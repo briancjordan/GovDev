@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AgileProjectConfiguration>
+  <ProductBacklog>
+    <Columns>
+      <Column refname="Microsoft.VSTS.Common.Priority" width="100" />
+      <Column refname="System.Title" width="400" />
+      <Column refname="System.State" width="100" />
+      <Column refname="Microsoft.VSTS.Scheduling.StoryPoints" width="50" />
+      <Column refname="System.IterationPath" width="200" />
+    </Columns>
+    <AddPanel>
+      <Fields>
+        <Field refname="System.Title" />
+        <Field refname="Microsoft.VSTS.Common.Priority" />
+      </Fields>
+    </AddPanel>
+  </ProductBacklog>
+  <IterationBacklog>
+    <Columns>
+      <Column refname="Microsoft.VSTS.Scheduling.StoryPoints" width="50" />
+      <Column refname="System.Title" width="400" />
+      <Column refname="System.State" width="100" />
+      <Column refname="System.AssignedTo" width="100" />
+      <Column refname="Microsoft.VSTS.Scheduling.RemainingWork" width="50" />
+    </Columns>
+  </IterationBacklog>
+</AgileProjectConfiguration>
