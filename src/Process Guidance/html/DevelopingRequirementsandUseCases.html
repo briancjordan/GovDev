@@ -1,0 +1,543 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="process guidance, developing product requirements" />
+    <meta name="System.Keywords" content="requirements, process guidance for developing" />
+    <meta name="Microsoft.Help.Id" content="4947c45a-c6a4-4865-9e3a-677740a0a1bc" />
+    <meta name="Description" content="Requirements describe what the stakeholders expect from the product. You should express your requirements in terms that allow them to be easily discussed with the business stakeholders, using the vocabulary and concepts of the business domain." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Developing Requirements" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml>
+        <mshelp:keyword Index="A" Term="4947c45a-c6a4-4865-9e3a-677740a0a1bc" />
+        <mshelp:keyword Index="K" Term="process guidance, developing product requirements" />
+        <mshelp:keyword Index="K" Term="requirements, process guidance for developing" />
+        <mshelp:attr Name="RevisionNumber" Value="28" />
+        <mshelp:attr Name="AssetID" Value="4947c45a-c6a4-4865-9e3a-677740a0a1bc" />
+        <mshelp:attr Name="Abstract" Value="Requirements describe what the stakeholders expect from the product. You should express your requirements in terms that allow them to be easily discussed with the business stakeholders, using the vocabulary and concepts of the business domain. Requir ..." />
+        <mshelp:attr Name="CommunityContent" Value="1" />
+        <mshelp:attr Name="ShippedIn" Value="vs.90" />
+        <mshelp:attr Name="TopicVersion" Value="10.0.10223.10000" />
+        <mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" />
+        <mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" />
+        <mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" />
+    </xml>
+    <title>Developing Requirements and Use Cases</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Developing Requirements and Use Cases</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray">
+                <p />
+            </font>
+            <div class="introduction">
+                <p>Requirements describe what the stakeholders expect from the product. You should express
+                    your requirements in terms that allow them to be easily discussed with the business
+                    stakeholders, using the vocabulary and concepts of the business domain. Requirements
+                    should neither discuss nor depend on the implementation. Requirements include not
+                    only the behavioral and quality of service expectations of the users but also statutory
+                    constraints and commercial standards. </p>
+                <p>By recording requirements in Visual Studio Team Foundation Server by using the requirements
+                    work item, you gain the following benefits:</p>
+                <ul>
+                    <li>
+                        <p>Monitor progress toward implementing the requirements by linking them to use 
+                            cases and associated task and test case work
+                            items.</p>
+                    </li>
+                    <li>
+                        <p>Structure the requirements into overall and more detailed use cases so that you
+                            can manage them more easily and so that progress reports can summarize the information.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Model the requirements in Visual Studio Ultimate, linking model elements to requirements
+                            in Team Foundation Server.</p>
+                    </li>
+                </ul>
+                <p>The activities that are described in this topic, like any development activities,
+                    should not be performed in strict order. Develop a domain model while you are writing
+                    scenarios because one activity will help you improve the other activity. Develop
+                    the use cases as the time for coding them approaches. Feed the experience with code
+                    that has been written and demonstrated back to the scenarios that have yet to be
+                    implemented.</p>
+                <p><span class="label">In this topic</span> </p>
+                <p><a href="#When">When to Develop Requirements</a></p>
+                <p><a href="#Model">Model the Business Domain</a></p>
+                <p><a href="#QofS">Develop Quality of Service Requirements</a></p>
+                <p><a href="#Review">Review Requirements</a></p>
+                <p><a href="#Validate">Validation</a></p>
+                <p><a href="#useCases">Write Use Cases</a></p>
+            </div>
+            <a name="When" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />When
+                to Develop Requirements</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>Team Foundation Server supports iterative working, and this practice is most effective
+                    when the early iterations are used to gain feedback from prospective users and other
+                    stakeholders. This feedback can be used to improve the requirements that have been
+                    stated for future iterations. This results in a product that is much more effective
+                    in its ultimate installation than a product that is developed over the same period
+                    without any user trial. If your project is one component among many in a larger
+                    program, early integration with other components allows the program architects to
+                    improve the overall product.</p>
+                <p>This flexibility must be balanced against the need to give firm commitments to your
+                    customer or to partners in parallel projects. </p>
+                <p>To a controlled extent, therefore, requirements are developed and refined throughout
+                    the project. Because the detailed use cases are likely to change during the project,
+                    determining them in full before the appropriate implementation is likely to result
+                    in wasted effort.</p>
+                <ul>
+                    <li>
+                        <p>In Iteration 0, develop a set of requirements that describe of the main features, 
+                            with just enough detail to form a project plan. The prodect plan assigns requirements
+                            to use cases and use cases toiterations and states what requirement will be fulfilled at the end of each iteration.
+                            Create a domain model of the major concepts and activities, and define the vocabulary
+                            that will be used for those concepts both in discussion with the users and in the
+                            implementation. Determine broad requirements that pervade every feature, such as
+                            security and other quality of service requirements.</p>
+                    </li>
+                    <li>
+                        <p>At or near the start of each iteration, develop the use cases for those 
+                            requirements
+                            in more detail. Determine the steps that the users will follow, defining them with
+                            the help of activity or sequence diagrams. Define what happens in exceptional cases.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify as often as possible all the requirements that have been implemented. Pervasive
+                            requirements, such as security, must be verified with tests that are extended for
+                            each new feature. If possible, automate the tests because automatic tests can be
+                            performed continuously.</p>
+                    </li>
+                </ul>
+                <h3 class="subHeading">Managing requirements changes</h3>
+                <div class="subsection">
+                    <p>The following guidelines let you operate an incremental process while monitoring
+                        it to satisfy requirements.</p>
+                    <ul>
+                        <li>
+                            <p>Do not change the use cases of requirements that are set for an iteration. In the 
+                                rare case of an abrupt change in circumstances, you might have to cancel an 
+                                iteration, review the project plan, and start a new iteration.</p>
+                        </li>
+                        <li>
+                            <p>Look for uncertainties in the requirements. Try to arrange the plan so that user
+                                experience with early iterations yields information that reduces the uncertainties.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Use change request work items to record requests to change behavior that has already
+                                been implemented, unless the requested improvement is already part of the plan.
+                                Link each change request to the appropriate requirement work items. For more information,
+                                see <span sdata="link"><a href="ChangeRequestGovDev.html">Change Request (GovDev)</a>
+                                </span>.</p>
+                        </li>
+                        <li>
+                            <p>Review change requests when you review the product before each iteration. Examine
+                                the impact of the request on dependent projects and users, and estimate the cost
+                                with regard to changes in your code. If a change request is accepted, update the
+                                requirement.</p>
+                        </li>
+                        <li>
+                            <p>Update the tests to conform to every requirements change.</p>
+                        </li>
+                        <li>
+                            <p>Designate a cut-off date (for example, after iteration 2 or 3) after which requirements
+                                changes must be much more strongly justified. If your project is for a paying customer,
+                                this is the date to have the customer approve a baseline set of requirements and
+                                switch from hourly payment to fixed price.</p>
+                        </li>
+                        <li>
+                            <p>Use bug work items to record implemented behavior that does not perform according
+                                to the explicit or implicit use cases of requirements. Where practical, create a new test that
+                                would have caught the bug.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Model" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Model the business domain</span> 
+            </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Create a UML model that describes the principal activities and concepts that are
+                    involved in the use of your product. Use the terms that are defined in this model
+                    as a "ubiquitous language," in the scenarios, in discussions with the stakeholders,
+                    in the user interface and any user manuals, and in the code itself.</p>
+                <p>Many requirements are not explicitly stated by your customer, and comprehending the
+                    implied requirements depends on an understanding of the business domain, that is,
+                    the context in which the product will work. Some of the work of requirements gathering
+                    in an unfamiliar domain is, therefore, about gaining knowledge of that context.
+                    After this kind of knowledge has been established, it can be used on more than one
+                    project.</p>
+                <p>Save the model in version control. </p>
+                <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/359900f8-6d69-493d-bfdf-2c9069c74a26">
+                    Modeling User Requirements</a></span>.</p>
+                <h3 class="subHeading">Modeling Behaviors</h3>
+                <div class="subsection">
+                    <p>Draw activity diagrams to summarize scenarios. Use swimlanes to group the actions
+                        that are performed by different actors. For more information, see <span sdata="link">
+                            <a href="http://msdn.microsoft.com/library/fe5dbe96-79ab-483a-b9bc-44d0d1d3efc2">UML
+                                Activity Diagrams: Guidelines</a></span>.</p>
+                    <p>Although a scenario usually describes a specific sequence of events, an activity
+                        diagram shows all the possibilities. Drawing an activity diagram can prompt you
+                        to think about alternative sequences and to ask your business clients what should
+                        happen in those cases.</p>
+                    <p>The following illustration shows a simple example of an activity diagram.</p>
+                    <img alt="Activity with three actions and a loop." src="../art/UC_ReqmWFAct.png" /><p>
+                        Where the interchange of messages is important, it might be more effective to use
+                        a sequence diagram that includes a lifeline for each actor and major product component.
+                    </p>
+                    <p>Use case diagrams let you summarize the different flows of activity that your product
+                        supports. Each node on the diagram represents a series of interactions between the
+                        users and the application in pursuit of a particular user goal. You can also factor
+                        common sequences and optional extensions into separate use case nodes. For more
+                        information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b1ae8ed0-d00b-4f9b-8e23-733e09e81e9b">
+                            UML Use Case Diagrams: Guidelines</a></span>.</p>
+                    <p>The following illustration shows a simple example of a use case diagram.</p>
+                    <img alt="Use cases for previous actions" src="../art/UML_ReqmWFUC.png" /></div>
+                    <p>Use cases play a very important role in the GovDev for TFS 2010 v1.0 process template.&nbsp; 
+                        They act as the link bewteen the top-down requirements and the iterative 
+                        implementation of application functionality and testing.&nbsp; For more 
+                        information see <a href="#useCases">Write Use Cases</a> and <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span>.</p>
+                <h3 class="subHeading">Modeling Concepts</h3>
+                <div class="subsection">
+                    <p>Draw domain class diagrams to describe the important entities and their relationships
+                        that are mentioned in the scenarios. For example, the DinnerNow model shows Restaurant,
+                        Menu, Order, Menu Item, and so on. For more information, see <span sdata="link"><a
+                            href="http://msdn.microsoft.com/library/94dbfd55-b300-4b49-9049-0831ed849486">UML
+                            Class Diagrams: Guidelines</a></span>.</p>
+                    <p>Label the roles (ends) of the relationships with names and cardinalities.</p>
+                    <p>In a domain class diagram, you do not typically attach operations to the classes.
+                        In the domain model, the activity diagrams describe the behavior. Assigning responsibilities
+                        to program classes is part of the development work.</p>
+                    <p>The following illustration shows a simple example of a class diagram.</p>
+                    <img alt="Rule in Comment attached to Order class." src="../art/UML_ReqmCD2.png" />
+                </div>
+                <h3 class="subHeading">Static constraints</h3>
+                <div class="subsection">
+                    <p>Add to the class diagrams constraints that govern the attributes and relationships.
+                        For example, the items on an order must all come from the same restaurant. These
+                        types of rules are important for the design of the product.</p>
+                </div>
+                <h3 class="subHeading">Model consistency</h3>
+                <div class="subsection">
+                    <p>Ensure that the model and scenarios are consistent. One of the most powerful uses
+                        for a model is to resolve ambiguities.</p>
+                    <ul>
+                        <li>
+                            <p>The scenario descriptions use the terms that are defined in the model and are consistent
+                                with the relations that it defines. If the model defines menu items, the scenarios
+                                should not refer to the same thing as products. If the class diagram shows that
+                                a menu item belongs to exactly one menu, the scenarios should not talk of sharing
+                                an item between menus.</p>
+                        </li>
+                        <li>
+                            <p>Every scenario describes a series of steps that are allowed by the activity diagrams.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Scenarios or activities describe how each class and relationship in the class diagram
+                                is created and destroyed. For example, what scenario creates a menu item? When is
+                                an order destroyed? </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="QofS" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Develop Quality of Service Requirements</span> 
+            </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Create work items that specify quality of service requirements. Set the Requirement
+                    Type field to Quality of Service, Non-Functional. Performance Safety or Security.</p>
+                <p>Consider each of these categories for each top level requirement and derive use 
+                    case if applicable.</p>
+                <p>The title of each quality of service requirement should capture its definition by
+                    presenting a context, an action, and a measurement. For example, you might create
+                    the following requirement: "During a catalog search, return the search results in
+                    less than three seconds.”</p>
+                <p>In addition, it is useful to capture more detail that explains why the requirement
+                    is necessary. Describe why the persona would value the requirement and why this
+                    level of service is required. Provide context and justification. This explanation
+                    may include useful risk management information such as data from a market survey,
+                    a customer focus group, or a usability study; help desk reports/tickets; or other
+                    anecdotal evidence.</p>
+            </div>
+            <a name="Review" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Review Requirements</span> 
+            </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>When the requirements have been written or updated, they should be reviewed by the
+                    appropriate stakeholders to ensure that they adequately describe all user interactions
+                    with the product. Common stakeholders might include a subject matter expert, a business
+                    analyst, and a user experience architect. The scenarios are also reviewed to ensure
+                    that they can be implemented in the project without any confusion or problems. If
+                    any problems are spotted, the scenarios must be fixed so that they are valid at
+                    the conclusion of this activity.</p>
+                <p>Review each requirement for the following characteristics: </p>
+                <ul>
+                    <li>
+                        <p>The requirement is written in the context of what task users must perform, what they
+                            already know, and how they expect to interact with the product. </p>
+                    </li>
+                    <li>
+                        <p>The requirement outlines a problem and is not obscured by proposed solutions to the
+                            problem. </p>
+                    </li>
+                    <li>
+                        <p>All relevant user interactions with the product are identified.</p>
+                    </li>
+                    <li>
+                        <p>The subject matter expert, the business analyst, and the user experience architect
+                            review each requirement in the context of the project to validate that all 
+                            requirements
+                            can be implemented successfully. If a requirement is not valid, it is revised so that
+                            it is valid. </p>
+                    </li>
+                    <li>
+                        <p>The requirement can be implemented with the available techniques, tools, and resources
+                            and within budget and schedule. </p>
+                    </li>
+                    <li>
+                        <p>The requirement has a single interpretation that is easily understood. </p>
+                    </li>
+                    <li>
+                        <p>The requirement does not conflict with another requirement. </p>
+                    </li>
+                    <li>
+                        <p>The requirement is testable.</p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Validate" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Validation</span> 
+            </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>Plan to deploy beta versions of the product into its working environment before its
+                    final release. Plan to update the requirements, based on stakeholder feedback from
+                    that deployment.</p>
+                <p>Validation means ensuring that the product fulfills its intended use in its operating
+                    environment. In GovDev for TFS 2010, validation is achieved by demonstrating working software
+                    to the stakeholders at the end of every iteration throughout the project. The schedule
+                    is arranged in such a way that concerns that are fed back to the developers from
+                    early demonstrations can be dealt with in the plan for the remaining iterations.
+                </p>
+                <p>To achieve true validation, the product must not only be run in a demonstration or
+                    simulated context. As far is as practicable, it should be tested in real conditions.
+                </p>
+            </div>
+            <a name="UseCases" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Write 
+                Use Cases</span> 
+            </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Work with your customer and other stakeholders to create scenarios, and enter 
+                    them as use case work items linked to the requirement.</p>
+                <p>A use case is a narrative that describes a sequence of events, shows
+                    how a particular goal is achieved, and usually involves interaction between people
+                    or organizations and computers. </p>
+                <p>Give it a descriptive title that clearly distinguishes it from others when viewed 
+                    in a list. Make sure that the principal actor or actors are stated and that 
+                    their goal is clear. You can write a use case by filling out the elements of the use case form.  
+                    For more information see <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span>.</p>
+                <h3 class="subHeading">Specific Scenarios</h3>
+                <div class="subsection">
+                    <p>Start by writing specific scenarios, which follow a particular set of actors through
+                        a specific sequence. For example, "Carlos orders a pizza and garlic bread at the
+                        DinnerNow Web site. The Web site redirects Carlos to Woodgrove Bank's payment service.
+                        Fourth Coffee prepares the pizza and delivers it."</p>
+                    <p>Specific scenarios help you envisage the system in use and are most useful when you
+                        first explore a feature. </p>
+                    <p>It can also be useful to create named personas that describe the backgrounds and
+                        other activities of people and organizations. Carlos sleeps rough and uses an Internet
+                        café; Wendy lives in a gated community; Sanjay orders meals for his wife at her
+                        work; Contoso runs a chain of 2,000 restaurants worldwide; Fourth Coffee is run
+                        by a couple who deliver by bicycle.</p>
+                    <p>More generic scenarios that are written in terms of "a customer," "a menu item,"
+                        and so on can be more convenient but are less likely to lead to the discovery of
+                        useful features.</p>
+                </div>
+                <h3 class="subHeading">Levels of detail</h3>
+                <div class="subsection">
+                    <p>In Iteration 0, write a few important scenarios in some detail, but write most scenarios
+                        in outline. When an iteration approaches in which a particular scenario is to be
+                        fully or partly implemented, add more detail.</p>
+                    <p>When you first consider a scenario, it can be useful to describe the business context,
+                        even aspects in which the product takes no part. For example, describe the DinnerNow
+                        method of delivery: Does each restaurant organize its own deliveries, or does DinnerNow
+                        run a delivery service? The answers to such questions provide useful context for
+                        the development team.</p>
+                    <p>The more detailed scenarios that you develop at the start of an iteration can describe
+                        user interface interactions, and storyboards can show user interface layout.
+                    </p>
+                </div>
+                <h3 class="subHeading">Organizing the scenarios</h3>
+                <div class="subsection">
+                    <p>You can organize scenarios by using the following methods:</p>
+                    <ul>
+                        <li>
+                            <p>Draw use case diagrams that show each scenario as a use case. This method is recommended
+                                because it makes the scenarios very easy to present and discuss. For more information,
+                                see <span sdata="link"><a href="http://msdn.microsoft.com/library/b1ae8ed0-d00b-4f9b-8e23-733e09e81e9b">
+                                    UML Use Case Diagrams: Guidelines</a></span>.</p>
+                            <ul>
+                                <li>
+                                    <p>Link each use case to the work item that defines the scenario. For more information,
+                                        see <span sdata="link"><a href="http://msdn.microsoft.com/library/e687a490-0f93-412c-a1ff-eea83cf7ba07">
+                                            How to: Link from Model Elements to Work Items</a></span>.</p>
+                                </li>
+                                <li>
+                                    <p>Draw Extends relationships to show that one scenario is a variation of another. For
+                                        example, "Customer specifies separate payment and delivery addresses" is an extension
+                                        of the basic "Customer makes an order" use case. Extensions are particularly useful
+                                        to separate out scenarios that will be implemented in a later iteration.</p>
+                                </li>
+                                <li>
+                                    <p>Draw Includes relationships to separate a procedure such as "Customer logs on," which
+                                        is common to several use cases.</p>
+                                </li>
+                                <li>
+                                    <p>Draw generalization relationships between general scenarios such as "Customer pays"
+                                        and specific variants such as "Customer pays by card."</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle8)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle8, event)" tabindex="0">
+                <img id="sectionToggle8" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional Resources</span> 
+            </h1>
+            <div id="sectionSection8" class="section" name="collapseableSection" style="">
+                <p>For more information, see the following Web resources:</p>
+                <ul>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=179031">A Practical Guide to Feature
+                            Driven Development</a>, Stephen R. Palmer and Malcolm J. Felsing; Prentice-Hall
+                            PTR, 2002.</p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=179032">Streamlined Object Modeling:
+                            Patterns, Rules and Implementation</a>, Jill Nicola, Mark Mayfield, and Mike Abney;
+                            Prentice Hall PTR, 2001.</p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=179033">Agile Modeling: Effective
+                            Practices for Extreme Programming and the Unified Process, Scott Ambler</a>; Wiley,
+                            2002.</p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=179034">Domain Driven Design: Tackling
+                            Complexity in the Heart of Software</a>, Eric Evans; Addison Wesley Professional,
+                            2003.</p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=179035">Object Design: Roles, Responsibilities
+                            and Collaborations, Rebecca Wirfs-Brock and Alan McKean</a>; Addison Wesley Professional,
+                            2002.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+				<span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

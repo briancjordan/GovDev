@@ -1,0 +1,797 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="planning, product" />
+    <meta name="System.Keywords" content="ranking, Use Cases" />
+    <meta name="System.Keywords" content="workbooks, product planning" />
+    <meta name="Microsoft.Help.Id" content="76914c37-d5c1-4fe1-903e-41ec8bc7e5b9" />
+    <meta name="Description" content="You can use the Use Case Planning workbook to manage the backlog and development of Use Cases, determine the team velocity, and balance the workload across several iterations, also known as sprints." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Use Case Planning Workbook" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:keyword Index="A" Term="76914c37-d5c1-4fe1-903e-41ec8bc7e5b9" /><mshelp:keyword Index="K" Term="planning, product" /><mshelp:keyword Index="K" Term="ranking, Use Cases" /><mshelp:keyword Index="K" Term="workbooks, product planning" /><mshelp:attr Name="RevisionNumber" Value="21" /><mshelp:attr Name="AssetID" Value="76914c37-d5c1-4fe1-903e-41ec8bc7e5b9" /><mshelp:attr Name="Abstract" Value="You can use the Use Case Planning workbook to manage the backlog and development of Use Cases, determine the team velocity, and balance the workload across several iterations, also known as sprints. To plan an iteration, you review, rank, prioritiz ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Use Case Planning Workbook</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Use Case Planning Workbook</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Use Case Planning workbook to manage the backlog and development of
+                    use cases, determine the team velocity, and balance the workload across several
+                    iterations, also known as sprints. To plan an iteration, you review, rank, prioritize,
+                    and assign story points to the use cases that will be implemented for a project. To balance
+                    workload, you assign each use case to a specific iteration and adjust these assignments
+                    until the number of story points that are assigned across all iterations are roughly
+                    equal. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Use Case Planning workbook is stored on the server that hosts SharePoint Products
+                                    for your team project. If a project portal has not been enabled for your team project,
+                                    you cannot access the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                        Access a Team Project Portal and Process Guidance</a></span>.</p>
+                                <p>Also, when you open the workbook for the first time, you must enable macros by clicking
+                                    <span class="ui">Options</span> next to the <span class="ui">Security Warning</span>. 
+                                    To modify the contents, you must click <span class="ui">Edit Workbook</span> next
+                                    to <span class="ui">Server Workbook</span>. For more information, see <span sdata="link">
+                                        <a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span>.</p>
+                                <p>If your team project was created before the release of Visual Studio Application
+                                    Lifecycle Management (ALM), you must perform upgrade tasks so that you can use the
+                                    Use Case Backlog workbook with your team project. For more information, see <span
+                                        sdata="link"><a href="http://msdn.microsoft.com/library/36c68c04-76d0-4cd0-b466-442eb4eab2a8">
+                                            Adding Workbooks to Team Projects</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Manage">Managing the Use Caset Backlog</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Rank">Ranking and Estimating Use Cases</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Plan">Planning Iterations</a></p>
+                                        <ul>
+                                            <li>
+                                                <p><a href="#Define">Defining Additional Iterations</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Schedule">Scheduling Iterations</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Interruptions">Accounting for Holidays and Planned Interruptions</a>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Balance">Balancing the Workload Across Iterations</a></p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Velocity">Reviewing the Team Velocity</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Add">Adding Use Cases to the Backlog</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Reorder">Reordering the List of Use Cases</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AdditionalResources">Additional Resources for Managing the Product Backlog
+                                            </a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Open the Use Case Planning workbook from the Shared Documents
+                                    folder in Team Explorer</span></p>
+                                <img alt="Open the Use Case Backlog Workbook" 
+                                    src="../art/ProcGuid_UseCaseBacklog_Workbook.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To create or modify Use Cases by using the workbook, you must be a member of the
+                    <span class="ui">Contributors</span> group or your <span class="ui">View work items in
+                        this node</span> and <span class="ui">Edit work items in this node</span> permissions
+                    must be set to <span class="ui">Allow</span>. </p>
+                <p>To add iterations or change the project structure, you must be a member of the <span
+                    class="ui">Project Administrators</span> group or your <span class="ui">Create and order
+                        child nodes</span>, <span class="ui">Delete this node</span>, and <span class="ui">Edit
+                            this node</span> permissions must be set to <span class="ui">Allow</span>.</p>
+                <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/39997de5-b7fb-4777-b779-07de0543abe6">
+                    Team Foundation Server Permissions</a></span>.</p>
+            </div>
+            <a name="Manage" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Managing 
+                the Use Case Backlog</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can use the Use Case Planning workbook to balance workload across several iterations.
+                    This workbook provides three worksheets as the following illustration shows and
+                    as described later in this topic.</p>
+                <img alt="Use Case Backlog Worksheet" 
+                    src="../art/ProcGuid_UseCaseBacklog1_Workbook.png" /><ul>
+                    <li>
+                        <p><span class="label">Use Case Backlog</span>: You use this worksheet to filter, rank,
+                            and prioritize the use cases that you want to manage. You can specify story points
+                            and assign use cases to iterations. </p>
+                        <p>The Use Case Backlog worksheet references the Use Case Planning team query, which finds
+                            all Use Cases that are defined for the team project. Within the workbook, you
+                            can filter the use cases based on product area. In addition, you can perform the following
+                            actions:</p>
+                        <ul>
+                            <li>
+                                <p><a href="#Add">Add Use Cases to the Backlog</a></p>
+                            </li>
+                            <li>
+                                <p><a href="#Reorder">Reorder the List of Use Cases</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span class="label">Iteration Planning</span>: You use this worksheet to schedule
+                            the iterations, review the workload for each iteration, and determine how to balance
+                            the workload across the iterations. </p>
+                    </li>
+                    <li>
+                        <p><span class="label">Interruptions</span>: You use this worksheet to specify holidays
+                            or other dates when the team will perform no work.</p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Rank" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Ranking
+                and Estimating Use Cases</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>After you create the initial set of use cases in the backlog, the team estimates
+                    the size of each use case, and then you rank them to determine the order in which the
+                    team will implement them. Typically, you start the process by ranking each use case,
+                    the team then estimates the size of each use case, and then you rank the use cases again
+                    based on the team's planning point estimates. </p>
+                <p>Story points measure the amount and complexity of the work that each use case requires
+                    compared to all other use cases in the backlog. Teams should try not to be overly
+                    precise with these estimates. They serve only to help identify appropriate tradeoffs
+                    when teams determine each use case's rank, which indicates how important the use case
+                    is compared to the other use cases in the backlog. Teams can also specify a high,
+                    medium, or low level of risk for each use case to indicate a relative level of
+                    uncertainty about the use case's requirements or design.</p>
+                <h3 class="procedureSubHeading">To rank and estimate Use Cases</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Use Case Planning workbook, click the <span class="ui">Use Case Backlog</span> 
+                                worksheet.</p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span> group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the list of Use Cases contains the most current
+                                information.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) To filter the list of use cases based on product area, in the <span class="ui">
+                                Area</span> list, select the check box next to each product area that you want to
+                                include. To define additional area paths, see<a href="#Add"> Defining Additional Iterations
+                                </a>later in this topic.</p>
+                        </li>
+                        <li>
+                            <p>Review the values for rank and story points for each use case, and update the fields
+                                in the following table as needed: </p>
+                            <div class="caption"></div>
+                            <div class="tableSection">
+                                <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                    <tr>
+                                        <th>
+                                            <p><span class="label">Field Name</span> </p>
+                                        </th>
+                                        <th>
+                                            <p><span class="label">Description</span> </p>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Stack Rank</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective rating of the Use Case compared to all other Use Cases in the backlog.
+                                                A use case that is assigned a lower number should be implemented before a use
+                                                case that is assigned a higher number.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Story Points</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective measure of the size and complexity of the use case. The team assigns
+                                                story points by considering several factors and estimating how big a use case is compared
+                                                to other use cases in the backlog. </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Risk</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective rating of the relative uncertainty as to the successful completion of
+                                                the use case. Teams can specify the following values:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><span class="ui">1 - High</span> </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">2 - Medium</span> </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">3 - Low</span> </p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>You can use the undo feature in Excel to reverse recent changes that were made to
+                                                work items before you publish the changes. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                                Publish Work Items in Office Excel</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />. </p>
+                            <p>The workbook is saved to your team project portal site. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Plan" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Planning
+                the Iterations</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Planning iterations is an iterative process in which you perform the following steps:
+                </p>
+                <ol>
+                    <li>
+                        <p>(Optional) <a href="#Add">Defining Additional Iterations</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Schedule">Scheduling Iterations</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Interruptions">Accounting for Holidays and Planned Interruptions</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><a href="#Balance">Balancing the Workload Across Iterations</a></p>
+                    </li>
+                </ol>
+                <a name="Define" />
+                <h3 class="subHeading">Defining Additional Iterations</h3>
+                <div class="subsection">
+                    <p>Before you can assign Use Cases to iterations, you will want all the iterations
+                        to be defined for your team project. The following illustration shows the default
+                        iteration structure that is defined in the process template for MSF for Agile Software
+                        Development v5.0.</p>
+                    <img alt="Default agile iterations" src="../art/ProcGuid_DefaultIterations.png" /><p>
+                        You can rename the iterations, add iterations, and change the tree hierarchy of
+                        the iterations.</p>
+                    <p>You can modify the product area and iteration structure by using Team Web Access,
+                        Team Explorer, Office Excel, or Office Project. The following procedure describes
+                        how to add iterations from Office Excel. For more information, see <span sdata="link">
+                            <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                                and Modify Areas and Iterations</a></span>. </p>
+                    <h3 class="procedureSubHeading">To add iterations to your team project from Office Excel
+                    </h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Use Case Planning workbook, on the <span class="ui">Team</span> tab, in the
+                                    <span class="ui">Work Items</span> group, click <span class="ui">Edit Areas and Iterations
+                                    </span>.</p>
+                                <p>The <span class="ui">Areas and Iterations</span> dialog box opens.</p>
+                            </li>
+                            <li>
+                                <p>Click the <span class="ui">Iteration</span> tab, and perform one or both of the following
+                                    steps:</p>
+                                <ul>
+                                    <li>
+                                        <p>To add an iteration, click the parent node, click the <span class="ui">Add a child
+                                            node</span> button on the toolbar, type a name for the new iteration, and then press
+                                            ENTER. </p>
+                                    </li>
+                                    <li>
+                                        <p>To promote a node, demote a node, or move a node up or down in the list, click the
+                                            node, and then click the appropriate button on the toolbar. </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Click <span class="ui">Close</span>. </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Schedule" />
+                <h3 class="subHeading">Scheduling Iterations</h3>
+                <div class="subsection">
+                    <p>To schedule the iterations, you add each iteration to the Iteration Planning worksheet
+                        and specify its start and end dates. This step provides the necessary data to balance
+                        the use cases across the iterations. </p>
+                    <h3 class="procedureSubHeading">To schedule the iterations</h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Use Case Planning workbook, click the <span class="ui">Iterations </span> worksheet.
+                                </p>
+                            </li>
+                            <li>
+                                <p>(Optional) To filter the use cases, click the
+                                    <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                    down arrow in the cell next to <span class="ui">Area</span>, and then click the
+                                    product area that you want to include.</p>
+                            </li>
+                            <li>
+                                <p>For each iteration in your planning, perform the following actions in the table area
+                                    under <span class="ui">Story Points per Iteration</span>:</p>
+                                <ol>
+                                    <li>
+                                        <p>Click the cell under <span class="ui">Iteration</span>, click the
+                                            <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                            down arrow, and then click the iteration that you want to include.</p>
+                                    </li>
+                                    <li>
+                                        <p>Click the cell under <span class="ui">Start Date</span>, and type the calendar date
+                                            for the start of the iteration.</p>
+                                        <p>The date format should be month/day/year. </p>
+                                    </li>
+                                    <li>
+                                        <p>Click the cell under <span class="ui">End Date</span>, and type the calendar date
+                                            for the end of the iteration.</p>
+                                        <p>The date format should be month/day/year. </p>
+                                    </li>
+                                    <li>
+                                        <p>Click the cell under <span class="ui">Team Size</span>, and type the number of team
+                                            members who will work on the iteration.</p>
+                                    </li>
+                                </ol>
+                                <p>The worksheet automatically calculates the following columns:</p>
+                                <ul>
+                                    <li>
+                                        <p>The <span class="ui">Days</span> column is calculated based on the start and end dates.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>The <span class="ui">Planned</span> and <span class="ui">Delivered</span> columns are
+                                            calculated from the Use Case Backlog worksheet. The story points for Use Cases
+                                            that have been resolved or closed are counted as having been <span class="ui">Delivered
+                                            </span>. Only those story points that are assigned to active Use Cases are counted
+                                            as <span class="ui">Planned</span>.</p>
+                                    </li>
+                                </ul>
+                                <p>As you complete each row for each iteration, a bar appears in the <span class="ui">
+                                    Velocity</span> chart to indicate the story points that are assigned to each iteration.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Interruptions" />
+                <h3 class="subHeading">Accounting for Holidays and Planned Interruptions</h3>
+                <div class="subsection">
+                    <p>You use the Interruptions worksheet to specify days when the team will perform little
+                        or no work, such as holidays or team events. The number of days in each iteration
+                        is updated in the Iteration Planning worksheet to reflect these interruptions.
+                    </p>
+                    <h3 class="procedureSubHeading">To account for holidays or planned work interruptions
+                    </h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Use Case Planning workbook, click the <span class="ui">Interruptions</span> 
+                                    worksheet.</p>
+                            </li>
+                            <li>
+                                <p>Click the cell under <span class="ui">Description</span>, and type the name of the
+                                    holiday or reason for the work interruption.</p>
+                            </li>
+                            <li>
+                                <p>Click the cell under <span class="ui">Date</span>, and type the date for the holiday
+                                    or work interruption.</p>
+                            </li>
+                            <li>
+                                <p>Add as many dates to the worksheet that fall within the planned iterations.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Balance" />
+                <h3 class="subHeading">Balancing the Workload Across Sprints</h3>
+                <div class="subsection">
+                    <p>By assigning each use case to an iteration, you add work to that iteration. Typically,
+                        the higher ranked use cases are implemented first. However, to balance workload across
+                        multiple iterations, you might need to make iterative adjustments to the iteration
+                        assignments. </p>
+                    <p>Initially, you might divide the number of use cases to be implemented by the number
+                        of iterations that you have planned. This strategy can provide a baseline for starting
+                        your assignment of use cases to iterations. </p>
+                    <p>Before you balance the use cases across the iterations, make sure that the following
+                        steps have been completed:</p>
+                    <ul>
+                        <li>
+                            <p>Each yse case has been assigned story points. Also, a best practice is to have
+                                Use Cases of similar point size.</p>
+                        </li>
+                        <li>
+                            <p>Use cases have been ranked, and the Use Case Backlog worksheet is sorted by rank.
+                            </p>
+                        </li>
+                        <li>
+                            <p>The iterations to be planned have been added to the Iterations worksheet.</p>
+                        </li>
+                        <li>
+                            <p>Time off for the team has been accounted for on the Interruptions worksheet.</p>
+                        </li>
+                    </ul>
+                    <h3 class="procedureSubHeading">To balance the workload across iterations </h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the <span class="ui">Use Case Backlog </span> worksheet, do a first pass of specifying
+                                    the iteration for each use case by clicking the
+                                    <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                    down arrow next to <span class="ui">Iteration</span> and then clicking the iteration.
+                                </p>
+                            </li>
+                            <li>
+                                <p>In the <span class="ui">Iterations </span> worksheet, view the story points that are
+                                    assigned to each iteration. If the story points are not evenly distributed across
+                                    the iterations, such as the following illustration shows, adjust the iteration assignment
+                                    until the iterations are balanced.</p>
+                                <img alt="Story points not balanced across sprints" src="../art/ProcGuid_ProdBacklog_ItPlan_Unbalanced_Wrkbk.png" />
+                            </li>
+                            <li>
+                                <p>Determine how many story points that you must move from one iteration to another.
+                                </p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>If the team size does not remain constant across iterations, you will want to factor
+                                                    these differences into your planning.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <p>In the <span class="ui">Use Case Backlog</span> worksheet, change the iteration assignments
+                                    until the number of story points is roughly even across all iterations. </p>
+                                <p>The following illustration shows work that has been balanced across five iterations.
+                                </p>
+                                <img alt="Load balanced sprints" src="../art/ProcGuid_PrdBacklog_ItPlan_Balanced_Wrkbk.png" />
+                            </li>
+                            <li>
+                                <p>Click
+                                    <img alt="Save" src="../art/Icon_saveWIT.gif" />. </p>
+                                <p>The workbook is saved to your team project portal site.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <a name="Velocity" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Reviewing
+                Team Velocity</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Your team's velocity is the number of story points that it can complete in an iteration.
+                    After several iterations have been completed, you can review the team velocity by
+                    viewing the Iterations worksheet. As shown in the following illustration, the team
+                    velocity is 15 story points for Iteration 1 and 16 story points for Iteration 2.
+                </p>
+                <img alt="Load balanced sprints" src="../art/ProcGuid_PrdBacklog_ItPlan_Balanced_Wrkbk.png" /><p>
+                    By continuing to track story points across iterations, you can better forecast upcoming
+                    iterations. For more information, see <span sdata="link"><a href="Scrum.html">Scrum</a>
+                    </span>.</p>
+            </div>
+            <a name="Add" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Use Cases to the Use Case Backlog</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>You can define use cases by adding them to the Use Case Backlog workbook and publishing
+                    it to the database for tracking work item. Even when the project is underway, the
+                    team might continue to create, estimate, and rank Use Cases. </p>
+                <h3 class="procedureSubHeading">To add Use Cases to the database for tracking work
+                    items</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In Office Excel, open the Use Case Planning workbook. </p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span> group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the list of Use Cases has the most current information.
+                            </p>
+                        </li>
+                        <li>
+                            <p>For each use case that you want to add, click the row at the bottom of the list, and
+                                specify the following information:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">In Title</span>, type an entry that identifies the customer as specifically
+                                        as possible and describes the customer's goal at a high level.</p>
+                                    <p>For example, you could specify "As a &lt;type of customer&gt;, I want to &lt;perform
+                                        this operation&gt;”. For more information, see <span sdata="link"><a href="CreatingaGreatProjectBacklog.html">
+                                            Creating a Great Project Backlog</a></span>.</p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">In the Work Item Type</span> list, click <span class="ui">Use Case
+                                        </span>.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Before you can publish a work item, you must specify the type of work item that you
+                                                        want to publish.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) To show additional Team Foundation fields in the list of work items, on
+                                the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> group,
+                                click <span class="ui">Choose Columns</span>.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                                Add or Remove Columns in a Work Item List</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>Add information to the remaining fields as appropriate.</p>
+                            <p>For more information about each field, see <span sdata="link"><a href="UseCaseGovDev.html">
+                                Use Case (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Reorder" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Reordering
+                the List of Use Cases</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>You can reorder the use cases in the Use Case Planning workbook by using the Excel
+                    feature for sorting rows.</p>
+                <h3 class="procedureSubHeading">To reorder the list of Use Cases in the workbook
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>To reorder the Use Cases, perform one of the following actions: </p>
+                            <ul>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Stack Rank</span>, and then click the sort option
+                                        that you want. </p>
+                                </li>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Story Points</span>, and then click the sort
+                                        option that you want. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AdditionalResources" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional 
+                Resources for Managing the Backlog</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>For more information about how to modify Use Cases by using Office Excel, see
+                    the following topics: </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/bd661b9f-cddc-4b5f-a5e9-f14b714179ca">
+                            Create, Open, and Modify Work Items Using Office Excel</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                            Add or Remove Columns in a Work Item List</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                            Publish Work Items in Office Excel</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3060a8cd-702c-4be8-9c05-c14636a77d9b">
+                            Connect a Microsoft Office Document to Team Foundation Server</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c9e48dcd-f6a9-4d7c-9616-5bfd1516f8e8">
+                            Sort, Filter, or Format a Work Item List</a></span> </p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="CreatingaGreatProjectBacklog.html">
+                    Creating a Great Project Backlog</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ComparingtheProductandSprintBacklogs.html">
+                    Comparing the Product and Sprint Backlogs</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="IterationBacklogWorkbook.html">
+                    Iteration Task Backlog Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

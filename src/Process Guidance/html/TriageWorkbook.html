@@ -1,0 +1,523 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="bugs, triage workbook" />
+    <meta name="System.Keywords" content="ranking, bugs during triage" />
+    <meta name="System.Keywords" content="triage, workbook" />
+    <meta name="Microsoft.Help.Id" content="ac07307f-e87c-43d5-a044-01023cea2e50" />
+    <meta name="Description" content="You can use the Triage workbook to rank and assign bugs to be worked on for an iteration, also referred to as a sprint." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Triage Workbook" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="ac07307f-e87c-43d5-a044-01023cea2e50" /><MSHelp:Keyword Index="K" Term="bugs, triage workbook" /><MSHelp:Keyword Index="K" Term="ranking, bugs during triage" /><MSHelp:Keyword Index="K" Term="triage, workbook" /><MSHelp:Attr Name="RevisionNumber" Value="15" /><MSHelp:Attr Name="AssetID" Value="ac07307f-e87c-43d5-a044-01023cea2e50" /><MSHelp:Attr Name="Abstract" Value="You can use the Triage workbook to rank and assign bugs to be worked on for an iteration, also referred to as a sprint. Triage is the process that a team uses to review newly reported or reopened bugs, assign a priority and iteration to them, and ass ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Triage Workbook</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Triage Workbook</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Triage workbook to rank and assign bugs to be worked on for an iteration,
+                    also referred to as a sprint. Triage is the process that a team uses to review newly
+                    reported or reopened bugs, assign a priority and iteration to them, and assign a
+                    team member to fix them. Triage is driven by the product owner or scrum master with
+                    input from the team. </p>
+                <p>The default workbook query displays a flat list of all active bugs that are defined
+                    for the team project. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Triage workbook is stored on the server that hosts SharePoint Products for your
+                                    team project. If a project portal has not been enabled for your team project, you
+                                    cannot access the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                        Access a Team Project Portal and Process Guidance</a></span>.</p>
+                                <p>When you open the workbook, click <span class="ui">Edit Workbook</span> next to <span
+                                    class="ui">Server Workbook</span> so that you can modify the workbook. For more information,
+                                    see <span sdata="link"><a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span>.</p>
+                                <p>If the workbook is not available to you, you can open the Triage team query by using
+                                    Team Explorer or Office Excel. This topic describes how to triage bugs by using
+                                    Office Excel. For information about how to triage bugs in the list of query results,
+                                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/6d094fa0-ae0c-4ce3-a3cf-c2488ddc0322">
+                                        Modify Work Items within a List View</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Bugs Listed in the Triage Workbook</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#TriageBugs">Triaging Bugs</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Reorder">Reordering the List of Bugs</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Filter">Filtering the List of Bugs</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AdditionalResources">Additional Resources for Modifying Bugs By Using Office
+                                            Excel</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">To access the Triage workbook</span</p>
+                                <ul>
+                                    <li>
+                                        <p>Open Team Explorer, open the <span class="ui">Shared Documents</span> folder, and
+                                            then open the <span class="ui">Triage</span> workbook as the following illustration
+                                            shows: </p>
+                                        <img alt="Triage workbook under Shared Documents" src="../art/ProcGuid_Triage_Workbook.png" />
+                                    </li>
+                                    <li>
+                                        <p>Or open Team Explorer, open the <span class="ui">Work Items</span> folder, and then
+                                            open the <span class="ui">Triage</span> team query, as the following illustration
+                                            shows:</p>
+                                        <img alt="Triage query" src="../art/ProcGuid_TriageQuery.png" /></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a team query or open a workbook, you must be assigned or belong to a group
+                    that has been assigned <span class="ui">Read</span> permissions for the team query
+                    folder for the team project. To modify a query, you must be assigned or belong to
+                    a group that has been assigned <span class="ui">Contribute</span> or <span class="ui">
+                        Full Control</span> permissions for the team query. For more information, see
+                    <span sdata="link"><a href="http://msdn.microsoft.com/library/682f0eb0-462d-41e2-b6a2-41949d1b90fb">
+                        Organize and Set Permissions on Work Item Queries</a></span>.</p>
+                <p>To create or modify bugs by using the query or workbook, you must be a member of
+                    the <span class="ui">Contributors</span> group or your <span class="ui">View work items
+                        in this node</span> and <span class="ui">Edit work items in this node</span> permissions
+                    must be set to <span class="ui">Allow</span>. For more information, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/39997de5-b7fb-4777-b779-07de0543abe6">Team
+                            Foundation Server Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Bugs
+                Listed in the Triage Workbook</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can use the Triage workbook to manage active bugs. The Triage worksheet references
+                    the Triage team query, which is configured to find all active bugs for the team
+                    project. The following illustration shows an example of the workbook in Office Excel.
+                </p>
+                <img alt="Example triage workbook" src="../art/ProcGuid_WorkbookTriage.png" />
+            </div>
+            <a name="TriageBugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Triaging
+                Bugs</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>A team can use the Triage workbook to change the <span class="ui">Stack Rank</span>, <span
+                    class="ui">Priority</span>, <span class="ui">Severity</span> and <span class="ui">Assigned
+                        To</span> values for active bugs. </p>
+                <h3 class="procedureSubHeading">To triage bugs</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Triage workbook, click the <span class="ui">Triage</span> worksheet.</p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span> group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the list of bugs contains the most current information.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Review each active bug.</p>
+                        </li>
+                        <li>
+                            <p>With input from developers, testers, and product managers, determine the importance
+                                of fixing each bug to support the goals of the project and the current iteration.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Assign a priority, severity, and rank to each newly active bug. Also, specify an
+                                iteration to fix each bug that will allow the development team to schedule and address
+                                it in a timely fashion. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If a bug report is unclear or the true impact of the bug is unknown, the bug report
+                                                should be clarified. Members of the team should attempt to reproduce the bug so
+                                                that they have a good understanding of its real impact and reproducibility.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>For unassigned bugs, in the <span class="ui">Assigned To</span> list, click the name
+                                of the team member to address the bug. </p>
+                        </li>
+                        <li>
+                            <p>Review the bug list, and adjust the priority, rank, and severity values to support
+                                current priorities. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Use the editing features in Office Excel to change the values for multiple cells.
+                                                For more information about how to modify cells in a worksheet, see topics about
+                                                how to enter and edit data in the Help for Office Excel.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>Update the following fields as needed:</p>
+                            <div class="caption"></div>
+                            <div class="tableSection">
+                                <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                    <tr>
+                                        <th>
+                                            <p><span class="label">Field Name</span> </p>
+                                        </th>
+                                        <th>
+                                            <p><span class="label">Description</span> </p>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Priority</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective rating of the bug as it relates to the business. You can specify the
+                                                following values:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><span class="ui">1</span> - Product cannot ship without the successful resolution
+                                                        of the bug, and it should be addressed as soon as possible. </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">2</span> - Product cannot ship without the successful resolution
+                                                        of the bug, but it does not need to be addressed immediately.</p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">3</span> - Resolution of the bug is optional based on resources,
+                                                        time, and risk.</p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Stack Rank</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective rating of the bug compared to other bugs. A bug that is assigned a lower
+                                                number should be fixed before a bug that is assigned higher number. </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Severity</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>A subjective rating of the impact of the bug on the project. You can specify the
+                                                following values:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><span class="ui">1 - Critical</span> </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">2 - High</span> </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">3 - Medium</span> </p>
+                                                </li>
+                                                <li>
+                                                    <p><span class="ui">4 - Low</span> </p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                                Publish Work Items in Office Excel</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Save and close the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Reorder" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Reordering
+                the List of Bugs</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can reorder the bugs that are listed in the Triage workbook by using the Office
+                    Excel feature for sorting rows.</p>
+                <h3 class="procedureSubHeading">To reorder the bugs that are listed in the workbook
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>To reorder the bugs, perform one of the following actions: </p>
+                            <ul>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Stack Rank</span>, and then click <span class="ui">Sort
+                                            Smallest to Largest</span>. </p>
+                                </li>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Priority</span>, and then click <span class="ui">
+                                            Sort Smallest to Largest</span>. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Filter" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the List of Bugs to be Triaged</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can filter the bugs that appear in the Triage workbook in the following ways
+                    by using the Office Excel feature for filtering rows:</p>
+                <ul>
+                    <li>
+                        <p>Filter on <span class="ui">Stack Rank, Priority</span>, or<span class="ui"> Severity </span> 
+                            to list only those bugs of a rank, priority, or severity that you specify. </p>
+                    </li>
+                    <li>
+                        <p>Filter on <span class="ui">Assigned To</span> to list only those bugs that are assigned
+                            to a team member that you specify.</p>
+                    </li>
+                    <li>
+                        <p>Filter on <span class="ui">Iteration</span> to list only those bugs that are assigned
+                            to an iteration that you specify.</p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>The <span class="ui">Iteration</span> tree hierarchy is defined by your project administrator
+                                            for the team project. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                Create and Modify Areas and Iterations</a></span>.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To filter the bugs that appear in the workbook</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Perform one or more of the following steps:</p>
+                            <ul>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Stack Rank</span>, <span class="ui">Priority</span>, 
+                                        or <span class="ui">Severity</span>, and then click the check box of each rank,
+                                        priority, or severity to display. </p>
+                                </li>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Assigned To</span>, and then click the check
+                                        box of each team member to display.</p>
+                                </li>
+                                <li>
+                                    <p>Click the
+                                        <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                        down arrow next to <span class="ui">Iteration</span>, and then click the check box
+                                        of each iteration to display.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AdditionalResources" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional
+                Resources for Modifying Bugs By Using Office Excel</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>For more information about how to modify bugs by using Office Excel, see the following
+                    topics: </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3060a8cd-702c-4be8-9c05-c14636a77d9b">
+                            Connect a Microsoft Office Document to Team Foundation Server</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/bd661b9f-cddc-4b5f-a5e9-f14b714179ca">
+                            Create, Open, and Modify Work Items Using Office Excel</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                            Add or Remove Columns in a Work Item List</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c9e48dcd-f6a9-4d7c-9616-5bfd1516f8e8">
+                            Sort, Filter, or Format a Work Item List</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                            Publish Work Items in Office Excel</mshelp:link></span> </p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a>
+                </span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

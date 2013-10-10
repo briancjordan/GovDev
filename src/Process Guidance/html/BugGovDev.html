@@ -1,0 +1,967 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="bugs, defining and work item form (GovDev)" />
+    <meta name="System.Keywords" content="work item types, Bug (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="22b047c9-4d06-4947-8336-84779fb2932d" />
+    <meta name="Description" content="You can learn how to fill in the details of a bug work item in this topic. For information about how to create a bug work item, see Work Items and Workflow." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Bug (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Bug" /><MSHelp:Keyword Index="A" Term="22b047c9-4d06-4947-8336-84779fb2932d" /><MSHelp:Keyword Index="K" Term="bugs, defining and work item form (GovDev)" /><MSHelp:Keyword Index="K" Term="work item types, Bug (GovDev)" /><MSHelp:Attr Name="RevisionNumber" Value="21" /><MSHelp:Attr Name="AssetID" Value="22b047c9-4d06-4947-8336-84779fb2932d" /><MSHelp:Attr Name="Abstract" Value="You can learn how to fill in the details of a bug work item in this topic. For information about how to create a bug work item, see Work Items and Workflow. " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Bug (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Bug (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can learn how to fill in the details of a bug work item in this topic. For information
+                    about how to create a bug work item, see <span sdata="link">
+                    <a href="WorkItemsandWorkflowGovDev.html">
+                        Work Items and Workflow (GovDev)</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Overview of Bug Creation and Tracking</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#CreateBugs">Defining a Bug</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkBugs">Linking a Test Case to a Bug</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkUseCase">Linking a Use Case to a Bug</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details and Attachments to a Bug</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#CloseBugs">Resolving and Closing a Bug</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Process Guidance</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="Scrum.html">Scrum</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Workbooks</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Dashboards and Reports</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugsDashboard.html">Bugs Dashboard</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugStatusReport.html">Bug Status Report</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugTrendsReport.html">Bug Trends Report</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="ReactivationsReport.html">Reactivations Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a bug, you must be a member of the <span class="ui">Readers</span> group or
+                    your <span class="ui">View work items in this node</span> must be set to <span class="ui">
+                        Allow</span>. To create or modify a bug, you must be a member of the <span class="ui">
+                            Contributors</span> group or your <span class="ui">Edit work items in this node
+                    </span> permissions must be set to <span class="ui">Allow</span>. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="CreateBugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Bug</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>A bug communicates that a potential problem exists in the code that your team is
+                    developing. When you define a bug, you want to accurately report the problem in
+                    a way that helps the reader to understand the full impact of the problem. You should
+                    also describe the actions that you took to find the bug so that other members of
+                    the team can more easily reproduce the behavior. The test results should clearly
+                    show the problem. Clear, understandable descriptions affect the probability that
+                    the bug will be fixed. </p>
+                <p>The work item form for a bug stores data in the fields and tabs that the following
+                    illustration shows:</p>
+                <img alt="Work Item Form for Bug" src="../art/ProcGuid__NewBug.png" /><p>When you define
+                    a bug, you must define the <span class="ui">Title</span> in the top section of the
+                    work item form and type text in the <span class="ui">Symptom</span> box on the <span
+                        class="ui">Details</span> tab. You can leave all other fields blank or accept
+                    their default values.</p>
+                <h3 class="procedureSubHeading">To define a bug</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form for a bug, specify one or more of the following
+                                fields:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span> (required), type a phrase that describes the code
+                                        defect that was found.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the name of the team member
+                                        who is responsible for fixing the bug, or leave this field blank to be assigned
+                                        later during triage.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Reason</span> list, click <span class="ui">Build Failure</span>, or leave the assignment as <span class="ui">New</span>. </p>
+                                    <p>By default, the value of the <span class="ui">Reason</span> field is <span class="ui">
+                                        New</span>. The <span class="ui">Resolved Reason</span> field is read-only and captures
+                                        the value of the <span class="ui">Reason</span> field when it is changed from <span
+                                            class="ui">Active</span> to <span class="ui">Resolved</span>. For more information
+                                        about these fields and how you can use them to track workflow, see <a href="#CloseBugs">
+                                            Resolving and Closing a Bug</a>later in this topic.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration, or leave these fields blank to be assigned later
+                                        during a planning or triage meeting. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The project administrator for each team project defines area and iteration paths
+                                                        for that project so that the team can track progress by those designations. For
+                                                        more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Rank</span>, type a number that indicates the relative importance
+                                        of the bug compared to the other bugs in the same iteration. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the value that indicates the importance
+                                        of the bug, where 1 is most important and 4 is least important.</p>
+                                    <p>By default, the value of this field is 2. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Severity</span> list, click the value that indicates the impact
+                                        of the bug on the project.</p>
+                                    <p>By default, the value of this field is <span class="ui">3 - Medium</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, specify one or more of the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Steps to Reproduce</span>, provide as much detail as needed so
+                                        that another team member can understand the problem that must be fixed.</p>
+                                    <p>You can format the content that you provide in this field.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">History</span> box, provide as much detail as you want.
+                                    </p>
+                                    <p>You can format the content that you provide here. </p>
+                                    <p>Every time that a team member updates the bug, its history shows the date of the
+                                        change, the team member who made the change, and the fields that changed.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">System Info</span> tab, specify one or more of the following
+                                types of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Found in Build</span> list, click or type the name of the
+                                        build in which the defect was found. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Each build is associated with a unique build name. For information about how to define
+                                                        build names, see <span sdata="link"><a href="http://msdn.microsoft.com/library/21153016-cebb-4bf7-b594-78d98bf0ac62">
+                                                            Customize Build Numbers</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Integrated in Build</span>, do not specify a build when you create
+                                        the bug. When you resolve a bug, type the name of the build that incorporates the
+                                        code or fixes a bug. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">System Info</span>, describe the software environment in which
+                                        the bug was found.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Link the bug to another work item, such as a test case or another bug.
+                            </p>
+                            <p>For more information about these activities, see <a href="#LinkBugs">Linking a Test
+                                Case to a Bug</a>later in this topic.</p>
+                        </li>
+                        <li>
+                            <p>On the work item toolbar, click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the bug, the identifier appears in the title under the work item toolbar.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkBugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                a Test Case to a Bug</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>By linking bugs to test cases, you support the accuracy and completeness of many
+                    reports that are defined for GovDev for TFS 2010. </p>
+                <h3 class="procedureSubHeading">To link an existing test case to a bug        <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Test Cases</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Bug </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default value of <span
+                                class="ui">Tested By</span>, which is the only type of link that is supported for
+                                links that you add from the <span class="ui">Test Cases</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Work item IDs</span>, type the ID of one or more test cases to
+                                which you want to link the bug, or click <span class="ui">Browse</span> to locate
+                                the test case to which you want to link. You can click the <span class="ui">My Test
+                                    Cases</span> team query to locate test cases and then select the check box next
+                                to the test case to which you want to link.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type a description for the test case to which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the bug and test case to which you linked it are updated. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkUseCase" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="Img1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking a Use Case to a Bug</span> </h1>
+            <div id="Div1" class="section" name="collapseableSection" style="">
+                <p>By linking bugs to use cases, you support the accuracy and completeness of many
+                    reports that are defined for GovDev for TFS 2010. </p>
+                <h3 class="procedureSubHeading">To link an existing test case to a bug</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Use Case</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>.     <p>The <span class="ui">Add Link to Bug </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default value list, leave the default value of 
+                                <span
+                                class="ui">Parent</span>, which is the only type of link that is supported for
+                                links that you add from the <span class="ui">Use Case</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>In </span>, type the ID of one or more t, type the ID of one use case to
+                                which you want to link the bug, or click <span class="ui">Browse        to 
+                                locate the use case to which you want to link. You can click the
+                                <span class="ui">Use Case Planning</span> team query to locate use cases and 
+                                then select the check box next to the use case to which you want to link.</p>
+                            <p>For more information, see tp://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type a description for the test case to which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the bug and test case to which you linked it are updated. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Details and Attachments to a Bug</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can add information to a bug that helps others reproduce or fix the bug. You
+                    add details to bugs in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Type information in the <span class="ui">Steps to Reproduce</span> or <span class="ui">
+                            History</span> fields.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to Web site or to a file that is stored on a server or Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a bug</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Details</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Steps to Reproduce</span>, type information.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">History</span>, type information.</p>
+                            <p>You can format text to provide emphasis or capture a bulleted list. For more information,
+                                see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                    Descriptions, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to a bug</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />, or press CTRL-V to paste a file
+                                        that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, and then click <span class="ui">Browse</span>. In the
+                                        <span class="ui">Attachment</span> dialog box, type or browse to the name of the
+                                        file that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, you can optionally type additional
+                                        information about the attachment. To return to the <span class="ui">Attachments</span> 
+                                        tab, click <span class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="CloseBugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Resolving
+                and Closing Bugs</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>When a bug has been fixed, you change its <span class="ui">State</span> from <a
+                    href="#Active">Active</a>to <a href="#Resolved">Resolved</a>. When the fix has been
+                    verified, you change its state from <a href="#Resolved">Resolved</a>to <a href="#Closed">
+                        Closed</a>. Any team member can change the state of a bug. Also, a bug that
+                    cannot be fixed can be resolved for other reasons as described later in this topic.
+                    For more information, see <span sdata="link">
+                    <a href="AssignmentsandWorkflowGovDev.html">
+                        Assignments and Workflow (GovDev)</a></span>.</p>
+                <h3 class="procedureSubHeading">To resolve or close a bug</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the work item form for the bug.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Resolved</span> or
+                                <span class="ui">Closed</span>. </p>
+                            <ul>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Resolved
+                                        </span>, the <span class="ui">Reason</span> field changes to <span class="ui">Fixed
+                                        </span>. </p>
+                                    <p>Verify that the value for <span class="ui">Reason</span> is correct, or click a different
+                                        option.</p>
+                                    <p>For more information, see <a href="#ActiveResolved">From Active to Resolved</a>later
+                                        in this topic.</p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Resolved</span> to <span class="ui">
+                                        Closed</span>, the <span class="ui">Reason</span> field changes to <span class="ui">Verified
+                                        </span>. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a bug in the <a href="#Active">Active</a>state with a default
+                                            reason of <span class="ui">New</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a bug from <a href="#ActiveResolved">Active to
+                                            Resolved</a>to indicate either that the bug has been fixed or for some other reason.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>A team member tests a bug that has been marked as fixed, verifies that it has been
+                                            fixed, and changes the state of the bug from <a href="#ResolvedClosed">Resolved to Closed
+                                            </a>.</p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Additional workflow transitions</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member finds that a resolved bug is not fixed or a test fails and changes
+                                            the state of the bug from <a href="#ResolvedActive">Resolved to Active</a>.</p>
+                                    </li>
+                                    <li>
+                                        <p>During regression testing, a team member finds that a closed bug is recurring and
+                                            changes the state of the bug from <a href="#ClosedActive">Closed to Active</a>.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Bug State Diagram</span> </p>
+                                <img alt="Bug state diagram" src="../art/ProcGuide_BugWorkflow.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active (New or Build Failure)</h3>
+                <div class="subsection">
+                    <p>A team member creates the bug, provides a descriptive title, and, in <span class="ui">
+                        Description</span>, adds as much detail as possible about the bug. The bug remains
+                        in the active state as it is being investigated and fixed. </p>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Resolved</h4>
+                    <div class="subsection">
+                        <p>You can specify one of the reasons in the following table when you resolve a bug:
+                        </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Fixed</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>After you fix the problem that the bug identifies, run unit tests to confirm that
+                                            the problem is fixed, and check in the changed code.</p>
+                                    </td>
+                                    <td>
+                                        <p>Link the bug to the changeset when the fix is checked in.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Deferred</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the bug will not be fixed in the current iteration. The bug will be postponed
+                                            until the team can reevaluate it for a future iteration or version of the product.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>(optional) Move the bug to a future iteration or the backlog, and maintain it in
+                                            an active state.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Duplicate</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When another active bug reports the same problem.</p>
+                                    </td>
+                                    <td>
+                                        <p>Create a link to the bug that remains active so that the team member who created
+                                            the duplicate bug can more easily verify the duplication before closing the bug.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">As Designed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the bug describes an expected condition or behavior of the system or is outside
+                                            the acceptance criteria for either the application area or the use case that the
+                                            bug affects.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Cannot Reproduce</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When team members cannot reproduce the behavior that the bug reports.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Obsolete</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the bug no longer applies to the product. For example, a bug is obsolete if
+                                            it describes a problem in a feature area that no longer exists in the product.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are automatically captured when the state of a bug is changed
+                            from active to resolved:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Resolved By</span>: Name of the team member who resolved the
+                                    bug.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Resolved Date</span>: Date and time when the bug was resolved,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    bug was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Resolved" />
+                <h3 class="subHeading">Resolved</h3>
+                <div class="subsection">
+                    <p>The team member who is assigned to fix the bug resolves it when it is fixed. Or,
+                        a team member might determine that the bug should be resolved for other reasons,
+                        as the following table describes. </p>
+                    <a name="ResolvedClosed" />
+                    <h4 class="subHeading">From Resolved to Closed</h4>
+                    <div class="subsection">
+                        <p>The only supported Reason for closing a bug is <span class="ui">Verified</span>.
+                        </p>
+                        <p>The following data fields are automatically captured when the state of a bug is changed
+                            from resolved to closed:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the bug.
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the bug was closed, as
+                                    recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    bug was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ResolvedActive" />
+                    <h4 class="subHeading">From Resolved to Active</h4>
+                    <div class="subsection">
+                        <p>You can specify one of the reasons in the following table when you reactivate a bug
+                            from a resolved state:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Not fixed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the resolution is unacceptable or if the fix was incorrect.</p>
+                                    </td>
+                                    <td>
+                                        <p>Provide details about why you denied the resolution or why the fix did not work correctly.
+                                            This information should assist the next person who owns the bug in resolving it
+                                            appropriately. </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Test Failed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When a test demonstrates that the bug still exists. </p>
+                                    </td>
+                                    <td>
+                                        <p>Provide details about which test failed and in which build. </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when the state of a bug is changed from
+                            resolved to active:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the bug.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the bug was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>A team member can change a closed bug to active if the problem or code defect that
+                        it describes reappears or was not fixed previously.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>You can specify one of the reasons in the following table when you reactivate a bug
+                            from a closed state:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Regression</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the bug reappears in later builds of the code. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reactivated</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the bug was closed in error or for some other reason.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when the state of a bug is changed from
+                            closed to active:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the bug.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the bug was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestCaseGovDev.html">Test Case (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">GovDev for TFS 2010 v1.0</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

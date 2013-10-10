@@ -1,0 +1,1259 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="workbooks, Iteration Task Backlog (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="75b0485a-3ffa-4b40-828b-f1e4d486b153" />
+    <meta name="Description" content="You can use the Iteration Task Backlog workbook to plan and track the progress of work for each iteration, also known as a sprint. This workbook calculates the team capacity and burndown based on the estimated and remaining effort defined for tasks." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Iteration Task Backlog Workbook" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:keyword Index="A" Term="75b0485a-3ffa-4b40-828b-f1e4d486b153" /><mshelp:keyword Index="K" Term="workbooks, Iteration Task Backlog (GovDev)" /><mshelp:attr Name="RevisionNumber" Value="21" /><mshelp:attr Name="AssetID" Value="75b0485a-3ffa-4b40-828b-f1e4d486b153" /><mshelp:attr Name="Abstract" Value="You can use the Iteration Task Backlog workbook to plan and track the progress of work for each iteration, also known as a sprint. This workbook calculates the team capacity and burndown based on the estimated and remaining effort defined for tasks. The d ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Iteration Task Backlog Workbook</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Iteration Task Backlog Workbook</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Iteration Task Backlog workbook to plan and track the progress of work
+                    for each iteration, also known as a sprint. This workbook calculates the team capacity
+                    and burndown based on the estimated and remaining effort defined for tasks. The
+                    default workbooks provide five worksheets that you can use to plan the work, calculate
+                    team capacity, and visualize the burndown for the iteration. You can create additional
+                    workbooks as needed to support additional iterations. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Iteration Task Backlog workbook is stored on the server that hosts SharePoint Products
+                                    for your team project. If a project portal has not been enabled for your team project,
+                                    you cannot access the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                        Access a Team Project Portal and Process Guidance</a></span>.</p>
+                                <p>Also, when you open the workbook for the first time, you must enable macros by clicking
+                                    <span class="ui">Options</span> next to the <span class="ui">Security Warning</span>. 
+                                    To modify the contents, you must click <span class="ui">Edit Workbook</span> next
+                                    to <span class="ui">Server Workbook</span>. For more information, see <span sdata="link">
+                                        <a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span>.</p>
+                                <p>If your team project was created before the release of Visual Studio Application
+                                    Lifecycle Management (ALM), you will have to perform upgrade tasks so that your
+                                    team project can use the Iteration Task Backlog workbook. For more information, see <span
+                                        sdata="link"><a href="http://msdn.microsoft.com/library/36c68c04-76d0-4cd0-b466-442eb4eab2a8">
+                                            Adding Workbooks to Team Projects</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Manage">Managing the Iteration Task Backlog</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Create">Creating Iteration-Specific Workbooks</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#EstimateTasks">Estimating and Assigning Tasks</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Plan">Planning an Iteration</a></p>
+                                        <ul>
+                                            <li>
+                                                <p><a href="#Schedule">Scheduling the Iteration</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Interruptions">Accounting for Holidays and Planned Interruptions</a>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Capacity">Determining Team Capacity</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a href="#Burndown">Visualizing the Burndown</a></p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Track">Tracking the Progress of the Iteration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Add">Adding Use Cases and Tasks to the Backlog</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AdditionalResources">Additional Resources for Managing the Iteration Backlog
+                                            </a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Open the Iteration Task Backlog workbook from the Shared Documents
+                                    folder in Team Explorer:</span> </p>
+                                <img alt="Opening the Iteration Task Backlog workbook" src="../art/ProcGuid_IterationBacklog_Workbook.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a team query or open a workbook, you must be assigned or belong to a group
+                    that has been assigned <span class="ui">Read </span> permissions for the team query
+                    folder for the team project. To modify a query, you must be assigned or belong to
+                    a group that has been assigned <span class="ui">Contribute </span> or <span class="ui">
+                        Full Control </span> permissions for the team query. For more information, see
+                    <span sdata="link"><a href="http://msdn.microsoft.com/library/682f0eb0-462d-41e2-b6a2-41949d1b90fb">
+                        Organize and Set Permissions on Work Item Queries</a></span>.</p>
+                <p>To create or modify use cases or tasks by using the workbook, you must be a member
+                    of the <span class="ui">Contributors </span> group or your <span class="ui">View work
+                        items in this node </span> and <span class="ui">Edit work items in this node</span> 
+                    permissions must be set to <span class="ui">Allow</span>. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/39997de5-b7fb-4777-b779-07de0543abe6">
+                        Team Foundation Server Permissions</a></span>.</p>
+            </div>
+            <a name="Manage" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Managing
+                the Iteration Task Backlog</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can use the Iteration Task Backlog workbook to determine team capacity and estimate
+                    the burndown for an iteration. This workbook provides five worksheets as the following
+                    illustration shows.</p>
+                <img alt="Iteration Task Backlog worksheet" src="../art/ProcGuid_IterationBacklog1_Wrkbk.png" /><p>
+                    You use the worksheets in the following ways:</p>
+                <ul>
+                    <li>
+                        <p><span class="label">Iteration Task Backlog</span>: Verify that all tasks are assigned
+                            to use cases. Review and assign levels of effort to each task. Assign tasks to
+                            iterations. </p>
+                        <p>The Iteration Task Backlog worksheet references the Iteration Task Backlog team query, which
+                            is configured to display all use cases and linked tasks that are defined for
+                            the team project. </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>If you have added tasks but have not linked them to a use case with the child link
+                                            type, they will not appear in the iteration task backlog.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>Within the workbook, you can filter the use cases based on product area. In addition,
+                            you can perform the following actions:</p>
+                        <ul>
+                            <li>
+                                <p><a href="#Add">Adding Use Cases and Tasks to the Backlog</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span class="label">Settings</span>: Schedule the iteration, and set the area and
+                            iteration filters for the iteration. </p>
+                        <img alt="Settings worksheet" src="../art/ProcGuid_IterationBacklogSettings_Wrkbk.png" />
+                    </li>
+                    <li>
+                        <p><span class="label">Interruptions</span>: Specify holidays or other dates when no
+                            work will be performed for the team and for individual team members.</p>
+                        <img alt="Interruptions worksheet" src="../art/ProcGuid_IterationBacklog)Interruptions_Wrkbk.png" />
+                    </li>
+                    <li>
+                        <p><span class="label">Capacity</span>: Balance workload across the team. </p>
+                        <img alt="Capacity worksheet" src="../art/ProcGuid_IterationBacklog_Capacity_Wrkbk.png" />
+                    </li>
+                    <li>
+                        <p><span class="label">Burndown</span>: Estimate when the iteration will end, based
+                            on start dates for the iteration.</p>
+                        <img alt="Burndown worksheet" src="../art/ProcGuid_IterationBacklog_Burndown_Wrkbk.png" />
+                    </li>
+                </ul>
+            </div>
+            <a name="Create" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                Iteration-Specific Workbooks</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>After you define the iterations for a product release, you can create iteration-specific
+                    workbooks. For more information about how to define iterations, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                            and Modify Areas and Iterations</a></span>.</p>
+                <p>You create iteration-specific workbooks by performing the following actions:</p>
+                <ul>
+                    <li>
+                        <p>Create an iteration-specific query.</p>
+                    </li>
+                    <li>
+                        <p>Save a copy of the Iteration Task Backlog workbook.</p>
+                    </li>
+                    <li>
+                        <p>Configure the Iteration Task Backlog worksheet to refresh data from its iteration-specific
+                            query. </p>
+                    </li>
+                    <li>
+                        <p>Customize the remaining worksheets in the workbook as <a href="#Plan">Planning an
+                            Iteration</a> describes later in this topic.</p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To create an iteration-specific query</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open Team Explorer, and expand your team project node.</p>
+                        </li>
+                        <li>
+                            <p>Expand the <span class="ui">Work Items</span> node, expand <span class="ui">Team Queries
+                                </span>, and expand <span class="ui">Workbook Queries</span>.</p>
+                        </li>
+                        <li>
+                            <p>Right-click <span class="ui">Iteration Task Backlog</span>, and then click
+                                <img alt="Copy" src="../art/Icon_copyWIT.gif" />
+                                <span class="ui">Copy</span>.</p>
+                        </li>
+                        <li>
+                            <p>Right-click <span class="ui">Workbook Queries</span>, and then click
+                                <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                <span class="ui">Paste</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Specify new query item name</span> dialog box, type or modify
+                                the name of the query to correspond to the name of the iteration that you are defining,
+                                and then click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Right-click the query that you just created and named, and then click
+                                <img alt="Edit query" src="../art/WITIconEditQuery.gif" />
+                                <span class="ui">Edit Query</span>. </p>
+                            <p>The Query Editor opens in a new tab. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Click here to add a new clause</span>, and then click <span
+                                class="ui">And</span>. </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Field</span> list, click <span class="ui">Iteration Path</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Operator</span> list, click <span class="ui">Under</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Value</span> list, click the iteration that you want to use.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Run Query" src="../art/Icon_runQuery.gif" />
+                                <span class="ui">Run Query</span>. </p>
+                            <p>Verify that the results match your expectations.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Query</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To save a copy of the Iteration Task Backlog workbook
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open Team Explorer, and expand your team project node.</p>
+                        </li>
+                        <li>
+                            <p>Expand the <span class="ui">Documents</span> node, expand <span class="ui">Shared
+                                Documents</span>, and expand <span class="ui">Iteration 1</span>.</p>
+                        </li>
+                        <li>
+                            <p>Right-click <span class="ui">Iteration Task Backlog.xlsm</span>, and then click
+                                <img alt="Copy" src="../art/Icon_copyWIT.gif" />
+                                <span class="ui">Copy</span>.</p>
+                        </li>
+                        <li>
+                            <p>Right-click the folder to which you want to copy the workbook, and then click
+                                <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                <span class="ui">Paste</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>You can drag the workbook to any folder under the <span class="ui">Shared Documents
+                                                </span> node. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Right-click the copied workbook, and then click <span class="ui">Rename</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Type the name of the iteration-specific workbook, and then press ENTER.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To configure the Iteration Task Backlog worksheet to refresh
+                    data from the iteration-specific query</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open Team Explorer, and expand your team project node.</p>
+                        </li>
+                        <li>
+                            <p>Right-click the iteration-specific workbook that you want to configure, and then
+                                click
+                                <img alt="Open Work Item" src="../art/Icon_openWorkItem.gif" 
+                                    style="height: 28px" />
+                                <span class="ui">Open</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">File Download</span> dialog box, click <span class="ui">OK
+                                </span>.</p>
+                            <p>The workbook opens in Office Excel. Macros are automatically disabled. At the top
+                                of the workbook, the notices in the following illustration appear.</p>
+                            <img alt="Security and server Excel notices" src="../art/ProcGuid_Workbook_Notices.png" />
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Options</span>. </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Microsoft Office Security Options</span> dialog box, under
+                                <span class="ui">Macros</span>, click <span class="ui">Enable this content</span>, and then click <span class="ui">OK</span>.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Edit Workbook</span>. </p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab in Office Excel, in the <span class="ui">Work
+                                Items</span> group, click <span class="ui">Configure</span>, click <span class="ui">List
+                                </span>, and then click the ellipsis (<span class="ui">…</span> ).</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Refresh from query</span> list, find the iteration-specific
+                                query that you created earlier, click that query, and then click <span class="ui">Apply
+                                </span>.</p>
+                            <p>The worksheet will update to list the work items that are found by the iteration-specific
+                                query that you selected. This process might take a few minutes.</p>
+                        </li>
+                        <li>
+                            <p>Review the worksheet to make sure that the use cases and tasks that are listed meet
+                                your expectations. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />. </p>
+                            <p>The workbook is saved to your team project portal site.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="EstimateTasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Estimating
+                and Assigning Task Effort</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>The Iteration Task Backlog workbook contains the set of use cases and associated tasks
+                    that the team plans to implement for a specific iteration. The team estimates the
+                    level of effort that each task will require. Each team member signs up for the tasks
+                    to which they can commit, based on their skill set and workload. For more information,
+                    see <span sdata="link"><a href="SprintPlanningMeeting.html">Sprint Planning Meeting</a>
+                    </span>.</p>
+                <h3 class="procedureSubHeading">To estimate task effort and assign tasks</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Iteration Task Backlog workbook, click the <span class="ui">Iteration Task Backlog</span> 
+                                worksheet.</p>
+                        </li>
+                        <li>
+                            <p>If you have opened a workbook that you have saved to your local computer, on the
+                                <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> group,
+                                click <span class="ui">Refresh</span>.</p>
+                            <p>This step helps make sure that the list of use cases and tasks contains the most
+                                current information.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) To filter the list of use cases based on product area, click the
+                                <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                down arrow next to <span class="ui">Area</span>, and then click the check box next
+                                to each product area that you want to include. </p>
+                        </li>
+                        <li>
+                            <p>Review the tasks that are assigned to each use case, and define additional tasks
+                                if necessary. </p>
+                            <p>For more information, see <a href="#Add">Adding Use Cases and Tasks to the Backlog</a>later in this topic.</p>
+                        </li>
+                        <li>
+                            <p>In each task, verify that <span class="ui">Remaining Work </span> and<span class="ui">
+                                Completed Work</span> contain values.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Use the Excel editing features to change the values for multiple cells. For more
+                                                information about how to modify cells in a worksheet, see topics about how to enter
+                                                and edit data in the Office Excel Help.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>Update the following fields for each task as needed: </p>
+                            <div class="caption"></div>
+                            <div class="tableSection">
+                                <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                    <tr>
+                                        <th>
+                                            <p><span class="label">Field Name</span> </p>
+                                        </th>
+                                        <th>
+                                            <p><span class="label">Description</span> </p>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Activity</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The type of activity that is required to perform a task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Remaining Work</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The number of hours of work that must be spent to complete a task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Completed Work</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The number of hours of work that have already been spent to complete a task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Assigned To</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The name of the team member who commits to complete the task.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If you subdivide a task into subtasks, specify hours for the subtasks only. In Team
+                                                Foundation reports, hours that you define for the subtask are rolled up as summary
+                                                values for the parent task and the use case. If you assign hours in both places,
+                                                hours will be counted twice in those reports that track hours. For information about
+                                                how to correct this condition, see <span sdata="link"><a href="http://msdn.microsoft.com/library/09e8e02d-9ecb-4012-9ee0-cebb89372096">
+                                                    Address Inaccuracies Published for Summary Values</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>You can use the undo feature in Excel to undo recent changes that you made to work
+                                                items before you publish the changes. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                                Publish Work Items in Office Excel</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Plan" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Planning
+                an Iteration</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Before you plan an iteration, you might want to review the product backlog and make
+                    sure that the iteration that is assigned to each use case meets your planning
+                    expectations. For more information, see <span sdata="link"><a href="UseCasePlanningWorkbook.html">
+                        Use Case Planning Workbook</a></span>.</p>
+                <p>When you plan an iteration, you should iteratively perform the following steps until
+                    the plan meets your team's objectives and capacity:</p>
+                <ul>
+                    <li>
+                        <p><a href="#Schedule">Scheduling the Iteration</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Interruptions">Accounting for Holidays and Planned Interruptions</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><a href="#Capacity">Determining Team Capacity</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Burndown">Visualizing the Burndown</a></p>
+                    </li>
+                </ul>
+                <a name="Schedule" />
+                <h3 class="subHeading">Scheduling the Iteration</h3>
+                <div class="subsection">
+                    <p>To schedule the iteration, you specify the filters that are applicable for the iteration
+                        and define the start and end date for the iteration. This step provides the data
+                        that is necessary to calculate team capacity and burndown.</p>
+                    <h3 class="procedureSubHeading">To schedule the iteration</h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Iteration Task Backlog workbook, click the <span class="ui">Settings</span> worksheet.
+                                </p>
+                            </li>
+                            <li>
+                                <p>(optional) Click the
+                                    <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                    down arrow in the cell next to <span class="ui">Area</span>, and then click the
+                                    product area that you want to include.</p>
+                            </li>
+                            <li>
+                                <p>Click the
+                                    <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                    down arrow in the cell next to <span class="ui">Iteration</span>, and then click
+                                    the iteration that you want to include.</p>
+                            </li>
+                            <li>
+                                <p>Click the cell next to <span class="ui">Start Date</span>, and type the calendar
+                                    date for the start of the iteration.</p>
+                                <p>The date format should be month/day/year (for example, 8/2/2009).</p>
+                            </li>
+                            <li>
+                                <p>Click the cell next to <span class="ui">End Date</span>, and type the calendar date
+                                    for the end of the iteration. </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Interruptions" />
+                <h3 class="subHeading">Accounting for Holidays and Planned Interruptions</h3>
+                <div class="subsection">
+                    <p>You can use the Interruptions worksheet to specify days when no work will be performed,
+                        either by the team or a team member. The number of days that are calculated for
+                        the iteration is updated on the <span class="ui">Settings</span> worksheet to reflect
+                        these interruptions.</p>
+                    <h3 class="procedureSubHeading">To account for holidays or planned work interruptions
+                    </h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Iteration Task Backlog workbook, click the <span class="ui">Interruptions</span> 
+                                    worksheet.</p>
+                            </li>
+                            <li>
+                                <p>Under <span class="ui">Planned Interruptions</span>, for each team member that has
+                                    planned vacation days or work interruption days, perform the following steps:
+                                </p>
+                                <ol>
+                                    <li>
+                                        <p>Click a cell under the Team Member column, and then click the name of the team member.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Fill out the <span class="ui">Description</span>, <span class="ui">Start Date,</span> 
+                                            and <span class="ui">End Date</span>.</p>
+                                        <p>The date format should be month/day/year (for example, 8/2/2009).</p>
+                                    </li>
+                                    <li>
+                                        <p>Add a row for each time-off period.</p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>Under <span class="ui">Holidays</span>, perform the following steps:</p>
+                                <ol>
+                                    <li>
+                                        <p>Fill out the <span class="ui">Description</span>, <span class="ui">Start Date</span>, and <span class="ui">End Date</span>.</p>
+                                        <p>The date format should be month/day/year (for example, 8/2/2009).</p>
+                                    </li>
+                                    <li>
+                                        <p>Add a row for each time off period.</p>
+                                    </li>
+                                </ol>
+                                <p>Add any dates that fall within the planned iteration to the worksheet.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Capacity" />
+                <h3 class="subHeading">Determining Team Capacity and Load Balancing Work</h3>
+                <div class="subsection">
+                    <p>Before you balance workload across team members, make sure that the following steps
+                        have been completed:</p>
+                    <ul>
+                        <li>
+                            <p>A value has been defined for the <span class="ui">Remaining Work</span> and <span
+                                class="ui">Completed Work</span> for each task.</p>
+                        </li>
+                        <li>
+                            <p>The <span class="ui">Iteration Path</span> is assigned to all tasks that the team
+                                intends to complete for the current iteration that the team is planning. </p>
+                        </li>
+                        <li>
+                            <p>Time off for each team member and the team is specified on the <span class="ui">Interruptions
+                                </span> worksheet.</p>
+                        </li>
+                    </ul>
+                    <h3 class="procedureSubHeading">To determine team capacity and balance workload across
+                        the team</h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Iteration Task Backlog workbook, click the <span class="ui">Capacity</span> worksheet.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Under <span class="ui">Individual Capacity</span>, add each team member to the list,
+                                    and specify the expected hours that each team member will work on the project each
+                                    day.</p>
+                                <p>The following fields should update automatically with information that is specific
+                                    for each team member: </p>
+                                <div class="caption"></div>
+                                <div class="tableSection">
+                                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                        <tr>
+                                            <th>
+                                                <p><span class="label">Column</span> </p>
+                                            </th>
+                                            <th>
+                                                <p><span class="label">Description</span> </p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Days</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The number of working days during the iteration.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Capacity</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The total number of working hours left for the iteration. This value is calculated
+                                                    based on the length of the iteration as defined in the <span class="ui">Settings
+                                                    </span> worksheet, the current date (which indicates how many days are left in the
+                                                    iteration), and the hours per day that is specified for the team member.</p>
+                                                <div class="alert">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <th align="left">
+                                                                <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                                                </b></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p>You cannot plan work that is in the past. The cells in the <span class="ui">Capacity
+                                                                    </span> column reference the dates on the <span class="ui">Settings </span> worksheet
+                                                                    and the current date when calculating capacity. </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Assigned</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The total number of hours that are assigned for the iteration. This number is a rollup
+                                                    of all the <span class="ui">Remaining Work </span> hours that are assigned to tasks.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Utilized</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The total number of hours of the team member's capacity that are allocated. This
+                                                    number is a roll up of all the <span class="ui">Remaining Work </span> hours of tasks
+                                                    that are assigned to that team member, but the number cannot exceed the team member's
+                                                    capacity. </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Over</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The number of hours by which the team member is overallocated. This number is calculated
+                                                    by subtracting the <span class="ui">Capacity</span> from <span class="ui">Assigned
+                                                    </span> hours.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><span class="ui">Under</span> </p>
+                                            </td>
+                                            <td>
+                                                <p>The number of hours that the team member has to work on the project but that are
+                                                    not being used. This number is calculated by subtracting the <span class="ui">Utilized
+                                                    </span> from <span class="ui">Capacity </span> hours.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Review the <span class="ui">Team Capacity</span> chart, and determine whether the
+                                    team is over or under utilized. The ideal chart will show close to 100% <span class="ui">
+                                        Utilized</span>, with no red bar showing <span class="ui">Over</span> utilization
+                                    and a small green bar that shows <span class="ui">Under</span> utilization. For an
+                                    example, see the following illustration:</p>
+                                <img alt="Team Capacity" src="../art/ProcGuid_IterationBacklog_TeamCapacity.png" /><p>
+                                    To correct for over or under utilization, perform one of the following actions:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>If the team is over-utilized, click the <span class="ui">Iteration Task Backlog</span> 
+                                            worksheet, and reassign some tasks to a later iteration.</p>
+                                    </li>
+                                    <li>
+                                        <p>If the team is under utilized, open the Product Backlog workbook, and reassign some
+                                            use cases and tasks to the iteration that you are planning. Refresh the <span
+                                                class="ui">Iteration Task Backlog </span> worksheet to show the newly assigned tasks.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p>Make these adjustments before balancing workload across team members.</p>
+                            </li>
+                            <li>
+                                <p>Review the <span class="ui">Individual Capacity </span> chart, and identify team members
+                                    who are over and under allocated. </p>
+                                <p>As the following illustration shows, one team member is over allocated, and three
+                                    team members are under allocated. </p>
+                                <img alt="Over and under allocated capacity" src="../art/ProcGuid_IterationBacklog_CapacityU_Wrkbk.png" />
+                            </li>
+                            <li>
+                                <p>Click the <span class="ui">Iteration Task Backlog </span> worksheet, and take the following
+                                    actions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Determine how to reassign work to use resources effectively, with no one over allocated
+                                            and no one under allocated. </p>
+                                    </li>
+                                    <li>
+                                        <p>Discuss with the team which tasks are most appropriate to reassign. </p>
+                                    </li>
+                                    <li>
+                                        <p>Change the assignment for tasks to be reassigned. Repeat this step until no team
+                                            member is over allocated or under allocated. </p>
+                                    </li>
+                                </ul>
+                                <p>The following illustration shows how the workload has been balanced across the four
+                                    team members. </p>
+                                <img alt="Load balanced capacity" src="../art/ProcGuid_IterationBacklog_CapacityB_Wrkbk.png" />
+                            </li>
+                            <li>
+                                <p>Save the workbook.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <a name="Burndown" />
+                <h3 class="subHeading">Visualizing the Burndown</h3>
+                <div class="subsection">
+                    <p>The data that appears in the <span class="ui">Burndown</span> worksheet is derived
+                        from the data warehouse. </p>
+                    <div class="alert">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th align="left">
+                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                    </b></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>The <span class="ui">Burndown</span> worksheet requires that the team project collection
+                                        where your team project is stored was provisioned with SQL Server Analysis Services.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <h3 class="procedureSubHeading">To visualize the burndown for the iteration</h3>
+                    <div class="subSection">
+                        <ol>
+                            <li>
+                                <p>In the Iteration Task Backlog workbook, click the <span class="ui">Burndown </span> worksheet.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Click the cell next to <span class="ui">Trend Start Date</span>, and type the date
+                                    that you want to start the iteration in month/day/year format (for example, 8/2/2009).
+                                </p>
+                            </li>
+                            <li>
+                                <p>Click <span class="ui">Update now</span>. </p>
+                                <p>The chart updates with data that is stored in the data warehouse. </p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>You might experience a delay between the time when you updated the effort fields
+                                                    for tasks and when that data is available from the data warehouse. </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p>The <span class="ui">Ideal Trend </span> line calculates a slope or trajectory for
+                                    when work will be completed based on the trend start date, the amount of work remaining,
+                                    and the end date for the iteration. </p>
+                            </li>
+                            <li>
+                                <p>(Optional) To visualize the burndown based on different trend start dates, you can
+                                    select the <span class="ui">Automatic Chart Update </span> check box. </p>
+                                <p>The chart will be refreshed every time that you change <span class="ui">Trend Start
+                                    Date</span>. </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <a name="Track" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Tracking
+                the Progress of the Iteration</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>After the iteration is underway, you can use the Iteration Task Backlog workbook to determine
+                    whether the team is on track to completing the work. To track progress, each team
+                    member must update the <span class="ui">Completed Work </span> and <span class="ui">Remaining
+                        Work </span> for each task. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>In addition to the <span class="ui">Burndown</span> worksheet, you can view the rate
+                                    at which the team is progressing and determine the team burn rate by viewing the
+                                    Burndown and Burn Rate report. For more information, see <span sdata="link"><a href="BurndownandBurnRateReportGovDev.html">
+                                        Burndown and Burn Rate Report (GovDev)</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="procedureSubHeading">To track the progress of the iteration</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the Iteration Task Backlog workbook, and then click the <span class="ui">Burndown
+                                </span> worksheet.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Update now</span>. </p>
+                        </li>
+                        <li>
+                            <p>Review the rate of work that the team is completing and the work that is still remaining.
+                                The <span class="ui">Ideal Trend</span>  line should be above the blue area, which
+                                indicates that work is progressing as expected. The following illustration shows
+                                a healthy burndown chart:</p>
+                            <img alt="Healthy burndown chart" src="../art/ProcGuid_IterationBacklog_Wrkbk_Burndown.png" />
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Add" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Use Cases and Tasks to the Iteration Task Backlog</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>You can create use cases and tasks by adding them to the Iteration Task Backlog workbook
+                    and publishing the workbook to the database for tracking work items. For more information
+                    about how to modify work items by using Office Excel, see <span sdata="link"><a href="http://msdn.microsoft.com/library/f12ae7e2-1893-4386-9a9b-f0e699a2ccad">
+                        Performing Top-Down Planning Using a Tree List of Work Items (In Excel)</a></span>.</p>
+                <h3 class="procedureSubHeading">To add use cases and tasks to the iteration task backlog
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In Office Excel, open your iteration-specific workbook. </p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span>  group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the list of use cases and tasks contains the most
+                                current information.</p>
+                        </li>
+                        <li>
+                            <p>For each use case that you want to add, click the row at the bottom of the list,
+                                and specify the following information for each use case that you want to add:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span> list, click <span class="ui">Use Case
+                                        </span>.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You must specify the type of work item that you want to add before you can publish
+                                                        it.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Title</span>, type text that identifies the customer as specifically
+                                        as possible and describes the customer's goal at a high level.</p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Iteration</span>, click the iteration that is set for this workbook.
+                                    </p>
+                                    <p>Click a different iteration if the work is to be performed in another iteration.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>For each task that you want to add, insert a row after the use case, and specify
+                                the following information:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span>  list, click <span class="ui">Task</span>.</p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Title 2</span>, type an entry that identifies the customer as
+                                        specifically as possible and describes the customer's goal at a high level.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Make sure that you type the task title in the <span class="ui">Title 2</span>  column.
+                                                        This step creates a link between the use case and the task when the workbook is
+                                                        published. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Iteration</span>, click the iteration that is set for this workbook.
+                                    </p>
+                                    <p>Click a different iteration if the work is to be performed in another iteration.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Specify information for the following task fields: </p>
+                            <div class="caption"></div>
+                            <div class="tableSection">
+                                <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                    <tr>
+                                        <th>
+                                            <p><span class="label">Field Name</span> </p>
+                                        </th>
+                                        <th>
+                                            <p><span class="label">Description</span> </p>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Activity</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The type of activity that is required to perform a task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Original Estimate</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The number of hours that are required to complete a task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Remaining</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The number of hours that remain to finish the task.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><span class="ui">Completed</span> </p>
+                                        </td>
+                                        <td>
+                                            <p>The number of hours that have already been spent working on a task.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Use the Excel editing features to change the values for multiple cells. For more
+                                                information about how to modify cells in a worksheet, see topics about how to specify
+                                                and edit data in the Help for Microsoft Excel.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>(Optional) Add information to the remaining fields as appropriate.</p>
+                            <p>For more information about each field, see <span sdata="link">
+                                <a href="UseCaseGovDev.html">
+                                Use Case (GovDev)</a></span>  or <span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                                    </a></span>.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) To show additional Team Foundation fields in the list, on the <span
+                                class="ui">Team</span>  tab, in the <span class="ui">Work Items</span>  group, click
+                                <span class="ui">Choose Columns</span>.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                                Add or Remove Columns in a Work Item List</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                            <p>You can later open the local copy of the workbook, refresh the list, and make additional
+                                changes. You do not need to open the workbook from Team Explorer each time.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span>  tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                                Publish Work Items in Office Excel</mshelp:link></span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AdditionalResources" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional
+                Resources for Managing the Iteration Backlog</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>For information about how to modify use cases and tasks by using Microsoft Excel,
+                    see the following topics: </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/f12ae7e2-1893-4386-9a9b-f0e699a2ccad">
+                            Performing Top-Down Planning Using a Tree List of Work Items (In Excel)</mshelp:link>
+                            </span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/bd661b9f-cddc-4b5f-a5e9-f14b714179ca">
+                            Create, Open, and Modify Work Items Using Office Excel</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                            Add or Remove Columns in a Work Item List</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                            Publish Work Items in Office Excel</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3060a8cd-702c-4be8-9c05-c14636a77d9b">
+                            Connect a Microsoft Office Document to Team Foundation Server</a></span> </p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="AgilePrinciplesandValuesbyJeffSutherland.html">
+                    Agile Principles and Values, by Jeff Sutherland</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="SprintPlanningMeeting.html">Sprint
+                    Planning Meeting</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCasePlanningWorkbook.html">
+                    Use Case Planning Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/5b6e2120-0474-4348-8d4a-71ea7ea976f6">
+                    Rank the Product Backlog</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,587 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="testing, test team productivity reports (Excel report)" />
+    <meta name="Microsoft.Help.Id" content="cd899058-1200-4b1f-8fb2-4cecec8b0c05" />
+    <meta name="Description" content="Teams who are responsible for testing software can use the Test Team Productivity report to help track the overall activity of the team and individual team members in testing the product and finding and reporting bugs." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Test Team Productivity Excel Report" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Test Team Productivity" /><MSHelp:Keyword Index="A" Term="cd899058-1200-4b1f-8fb2-4cecec8b0c05" /><MSHelp:Keyword Index="K" Term="testing, test team productivity reports (Excel report)" /><MSHelp:Attr Name="RevisionNumber" Value="8" /><MSHelp:Attr Name="AssetID" Value="cd899058-1200-4b1f-8fb2-4cecec8b0c05" /><MSHelp:Attr Name="Abstract" Value="Teams who are responsible for testing software can use the Test Team Productivity report to help track the overall activity of the team and individual team members in testing the product and finding and reporting bugs. The Test Team Productivity repo ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Test Team Productivity Excel Report</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Test Tesm Productivity Excel Report </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Teams who are responsible for testing software can use the Test Team Productivity
+                    report to help track the overall activity of the team and individual team members
+                    in testing the product and finding and reporting bugs. The Test Team Productivity
+                    report provides four reports that show test and bug activity:</p>
+                <ul>
+                    <li>
+                        <p><span class="ui">Test Activity</span>: Helps the team monitor the volume of tests
+                            it has run over the past four weeks. </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Test Activity Per User</span>: Helps the team track the volume of
+                            tests that individual team members have run over the past eight weeks. The team
+                            can use this to help load balance the test activity across team members. </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Bugs Created By User</span>: Helps the team track how many bugs
+                            each team member creates. </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Bug Effectiveness</span>: Supports the team in determining how effective
+                            it is in defining bugs that are useful and that help build a quality product.
+                        </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>You can view the Test Team Productivity report from the <span class="ui">Test Team
+                                            Management </span> folder that is located under the <span class="ui">Excel Reports
+                                            </span> folder for the team project in Team Explorer. You can access this folder
+                                            only if your team project portal has been enabled and is provisioned to use SharePoint
+                                            Products. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                                Access a Team Project Portal and Process Guidance</a></span>. </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Reports</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#RequiredActivities">Required Activities for Tracking Test and Bug Activity
+                                            </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Updating">Updating and Customizing the Reports</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Related topics</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProgressExcelReport.html">Test Team Progress
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestingGapsExcelReportGovDev.html">Testing Gaps Excel
+                                            Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Read</span> permissions in SharePoint Products for the team
+                    project. </p>
+                <p>To modify or customize the report, you must be a member of the <span class="ui">TfsWarehouseDataReaders
+                    </span> security role in SQL Server Analysis Services. You must also be assigned
+                    or belong to a group that has been assigned the <span class="ui">Members</span> permissions
+                    in SharePoint Products for the team project. For more information, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">Grant
+                            Access to the Databases of the Data Warehouse for Visual Studio ALM</a></span> 
+                    and <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>. </p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Reports</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The test activity reports are available only when the team creates test plans and
+                    starts to run tests by using Microsoft Test Manager. For information about how to
+                    define test suites and test plans, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c42dca33-6308-4790-a646-2f80ca36b96f">
+                        Organizing Test Cases Using Test Suites</a></span>. </p>
+                <p>The bug activity reports are available only when the team creates bugs and starts
+                    to resolve bugs. </p>
+                <p>These reports are based on PivotTable reports that show activity that is recorded
+                    for a specific team project and data that is stored in the data warehouse. </p>
+                <h3 class="subHeading">Test Activity and Test Activity by User Reports</h3>
+                <div class="subsection">
+                    <p>The Test Activity report provides a line graph that shows the number of individual
+                        tests that were run each day. If a particular test case was run three times in one
+                        day, it is counted three times for that day. </p>
+                    <img alt="Test Activity Excel Report" src="../art/ProcG_TestActivity.png" /><p>The Test
+                        Activity per User report provides a bar chart that indicates how many tests each
+                        test team member ran each week. </p>
+                    <img alt="Test Activity Per User Excel Report" src="../art/ProcG_ActPerUser.png" /><p>
+                        The following table describes the report filters and fields that are used in the
+                        PivotTables that generate the test activity reports. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Filters</p>
+                                </th>
+                                <th>
+                                    <p>Fields</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Team Project - Team Project Hierarchy</span>: Includes data that
+                                                is collected for the selected team project.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Area Hierarchy</span>: Includes test results that
+                                                were run from test cases that were assigned to the selected product areas.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Iteration Hierarchy</span>: Includes test results
+                                                that were run from test cases that were assigned to the selected iterations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Plan - Test Plan Name</span>: Includes test results that were
+                                                run from test cases that belong to the selected test plans. </p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Filter specific to the Test Activity report</span>:</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test Result - Outcome</span>: Includes test results that had an
+                                                outcome of Passed, Failed, Never Run. </p>
+                                            <div class="alert">
+                                                <table width="100%" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <th align="left">
+                                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                            </b></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>The <span class="ui">Outcome</span> field is not listed under the Report Filter. However,
+                                                                it is set in the <span class="ui">PivotTable Field List</span>.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Filter specific to the Test Activity by User report</span>:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test Run - Is Automated</span>: Includes only test results from
+                                                manual test cases. (<span class="ui">Is Automated</span> =<span class="ui">False</span> 
+                                                ) </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">(Measure) Test - Result Count</span>: Counts all the results for
+                                                each test run individually. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Date - Sets - Last 4 or 8 weeks</span>: Defines the time span of
+                                                activity to report. </p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Field specific to the Test Activity by User report</span>:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test - Test Results Executed By</span>: Groups the count of test
+                                                results according to the team member who ran the tests. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Bugs Created by User and Bug Effectiveness Reports</h3>
+                <div class="subsection">
+                    <p>The Bugs Created by User report provides a bar chart that indicates how many bugs
+                        each test team member created each week. </p>
+                    <img alt="Bugs Per User Excel Report" src="../art/ProcG_BugsPerUser.png" /><p>The Bug
+                        Effectiveness report provides a bar chart that indicates the count of resolved bugs
+                        that were created by each test team member, grouped by their bug resolution.
+                    </p>
+                    <img alt="Bug Effectiveness Excel Report" src="../art/ProcG_BugEffectiveness.png" /><p>
+                        The following table describes the report filters and fields that are used in the
+                        PivotTables that generate the bug activity reports. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Filters</p>
+                                </th>
+                                <th>
+                                    <p>Fields</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Team Project - Team Project Hierarchy</span>: Includes work items
+                                                that are defined for the selected team project. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item - Work Item.Iteration Hierarchy</span>: Includes work
+                                                items that are assigned to the selected iteration paths. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item - Work Item.Area Hierarchy</span>: Includes work items
+                                                that are assigned to the selected product areas.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item - Work Item.Work Item Type</span>: Includes only the selected
+                                                work items. For these reports, bug is selected.</p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Filter specific to the Bugs Created by User report</span>:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Work Item - Rev=1</span>: Selects data that is contained in the
+                                                first revision of the work item to include in the report. </p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Filters specific to the Bug Effectiveness report</span>:</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Work Item - State</span>: Includes work items that are in the selected
+                                                state. For this report, includes bugs that are in the <span class="ui">Resolved</span> 
+                                                state. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item - Work Item.Previous State</span>: Includes work items
+                                                whose previous state was in one of the selected states. For this report, includes
+                                                bugs whose previous state was <span class="ui">Active</span>. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Date - Year Month Date=All</span>: Includes work items that contain
+                                                data that corresponds to the previous filters in the list during the selected time
+                                                periods. For this report, <span class="ui">All</span> time periods are included.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p><span class="label">Fields specific to Bugs Created by User report</span>: </p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Work Item - Created By</span>: Groups the report of bugs based on
+                                                the test team member who created the bugs.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">(Measure) Work Item - Revision Count</span>: Counts the number of
+                                                times that a work item has been modified. Because the report is filtered to only
+                                                consider data contained in Revision 1 of each bug, the <span class="ui">Revision Count
+                                                </span> provides the total number of new bugs that the test team member created.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Date - Sets - Last 8 weeks</span>: The time span of activity to
+                                                include in the report.</p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Fields specific to Bug Effectiveness report</span>: </p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Work Item - Reason</span>: The reason that the state of the work
+                                                item changed. For the Bug Effectiveness report, this provides the groupings of <span
+                                                    class="ui">As Designed</span>, <span class="ui">Cannot Reproduce</span>, <span class="ui">
+                                                        Duplicate</span>, and <span class="ui">Fixed</span>.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">(Measure) Work Item - State Change Count</span>: Indicates the number
+                                                of times that a team member changed the state of the work item. For the Bug Effectiveness
+                                                report, this field indicates how often the bug has been reactivated.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item - Created By</span>: Groups the report of bugs based on
+                                                the test team member who created the bugs.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a name="RequiredActivities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Tracking Test and Bug Activity</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the test activity reports to be useful and accurate, the team must perform the
+                    following activities:</p>
+                <ul>
+                    <li>
+                        <p>Define test cases and test plans, and assign test cases to the test plans. For more
+                            information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                                Defining Your Testing Effort Using Test Plans</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>Run tests. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/7a154168-c409-4163-bbf2-29971a638458">
+                            Running Tests</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>(Optional) To filter the reports by product area and iteration, specify the <span
+                            class="ui">Area</span> and <span class="ui">Iteration</span> paths of each test case.
+                        </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>The project administrator for each team project defines area and iteration paths
+                                            for that project so that the team can track progress by those designations. For
+                                            more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                Create and Modify Areas and Iterations</a></span>.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <p>For the bug activity reports to be useful and accurate, the team must perform the
+                    following activities:</p>
+                <ul>
+                    <li>
+                        <p>Create a bug for each code defect that was found by testing. </p>
+                    </li>
+                    <li>
+                        <p>Update the <span class="ui">State</span> of each bug as the team fixes, verifies,
+                            closes, or reactivates it and accurately set the <span class="ui">Reason</span> field
+                            every time that the bug changes state.</p>
+                    </li>
+                    <li>
+                        <p>(Optional) To filter the reports by product area and iteration, specify the <span
+                            class="ui">Area</span> and <span class="ui">Iteration</span> paths of each bug.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Updating" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Updating
+                and Customizing the Reports</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can update the Test Team Productivity report by opening it in Office Excel and
+                    changing the filter options for the PivotTable report for one of the worksheets.
+                    You can customize each report to support other views, as the following table describes.
+                </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>View</p>
+                            </th>
+                            <th>
+                                <p>Action</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test or bug activity for a product area</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Area</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test or bug activity for an iteration</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Iteration</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test activity for a specific test plan or set of test plans</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Test Plan</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test or bug activity for the most recent six, eight, or more weeks</p>
+                            </td>
+                            <td>
+                                <p>In the Columns PivotTable Field List, replace <b>@@Last 4 weeks@@</b>or <b>@@Last
+                                    8 weeks@@</b>with a different <b>Set</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Bug effectiveness for a particular time period</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Year Month Date</b>(default=All)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>For more information about how to work with and customize PivotTables and PivotChart
+                    reports, see the following pages on the Microsoft Web site:</p>
+                <ul>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165722">Ways to customize PivotTable
+                            reports</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165723">Edit or remove a workbook
+                            from Excel Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165724">Publish a workbook to Excel
+                            Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165725">Save a file to a SharePoint
+                            library or another Web location</a></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestEarlyandOften.html">Test Early
+                    and Often</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ExcelReportsGovDev.html">Excel
+                    Reports (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

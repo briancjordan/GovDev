@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+  <WORKITEMTYPE name="Use Case">
+    <DESCRIPTION>Tracks an activity the user will be able to perform with the application</DESCRIPTION>
+    <FIELDS>
+      <FIELD name="Id" refname="System.Id" type="Integer" />
+      <FIELD name="Title" refname="System.Title" type="String">
+        <REQUIRED />
+        <HELPTEXT>What the user will be able to do when this is implemented</HELPTEXT>
+      </FIELD>
+      <FIELD name="Description" refname="System.Description" type="PlainText">
+        <HELPTEXT>Description or reference to the story that must work for this work to be considered complete</HELPTEXT>
+      </FIELD>
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true">
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
+        <HELPTEXT>The person currently working on this story</HELPTEXT>
+      </FIELD>
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath">
+        <HELPTEXT>The area of the product with which this user story is associated</HELPTEXT>
+      </FIELD>
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath">
+        <HELPTEXT>The iteration within which this user story will be implemented</HELPTEXT>
+      </FIELD>
+      <FIELD name="History" refname="System.History" type="History">
+        <HELPTEXT>Discussion thread plus automatic record of changes</HELPTEXT>
+      </FIELD>
+      <FIELD name="State" refname="System.State" type="String">
+        <HELPTEXT>Active= work remains to be done; Resolved = awaiting acceptance tests; Closed = acceptance tests passed</HELPTEXT>
+      </FIELD>
+      <FIELD name="Reason" refname="System.Reason" type="String">
+        <HELPTEXT>The reason why the story is in its current state</HELPTEXT>
+      </FIELD>
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" />
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true">
+        <VALIDUSER />
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" />
+      <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
+        <WHENCHANGED field="System.State">
+          <SERVERDEFAULT from="clock" />
+        </WHENCHANGED>
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated Date" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Activated By" refname="Microsoft.VSTS.Common.ActivatedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Resolved Date" refname="Microsoft.VSTS.Common.ResolvedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Resolved By" refname="Microsoft.VSTS.Common.ResolvedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Resolved Reason" refname="Microsoft.VSTS.Common.ResolvedReason" type="String" reportable="dimension" />
+      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+      </FIELD>
+      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" syncnamechanges="true" reportable="dimension">
+        <WHENNOTCHANGED field="System.State">
+          <READONLY />
+        </WHENNOTCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD name="Risk" refname="Microsoft.VSTS.Common.Risk" type="String" reportable="dimension">
+        <ALLOWEDVALUES>
+          <LISTITEM value="1 - High" />
+          <LISTITEM value="2 - Medium" />
+          <LISTITEM value="3 - Low" />
+        </ALLOWEDVALUES>
+        <HELPTEXT>Uncertainty in requirement or design</HELPTEXT>
+      </FIELD>
+      <FIELD name="Stack Rank" refname="Microsoft.VSTS.Common.StackRank" type="Double" reportable="dimension">
+        <HELPTEXT>Work first on items with lower-valued stack rank. Set in triage.</HELPTEXT>
+      </FIELD>
+      <FIELD name="Start Date" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>The start date for implementation of this story</HELPTEXT>
+      </FIELD>
+      <FIELD name="Finish Date" refname="Microsoft.VSTS.Scheduling.FinishDate" type="DateTime" reportable="dimension">
+        <HELPTEXT>The completion date for all the tasks implementing this story</HELPTEXT>
+      </FIELD>
+      <!-- **************** Team Build Integration Fields **************  -->
+      <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES>
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
+      </FIELD>
+      <FIELD name="GovDev Description" refname="GovDev.Description" type="HTML">
+        <HELPTEXT>Description or reference to the use case that must work for this work to be considered complete</HELPTEXT>
+      </FIELD>
+      <FIELD name="Scenario" refname="GovDev.Scenario" type="HTML">
+        <HELPTEXT>Description or reference to the scenarios associated with the use case that must work for this work to be considered complete</HELPTEXT>
+      </FIELD>
+      <FIELD name="Planning Points" refname="Microsoft.VSTS.Scheduling.StoryPoints" type="Double" reportable="measure">
+        <HELPTEXT>The size of work estimated for implementing this use case</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Active">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Resolved">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Closed" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Active">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <DEFAULT from="currentuser" />
+            </FIELD>
+            <FIELD refname="GovDev.Description">
+              <DEFAULT from="value" value="Actors:&lt;/br&gt;&lt;/br&gt;Triggering Event:&lt;/br&gt;&lt;/br&gt;Stakeholders:&lt;/br&gt;&lt;/br&gt;Pre-Condition:&lt;/br&gt;&lt;/br&gt;Post-condition:&lt;/br&gt;&lt;/br&gt;Flow of events:&lt;/br&gt;&lt;/br&gt;Exceptions:" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Active" to="Resolved">
+          <REASONS>
+            <DEFAULTREASON value="Code complete and unit tests pass" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+        </TRANSITION>
+        <TRANSITION from="Resolved" to="Closed">
+          <REASONS>
+            <DEFAULTREASON value="Acceptance tests pass" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Resolved" to="Active">
+          <REASONS>
+            <DEFAULTREASON value="Acceptance tests fail" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Active" to="Closed">
+          <REASONS>
+            <REASON value="Abandoned" />
+            <REASON value="Out of scope" />
+            <DEFAULTREASON value="Rejected" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Closed" to="Active">
+          <REASONS>
+            <REASON value="Closed in error" />
+            <DEFAULTREASON value="Reintroduced in Scope" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Closed" to="Resolved">
+          <REASONS>
+            <DEFAULTREASON value="Closed in error" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout>
+        <Group>
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" Label="&amp;Title:" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Assi&amp;gned To:" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="&amp;State:" LabelPosition="Left" />
+                <Control FieldName="System.Reason" Type="FieldControl" Label="&amp;Reason:" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Classification">
+              <Column PercentWidth="100">
+                <Control FieldName="System.IterationPath" Type="WorkItemClassificationControl" Label="Ite&amp;ration:" LabelPosition="Left" />
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="&amp;Area:" LabelPosition="Left" />
+                <Control FieldName="Microsoft.VSTS.Common.Risk" Type="FieldControl" Label="Risk:" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="100">
+            <Group Label="Planning">
+              <Column PercentWidth="40">
+                <Control FieldName="Microsoft.VSTS.Common.StackRank" Type="FieldControl" Label="Stack Ran&amp;k:" LabelPosition="Left" NumberFormat="DecimalNumbers" MaxLength="10" />
+              </Column>
+              <Column PercentWidth="14" />
+              <Column PercentWidth="40">
+                <Control FieldName="Microsoft.VSTS.Scheduling.StoryPoints" Type="FieldControl" Label="Planning Points:" LabelPosition="Left" />
+              </Column>
+              <Column PercentWidth="100" />
+            </Group>
+          </Column>
+        </Group>
+        <TabGroup>
+          <Tab Label="Details">
+            <Group>
+              <Column PercentWidth="50">
+                <Control FieldName="GovDev.Description" Type="HtmlFieldControl" Label="&amp;Description:" LabelPosition="Top" Dock="Fill" />
+              </Column>
+              <Column PercentWidth="50">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="&amp;History:" LabelPosition="Top" Dock="Fill" />
+              </Column>
+            </Group>
+          </Tab>
+          <Tab Label="Scenarios">
+            <Group>
+              <Column PercentWidth="100">
+                <Control FieldName="GovDev.Scenario" Type="HtmlFieldControl" Label="Scenarios:" LabelPosition="Top" />
+              </Column>
+            </Group>
+          </Tab>
+          <Tab Label="Requirement">
+            <Control Type="LinksControl" Name="GeneralLinks" LabelPosition="Top">
+              <LinksControlOptions>
+                <LinkColumns>
+                  <LinkColumn RefName="System.Id" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="System.LinkTypes.Hierarchy" FilterOn="reversename" />
+                </WorkItemLinkFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Requirement" />
+                </WorkItemTypeFilters>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Tasks">
+            <Control Type="LinksControl" Name="Hierarchy" Label="&amp;Tasks implementing this Use Case:" LabelPosition="Top">
+              <LinksControlOptions>
+                <LinkColumns>
+                  <LinkColumn RefName="System.Id" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="System.LinkTypes.Hierarchy" FilterOn="forwardname" />
+                </WorkItemLinkFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Task" />
+                </WorkItemTypeFilters>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Test Cases">
+            <Control Type="LinksControl" Name="TestedBy" Label="Test &amp;Cases testing this Use Case:" LabelPosition="Top">
+              <LinksControlOptions>
+                <LinkColumns>
+                  <LinkColumn RefName="System.Id" />
+                  <LinkColumn RefName="System.WorkItemType" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="Microsoft.VSTS.Common.TestedBy" FilterOn="forwardname" />
+                </WorkItemLinkFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Test Case" />
+                </WorkItemTypeFilters>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Bugs">
+            <Control Type="LinksControl" Label="&amp;Bugs submitted against this Use Case:" LabelPosition="Top">
+              <LinksControlOptions>
+                <LinkColumns>
+                  <LinkColumn RefName="System.Id" />
+                  <LinkColumn RefName="System.Title" />
+                  <LinkColumn RefName="System.AssignedTo" />
+                  <LinkColumn RefName="System.State" />
+                  <LinkColumn LinkAttribute="System.Links.Comment" />
+                </LinkColumns>
+                <WorkItemLinkFilters FilterType="include">
+                  <Filter LinkType="System.LinkTypes.Hierarchy" FilterOn="forwardname" />
+                </WorkItemLinkFilters>
+                <ExternalLinkFilters FilterType="excludeAll" />
+                <WorkItemTypeFilters FilterType="include">
+                  <Filter WorkItemType="Bug" />
+                </WorkItemTypeFilters>
+              </LinksControlOptions>
+            </Control>
+          </Tab>
+          <Tab Label="Attachments">
+            <Control Type="AttachmentsControl" LabelPosition="Top" />
+          </Tab>
+        </TabGroup>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</Witd:WITD>

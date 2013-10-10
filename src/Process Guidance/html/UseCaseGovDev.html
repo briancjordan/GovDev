@@ -1,0 +1,1196 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="Use Cases" />
+    <meta name="System.Keywords" content="Use Cases, defining and work item form" />
+    <meta name="System.Keywords" content="Use Cases, work item form" />
+    <meta name="System.Keywords" content="work item types, Use Cases (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="05ef6af3-6cb3-4497-8551-b63b0eb1fc11" />
+    <meta name="Description" content="You can learn how to fill in the details of a use case work item in this topic. For information about what Use Cases are and how they are used in agile processes, see Creating Great Use Cases." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Use Case (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Use Case" /><MSHelp:Keyword Index="A" Term="05ef6af3-6cb3-4497-8551-b63b0eb1fc11" /><MSHelp:Keyword Index="K" Term="Use Cases" /><MSHelp:Keyword Index="K" Term="Use Cases, defining and work item form" /><MSHelp:Keyword Index="K" Term="Use Cases, work item form" /><MSHelp:Keyword Index="K" Term="work item types, Use Cases (GovDev)" /><MSHelp:Attr Name="RevisionNumber" Value="35" /><MSHelp:Attr Name="AssetID" Value="05ef6af3-6cb3-4497-8551-b63b0eb1fc11" /><MSHelp:Attr Name="Abstract" Value="You can learn how to fill in the details of a use case work item in this topic. For information about what Use Cases are and how they are used in agile processes, see Creating Great Use Cases. For information about how to create a work item f ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Use Case (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Use Case (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can learn how to fill in the details of a use case work item in this topic.
+                    For information about what Use Cases are and how they are used in agile processes,
+                    see <span sdata="link"><a href="CreatingaGreatProjectBacklog.html">Creating a Great
+                        Project Backlog</a></span>. For information about how to create a work item
+                    for a use case, see <span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work
+                        Items and Workflow (GovDev)</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Defining">Defining a Use Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddTask">Adding and Linking Tasks to a Use Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddTestCase">Adding and Linking Test Cases to a Use Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddBug">Adding and Linking Bugs to a Use Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details and Attachments to Use Cases
+                                            </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Tracking">Resolving and Closing a Use Case</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Agile Processes</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="CreatingaGreatProjectBacklog.html">Creating a Great Project
+                                            Backlog</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Scrum.html">Scrum</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Agile Workbooks</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCasePlanningWorkbook.html">Use Case Planning Workbook
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="IterationBacklogWorkbook.html">Iteration Task Backlog Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">GovDev Reports (Reporting Services)</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">Requirements Traceability Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements Progress Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a use case, you must be a member of the <span class="ui">Readers</span> 
+                    group or your <span class="ui">View work items in this node</span> must be set to
+                    <span class="ui">Allow</span>. To create or modify a use case, you must be a member
+                    of the <span class="ui">Contributors</span> group or your <span class="ui">Edit work
+                        items in this node</span> permissions must be set to <span class="ui">Allow</span>. 
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Defining" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Use Case</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>A use case communicates functionality that is of value to the end user of the product
+                    or system. Each use case should simply state what a user wants to do with a feature
+                    of the software and describe it from the user's perspective. When you write use 
+                    cases, you should focus on who the feature is for, what they want to accomplish,
+                    and why. You should avoid descriptions that specify how the feature should be developed.
+                </p>
+                <p>The work item form for a use case stores data in the fields and tabs that the 
+                    following illustration shows:</p>
+                <img alt="Work Item Form for a Use Case" src="../art/ProcGuid_NewUseCase.png" /><p>
+                    When you define a use case, you must define the <span class="ui">Title</span> in
+                    the top section of the work item form. You can leave all other fields blank or accept
+                    their default values.</p>
+                <h3 class="procedureSubHeading">To define a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form for the use case, specify one or more
+                                of the following types of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span> (Required), type a short description.</p>
+                                    <p>Good titles reflect the value to the customer or functionality that needs to
+                                        be implemented. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the name of the team member
+                                        who owns the use case.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>If you leave the use case unassigned, it is automatically assigned to you. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Rank</span> box, type a number that indicates the relative
+                                        importance of the use case compared to the other use cases in the product backlog.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Story Points</span> box, type a number that specifies a subjective
+                                        rating for the amount of work that will be required to complete a use case.
+                                    </p>
+                                    <p>If you specify more points, you indicate that more work will be required. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the level of importance for the
+                                        use case on a scale of 1 (most important) to 4 (least important). </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration or leave these fields blank to be assigned later
+                                        during a planning meeting. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The project administrator for each team project defines area and iteration paths
+                                                        for that project so that the team can track progress by those designations. For
+                                                        more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, you are provided with a template for 
+                                specifying the use case information. Your team will use this information to create work items for tasks and test cases.
+                                        For more information, see <span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                                            </a></span> and <span sdata="link"><a href="TestCaseGovDev.html">Test Case (GovDev)</a>
+                                            </span>.</p>
+                         </li> 
+                        <li>
+                            <p>In the <span class="ui">Scenarios</span> tab, describe the alternate paths of 
+                                executioon that could occur as the user is performing the functionality. 
+                                This information will aid the team in the creation of work items for tasks and test cases 
+                                to complete the use case.</p>
+                        </li>  
+                        <li>
+                            <p>In the <span class="ui">History</span> box, add comments that you want to capture
+                                as part of the historical record.</p>
+                            <p>Every time that a team member updates the work item, its history shows the date of
+                                the change, the team member who made the change, and the fields that changed.
+                            </p>
+                        </li>
+                        </li>
+                        <li>
+                            <p>Link the use case to other work items, such as tasks, test cases, bugs, and issues.
+                            </p>
+                            <p>For more information, see the following sections later in this topic:</p>
+                            <ul>
+                                <li>
+                                    <p><a href="#AddTask">Adding and Linking Tasks to a Use Case</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#AddTestCase">Adding and Linking Test Cases to a Use Case</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#AdBug">Adding and Linking Bugs to a Use Case</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#AddDetailsAttachments">Adding Details and Attachments to a
+                                        Use Case</a></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                    <div class="alert">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th align="left">
+                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                    </b></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>After you save the use case, the identifier appears in the title under the work
+                                        item toolbar.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a name="AddTask" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding and Linking Tasks to a Use Case</span>
+            </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You add tasks to a use case to track the progress of work that has occurred to
+                    complete the use case. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Requirements Traceability and Requirements Progress reports require that you create links between
+                                    requirements and use cases, use cases and tasks and use cases and test cases. For more information,
+                                    see <span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">Requirements Traceability Report
+                                        (GovDev)</a></span> and <span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements Progress Report (GovDev)</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="procedureSubHeading">To create a Task that is linked to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Implementation</span> tab, click
+                                <img alt="Add New Linked Work Item" src="../art/Icon_addNewLinkedWorkItem.gif" />
+                                <span class="ui">New</span>.</p>
+                            <p>The <span class="ui">Add new Linked Work Item</span> dialog box opens.</p>
+                            <img alt="Add new linked Task to a Use Case" 
+                                src="../art/ProcGuid_UseCaseLinkToNewTask.png" />
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default option, <span
+                                class="ui">Child</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span> list, leave the default option <span class="ui">Task</span> 
+                                as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Title</span>, type a name that identifies the area of work to
+                                be performed as specifically as possible. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type additional information.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>A work item form for a task opens with the information that you have provided.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Specify the remaining fields as described in <span sdata="link"><a href="TaskGovDev.html">
+                                Task (GovDev)</a></span>, and then click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To link several existing tasks to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Implementation</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Use Case </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default option, <span
+                                class="ui">Child</span> as it is the only allowed option.&nbsp; </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Link task to Use Case dialog box" 
+                                src="../art/ProcGuid_UseCaseLinkToTasks.png" />
+                        </li>
+                        <li>
+                            <p>Type the items in <span class="ui">Work item IDs</span>, or browse for the items
+                                to which you want to link. You can also run the <span class="ui">My Tasks </span> 
+                                team query to locate the tasks to which you want to link. Select the check box next
+                                to each task that you want to link to the use case. For more information, see
+                                <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                    Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type a description for the tasks to which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>, and then click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the use case and tasks that you linked are updated. A <span class="ui">Parent</span> link to the use 
+                                                case is created for each task that you added.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddTestCase" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding and Linking Test Cases to a Use Case</span>
+            </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>As part of planning, you create test cases and link them to Use Cases. The recommended
+                    client for creating test suites and test cases is Microsoft Test Manager. From this
+                    client, you can also link to a use case as described in <span sdata="link"><a href="http://msdn.microsoft.com/library/3f532459-17ce-4d0b-858d-95de60b45206">
+                        How to: View Requirements or Use Cases Using Microsoft Test Manager</a></span>.</p>
+                <h3 class="procedureSubHeading">To create a Test Case that is linked to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Test Cases</span> tab, click
+                                <img alt="Add New Linked Work Item" src="../art/Icon_addNewLinkedWorkItem.gif" />
+                                <span class="ui">New</span>.</p>
+                            <p>The <span class="ui">Add new Linked Work Item</span> dialog box opens.</p>
+                            <img alt="Add new linked Test Case to a Use Case" 
+                                src="../art/ProcGuid_UseCaseLinkToNewTestCase.png" />
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default option, <span
+                                class="ui">Tested By</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span> list, leave the default option, <span
+                                class="ui">Test Case</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Title</span>, type a descriptive name that defines the area to
+                                be tested. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type additional information.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>A work item form for a test case opens with the information that you have provided.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Specify the remaining fields as described in <span sdata="link"><a href="TestCaseGovDev.html">
+                                Test Case (GovDev)</a></span>, and then click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To link existing test cases to a use case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Test Cases</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Use Case </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default option,
+                                <span class="ui">Tested By</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Link test cases to Use Case dialog box" 
+                                src="../art/ProcGuid_UseCaseLinkToTestCases.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Work item IDs</span>, type the IDs of the test cases that you
+                                want to link, or browse for them. You can run the <span class="ui">My Test Cases</span> team query to locate the test
+                                cases that you want to add, and then select the check box next to each test case
+                                to which you want to link. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                    Find Work Items to Link or Import</mshelp:link></a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type a description for the test cases to which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>, and click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the use case and test cases to which you linked are updated. A <span class="ui">
+                                                Tests</span> link to the use case is created for each test case that you added.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddBug" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding 
+                and Linking Bugs to a Use Case</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can create a bug and link it to an open use case from the <span class="ui">
+                    Bugs</span> tab.</p>
+                <h3 class="procedureSubHeading">To create a Bug that is linked to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Bugs</span> tab, click
+                                <img alt="Add New Linked Work Item" src="../art/Icon_addNewLinkedWorkItem.gif" />
+                                <span class="ui">New</span>.</p>
+                            <p>The <span class="ui">Add new Linked Work Item</span> dialog box opens.</p>
+                            <img alt="Add new linked Bug to a Use Case" 
+                                src="../art/ProcGuid_UseCaseLinkToNewBug.png" />
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default options, <span
+                                class="ui">Child</span> as it is the only allowed option. </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span> list, leave the default option, <span
+                                class="ui">Bug</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Title</span>, type a descriptive name that defines the bug that
+                                you found. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type additional information.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>A work item form for a bug opens with the information that you have provided.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Specify the remaining fields as described in <span sdata="link"><a href="BugGovDev.html">
+                                Bug (GovDev)</a></span>, and then click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To link existing bugs to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Bugs</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Use Case </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default option. <span
+                                class="ui">Child</span> as it is the only allowed option.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Link bugs to Use Case dialog box" 
+                                src="../art/ProcGuid_UseCaseLinkToBugs.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Work item IDs</span>, type the IDs of the bugs that you
+                                want to link, or browse for them. You can run the <span class="ui">My Bugs</span> team query to locate the 
+                                bugs that you want to add, and then select the check box next to each buge
+                                to which you want to link. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                    Find Work Items to Link or Import</mshelp:link></a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type a description for the test cases to which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>, and click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the use case and bugs to which you linked are updated. A <span class="ui">
+                                                Parent</span> link to the use case is created for each bug that you added.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding Details 
+                and Attachments to Use Cases</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>You can add details to Use Cases in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Type information in the <span class="ui">Description</span> or <span class="ui">History
+                            </span> field.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to Web site or to a file that is stored on a server or a Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, type information in the <span class="ui">
+                                Description </span> field.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type information in the <span class="ui">History</span> field.</p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. For more
+                                information, see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Descriptions, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to a Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste a file that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, and then click <span class="ui">Browse</span>. In the
+                                        <span class="ui">Attachment</span> dialog box, type or browse to the name of the
+                                        file that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, type more information about
+                                        the attachment. To return to the <span class="ui">Attachments</span> tab, click <span
+                                            class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Tracking" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Resolving
+                and Closing a Use Case</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>You can use the <span class="ui">Active</span>, <span class="ui">Resolved</span>,
+                    and <span class="ui">Closed</span> states to track the progress of Use Cases.
+                    When you have written the code to implement a use case and all unit tests have
+                    passed, you change the <span class="ui">State</span> of the use case to <span class="ui">
+                        Resolved</span>. After all tasks are completed and the use case passed all
+                    acceptance tests, you change its <span class="ui">State</span> to <span class="ui">Closed
+                    </span>. Any team member can change the state of a use case.</p>
+                <p>For more information about the data fields that you can use to track work item states,
+                    see <span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                        (GovDev)</a></span>.</p>
+                <h3 class="procedureSubHeading">To resolve or close an active Use Case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the Use Case.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Resolved</span> or
+                                <span class="ui">Closed</span>. </p>
+                            <ul>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Resolved
+                                        </span>, the <span class="ui">Reason</span> field automatically changes to <span class="ui">
+                                            Code complete and unit tests pass</span>. </p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Resolved</span> to <span class="ui">
+                                        Closed</span>, the <span class="ui">Reason</span> field changes to <span class="ui">Acceptance
+                                            tests pass</span>.</p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Closed
+                                        </span>, you should click the<span class="ui"> Reason</span> that matches your intent,
+                                        as <a href="#ActiveCloseddescribes">Active to Closed</a>later in this topic.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A customer representative creates a use case in the <a href="#Active">Active</a>
+                                            state with the default reason, New.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the use case from <a href="#ActiveResolved">
+                                            Active to Resolved</a>when it is code complete and unit tests have passed</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <a href="#ResolvedClosed">Resolved to Closed
+                                            </a>when the test cases that were defined for the use case have passed </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Atypical transitions</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A customer representative determines that the use case is not relevant or out of
+                                            scope and changes the state from <a href="#ActiveClosed">Active to Closed</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>An acceptance test for the use case fails. Therefore, a team member changes the
+                                            state from <a href="#ResolvedActive">Resolved to Active</a></p>
+                                    </li>
+                                    <li>
+                                        <p>A customer representative determines that the use case was closed in error or is
+                                            now in scope and changes the state from <a href="#ClosedActive">Closed to Active
+                                            </a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Use Case State Diagram</span> </p>
+                                <img alt="Use Case state diagram" src="../art/UseCaseWorkflow.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active (New)</h3>
+                <div class="subsection">
+                    <p>The following data fields are automatically captured when a team member creates a
+                        Use Case:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Created By</span>: Name of the team member who created the work
+                                item.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created Date</span>: Date and time when the work item was created,
+                                as recorded by the server clock.</p>
+                        </li>
+                    </ul>
+                    <a name="ActiveResolved" />
+                    <h4 class="subHeading">From Active to Resolved</h4>
+                    <div class="subsection">
+                        <p>You can resolve an active use case for the following reason:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Code complete and unit tests pass</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the code to implement a use case is checked in and all unit tests have passed.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the use case to the team member who will test it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member resolves an active use case:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Resolved By</span>: Name of the team member who resolved the
+                                    work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Resolved Date</span>: Date and time when the work item was resolved,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>You can close an active use case because of one of the following reasons: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Rejected</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>You determine that the use case represents a feature or requirement that does not
+                                            support a business requirement, scenario, or value proposition.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Abandoned</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>The use case is no longer considered necessary to implement. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Out of Scope</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>The team has insufficient resources to implement the use case for the current iteration.
+                                        </p>
+                                        <p>A use case might be identified as out of scope because the team has insufficient
+                                            time or because blocking issues were discovered.</p>
+                                    </td>
+                                    <td>
+                                        <p>Update the Iteration field to specify in which iteration the scenario will be implemented.
+                                            If the scenario is deferred to the next release of the software, leave the Iteration
+                                            field blank, but describe in detail why the scenario was deferred and when it should
+                                            be implemented.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when you close an active use case:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the work
+                                    item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the work item was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Resolved" />
+                <h3 class="subHeading">Resolved</h3>
+                <div class="subsection">
+                    <p>When a use case is implemented in code, the lead developer sets the state to Resolved
+                        and assigns the use case to a tester so that testing can start.</p>
+                    <a name="ResolvedClosed" />
+                    <h4 class="subHeading">From Resolved to Closed</h4>
+                    <div class="subsection">
+                        <p>You can close a resolved use case for the following reason:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Acceptance tests pass</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>All test cases that are associated with the use case have passed. </p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the use case to the product owner.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are automatically captured when a team member closes a
+                            resolved use case:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the work
+                                    item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the work item was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ResolvedActive" />
+                    <h4 class="subHeading">From Resolved to Active</h4>
+                    <div class="subsection">
+                        <p>You can reactivate a resolved use case for the following reason:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Acceptance tests fail</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When at least one of the use case's tests failed. </p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the use case to the lead developer. Also, the tester should create bugs
+                                            for the test failures.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when you reactivate a resolved use case:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the work item was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>A closed use case can be reactivated if it comes back into scope. Usually a business
+                        analyst or program manager reactivates a closed use case.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>You can reactivate a closed use case for the following reasons:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reintroduced in Scope</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>Resources are available to implement the use case. </p>
+                                    </td>
+                                    <td>
+                                        <p>Make sure that the implementation tasks, test cases, and details that have been defined
+                                            for the use case are complete and up to date.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Closed in error</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>A Use case was closed before all associated tasks, test cases, or bugs were closed.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Make sure that the implementation tasks, test cases, and details for the use case
+                                            are well defined and sufficient to support its development.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when you reactivate a closed use case:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the work item was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCasePlanningWorkbook.html">
+                    Use Case Planning Workbook</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/d02ac295-f0dc-47d7-b5a3-3713b7f6bcf7">
+                    Plan the Sprint</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

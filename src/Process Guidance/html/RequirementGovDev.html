@@ -1,0 +1,1191 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="requirements" />
+    <meta name="System.Keywords" content="requirements, defining and work item form" />
+    <meta name="System.Keywords" content="work item types, requirements (CMMI)" />
+    <meta name="Microsoft.Help.Id" content="de004062-6481-4672-b309-58edf318ae0d" />
+    <meta name="Description" content="You can learn how to fill in the details of a requirement work item in this topic. A requirement communicates functionality that is of value to the customer of the product or system." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Requirement (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Requirement" /><MSHelp:Keyword Index="A" Term="de004062-6481-4672-b309-58edf318ae0d" /><MSHelp:Keyword Index="K" Term="requirements" /><MSHelp:Keyword Index="K" Term="requirements, defining and work item form" /><MSHelp:Keyword Index="K" Term="work item types, requirements (CMMI)" /><MSHelp:Attr Name="RevisionNumber" Value="23" /><MSHelp:Attr Name="AssetID" Value="de004062-6481-4672-b309-58edf318ae0d" /><MSHelp:Attr Name="Abstract" Value="You can learn how to fill in the details of a requirement work item in this topic. A requirement communicates functionality that is of value to the customer of the product or system. Each requirement should briefly state what a user wants to do with  ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10223.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Requirement (CMMI)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Requirements (GovDev)</span>
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can learn how to fill in the details of a requirement work item in this topic.
+                    A requirement communicates functionality that is of value to the customer of the
+                    product or system. Each requirement should briefly state what a user wants to do
+                    with a feature of the software and describe it from the user's perspective. For
+                    more information, see <span sdata="link">
+                    <a href="PlanningtheProjectGovDev.html">Planning
+                        the Project (CMMI)</a></span>.</p>
+                <p>For information about how to create this type of work item, see <span sdata="link">
+                    <a href="WorkItemsandWorkflowCMMI.html">Work Items and Workflow (CMMI)</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Defining">Defining a Requirement</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Linking">Linking a Requirement to Other Work Items</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details and Attachments to a Requirement
+                                            </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Tracking">Changing the State of a Requirement</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Process Guidance</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningtheProjectCMMI.html">Planning the Project (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="ArrangingRequirementsintoaProjectPlan.html">Arranging Requirements into a Project Plan</a></span></p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Workbooks</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Dashboards and Reports</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ProgressDashboardGovDev.html">Progress Dashboard (GovDev)</a></span></p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">Requirements Traceability Report (GovDev)</a></span></p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements Progress Report (GovDev)</a></span></p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Description, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and
+                                            Workflow (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">
+                                            Areas and Iterations</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (CMMI)</a>
+                                        </span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">
+                                            Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a requirement, you must be a member of the <span class="ui">Readers</span> 
+                    group or your <span class="ui">View work items in this node</span> must be set to
+                    <span class="ui">Allow</span>. To create or modify a requirement, you must be a
+                    member of the <span class="ui">Contributors</span> group or your <span class="ui">Edit
+                        work items in this node</span> permissions must be set to <span class="ui">Allow
+                    </span>. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Defining" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Requirement</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>When you write a requirement, you should focus on who the feature is for, what they
+                    want to accomplish, and why. You should avoid descriptions that specify how the
+                    feature should be developed. </p>
+                <p>When you create a requirement, you must specify only the title and requirement 
+                    Type (which is defaulted to &#39;Functional&#39;). However, you can
+                    further define the Requirement by specifying a variety of other kinds of information,
+                    as the following illustrations show:</p>
+                <img alt="Requirement work item form" src="../art/ProcGuid_NewRequirement.png" />
+                <p>When you define a requirement, you must define the <span class="ui">Title</span>. 
+                    You can leave all other fields blank or accept their default values.</p>
+                <h3 class="procedureSubHeading">To define a requirement</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form, specify one or more of the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span> (required), type a short description.</p>
+                                    <p>Good Requirement titles reflect the value to the customer or functionality that the
+                                        team must implement. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Requirement Type</span>, click the type of requirement that you
+                                        are defining.</p>
+                                    <p>The default value is <span class="ui">Funtional</span>.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the name of the team member
+                                        who owns the Requirement.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>If you leave the requirement unassigned, it is automatically assigned to you.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">State</span> list, leave the default value, <span class="ui">
+                                        Proposed</span>. In the <span class="ui">Reason</span> list, leave the default value,
+                                        <span class="ui">New</span>.</p>
+                                    <p>For more information about the <span class="ui">State</span> field and how you use
+                                        it to track workflow, see <a href="#Tracking">Changing the State of a Requirement
+                                        </a>later in this topic.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The project administrator for each team project defines area and iteration paths
+                                                        for that project so that the team can track progress by those designations. For
+                                                        more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the level of importance for the
+                                        Requirement on a scale of 1 (most important) to 4 (least important). </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Triage</span> list, click the triage substate.</p>
+                                    <p>Valid values are <span class="ui">Pending</span> (default), <span class="ui">More
+                                        Info</span>, <span class="ui">Info Received</span>, and <span class="ui">Triaged
+                                        </span>. This field identifies a level of triage for requirements that are in the
+                                        <span class="ui">Proposed</span> state. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Blocked</span> list, click <span class="ui">Yes</span> if an
+                                        issue is blocking progress toward the implementation of the Requirement.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Committed</span> list, click <span class="ui">Yes</span> if
+                                        a commitment has been made to implement the Requirement.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, describe the requirement and the criteria
+                                that the team will use to verify whether it has been fulfilled.</p>
+                            <p>You should provide as much detail as necessary to ensure that a developer can implement
+                                the Requirement and that a tester can test the requirement.</p>
+                            <p>Your team will use this information to create work items for use cases, tasks and test cases.
+                                For more information, see <span sdata="link"><a href="TaskGovDev.html">
+                                    Task (GovDev)</a></span> and <span sdata="link">
+                                <a href="TestCaseGovDev.html">
+                                        Test Case (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Analysis</span> tab, describe the impact to the customer if
+                                the requirement is not implemented.</p>
+                            <p>You might want to include details on the Kano model about whether this Requirement
+                                is in the Surprise, Required, or Obvious categories.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Use Cases </span>and <span class="ui">Change Requests</span> 
+                                tabs, you can create links from the requirement to related use cases and change
+                                requests. </p>
+                            <p>On the <span class="ui">Attachments</span> tab, you can attach specifications, images,
+                                or other files that provide more details about the Requirement to be implemented.
+                            </p>
+                            <p>For more information, see the following sections later in this topic:</p>
+                            <ul>
+                                <li>
+                                    <p><a href="#Linking">Linking the Requirement to Other Work Items</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#AddDetailsAttachments">Adding Details and Attachments to a
+                                        Requirement</a></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the requirement, the identifier appears in the title under the work
+                                                item toolbar.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Linking" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                a Requirement to Other Work Items</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>By creating relationships between requirements and other work items, you can plan
+                    projects more effectively, track dependencies more accurately, view hierarchical
+                    relationships more clearly, and find relevant information more quickly. From the
+                    work item form for a Requirement, you can create a work item that is automatically
+                    linked to the Requirement, or you can create links to existing work items. </p>
+                <p>You use the <span class="ui">Use Cases</span>, and <span class="ui">Change 
+                    Requests</span> 
+                    tabs to create links for specific types of work items and specific types of links.
+                    For more information about the restrictions for each tab, see <span sdata="link"></span> <span sdata="link">
+                    <a
+                        href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)</a></span>.</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Requirements Traceability and Requirements Progress reports require that you create
+                                    links between requirements and use cases.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="procedureSubHeading">To create a use case and link it to a requirement</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the work item form for the requirement, and click the Use<span class="ui"> Cases</span> tab and then click
+                                        <img alt="Add New Linked Work Item" src="../art/Icon_addNewLinkedWorkItem.gif" />
+                                        <span class="ui">New</span>. </p>
+                            <p>The <span class="ui">Add new Linked Work Item</span> dialog box opens.</p>
+                            <p>&nbsp;</p>
+                            <img alt="Add new linked use case dialog box" 
+                                src="../art/ProcGuid_AddNewUseCasetoRequirement.png" />
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default value of <span class="ui">Child</span> as it is the only choice for linking of a use case.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span> list, leave the default value of
+                                <span class="ui">Use Case</span> as it is the only allowed choice.</p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Title</span>, type a short but specific description of the work
+                                to be performed. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type additional information, and then
+                                click <span class="ui">OK</span>. </p>
+                            <p>A work item form for the use case opens with the information
+                                that you have provided. </p>
+                        </li>
+                        <li>
+                            <p>Specify the remaining fields as described in <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                        <li>
+                            Use a similar apporoach to create and link a change request to the requirement.
+                         </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Details and Attachments to Requirements</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can add details to requirements in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>On the <span class="ui">Details</span> tab, type information in the <span class="ui">
+                            Description</span> field or the <span class="ui">History</span> field.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to Web site or to a file that is stored on a server or a Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a Requirement</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Details</span> tab, and, in <span class="ui">History</span>, add comments that you want to capture as part of the historical record.</p>
+                            <p>Every time that a team member updates the work item, its history shows the date of
+                                the change, the team member who made the change, and the fields that changed.
+                            </p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. For more
+                                information, see <span sdata="link"></span> <span sdata="link">
+                                <a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Description, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To attach a file to a Requirement</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Copy a file, and then click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste it.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, and then click <span class="ui">Browse</span>. In the
+                                        <span class="ui">Attachment</span> dialog box, type the name or browse to the file
+                                        that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, type more information about
+                                        the attachment.</p>
+                                    <p>To close the <span class="ui">Attachment</span> dialog box, click <span class="ui">
+                                        OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+                <a name="Tracking" />
+                <h1 class="heading">
+                    <span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Changing
+                the State of a Requirement</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>A team can track the progress of a requirement by setting its <span class="ui">State
+                    </span> field to one of the following values:</p>
+                <ul>
+                    <li>
+                        <p><a href="#Proposed">Proposed</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Active">Active</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Resolved">Resolved</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Closed">Closed</a></p>
+                    </li>
+                </ul>
+                <p>When you create a requirement, it is in the <span class="ui">Proposed</span> state
+                    by default. When the team accepts a requirement for the current iteration, the team
+                    moves the work item to the <span class="ui">Active</span> state and creates tasks
+                    to implement it. When the team completes the Tasks and system tests show that the
+                    team has successfully implemented the requirement, the team moves it to the <span
+                        class="ui">Resolved</span> state. Finally, when the team validates the requirement,
+                    the team moves it to the <span class="ui">Closed</span> state. </p>
+                <p>Any team member can change the state of a requirement.</p>
+                <p>For more information about the data fields that you can use to track work item states,
+                    see <span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments 
+                    and
+                        Workflow (GovDev)</a></span>.</p>
+                <h3 class="procedureSubHeading">To change the state of a requirement</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the work item form for the requirement.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Active</span>, <span
+                                class="ui">Resolved</span> or <span class="ui">Closed</span>. </p>
+                            <ul>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Proposed</span> to <span class="ui">
+                                        Active</span>, the <span class="ui">Reason</span> field automatically changes to
+                                        <span class="ui">Accepted</span>. </p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Resolved
+                                        </span>, the <span class="ui">Reason</span> field automatically changes to <span class="ui">
+                                            Code Complete and System Test Passed</span>. </p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Resolved</span> to <span class="ui">
+                                        Closed</span>, the <span class="ui">Reason</span> field changes to <span class="ui">Pass
+                                            Validation Test</span>.</p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Closed
+                                        </span>, you should click an option that matches your intent in the<span class="ui">
+                                            Reason</span> list.</p>
+                                    <p>Valid options are <span class="ui">Split</span> (default), <span class="ui">Abandoned
+                                        </span>, and <span class="ui">Out-of-Scope</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a requirement in the default state, <span class="ui">Proposed
+                                            </span>, with the default reason, <span class="ui">New</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <span class="ui">Proposed</span> to <span
+                                            class="ui">Active</span> with the default reason, <span class="ui">Accepted</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from<span class="ui"> Active</span> to <span class="ui">
+                                            Resolved</span> when the requirement is code complete and system tests have passed.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <span class="ui">Resolved</span> to <span
+                                            class="ui">Closed</span> when the requirement is validated as successfully meeting
+                                            customer expectations. </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Atypical transitions</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member changes the state from <span class="ui">Proposed</span> to <span
+                                            class="ui">Closed</span> with the default reason, <span class="ui">Rejected</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <span class="ui">Active</span> to <span class="ui">
+                                            Proposed</span> with the default reason, <span class="ui">Investigated</span>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>A team member determines that the requirement is not relevant or out of scope and
+                                            changes the state from <span class="ui">Active</span> to <span class="ui">Closed</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A validation test for the requirement fails. Therefore, a team member changes the
+                                            state from <span class="ui">Resolved</span> to <span class="ui">Active</span>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>A team member determines that the requirement was closed in error or is now in scope
+                                            and changes the state from <span class="ui">Closed</span> to <span class="ui">Active
+                                            </span>. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Requirement State Diagram</span> </p>
+                                <img alt="Requirement workflow" src="../art/ProcGuid_RequirementsState.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Proposed" />
+                <h3 class="subHeading">Proposed (New)</h3>
+                <div class="subsection">
+                    <p>The following data fields are automatically captured when a team member creates a
+                        requirement:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Created By</span>: Name of the team member who created the requirement.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created Date</span>: Date and time when the requirement was created,
+                                as recorded by the server clock.</p>
+                        </li>
+                    </ul>
+                    <a name="ProposedActive" />
+                    <h4 class="subHeading">From Proposed to Active</h4>
+                    <div class="subsection">
+                        <p>A team member can change the state of a requirement from <span class="ui">Proposed
+                            </span> to <span class="ui">Active</span> for the reasons that the following table
+                            describes:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Accepted</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the triage committee approves the requirement for implementation in the current
+                                            iteration.</p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the requirement to the team member who will implement it.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Investigate</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the triage committee determines that the team must investigate the customer
+                                            impact before the committee will decide whether the team should implement the requirement.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Return the requirement to the <span class="ui">Proposed</span> state when the investigation
+                                            is complete.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member changes the state of a
+                            requirement to <span class="ui">Active</span>:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who activated the
+                                    requirement.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the requirement was
+                                    activated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ProposedClosed" />
+                    <h4 class="subHeading">From Proposed to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close a requirement that is in the <span class="ui">Proposed</span> 
+                            state because of the reason that the following table describes: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Rejected</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the triage committee determines that the team cannot implement the requirement
+                                            or the customer no longer needs it.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes a Requirement:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the Requirement.
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the Requirement was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    Requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active</h3>
+                <div class="subsection">
+                    <p>The team should implement only those requirements that are in the <span class="ui">
+                        Active</span> state. For active requirements, team members should create tasks for
+                        writing code, testing, and documenting the requirement. When all tasks are complete,
+                        the requirement moves to the <span class="ui">Resolved</span> state. A team member
+                        can also close a requirement if it is split, abandoned, or determined to be out
+                        of scope.</p>
+                    <a name="ActiveResolved" />
+                    <h4 class="subHeading">From Active to Resolved</h4>
+                    <div class="subsection">
+                        <p>A team member can resolve an active requirement for the reason that the following
+                            table describes:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Code Complete and System Test Passed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team checks in code to implement a requirement and all system tests have
+                                            passed.</p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the requirement to the team member who will test it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member resolves an active requirement:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Resolved By</span>: Name of the team member who resolved the
+                                    requirement.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Resolved Date</span>: Date and time when the requirement was
+                                    resolved, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close an active requirement because of one of the reasons that
+                            the following table describes: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Split</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>When the requirement is too large or needs more precise definition. </p>
+                                    </td>
+                                    <td>
+                                        <p>Create one or more additional requirements, and link to them from the original requirement.
+                                            The new requirements should be accepted as <span class="ui">Active</span>.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Abandoned</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team no longer needs to implement the requirement. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Out of Scope</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team has insufficient time to implement the requirement for the current
+                                            iteration or has discovered blocking issues.</p>
+                                    </td>
+                                    <td>
+                                        <p>Specify in which iteration the Requirement might be implemented. If the requirement
+                                            is deferred to the next release of the software, leave the Iteration field blank,
+                                            but describe in detail why the requirement was deferred and when the team should
+                                            implement it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes an active requirement:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the requirement.
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the requirement was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ActiveProposed" />
+                    <h4 class="subHeading">From Active to Proposed</h4>
+                    <div class="subsection">
+                        <p>A team member can change the state of an active requirement to <span class="ui">Proposed
+                            </span> because of one of the reasons in the following table: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Postponed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team will not implement the requirement in the current iteration but might
+                                            in a future iteration.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Investigation Complete</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>When the team has investigated the requirement and is resubmitting it for triage.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes an active requirement:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Changed By</span>: Name of the team member who changed the state
+                                    of the requirement.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Resolved" />
+                <h3 class="subHeading">Resolved</h3>
+                <div class="subsection">
+                    <p>After a requirement has been implemented in code and passes system tests, the lead
+                        developer sets its state to <span class="ui">Resolved</span> and assigns the requirement
+                        to a tester. The tester then validates whether it has been implemented according
+                        to customer expectations. If it has, the tester closes the requirement. If it has
+                        not, the tester reactivates it for further work.</p>
+                    <a name="ResolvedClosed" />
+                    <h4 class="subHeading">From Resolved to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close a resolved requirement for the reason that the following
+                            table describes:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Validation Test Passed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the requirement passes all validation tests that are associated with it.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the requirement to the product owner.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are automatically captured when a team member closes a
+                            resolved requirement:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the requirement.
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the requirement was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ResolvedActive" />
+                    <h4 class="subHeading">From Resolved to Active</h4>
+                    <div class="subsection">
+                        <p>A team member can reactivate a resolved Requirement for the reason that the following
+                            table describes:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Validation Test Failed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the validation test indicates that the requirement does not meet one or more
+                                            customer expectations.</p>
+                                    </td>
+                                    <td>
+                                        <p>Document the problems as bugs, and assign the requirement to the lead developer.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when a team member reactivates a resolved
+                            requirement:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the requirement.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the requirement was
+                                    reactivated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>The team should no longer work on any requirement that has been closed because it
+                        was rejected or successfully implemented, verified, and validated.</p>
+                    <p>The team can reactivate a closed requirement if it comes back into scope. Usually
+                        a business analyst or program manager reactivates a closed Requirement.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>A team member can reactivate a closed requirement for the reasons that are described
+                            in the following table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reintroduced in Scope</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When resources have become available to implement the requirement. </p>
+                                    </td>
+                                    <td>
+                                        <p>Make sure that the implementation tasks, test cases, and details that have been defined
+                                            for the requirement are complete and up to date.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Closed in error</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When a requirement was accidentally closed. </p>
+                                    </td>
+                                    <td>
+                                        <p>Make sure that the implementation tasks, test cases, and details that have been defined
+                                            for the requirement are complete and up to date.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when a team member reactivates a closed
+                            requirement:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the requirement.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the requirement was
+                                    reactivated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    requirement work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"></span> <span sdata="link">
+                    <a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link">
+                    <a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10223.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

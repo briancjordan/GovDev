@@ -1,0 +1,271 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="team, contribution report" />
+    <meta name="Microsoft.Help.Id" content="2b21601e-c737-4eda-b836-87517e19cf63" />
+    <meta name="Description" content="The Contribution by Team Member Report displays the various contributions by team members for a specified iteration and area or entire project. For information about how to open this report, refresh the data, or manage reports, see Reports." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="COntribution by Team Member Report (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Requirements Traceability" /><mshelp:keyword Index="A" Term="2b21601e-c737-4eda-b836-87517e19cf63" /><mshelp:keyword Index="K" Term="team, contribution report" /><mshelp:attr Name="RevisionNumber" Value="1" /><mshelp:attr Name="AssetID" Value="2b21601e-c737-4eda-b836-87517e19cf63" /><mshelp:attr Name="Abstract" Value="The Contribution by Team Member Report displays the various contributions by team members for a specified iteration and area or entire project. For information about how to open this report, refresh the data, or manage reports, see Reports. " /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Contribution by Team Member Report (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Contirbution by Team Member Report (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>The Contribution by Team Member Report displays the various contributions by team 
+                    members for a specified iteration and area or entire project. For information about how to open this report, refresh
+                    the data, or manage reports, see <span sdata="link"><a href="ReportsGovDev.html">Reports
+                        (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                     <li>
+                                        <p> How many hours are being completed by the team?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many check-ins has each team member made? </p>
+                                    </li>
+                                    <li>
+                                        <p>What is the code churn for each team member?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in Reporting Services. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Contribution by Team Member Report presents a snapshot of the hours and code 
+                    churn
+                    for the specified iteration and area as the following illustration
+                    shows:</p>
+                <img alt="Contribution by Team Member example report" 
+                    src="../art/ProcGuid_ContributionReport.png" /><p>
+                    This report displays the following information:
+                </p>
+                <p><span class="label">Work Effort</span> </p>
+                <ul>
+                    <li>
+                        <p><span class="ui">Completed Hours by Team Member</span>: A graph with numeric value 
+                            that shows the set of hours logged by each team member.
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Number of changeset checked-in by Team Member</span>: A numeric value  
+                            that shows the number of changesets logged by each team member.
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Code churn by Team Member</span>: A numeric table showing the 
+                            lines of code (LOC) added, modified and deleted by each team member.
+                        </p>
+                    </li>
+                </ul>
+            <a name="RequiredActivities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Tracking Progress</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the Contribution by Team Member Report to be useful and accurate,
+                    the team must perform the following activities:</p>
+                <ul>
+                    <li>
+                        <p>Specify and update the <span class="ui">Completed</span> and <span class="ui">Remaining
+                            </span> fields for each task as the team works on it.</p>
+                    </li>
+                    <li>
+                        <p>Associate the code check-in with the task the code supports.
+                        </p>
+                    </li>
+                    <li>
+                        <p>(optional) Specify the <span class="ui">Iteration</span> and <span class="ui">Area
+                            </span> paths for each work item if you want to filter by those fields. </p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can filter the Contribution by Team Member Report to show statistics only for the iterations or product areas that you specify. </p>
+                <h3 class="procedureSubHeading">To specify which work tiems appear in the report
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Iteration</span> or <span class="ui">Area</span> list, select
+                                the check box of each iteration or product area to include. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span> to refresh the report based on the new filter
+                                criteria.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a>
+                </span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a>
+                </span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)
+                    </a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

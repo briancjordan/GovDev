@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution SolutionId="1fc362b3-3c74-4478-adef-b6fbe83407b5" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Assemblies>
+    <Assembly Location="Microsoft.Dpe.Ps.Govdev.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="TfsDashboardGovDevReports\feature.xml" />
+    <FeatureManifest Location="TfsDashBoardGovDevMoss\feature.xml" />
+    <FeatureManifest Location="TfsDashboardGovDevMossUI\feature.xml" />
+    <FeatureManifest Location="TfsDashboardGovDevPages\feature.xml" />
+  </FeatureManifests>
+  <TemplateFiles>
+    <TemplateFile Location="FEATURES\TfsDashboardGovDevPages\dashboardlayouts.aspx" />
+    <TemplateFile Location="FEATURES\TfsDashboardGovDevReports\Reports\Use Case Progress.xlsx" />
+    <TemplateFile Location="FEATURES\TfsDashboardGovDevReports\Reports\Use Case Test Status.xlsx" />
+  </TemplateFiles>
+</Solution>

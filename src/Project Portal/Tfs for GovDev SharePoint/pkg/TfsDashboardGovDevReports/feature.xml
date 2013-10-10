@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="b361868f-68df-42f9-ac40-b1366d77b1bf"
+         Title="GovDev Custom Reports for Team Foundation Server"
+         Description="Contains Excel Reports and associated SharePoint customizations of the GovDev for TFS Process Template.  Activate if the team project has reporting enabled, but you do not have Excel Services enabled to render Excel reports."
+         Version="1.0.0.0"
+         Scope="Web"
+         Hidden="FALSE"
+         ReceiverAssembly="Microsoft.Dpe.Ps.Govdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9d438aa16c6f03bd"
+         ReceiverClass="Microsoft.Dpe.Ps.Govdev.GovDevReportsReceiver"
+         DefaultResourceFile="core"
+         xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <Properties>
+    <Property Key="ProcessTemplate" Value="GovDev" />
+    <Property Key="DashboardLevel" Value="WssWarehouse" />
+  </Properties>
+  
+  <ElementManifests>
+    <ElementManifest Location="Element1\elements.xml" />
+  </ElementManifests>
+</Feature>

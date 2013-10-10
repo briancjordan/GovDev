@@ -1,0 +1,715 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="bugs, dashboard (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="ecd05065-521c-451f-acd9-efde10fa1822" />
+    <meta name="Description" content="You can monitor Bug activity for a team project by using the Bugs dashboard, which shows the following charts:" />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Bugs Dashboard" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Bugs" /><mshelp:keyword Index="A" Term="ecd05065-521c-451f-acd9-efde10fa1822" /><mshelp:keyword Index="K" Term="bugs, dashboard (GovDev)" /><mshelp:attr Name="RevisionNumber" Value="17" /><mshelp:attr Name="AssetID" Value="ecd05065-521c-451f-acd9-efde10fa1822" /><mshelp:attr Name="Abstract" Value="You can monitor Bug activity for a team project by using the Bugs dashboard, which shows the following charts:" /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Bugs Dashboard</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Bugs Dashboard</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can monitor Bug activity for a team project by using the Bugs dashboard, which
+                    shows the following charts:</p>
+                <ul>
+                    <li>
+                        <p>Bug burndown</p>
+                    </li>
+                    <li>
+                        <p>the rate at which the team is finding, resolving, and closing Bugs over time</p>
+                    </li>
+                    <li>
+                        <p>the count of priority Bugs over time</p>
+                    </li>
+                    <li>
+                        <p>the current count of active Bugs that are assigned to each team member </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>You access dashboards through your team project portal. You can access the Bugs dashboard
+                                            only if that portal has been enabled and is provisioned to use Microsoft Office
+                                            SharePoint Server 2007. For more information, see <span sdata="link">
+                                            <a href="DashboardsGovDev.html">
+                                                Dashboards (GovDev)</a></span>  or <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                                    Access a Team Project Portal and Process Guidance</a></span>.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data That Appears in the Dashboard</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Activities">Required Activities for Tracking Bugs</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Using">Monitoring Active Bugs and Bug Trends</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this dashboard to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>How quickly is the team resolving and closing bugs? </p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team fixing bugs quickly enough to finish on time? </p>
+                                    </li>
+                                    <li>
+                                        <p>How many bugs is the team reporting, resolving, and closing per day?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team resolving priority 1 bugs before priority 2 and 3 bugs?</p>
+                                    </li>
+                                    <li>
+                                        <p>Does any team member have a backlog of priority 1 bugs that warrant redistribution?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>What is the status of last night's build?</p>
+                                    </li>
+                                    <li>
+                                        <p>What were the most recent check-ins?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the dashboard, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Read</span> permissions in SharePoint Products for the team
+                    project. To modify, copy, or customize the dashboard, you must be assigned or belong
+                    to a group that has been assigned the <span class="ui">Members</span> permissions
+                    in SharePoint Products for the team project. For more information, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">Add
+                            Users to Team Projects</a></span>.</p>
+                <p>To modify a report in Office Excel, you must be a member of the <span class="ui">
+                    TfsWarehouseDataReaders</span> security role in SQL Server Analysis Services. You
+                    must also be assigned or belong to a group that has been assigned the <span class="ui">
+                        Members</span> permissions in SharePoint Products for the team project. For more
+                    information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">
+                        Grant Access to the Databases of the Data Warehouse for Visual Studio ALM</a>
+                    </span>.</p>
+                <p>To view a Bug or other type of work item, you must be a member of the <span class="ui">
+                    Readers</span> group or your <span class="ui">View work items in this node</span> 
+                    permission must be set to <span class="ui">Allow</span>. To create or modify a Bug
+                    or other type of work item, you must be a member of the <span class="ui">Contributors
+                    </span> group or your <span class="ui">Edit work items in this node</span> permission
+                    must be set to <span class="ui">Allow</span>. For more information, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">Managing
+                            Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                That Appears in the Dashboard</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The team can use the Bugs dashboard to understand how well the team is finding, resolving,
+                    and closing bugs. Specifically, the dashboard displays the Web parts that the following
+                    illustration shows and the following table describes: </p>
+                <img alt="Bugs Dashboard" src="../art/ProcGuid_DashBugs.png" /><div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Burndown, trend, and bar charts, reports
+                                    <img alt="Step 1" src="../art/ProcGuid_1.gif" />
+                                    through
+                                    <img alt="Step 4" src="../art/ProcGuid_4.gif" />, do not appear when the server
+                                    that hosts Analysis Services for the team project is not available.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>For more information about how to interpret, update, or customize the charts that
+                    appear in the Bugs dashboard, see the topics that are listed in the following table.
+                </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Web part</p>
+                            </th>
+                            <th>
+                                <p>Data displayed</p>
+                            </th>
+                            <th>
+                                <p>Related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 1" src="../art/ProcGuid_1.gif" /></td>
+                            <td>
+                                <p>A visual representation of the cumulative count of all Bugs, grouped by their state,
+                                    for the past four weeks.</p>
+                                <img alt="Bug Progress Excel Report" src="../art/ProcGuid_ExcelBug.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugProgressExcelReport.html">Bug Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 2" src="../art/ProcGuid_2.gif" /></td>
+                            <td>
+                                <p>Line chart that shows the rolling average of the number of Bugs that the team has
+                                    opened, resolved, and closed for the past four weeks. The rolling average is based
+                                    on the seven days before the date for which it is calculated.</p>
+                                <img alt="Bug Trends report" src="../art/ProcGuid_BugTrends.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugTrendsExcelReport.html">Bug Trends Excel Report</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 3" src="../art/ProcGuid_3.gif" /></td>
+                            <td>
+                                <p>A visual representation of the cumulative count of all Bugs, grouped by their priority,
+                                    for the past four weeks.</p>
+                                <img alt="Bugs by priority chart" src="../art/ProcGuid_ByPriority.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyPriorityExcelReport.html">Bugs by Priority Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 4" src="../art/ProcGuid_4.gif" /></td>
+                            <td>
+                                <p>A horizontal bar chart with the total count of active Bugs that each team member
+                                    has currently assigned to them, grouped by priority.</p>
+                                <img alt="Bugs by Assignment chart" src="../art/ProcGuid_ByAssignment.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyAssignmentExcelReport.html">Bugs by Assignment
+                                    Excel Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 5" src="../art/ProcGuid_6.gif" /></td>
+                            <td>
+                                <p>List of the active Bugs. The list is derived from a Team Web Access Web part.
+                                </p>
+                                <img alt="Bug Trends report" src="../art/ProcGuid_BugTrends.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 6" src="../art/ProcGuid_6a.gif" /></td>
+                            <td>
+                                <p>List of upcoming events. The list is derived from a SharePoint Web part.</p>
+                                <img alt="Import Events Web part" src="../art/SharePoint_Dashboard.png" /></td>
+                            <td>
+                                <p>Not applicable</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 7" src="../art/ProcGuid_7.gif" /></td>
+                            <td>
+                                <p>Count of active, resolved, and closed work items. You can open the list of work 
+                                    items by clicking each number. This list is derived from a Team Web Access Web 
+                                    part.</p>
+                                <img alt="Project Work Items Web part" src="../art/TWSA_DashProjectWI.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and 
+                                    Workflow (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 8" src="../art/ProcGuid_8.gif" /></td>
+                            <td>
+                                <p>List of recent builds and their status. You can view more details about a build by
+                                    clicking it. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Builds Web part" src="../art/TWSA_DashBuilds.png" /><p><span class="label">
+                                    Legend</span>:</p>
+                                <p>
+                                    <img alt="Build in Progress" src="../art/Icon_BuildStatus_1.gif" />: Build in Progress
+                                </p>
+                                <p>
+                                    <img alt="Build Not Started" src="../art/Icon_BuildStatus_2.gif" />: Build Not Started
+                                </p>
+                                <p>
+                                    <img alt="Build Succeeded" src="../art/Icon_BuildStatus_3.gif" />: Build Succeeded
+                                </p>
+                                <p>
+                                    <img alt="Build Failed" src="../art/Icon_BuildStatus_4.gif" />: Build Failed
+                                </p>
+                                <p>
+                                    <img alt="Build Stopped" src="../art/Icon_BuildStatus_5.gif" />: Build Stopped
+                                </p>
+                                <p>
+                                    <img alt="Build Partially Succeeded" src="../art/Icon_BuildStatus_6.gif" />: Build
+                                    Partially Succeeded</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/5c0de804-7ff9-468b-9053-fd068ea1a2bc">
+                                    Managing and Viewing Completed Builds</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="9" src="../art/ProcGuid_9.gif" /></td>
+                            <td>
+                                <p>List of the most recent check-ins. You can view more details about a specific check-in
+                                    by clicking it. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Checkins Web part" src="../art/TWSA_DashCheckins.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/dded21d3-4869-4e19-bca4-62e27179539c">
+                                    Using the Check In and Pending Changes Windows</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Activities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Tracking Bugs</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the reports that appear in the Bugs dashboard to be useful and accurate, the
+                    team must perform the following activities:</p>
+                <ul>
+                    <li>
+                        <p>Define Bugs, and specify their <span class="ui">Iteration</span> and <span class="ui">
+                            Area</span> paths. </p>
+                    </li>
+                    <li>
+                        <p>Assign each Bug to the team member who is working to resolve or close it.</p>
+                    </li>
+                    <li>
+                        <p>Specify the <span class="ui">Priority</span> of each Bug.</p>
+                    </li>
+                    <li>
+                        <p>Update the <span class="ui">State</span> of each Bug as the team fixes, verifies,
+                            and closes it. </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Using" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Monitoring
+                Active Bugs and Bug Trends</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Team members can use the Bugs dashboard to determine whether they are managing the
+                    list of active Bugs according to established team goals and agile practices. By
+                    unit testing each increment of code before check-in, the team can reduce the overall
+                    number of bugs that the team must find. A team that focuses on being able to ship
+                    each increment of code removes defects incrementally and minimizes ongoing bugs.
+                </p>
+                <p>By using the Bugs dashboard, the team can answer the following questions:</p>
+                <ul>
+                    <li>
+                        <p>Is the number of active Bugs acceptable based on team goals? Is the team postponing
+                            too many Bugs?</p>
+                    </li>
+                    <li>
+                        <p>Is the team finding, fixing, and closing Bugs quickly enough to meet expectations
+                            and at a rate that matches previous development cycles? </p>
+                    </li>
+                    <li>
+                        <p>Is the team addressing high priority bugs before lower priority bugs?</p>
+                    </li>
+                    <li>
+                        <p>Does any team member need help in resolving bugs?</p>
+                    </li>
+                </ul>
+                <p>For more questions to ask based on the indicators that appear in the dashboard, see
+                    the following sections:</p>
+                <ul>
+                    <li>
+                        <p><a href="#Progress">Bug Progress Indicators</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Trend">Trend Indicators</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#PriorityDistribution">Priority and Distribution of Bugs</a></p>
+                    </li>
+                </ul>
+                <a name="Progress" />
+                <h3 class="subHeading">Bug Progress Indicators</h3>
+                <div class="subsection">
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Indicator</p>
+                                </th>
+                                <th>
+                                    <p>Questions to ask</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The band for active Bugs is becoming wider</span>. If the width
+                                        of the team's band for active Bugs is increasing, the Bug backlog is growing. The
+                                        team is finding more Bugs than it can resolve or close. </p>
+                                    <p>A widening band of active Bugs might indicate that a bottleneck is slowing the team's
+                                        ability to resolve and close Bugs.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Are team members being reallocated to other, non-priority tasks?</p>
+                                        </li>
+                                        <li>
+                                            <p>Are other issues blocking the team's ability to resolve and fix Bugs? </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The number of active Bugs is not changing</span>. A flat trend
+                                        in the number of active Bugs indicates that the team is not finding Bugs.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Is the test coverage sufficient?</p>
+                                        </li>
+                                        <li>
+                                            <p>Are other issues blocking the team's ability to find Bugs?</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The number of resolved or closed Bugs is not changing</span>.
+                                        When the number of Bugs that the team is resolving or closing remains flat for long
+                                        periods of time, team members might not be able to resolve or close Bugs.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Are team priorities correctly set? </p>
+                                        </li>
+                                        <li>
+                                            <p>Are team members overallocated on other tasks?</p>
+                                        </li>
+                                        <li>
+                                            <p>Are team members correctly tracking their Bug status?</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <a name="Trend" />
+                <h3 class="subHeading">Bug Trend Indicators</h3>
+                <div class="subsection">
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Indicator</p>
+                                </th>
+                                <th>
+                                    <p>Questions to ask</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The team is resolving many Bugs in each time period</span>. A
+                                        high resolution rate usually indicates that the team is making good progress.
+                                    </p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Is the team promptly closing the Bugs that it resolves? The rate of closure should
+                                                resemble the rate of resolution.</p>
+                                        </li>
+                                        <li>
+                                            <p>Is the team reactivating Bugs at an acceptable rate? </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The team is resolving Bugs quickly but not closing them</span>.  
+                                        Team members who are assigned to verify fixes might be spread too thin, or different
+                                        priorities might keep those team members from closing resolved Bugs.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Are test resources over-allocated? </p>
+                                        </li>
+                                        <li>
+                                            <p>Should the team revisit test priorities?</p>
+                                            <p>For more information about these metrics, see <span sdata="link">
+                                                <a href="TestDashboardGovDev.html">
+                                                Test Dashboard (GovDev)</a></span>.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The team is finding few bugs in each time period</span>. The
+                                        team might struggle to find bugs in a high-quality solution or with ineffective
+                                        testing.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Do the metrics for code coverage, code churn, or test progress indicate a problem
+                                                with the code or testing?</p>
+                                            <p>For more information about these metrics, see <span sdata="link">
+                                                <a href="QualityDashboardGovDev.html">
+                                                Quality Dashboard (GovDev)</a></span>.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The team is finding about the same number of bugs in successive
+                                        time periods</span>. If the team finds the same number of bugs week after week or
+                                        iteration after iteration, you might investigate the underlying cause. Early in
+                                        the testing cycle, the tests might not be rigorous or advanced enough to find many
+                                        bugs. In early iterations, this situation is expected. However, as the product matures,
+                                        tests should exercise broader scenarios and integrations. </p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Are the test cases adequate to test the use cases that the team is developing?
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>Have the tests become stale or are they testing the wrong functionality?</p>
+                                        </li>
+                                        <li>
+                                            <p>Is the test team rigorously testing each use case?</p>
+                                            <p>For more information about these metrics, see <span sdata="link">
+                                                <a href="TestDashboardGovDev.html">
+                                                Test Dashboard (GovDev)</a></span>.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The team is finding many bugs in each time period</span>. The
+                                        team might find bugs easily in sloppy code, in newly integrated code, with effective
+                                        testing, or during a specific event, such as a bug bash. </p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Do the metrics for code coverage, code churn, or test progress indicate a problem
+                                                with the code or testing?</p>
+                                            <p>For more information about these metrics, see <span sdata="link">
+                                                <a href="QualityDashboardGovDev.html">
+                                                Quality Dashboard (GovDev)</a></span>.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <a name="PriorityDistribution" />
+                <h3 class="subHeading">Bug Priority and Distribution</h3>
+                <div class="subsection">
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Indicator</p>
+                                </th>
+                                <th>
+                                    <p>Questions to ask</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">The number of active higher priority Bugs is larger than the
+                                        number of active lower priority Bugs</span>. When the number of high priority Bugs
+                                        is much larger than the number of lower priority bugs, the team might be focusing
+                                        on lower priority items first. </p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Is the team fixing bugs in the order of priority set by the team?</p>
+                                        </li>
+                                        <li>
+                                            <p>Are issues blocking the team's ability to fix the higher priority bugs?</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="label">Bug assignments are not evenly distributed</span>. The team might
+                                        consider reassigning work when many Bugs are assigned to one or two team members
+                                        and only a few to other team members. </p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p>Should the team balance the workload by reassigning Bugs?</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="DashboardsGovDev.html">Dashboards (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

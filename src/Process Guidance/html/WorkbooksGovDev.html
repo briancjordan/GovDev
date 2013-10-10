@@ -1,0 +1,468 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, workbooks" />
+    <meta name="System.Keywords" content="documents [Visual Studio ALM], agile process template workbooks" />
+    <meta name="System.Keywords" content="workbooks" />
+    <meta name="System.Keywords" content="workbooks, agile process template" />
+    <meta name="Microsoft.Help.Id" content="ca2d7370-0ab1-46b3-a567-25a928abc21b" />
+    <meta name="Description" content="You can use workbooks to build your product backlog and plan work by assigning the Use Cases, tasks, bugs, and issues to specific iterations, also referred to as sprints." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Workbooks (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Workbooks" /><mshelp:keyword Index="A" Term="ca2d7370-0ab1-46b3-a567-25a928abc21b" /><mshelp:keyword Index="K" Term="agile process template, workbooks" /><mshelp:keyword Index="K" Term="documents [Visual Studio ALM], agile process template workbooks" /><mshelp:keyword Index="K" Term="workbooks" /><mshelp:keyword Index="K" Term="workbooks, agile process template" /><mshelp:attr Name="RevisionNumber" Value="12" /><mshelp:attr Name="AssetID" Value="ca2d7370-0ab1-46b3-a567-25a928abc21b" /><mshelp:attr Name="Abstract" Value="You can use workbooks to build your product backlog and plan work by assigning the Use Cases, tasks, bugs, and issues to specific iterations, also referred to as sprints. By using the workbooks that are provided with the process template for MSF f ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Workbooks (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Workbooks (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use workbooks to build your product backlog and plan work by assigning the
+                    use cases, tasks, bugs, and issues to specific iterations, also referred to as
+                    sprints. By using the workbooks that are provided with the process template for
+                    GovDev for TFS 2010 v1.0, you can quickly create work items and modify
+                    the rank, priority, state, and assignments of multiple work items at the same time.
+                </p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Configuration">Required Configurations to Use Workbooks</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Tasks">Common Tasks Performed Using Workbooks</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Open">Opening a Workbook</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#RelatedTasks">Related Tasks</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Configuration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Configurations to Use Workbooks</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>To access and use the workbooks, the following configurations must be met:</p>
+                <ul>
+                    <li>
+                        <p>To access a workbook, your team project must have been provisioned with a project
+                            portal. </p>
+                        <p>Workbooks are stored on the server that hosts SharePoint Products for your team project.
+                            If a project portal has not been enabled for your team project, you cannot access
+                            the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                Access a Team Project Portal and Process Guidance</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>To open a workbook in Office Excel, you must have the Team Foundation Office Integration
+                            add-in installed on your client computer. This add-in is installed when you install
+                            any product in Visual Studio ALM. </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Tasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Common
+                Tasks Performed Using Workbooks</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Workbook</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Build the backlog of use cases and balance workload across
+                                    iterations</span>. You can use the Use Case Planning workbook to balance use cases
+                                    across iterations. To build the product backlog, you review, rank, prioritize, and
+                                    assign points to use cases. To balance workload, you assign each use case to a specific
+                                    iteration and adjust as needed until the story points that are assigned across all
+                                    iterations are balanced.</p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>You must enable macros when you open the Use Case Planning workbook to use the functionality
+                                                    that is built into the workbook. </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p>This workbook uses the Use Case Planning team query to list use cases that are
+                                    not closed or that have not been closed in the last 90 days.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCasePlanningWorkbook.html">Use Case Planning Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Plan and balance workload for an iteration</span>. You can use
+                                    the Iteration Task Backlog workbook to plan and track the progress of work for a specific
+                                    iteration. By using this workbook, you can determine the team capacity, adjust work
+                                    based on over or under allocated capacity for both the team and individual team
+                                    members, and break down use cases into tasks for the team to work on. You can
+                                    create additional workbooks to support additional iterations. </p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>You must enable macros when you open the Iteration Task Backlog workbook for you to use
+                                                    the functionality that is built into the workbook. </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p>This workbook uses the Iteration Task Backlog team query to list the use cases and
+                                    linked tasks that are assigned to an iteration.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IterationBacklogWorkbook.html">Iteration Task Backlog Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Review, rank, and track blocking issues</span>. You can use the
+                                    Issues workbook to review and rank problems that might block team progress. This
+                                    workbook uses the Open Issues team query to list all issues that are not closed.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssuesWorkbook.html">Issues Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Triage bugs</span>. You can use the Triage workbook to rank and
+                                    assign bugs to be worked on for an iteration. This workbook uses the Bug Triage
+                                    team query to list all active bugs that are assigned to an iteration but not a team
+                                    member.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Open" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Opening
+                a Workbook</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can open a workbook from the team project portal or by using Team Explorer.
+                </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>When you open a workbook, it is connected to the server that hosts SharePoint Products
+                                    for your team project. Changes that you make to the workbook must be published to
+                                    the database for tracking work items. Also, you must save the workbook on the server
+                                    to give other team members access to the updates.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="procedureSubHeading">To open a workbook by using Team Explorer</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open Team Explorer, and expand your team project node.</p>
+                        </li>
+                        <li>
+                            <p>Expand the <span class="ui">Documents</span> node, and then expand <span class="ui">
+                                Shared Documents</span>. </p>
+                            <p>The default set of folders and workbooks matches the following illustration.</p>
+                            <img alt="Opening the Iteration Task Backlog workbook" src="../art/ProcGuid_IterationBacklog_Workbook.png" />
+                        </li>
+                        <li>
+                            <p>Right-click the workbook that you want to open, and then click <span class="ui">Open
+                                </span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">File Download</span> dialog box, click <span class="ui">OK
+                                </span>.</p>
+                            <p>The workbook opens in Office Excel. Macros are automatically disabled. At the top
+                                of the workbook, the notices in the following illustration appear.</p>
+                            <img alt="Security and server Excel notices" src="../art/ProcGuid_Workbook_Notices.png" />
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Options</span>. </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Microsoft Office Security Options</span> dialog box, under
+                                <span class="ui">Macro</span> s, click <span class="ui">Enable this content</span>, 
+                                and then click <span class="ui">OK</span>.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Edit Workbook</span>, and modify the workbook as needed.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Save and close the workbook. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="RelatedTasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Related
+                Tasks</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Build the product backlog, plan a sprint, and track progress</span>. 
+                                    Scrum defines a set of processes that are based on the agile principles and values,
+                                    which can help your team deliver more value to your customers faster. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="Scrum.html">Scrum</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Plan the structure of your meetings</span>. Each agile practice
+                                    has, at its core, a set of meetings that keep the project on track and moving in
+                                    the correct direction. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="MeetingsGovDev.html">Meetings (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define requirements, use cases or scenaios</span>. 
+                                    A team creates requirements and use cases to define the features and functions
+                                    to be implemented. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementGovDev.html">Requirement (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Estimate and track work</span>. A team uses tasks to track the
+                                    level of effort that is required to implement a use case or other area of work
+                                    that is identified for the project. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define and manage risks, issues, or impediments</span>. You can
+                                    define known or potential problems, impediments, or risks to your project by using
+                                    the issue work items. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssueGovDev.html">Issue (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Open and track bugs</span>. You can track code defects by using
+                                    bug work items.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TeamQueriesGovDev.html">Team Queries
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,663 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="progress, reporting burndown and burn rate" />
+    <meta name="Microsoft.Help.Id" content="68941ffa-eb19-4d52-9418-7de1b6aca335" />
+    <meta name="Description" content="After a team has worked on one or more iterations, also known as sprints, you can determine the rate of team progress by reviewing the Burndown and Burn Rate report. Burndown shows the trend of completed and remaining work over a specified time period." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Burndown and Burn Rate Report (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Burndown and Burn Rate" /><MSHelp:Keyword Index="A" Term="68941ffa-eb19-4d52-9418-7de1b6aca335" /><MSHelp:Keyword Index="K" Term="progress, reporting burndown and burn rate" /><MSHelp:Attr Name="RevisionNumber" Value="16" /><MSHelp:Attr Name="AssetID" Value="68941ffa-eb19-4d52-9418-7de1b6aca335" /><MSHelp:Attr Name="Abstract" Value="After a team has worked on one or more iterations, also known as sprints, you can determine the rate of team progress by reviewing the Burndown and Burn Rate report. Burndown shows the trend of completed and remaining work over a specified time perio ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Burndown and Burn Rate Report (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Burndown and Burn Rate Report</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>After a team has worked on one or more iterations, also known as sprints, you can
+                    determine the rate of team progress by reviewing the Burndown and Burn Rate report.
+                    Burndown shows the trend of completed and remaining work over a specified time period.
+                    Burn rate provides calculations of the completed and required rate of work based
+                    on the specified time period. In addition, a chart shows the amount of completed
+                    and remaining work that is assigned to team members. You can view the Burndown and
+                    Burn Rate report based on hours worked or number of work items that have been resolved
+                    and closed. </p>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsGovDev.html">Reports (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Duration">Setting the Duration of the Iteration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report and Changing the Display</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the team likely to finish the iteration on time? </p>
+                                    </li>
+                                    <li>
+                                        <p>Will the team complete the required work, based on the current burn rate? </p>
+                                    </li>
+                                    <li>
+                                        <p>How much work does each team member have? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in SQL Server Reporting Services. For more
+                    information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Burndown and Burn Rate report summarizes the data that was captured during the
+                    time interval that you specify for each task, use case, or bug based on the filters
+                    that you specify. The data is derived from the data warehouse.</p>
+                <p>You can filter the report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the tasks that are counted in the report by specifying iteration and area
+                            paths and work item states. You can also filter the report to show use cases
+                            and bugs.</p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report and Changing the
+                    Display</a>later in this topic.</p>
+                <p>You can use the Burndown and Burn Rate report to understand how well the team is
+                    progressing and whether the team or a team member is over-allocated. The upper section
+                    of the report displays a version of the Remaining Work report, as the following
+                    illustration shows.</p>
+                <img alt="Example Burndown and Velocity report - bottom" src="../art/ProcGuid_BurndownBottom.png" /><p>
+                    In addition, you can display trend lines that predict when work will be completed.
+                    The ideal trend line calculates a slope or trajectory for when work will be completed
+                    based on the amount of work remaining and the end date that you define for the report.
+                    The actual trend line is calculated based on the team's actual progress in completing
+                    work and closing work items.</p>
+                <p>The lower section of the report presents a calculation of the team's burn rate, both
+                    actual and required, and a breakdown of work assignments to each team member, as
+                    the following illustration shows:</p>
+                <img alt="Example Burndown and Velocity report - top" src="../art/ProcGuid_Part2Burndown.png" /><h3
+                    class="subHeading">Burndown</h3>
+                <div class="subsection">
+                    <p>Burndown shows the trend of how much work has been completed and how much work remains
+                        across time in an iteration or a release. The source of the raw data is either work
+                        hours or work remaining, which is tracked on the vertical axis, and the time period
+                        (days), which is tracked on the horizontal axis. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Hours</p>
+                                </th>
+                                <th>
+                                    <p>Number of Work Items</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Hours Remaining</span>: The cumulative value of all remaining hours
+                                                for all tasks. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Hours Completed</span>: The cumulative value of all completed hours
+                                                for all tasks.</p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Trend lines</span>:</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Actual</span>: The line intersects the x-axis when the iteration
+                                                is expected to complete based on the actual rate of hours being completed and hours
+                                                remaining.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Ideal</span>: The line is drawn from the remaining work on the start
+                                                date to intersect the x-axis on the end date.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Active</span>: The cumulative total of all tasks, use cases,
+                                                or bugs that are in the <span class="ui">Active</span> (blue) state. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Resolved</span>: The cumulative total of all use cases or bugs
+                                                and that are in the <span class="ui">Resolved</span> (gold) state.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Closed</span>: The cumulative total of all tasks, use cases,
+                                                or bugs in the <span class="ui">Closed</span> (green) state. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Burn Rate</h3>
+                <div class="subsection">
+                    <p>The Burn Rate section of the report shows an estimate of how much work a team can
+                        complete during an iteration. Burn rate is one of the key elements for estimation.
+                        This calculation shows how quickly the team is actually completing planned work
+                        and how much the rate varies from day to day, or iteration to iteration. You can
+                        use this data to plan the next iteration, together with the quality measures. Similar
+                        to the Remaining Work report, this strategy is most useful when you look at days
+                        within an iteration or several iterations within a project. For more information,
+                        see <span sdata="link"><a href="RemainingWorkReport.html">Remaining Work Report</a>
+                        </span>.</p>
+                    <p>The following table describes how the burn rate is calculated. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Team Burn Rate (Hours Completed/Day)</p>
+                                </th>
+                                <th>
+                                    <p>Team Burn Rate (Work Items Completed/Day)</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Actual</span>: The total number of hours that the team completed
+                                                during the time interval that you specify and divided by the number of days in the
+                                                interval. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Required</span>: The total number of hours that were estimated for
+                                                the time interval that you specify and divided by the number of days in the interval.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Actual</span>: The total number of work items that the team completed
+                                                during the time interval that you specify and divided by the number of days in the
+                                                interval. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Required</span>: The total number of work items that the team defined
+                                                for the time interval that you specify and divided by the number of days in the
+                                                interval.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Assignment of Work</h3>
+                <div class="subsection">
+                    <p>The Assignment of Work section of the report provides insight into how well work
+                        has been allocated across the team, in addition to the work that the team completed
+                        and that remains for each team member. The following table describes the information
+                        that this view provides.</p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Assignment of Work (Hours)</p>
+                                </th>
+                                <th>
+                                    <p>Assignment of Work (Number of Work Items)</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>For each team member:</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Remaining</span>: The total number of hours that remain in the time
+                                                interval that you specify. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Completed</span>: The total number of hours that the team member
+                                                completed in the time interval that you specify.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>For each team member:</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Active</span> (blue): The total number of tasks, use cases, and
+                                                bugs that are in the active state. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Resolved</span> (gold): The total number of tasks, use cases,
+                                                and bugs that are in the resolved state.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Closed</span> (green): The total number of tasks, use cases, and
+                                                bugs that are in the closed state.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Required Activities for Tracking Work Items</h3>
+                <div class="subsection">
+                    <p>For the Burndown and Burn Rate report to be useful and accurate, the team must perform
+                        the following activities for tracking work items:</p>
+                    <ul>
+                        <li>
+                            <p>Define tasks, use cases, and bugs, and specify the <span class="ui">Iteration</span> 
+                                and <span class="ui">Area</span> paths for each. </p>
+                        </li>
+                        <li>
+                            <p>Specify and update the <span class="ui">Completed</span> and <span class="ui">Remaining
+                                </span> fields for each task or subtask as it is worked on.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If you subdivide a task into subtasks, specify hours only for the subtasks. These
+                                                hours are rolled up as summary values for the parent task and use case. For more
+                                                information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/09e8e02d-9ecb-4012-9ee0-cebb89372096">
+                                                    Address Inaccuracies Published for Summary Values</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Update the <span class="ui">State</span> of each use case, task, and bug as it progresses
+                                from active to closed. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Duration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Setting
+                the Duration of the Iteration</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To understand the progress that the team has made for your current iteration, the
+                    start and end dates for the report must match your current iteration cycle. Results
+                    for the actual trend and team burn rate will vary significantly based on the duration
+                    that you set for the iteration. </p>
+                <h3 class="procedureSubHeading">To change the duration of the iteration</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>For the <span class="ui">Iteration Start (Date)</span> and <span class="ui">Iteration
+                                End (Date)</span>, click the calendar icon, and then click the date that corresponds
+                                to the start or end of the iteration.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can filter the report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the use cases, tasks and bugs that are counted in the report by specifying
+                            iteration and area paths, work item types, and work item states.</p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering of the Report and Changing
+                    the Display</a>later in this topic.</p>
+                <h3 class="subHeading">Questions That the Report Answers</h3>
+                <div class="subsection">
+                    <p>You can review the report to determine the progress that the team made within an
+                        iteration or over time. For example, you can find answers to the following questions:
+                    </p>
+                    <h4 class="subHeading">Burndown</h4>
+                    <div class="subsection">
+                        <ul>
+                            <li>
+                                <p>How fast is the team completing remaining work? </p>
+                            </li>
+                            <li>
+                                <p>Is the team adding work during the iteration? Is there scope creep?</p>
+                            </li>
+                            <li>
+                                <p>How much work can the team complete in the available time?</p>
+                            </li>
+                            <li>
+                                <p>When can the team finish the work?</p>
+                            </li>
+                            <li>
+                                <p>When can the team finish the current iteration?</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subHeading">Burn Rate</h4>
+                    <div class="subsection">
+                        <ul>
+                            <li>
+                                <p>Is the team working quickly enough to finish the remaining work on time?</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="subHeading">Work Assignment</h4>
+                    <div class="subsection">
+                        <ul>
+                            <li>
+                                <p>How is the work distributed across the team? </p>
+                            </li>
+                            <li>
+                                <p>Should the team balance the remaining work load?</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="subHeading">Healthy Versions of the Report</h3>
+                <div class="subsection">
+                    <p>A healthy Burndown and Burn Rate report shows that the team is making steady progress
+                        toward finishing the work. The actual and ideal trend lines are close together.
+                    </p>
+                    <img alt="Healthy version of Burndown report" src="../art/ProcGuid_HealthyBurndown.png" />
+                </div>
+                <h3 class="subHeading">Unhealthy Versions of the Report</h3>
+                <div class="subsection">
+                    <p>An unhealthy Burndown and Burn Rate report will show one or more of the following
+                        indications:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Actual and ideal trend lines are diverging or are far apart</span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">The total number of hours is increasing</span>. </p>
+                            <p>Scope creep occurs when team members add features to an iteration after it is planned.
+                                The following illustration shows an iteration in which a team is taking on more
+                                work over time and making minimal progress on the work that had already been assigned.
+                            </p>
+                            <img alt="Burndown showing scope creep" src="../art/ProcGuid_ScopeCreep.png" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report and Changing the Display</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can filter the Burndown and Burn Rate report or change its display in the following
+                    ways:</p>
+                <ul>
+                    <li>
+                        <p>Filter the use cases, bugs, and tasks that the report represents by specifying
+                            iteration and area paths, work item types, and work item states</p>
+                    </li>
+                    <li>
+                        <p>Change the view.</p>
+                    </li>
+                    <li>
+                        <p>Specify the type of trend line to display. </p>
+                    </li>
+                </ul>
+                <p>The following illustration shows the available filters and display options:</p>
+                <img alt="Filters for the Burndown and Velocity report" src="../art/ProcGuid_Burndown.png" /><h3
+                    class="procedureSubHeading">To filter the set of work items that are counted in
+                    the report</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Perform one or both of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Iteration</span> or <span class="ui">Area</span> list, select
+                                        the check box of each iteration or product area to include.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span> or <span class="ui">State</span> list,
+                                        select the check box of each work item type or state to include.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To switch between work hours and number of work items
+                    displayed in the report </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Measure</span> list, click one of the following options:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">Hours of Work</span> displays the cumulative number of work hours
+                                        for all tasks that are defined for the iteration.</p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Number of Work Items</span> displays the cumulative number of work
+                                        items, grouped by state, that are defined for the iteration. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To display trend lines</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Trend Line</span> list, click one of the following options:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">Display Actual</span> displays a band that is based on the actual
+                                        burndown. The band intersects the x-axis when the iteration is expected to finish.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Display Ideal</span> displays a straight line from the remaining
+                                        work at the start date to the x-axis on the end date.</p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Display Both</span> displays both the actual and ideal trend lines.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">None</span> does not display a trend line. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="RemainingWorkReport.html">Remaining
+                    Work Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a>
+                </span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                    </a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)
+                    </a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

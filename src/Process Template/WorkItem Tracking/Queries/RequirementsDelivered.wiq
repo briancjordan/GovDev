@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkItemQuery Version="1">
+  <Wiql>
+    SELECT [System.Id],
+           [Microsoft.VSTS.Common.StackRank],
+           [System.Title],
+           [System.AssignedTo],
+           [System.Reason]
+      FROM WorkItems
+     WHERE [System.TeamProject] = @project
+      AND  [System.IterationPath] UNDER '$$PROJECTNAME$$'
+      AND  [System.WorkItemType] = 'Requirement'
+      AND  [System.State] = 'Closed'
+  ORDER BY [System.Id]
+  </Wiql>
+</WorkItemQuery>

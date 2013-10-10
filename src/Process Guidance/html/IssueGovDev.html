@@ -1,0 +1,622 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp"
+xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
+xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <title>Issue (GovDev)</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="issues" />
+    <meta name="System.Keywords" content="issues, defining and work item form (GovDev)" />
+    <meta name="System.Keywords" content="work item types, issue Agile)" />
+    <meta name="Microsoft.Help.Id" content="3a07e451-7622-4d8e-bb2a-8bc7ddcf63ed" />
+    <meta name="Description" content="In this topic, you can learn how to fill in the details of an issue work item. For information about how to create this type of work item, see Work Items and Workflow." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Issue (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Issue" /><MSHelp:Keyword Index="A" Term="3a07e451-7622-4d8e-bb2a-8bc7ddcf63ed" /><MSHelp:Keyword Index="K" Term="issues" /><MSHelp:Keyword Index="K" Term="issues, defining and work item form (GovDev)" /><MSHelp:Keyword Index="K" Term="work item types, issue Agile)" /><MSHelp:Attr Name="RevisionNumber" Value="20" /><MSHelp:Attr Name="AssetID" Value="3a07e451-7622-4d8e-bb2a-8bc7ddcf63ed" /><MSHelp:Attr Name="Abstract" Value="In this topic, you can learn how to fill in the details of an issue work item. For information about how to create this type of work item, see Work Items and Workflow. " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Issue (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>In this topic, you can learn how to fill in the details of an issue work item. For
+                    information about how to create this type of work item, see <span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow (GovDev)</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#CreateIssues">Defining an Issue</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkIssue">Linking an Issue to a Use Case, Task, or Other Work Item</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details, Attachments, or Hyperlinks to an Issue</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#CloseIssues">Closing Issues</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Workbooks</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssuesWorkbook.html">Issues Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view an issue, you must be a member of the <span class="ui">Readers</span> group
+                    or your <span class="ui">View work items in this node</span> must be set to <span
+                        class="ui">Allow</span>. To modify an issue, you must be a member of the <span class="ui">
+                            Contributors</span> group or your <span class="ui">Edit work items in this node
+                    </span> permissions must be set to <span class="ui">Allow</span>. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="CreateIssues" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                an Issue</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The work item form for an issue stores data in the fields and tabs that are shown
+                    in the following illustration:</p>
+                <img alt="Work Item Form for Issue" src="../art/ProcGuid_NewIssue.png" /><h3 class="procedureSubHeading">
+                    To define a single issue</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form, specify one or more of the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span>, verify and, if necessary, update the text to more
+                                        accurately define the problem and the areas of work that are affected. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the name of the team member
+                                        who is responsible for addressing the issue.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration, or leave these fields blank to be assigned later
+                                        during a planning meeting. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Your project administrator defined the <span class="ui">Area</span> and <span class="ui">
+                                                        Iteration</span> tree hierarchies so that team members can track progress by those
+                                                        designations. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                </a>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the level of importance of the
+                                        issue on a scale of 1 to 4, 1 being most important.</p>
+                                    <p>By default, this value is 2. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Due Date</span>, click the date by which the issue must be resolved.
+                                    </p>
+                                    <p>By default, this value is the current date.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, specify one or more of the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Description</span> box, provide as much detail as you want
+                                        to describe the issue.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">History</span> box, provide as much detail as you want.
+                                    </p>
+                                    <p>You can format the text that you type in this box. </p>
+                                    <p>Every time that a team member updates the work item, its history shows the date of
+                                        the change, the name of the team member who made the change, and the fields that
+                                        changed.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Link the issue to other work items, such as a use case or task.</p>
+                            <p>For more information, see the next section in this topic.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkIssue" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                an Issue to a Use Case, Task, or Other Work Item</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>On the <span class="ui">Links</span> tab, you can link an issue to another work item.
+                </p>
+                <h3 class="procedureSubHeading">To link an issue to a use case, a task, or another
+                    work item</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Links</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Issue </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, click <span class="ui">Related</span>.</p>
+                        </li>
+                        <li>
+                            <p>Perform one of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Work item IDs</span>, type the IDs of the work items that you
+                                        want to find. Separate IDs by commas or spaces. </p>
+                                </li>
+                                <li>
+                                    <p>Click <span class="ui">Browse</span> to specify work items from a list.</p>
+                                    <p>The <span class="ui">Choose linked work items</span> dialog box appears.</p>
+                                    <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" /><p>
+                                        In the <span class="ui">Saved query</span> list, click a query that contains the
+                                        work items that you want to add. For example, you can click <span class="ui">Open Use Cases</span> or <span class="ui">Open Tasks</span>.</p>
+                                    <p>Click <span class="ui">Find</span>, and then select the check box next to each work
+                                        item that you want to link to the issue.</p>
+                                    <p>Click <span class="ui">OK</span>.</p>
+                                </li>
+                                <li>
+                                    <p>(Optional) Type a description for the items that you are linking to. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the issue and the items to which you linked are updated. A <span class="ui">
+                                                Related</span> link to the issue is defined for each work item that you added.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Details, Attachments, or Hyperlinks to an Issue</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can add information to an issue as more information becomes available. You add
+                    details to an issue in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Type information in the <span class="ui">Description</span> or <span class="ui">History
+                            </span> field.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to a Web site or to a file that is stored on a server or Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to an issue</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Details</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>Type information in the <span class="ui">Description </span> field.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Type information in the <span class="ui">History</span> field.</p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. For more
+                                information, see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Descriptions, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to an issue</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste a file that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, click <span class="ui">Browse</span>, and, in the <span
+                                            class="ui">Attachment</span> dialog box, type or browse to the name of the file
+                                        that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, type additional information
+                                        about the attachment. To close the <span class="ui">Attachment</span> dialog box,
+                                        click <span class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add a hyperlink to an issue</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Links </span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, click <span class="ui">Hyperlink.</span> 
+                            </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Address</span> box, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>If the target is a Web site, type the URL, or copy it from your Internet browser
+                                        and paste it into the <span class="ui">Address</span> box.</p>
+                                </li>
+                                <li>
+                                    <p>If the target is a server location, type its UNC address.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) In the <span class="ui">Comment</span> box, type additional information
+                                about the hyperlink.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="CloseIssues" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Closing
+                an Issue</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>After an issue has been resolved and is no longer blocking progress, you change the
+                    state from active to closed. For more information about data fields that track states
+                    of work items, see <span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments
+                        and Workflow (GovDev)</a></span>.</p>
+                <h3 class="procedureSubHeading">To close an issue</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the issue.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Closed</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates an issue in the <a href="#Active">Active</a>state with a default
+                                            reason of New.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <a href="#ActiveClosed">Active to Closed</a>
+                                            when the issue is resolved or no longer blocking progress.</p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Additional workflow transitions states</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member determines that the issue was closed in error and reactivates the issue
+                                            by changing the state from <a href="#ClosedActive">Closed to Active</a>.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Issue State Diagram</span> </p>
+                                <img alt="Issue state diagram" src="../art/ProcGuide_Issue.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active (New)</h3>
+                <div class="subsection">
+                    <p>All work items are created in the <span class="ui">Active</span> state. Each issue
+                        remains in the active state as it is being implemented. The team member who is assigned
+                        to the issue tracks its progress and that of any use cases, tasks, or other work
+                        items that it affects. </p>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>When you close an issue, the <span class="ui">Assigned To</span> field is automatically
+                            populated with the name of the team member who created the issue, and the <span class="ui">
+                                Reason</span> field is set to <span class="ui">Issue Resolved</span>.</p>
+                        <p>The following data fields are automatically captured during the transition from active
+                            to closed:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the work
+                                    item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the work item was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state for the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>Any team member can reactivate a closed issue if it was closed in error.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>When you reactivate an issue, the <span class="ui">Assigned To</span> field is automatically
+                            populated with the name of the team member who closed the issue. The <span class="ui">
+                                Reason</span> field is set to <span class="ui">Reactivated</span>. </p>
+                        <p>The following data is automatically captured during the transition from closed to
+                            active:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the work item was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="IssuesWorkbook.html">Issues Workbook
+                    </a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                    </a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

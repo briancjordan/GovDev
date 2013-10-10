@@ -1,0 +1,775 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="dashboards, Quality (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="eaae1890-73e5-4324-9df4-634281621d2a" />
+    <meta name="Description" content="You can use the Quality dashboard to obtain an overview of progress occurring in the test, development, and build areas as they relate to the quality of the software under development." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Quality Dashboard (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Quality" /><MSHelp:Keyword Index="A" Term="eaae1890-73e5-4324-9df4-634281621d2a" /><MSHelp:Keyword Index="K" Term="dashboards, Quality (GovDev)" /><MSHelp:Attr Name="RevisionNumber" Value="14" /><MSHelp:Attr Name="AssetID" Value="eaae1890-73e5-4324-9df4-634281621d2a" /><MSHelp:Attr Name="Abstract" Value="You can use the Quality dashboard to obtain an overview of progress occurring in the test, development, and build areas as they relate to the quality of the software under development. The team can use the Quality dashboard to learn and make decision ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Quality Dashboard (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Quality Dashboard (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Quality dashboard to obtain an overview of progress occurring in
+                    the test, development, and build areas as they relate to the quality of the software
+                    under development. The team can use the Quality dashboard to learn and make decisions
+                    that support team goals around product quality.</p>
+                <p>By using this dashboard, you can review test progress, build states, progress in
+                    resolving and closing bugs, rate of bug reactivations, the percentage of code that
+                    has been tested, and the trends in code changes. Each of these metrics is plotted
+                    for the most recent four weeks. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You access dashboards through your team project portal. You can access the Quality
+                                    dashboard only if your that portal has been enabled and is provisioned to use Microsoft
+                                    Office SharePoint Server 2007. For more information, see <span sdata="link"><a href="DashboardsGovDev.html">
+                                        Dashboards (GovDev)</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                            Access a Team Project Portal and Process Guidance</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data That Appears in the Dashboard</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Activities">Required Activities for Tracking Quality</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Troubleshooting">Troubleshooting Quality Issues</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Customizing">Customizing the Quality Dashboard</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this dashboard to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the test effort on track?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team testing the appropriate functionality?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are the team's bug fixes of high quality?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are tests stale?</p>
+                                    </li>
+                                    <li>
+                                        <p>Does the team have sufficient tests?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are any bottlenecks occurring? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the dashboard, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Read</span> permission in SharePoint Products for the team project.
+                    To modify, copy, or customize a dashboard, you must be assigned or belong to a group
+                    that has been assigned the <span class="ui">Members</span> permission in SharePoint
+                    Products for the team project. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span>.</p>
+                <p>To modify a report in Office Excel, you must be a member of the <span class="ui">
+                    TfsWarehouseDataReaders</span> security role in SQL Server Analysis Services and
+                    you must be assigned or belong to a group that has been assigned the <span class="ui">
+                        Members</span> permission in SharePoint Products for the team project. For more
+                    information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">
+                        Grant Access to the Databases of the Data Warehouse for Visual Studio ALM</a>
+                    </span>.</p>
+                <p>To view a work item, you must be a member of the <span class="ui">Readers</span> group
+                    or your <span class="ui">View work items in this node</span> permission must be set
+                    to <span class="ui">Allow</span>. To create or modify a work item, you must be a
+                    member of the <span class="ui">Contributors</span> group or your <span class="ui">Edit
+                        work items in this node</span> permission must be set to <span class="ui">Allow
+                    </span>. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                That Appears in the Dashboard</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>Team members can use the Quality dashboard to determine the overall quality of the
+                    product that they are developing. In an ideal case, test pass rates, bugs, and code
+                    churn all show the same picture, but often they do not. When you find a discrepancy,
+                    you must examine more closely the appropriate build and data series. The Quality
+                    dashboard combines the test results, code coverage from testing, code churn, and
+                    bugs, to help you understand many perspectives at the same time.</p>
+                <p>Specifically, this dashboard displays the Web parts that the following illustration
+                    shows and the following table describes. </p>
+                <img alt="Product Quality Dashboard" src="../art/ProcGuid_Dashboard_ProductQuality.png" /><div
+                    class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The <span class="ui">Test Plan Progress</span> report is available only when the team
+                                    creates test plans and runs tests by using Test Runner and Microsoft Test Manager.
+                                    For information about how to define test suites and test plans, see <span sdata="link">
+                                        <a href="http://msdn.microsoft.com/library/c42dca33-6308-4790-a646-2f80ca36b96f">Organizing
+                                            Test Cases Using Test Suites</a></span>.</p>
+                                <p>Progress, build, and code charts, reports
+                                    <img alt="Step 1" src="../art/ProcGuid_1.gif" />
+                                    through
+                                    <img alt="Step 6" src="../art/ProcGuid_6a.gif" />, do not appear when the data warehouse
+                                    for the team project is not available.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>To learn more about how to interpret, update, or customize the charts that appear
+                    in the Quality dashboard, see the topics in the following table.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Web part</p>
+                            </th>
+                            <th>
+                                <p>Data displayed</p>
+                            </th>
+                            <th>
+                                <p>Related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 1" src="../art/ProcGuid_1.gif" /></td>
+                            <td>
+                                <p>Stacked area graph of the test results of all Test Cases grouped by their most recent
+                                    recorded outcome - <span class="ui">Never Run</span>, <span class="ui">Blocked</span>, <span class="ui">Failed</span>, or <span class="ui">Passed</span> - during the
+                                    most recent four weeks.</p>
+                                <img alt="Test Plan Progress Excel Report" src="../art/ProcGuid_AgileTest.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 2" src="../art/ProcGuid_2.gif" /></td>
+                            <td>
+                                <p>Stacked columns that show how many builds <span class="ui">Failed</span> or <span
+                                    class="ui">Succeeded</span> during the most recent four weeks.</p>
+                                <img alt="Build Status report" src="../art/ProcGuid_AgileExcel.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BuildsStatusExcelReport.html">Builds Status Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 3" src="../art/ProcGuid_3.gif" /></td>
+                            <td>
+                                <p>A stacked area graph of the cumulative count of all Bugs, grouped by state, during
+                                    the most recent four weeks.</p>
+                                <img alt="Bug Progress Excel Report" src="../art/ProcGuid_ExcelBug.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugProgressExcelReport.html">Bug Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 4" src="../art/ProcGuid_4.gif" /></td>
+                            <td>
+                                <p>A stacked area graph of how many bugs the team has reactivated from the resolved
+                                    or closed state during the most recent four weeks.</p>
+                                <img alt="Bug Reactivations Excel Report" src="../art/ProcGuid_AgileExR.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugReactivationsExcelReport.html">Bug Reactivations Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 5" src="../art/ProcGuid_6.gif" /></td>
+                            <td>
+                                <p>Line chart that shows the percentage of code tested by build verification tests (BVT)
+                                    and other tests during the most recent four weeks. </p>
+                                <img alt="Code Coverage Report" src="../art/ProcGuid_CodeCoverage.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeCoverageExcelReport.html">Code Coverage Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 6" src="../art/ProcGuid_6a.gif" /></td>
+                            <td>
+                                <p>Stacked area graph that shows how many lines of code the team added, removed, and
+                                    changed in the check-ins before the build during the most recent four weeks.
+                                </p>
+                                <img alt="Code Churn Report" src="../art/ProcGuid_CodeChurn.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeChurnExcelReport.html">Code Churn Excel Report</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 7" src="../art/ProcGuid_7.gif" /></td>
+                            <td>
+                                <p>List of upcoming events. This list is derived from a SharePoint Web part.</p>
+                                <img alt="Import Events Web part" src="../art/SharePoint_Dashboard.png" /></td>
+                            <td>
+                                <p>Not applicable</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 8" src="../art/ProcGuid_8.gif" /></td>
+                            <td>
+                                <p>Count of active, resolved, and closed work items. You can open the list of work items
+                                    by clicking each number. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Project Work Items Web part" src="../art/TWSA_DashProjectWI.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                                    (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="9" src="../art/ProcGuid_9.gif" /></td>
+                            <td>
+                                <p>List of recent builds and their status. You can view more details by clicking a specific
+                                    build. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Builds Web part" src="../art/TWSA_DashBuilds.png" /><p><span class="label">
+                                    Legend</span>:</p>
+                                <p>
+                                    <img alt="Build in Progress" src="../art/Icon_BuildStatus_1.gif" />: Build in Progress
+                                </p>
+                                <p>
+                                    <img alt="Build Not Started" src="../art/Icon_BuildStatus_2.gif" />: Build Not Started
+                                </p>
+                                <p>
+                                    <img alt="Build Succeeded" src="../art/Icon_BuildStatus_3.gif" />: Build Succeeded
+                                </p>
+                                <p>
+                                    <img alt="Build Failed" src="../art/Icon_BuildStatus_4.gif" />: Build Failed
+                                </p>
+                                <p>
+                                    <img alt="Build Stopped" src="../art/Icon_BuildStatus_5.gif" />: Build Stopped
+                                </p>
+                                <p>
+                                    <img alt="Build Partially Succeeded" src="../art/Icon_BuildStatus_6.gif" />: Build
+                                    Partially Succeeded</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/5c0de804-7ff9-468b-9053-fd068ea1a2bc">
+                                    Managing and Viewing Completed Builds</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="10" src="../art/ProcGuid_10.gif" /></td>
+                            <td>
+                                <p>List of the most recent check-ins. You can view more details by clicking a specific
+                                    check-in. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Checkins Web part" src="../art/TWSA_DashCheckins.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/dded21d3-4869-4e19-bca4-62e27179539c">
+                                    Using the Check In and Pending Changes Windows</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Activities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Monitoring Quality</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the Quality Dashboard to be useful and accurate, the team must perform the activities
+                    that this section describes. </p>
+                <h3 class="subHeading">Required Activities for Tracking Test Plan Progress</h3>
+                <div class="subsection">
+                    <p>For the Test Plan Progress report to be useful and accurate, the team must perform
+                        the following activities: </p>
+                    <ul>
+                        <li>
+                            <p>Define Test Cases and Use Cases, and create <span class="ui">Tested By</span> links
+                                between Test Cases and Use Cases. </p>
+                        </li>
+                        <li>
+                            <p>Define Test Plans, and assign Test Cases to Test Plans. For more information, see
+                                <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                                    Defining Your Testing Effort Using Test Plans</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>For manual tests, mark the results of each validation step in the Test Case as passed
+                                or failed. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Testers must mark a test step with a status if it is a validation test step. The
+                                                overall result for a Test Case reflects the status of all the test steps that the
+                                                tester marked. Therefore, the Test Case will have a status of failed if the tester
+                                                marked any test step as failed or did not mark it. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For automated tests, each Test Case is automatically marked as passed or failed.
+                            </p>
+                        </li>
+                        <li>
+                            <p>(Optional) To support filtering, assign <span class="ui">Iteration</span> and <span
+                                class="ui">Area</span> paths to each Test Case. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>For information about how to define area and iteration paths, see <span sdata="link">
+                                                <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                                                    and Modify Areas and Iterations</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Required Activities for Tracking Bug Progress and Bug Reactivations
+                </h3>
+                <div class="subsection">
+                    <p>For the Bug Progress and Bug Reactivations reports to be useful and accurate, the
+                        team must perform the following activities:</p>
+                    <ul>
+                        <li>
+                            <p>Define Bugs. </p>
+                        </li>
+                        <li>
+                            <p>Update the <span class="ui">State</span> of each Bug as the team fixes, verifies,
+                                closes, or reactivates it.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Specify the <span class="ui">Iteration</span> and <span class="ui">Area
+                                </span> paths of each Bug if you want to filter by those fields. </p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Required Activities for Tracking Build Status, Code Coverage,
+                    and Code Churn</h3>
+                <div class="subsection">
+                    <p>For the Build Status, Code Coverage, and Code Churn reports to be useful and accurate,
+                        team members must perform the following activities: </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Configure a build system</span>. To use Team Foundation Build,
+                                you must set up a build system. </p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/e5a1f360-7c62-44fc-8823-c6ebcd62bc20">
+                                Configure Your Build System</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Create build definitions</span>. You can create several build
+                                definitions and then run each of them to produce code for a different platform.
+                                Also, you can run each build for a different configuration.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/61593e10-d24b-492f-b19a-af4d85abea6b">
+                                Creating and Working with Build Definitions</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Define tests to run automatically as part of the build</span>. 
+                                As part of the build definition, you can define tests to run as part of the build
+                                or to fail if the tests fail.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/43930b12-c21b-4599-a980-2995e3d16e31">
+                                Define a Build Using the Default Template</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Configure tests to gather code coverage data</span>. For code
+                                coverage data to appear in the report, team members must instrument tests to gather
+                                that data.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8dcf94f8-8b85-41ba-a5a2-d12aa5d2da85">
+                                How to: Configure Code Coverage Using Test Settings for Automated Tests</a></span> 
+                                and <span sdata="link"><a href="http://msdn.microsoft.com/library/164f5cb9-9dad-4a0b-83e3-68e83ca99431">
+                                    How to: Gather Code-Coverage Data with Generic Tests</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Run builds regularly</span>. You can run builds at regular intervals
+                                or after every check-in. You can create regular builds when you use the schedule
+                                trigger.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                                Create a Basic Build Definition</a></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/5b8d6647-938a-4f7b-a72b-0f1921af849f">
+                                    Running and Monitoring Builds</a></span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Although a team member can manually rate a build by using Build Explorer, this rating
+                                                is not reflected in the Build Quality Indicators report. The build rating appears
+                                                in the Build Summary report. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/fa9e34bb-8142-46e3-8bea-c4909a10e2bf">
+                                                    Rate the Quality of a Completed Build</a></span> and <span sdata="link"><a href="BuildSummaryReport.html">
+                                                        Build Summary Report</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Troubleshooting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Troubleshooting
+                Quality Issues</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>The following table describes specific quality issues that the Quality dashboard
+                    can help you monitor and identify actions the team can take.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Issue</p>
+                            </th>
+                            <th>
+                                <p>Reports to review</p>
+                            </th>
+                            <th>
+                                <p>Troubleshooting notes</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Build failures</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Builds Status</span> </p>
+                            </td>
+                            <td>
+                                <p>A nightly build is the heartbeat of software development projects. When builds are
+                                    not completing successfully or are not passing build verification tests (BVT), the
+                                    team must fix the problem immediately. </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Tests failing</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Plan Progress</span> </p>
+                                <p><span class="ui">Code Churn</span> </p>
+                            </td>
+                            <td>
+                                <p>When the rates of failed tests and code churn are high, the team may investigate
+                                    why the software is failing so often. Causes may include loose development practices
+                                    or tests that are too rigorous for an early iteration cycle.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Tests passing but with a high rate of finding Bug</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Plan Progress</span> </p>
+                                <p><span class="ui">Bug Progress</span> </p>
+                            </td>
+                            <td>
+                                <p>When, many tests pass in the same period as many Bugs are found, the team might
+                                    investigate the following possibilities:</p>
+                                <ul>
+                                    <li>
+                                        <p>Tests might not be sufficiently rigorous for the current product stage. In early
+                                            iterations, simple tests are good. However, tests should exercise broader scenarios
+                                            and integration as the product matures. </p>
+                                    </li>
+                                    <li>
+                                        <p>Tests might be stale or testing the wrong functionality. </p>
+                                    </li>
+                                    <li>
+                                        <p>Different test techniques might offer better results.</p>
+                                    </li>
+                                    <li>
+                                        <p>Bugs are being reported but not subject to testing. When Bugs are reported and are
+                                            not linked to a Test Case, they are not subject to regression testing. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Tests are stale</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Plan Progress</span> </p>
+                                <p><span class="ui">Code Coverage</span> </p>
+                                <p><span class="ui">Code Churn</span> </p>
+                            </td>
+                            <td>
+                                <p>When many tests pass, a significant amount of code changes, and code coverage decreases,
+                                    the team might not be running tests that exercise the new code. </p>
+                                <p>Because tests are not developed at the same rate as the code changes, test coverage
+                                    might become less and less adequate. </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Team is not testing, closing, or reactivating resolved Bugs</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Bug Progress</span> </p>
+                            </td>
+                            <td>
+                                <p>When a bulge occurs in the Bug Progress report for resolved Bugs, idevelopers are
+                                    resolving Bugs, but testers have not verified and closed them. The team should investigate
+                                    why this pattern has developed.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Too little testing</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Plan Progress</span> </p>
+                                <p><span class="ui">Code Churn</span> </p>
+                            </td>
+                            <td>
+                                <p>When the team is running few tests, code churn is high, and code coverage is less
+                                    than expected, the team might need to allocate more resources to testing. In addition,
+                                    the team should ensure that testers are focusing on the same functions as the rest
+                                    of the team. </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Reactivations</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Bug Reactivations</span> </p>
+                            </td>
+                            <td>
+                                <p>When the team reactivates Bugs at a high or increasing rate, testers are frequently
+                                    rejecting developers' fixes. The team must address these problems to avoid allocating
+                                    significant resources toward reworking the rejected fixes. Potential causes include
+                                    poor bug reporting, poor test lab management, or overly aggressive triage.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Inadequate unit testing</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Code Coverage</span> </p>
+                                <p><span class="ui">Code Churn</span> </p>
+                            </td>
+                            <td>
+                                <p>When a decrease in code coverage coincides with an increase in code churn, developers
+                                    might be checking in code without any corresponding unit tests to cover it.
+                                </p>
+                                <p>In most cases, the code coverage should approach 100% if the team practices test-driven
+                                    development or similar techniques. If unit tests are reused as BVTs, the code coverage
+                                    should appear in the corresponding reports. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Customizing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Customizing
+                the Quality Dashboard</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can customize the Quality dashboard in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the filters of each Excel report to focus on specific product areas or iterations.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Add a custom query Web part that displays the list of work items that the query finds.
+                            For example, you can add a query that lists all active Bugs that are not linked
+                            to a Test Case. This query will show the volume of Bugs that are being reported
+                            but that are not found through testing and therefore not subject to regression testing.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Add existing Excel reports, such as <span class="ui">Bug Trends</span> and <span
+                            class="ui">Failure Analysis</span>, to the dashboard. </p>
+                    </li>
+                </ul>
+                <p>For more information about how to work with and customize reports in Office Excel,
+                    see the following pages on the Microsoft Web site:</p>
+                <ul>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165722">Ways to customize PivotTable
+                            reports</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165723">Edit or remove a workbook
+                            from Excel Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165724">Publish a workbook to Excel
+                            Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165725">Save a file to a SharePoint
+                            library or another Web location</a></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="Scrum.html">Scrum</a></span> 
+                </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="DashboardsGovDev.html">Dashboards
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

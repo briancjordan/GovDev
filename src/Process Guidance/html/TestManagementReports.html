@@ -1,0 +1,324 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="reports [Visual Studio ALM], test management" />
+    <meta name="System.Keywords" content="testing [Visual Studio ALM], test management reports" />
+    <meta name="Microsoft.Help.Id" content="9d85d62d-00a2-4c9f-8ad8-d527b13b58f4" />
+    <meta name="Description" content="The test team can take advantage of the Office Excel reports in the Test Team Management folder to monitor progress and identify the volume, status, and effectiveness of their test activities." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Test Management Reports" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="9d85d62d-00a2-4c9f-8ad8-d527b13b58f4" /><MSHelp:Keyword Index="K" Term="reports [Visual Studio ALM], test management" /><MSHelp:Keyword Index="K" Term="testing [Visual Studio ALM], test management reports" /><MSHelp:Attr Name="RevisionNumber" Value="8" /><MSHelp:Attr Name="AssetID" Value="9d85d62d-00a2-4c9f-8ad8-d527b13b58f4" /><MSHelp:Attr Name="Abstract" Value="The test team can take advantage of the Office Excel reports in the Test Team Management folder to monitor progress and identify the volume, status, and effectiveness of their test activities. The test management reports display team-project informat ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Test Management Reports</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Test Management Reports</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>The test team can take advantage of the Office Excel reports in the <span class="ui">
+                    Test Team Management </span> folder to monitor progress and identify the volume,
+                    status, and effectiveness of their test activities. The test management reports
+                    display team-project information that is stored in the data warehouse. The four
+                    Office Excel workbooks provide 17 reports, and each report appears in on its own
+                    worksheet. </p>
+                <p>Most of these reports are available only when the team creates test cases and test
+                    plans and starts to run tests by using Microsoft Test Manager. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">
+                        Testing the Application</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You can access the <span class="ui">Test Team Management </span> folder from the <span
+                                    class="ui">Excel Reports</span> folder for the team project in Team Explorer. You
+                                    can access this folder only if your team project portal has been enabled and is
+                                    provisioned to use SharePoint Products. For more information, see <span sdata="link">
+                                        <a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">Access
+                                            a Team Project Portal and Process Guidance</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Test
+                Team Tasks</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the success or failure rate of test activities with each
+                                    build</span>. The Build Quality workbook provides the following two reports, which
+                                    show the test results for all build definitions for a team project. </p>
+                                <ul>
+                                    <li>
+                                        <p><span class="ui">Build Verification Testing</span>: Helps the team monitor the quality
+                                            of builds by showing test results for all automated tests that are marked as Build
+                                            Verification Tests (BVT) and that are run during the build process. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Activity Per Build</span>: Helps the team monitor the quality
+                                            of builds by showing test results for all tests that have been run against the build
+                                            for all or selected test plans. </p>
+                                    </li>
+                                </ul>
+                                <p>The count of test results in these reports represents a cumulative count of the most
+                                    recent version of each test result in a particular build.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildQualityExcelReport.html">Build Quality Excel Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the overall productivity and effectiveness of the test
+                                    team's test and bug generation activities</span>. The Test Team Productivity workbook
+                                    provides the following four reports, which show test and bug activity.</p>
+                                <ul>
+                                    <li>
+                                        <p><span class="ui">Test Activity</span>: Helps the team monitor the volume of tests
+                                            that they have run over the past four weeks. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Activity Per User</span>: Helps the team track the volume of
+                                            tests that each team member has run over the past eight weeks. The team can use
+                                            this to help load balance the test activity across team members. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Bugs Created By User</span>: Helps the team track how many bugs
+                                            each team member has created. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Bug Effectiveness</span>: Supports the team in determining how effective
+                                            they are in defining bugs that are useful and help build a quality product.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProductivityExcelReport.html">Test Team Productivity
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the test results and regression testing for a product
+                                    </span>. The Test Team Progress workbook provides the following four reports:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p><span class="ui">Test Plan Progress</span>: Helps the team determine how much testing
+                                            the team has completed and whether it is likely to finish test activities on time.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Case Authoring Status</span>: Helps the team track the progress
+                                            toward finishing the definition of tests so that they can be run. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Status by Suite</span>: Helps the team determine how much testing
+                                            the team has completed within each test suite. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Status by Area</span>: Helps the team determine how much testing
+                                            the team has completed within each product area.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Failure Analysis</span>: Helps the team monitor how many regressions
+                                            it is finding.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Automation Design Status</span>: Supports the team in tracking the
+                                            number of test cases that still must be automated. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProgressExcelReport.html">Test Team Progress
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Determine where the test plans, test configurations, and test
+                                    coverage are deficient</span>. The Testing Gaps workbook provides the following
+                                    five reports, which are based on test results and builds that have been defined
+                                    and run for a team project.</p>
+                                <ul>
+                                    <li>
+                                        <p><span class="ui">Use Case Status</span> or<span class="ui"> Requirement Status</span> 
+                                            : Helps the team identify gaps in test coverage for each Use Case or requirement.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Use Case Status by Config</span> or<span class="ui"> Requirement
+                                            Status by Config</span>: Helps the team identify gaps in test coverage for each
+                                            test configuration for each Use Case or requirement. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Test Status by Area</span>: Helps the team identify gaps in test
+                                            coverage of product areas. This report requires that team members assign test cases
+                                            to product areas. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Tests Not Executed</span>: Helps the team identify test cases that
+                                            have never been run for each test configuration. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Code Coverage</span>: Helps the team determine which builds and
+                                            build assemblies have low or high code coverage.</p>
+                                    </li>
+                                </ul>
+                                <p>The count of test results in these reports represents a cumulative count of the most
+                                    recent version of each test result in a particular build. If a test is run multiple
+                                    times against a build, the count includes the most recent result for that test for
+                                    that build.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestingGapsExcelReportGovDev.html">Testing Gaps Excel
+                                            Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestEarlyandOften.html">Test Early and Often</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">Testing the Application</mshelp:link></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"></span> <span sdata="link"><a href="ExcelReportsGovDev.html">Excel Reports (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

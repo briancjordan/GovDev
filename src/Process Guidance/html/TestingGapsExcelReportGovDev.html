@@ -1,0 +1,828 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="testing, monitoring gaps (Excel report)" />
+    <meta name="Microsoft.Help.Id" content="6f1a7509-2c47-411f-b033-ebd72b9c51d3" />
+    <meta name="Description" content="Teams who are responsible for testing software can use the Testing Gaps report to help determine where there are deficiencies in their test plans, test configurations, and test coverage." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Testing Gaps Excel Report (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Testing Gaps" /><MSHelp:Keyword Index="A" Term="6f1a7509-2c47-411f-b033-ebd72b9c51d3" /><MSHelp:Keyword Index="K" Term="testing, monitoring gaps (Excel report)" /><MSHelp:Attr Name="RevisionNumber" Value="8" /><MSHelp:Attr Name="AssetID" Value="6f1a7509-2c47-411f-b033-ebd72b9c51d3" /><MSHelp:Attr Name="Abstract" Value="Teams who are responsible for testing software can use the Testing Gaps report to help determine where there are deficiencies in their test plans, test configurations, and test coverage. The Testing Gaps report provides the following five reports bas ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Testing Gaps Excel Report (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Use Case Test Status Excel Report (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Teams who are responsible for testing software can use the Testing Gaps report to
+                    help determine where there are deficiencies in their test plans, test configurations,
+                    and test coverage. The Testing Gaps report provides the following five reports based
+                    on test results and builds that have been defined and run for a team project.
+                </p>
+                <ul>
+                    <li>
+                        <p><span class="ui">Use Case Test Status</span>: Helps the team identify gaps in test coverage
+                            for each use case. This report requires that team members link test cases to use 
+                            cases. </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Use Case Test Status by Config</span>: Helps the team identify gaps
+                            in test coverage for each test configuration for each use case. This report requires
+                            that team members link test cases to use cases.</p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Test Status by Area</span>: Helps the team identify gaps in test
+                            coverage of product areas. This report requires that team members assign test cases
+                            to product areas. </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Tests Not Executed</span>: Helps the team identify test cases that
+                            have never been run for each test configuration. </p>
+                    </li>
+                </ul>
+                <p>The first four reports are available only when the team creates test plans and starts
+                    to run tests by using Microsoft Test Manager. For information about how to define
+                    test suites and test plans, see <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                        Defining Your Testing Effort Using Test Plans</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You can access the Use Case Testing report from the <span class="ui">Excel Reports</span> folder
+                                    for the team project in Team Explorer. You can access this folder only if your team
+                                    project portal has been enabled and is provisioned to use SharePoint Products. For
+                                    more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                        Access a Team Project Portal and Process Guidance</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Reports</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#RequiredActivities">Required Activities for Monitoring Testing Gaps</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Updating">Updating and Customizing the Report</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Related topics</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildQualityExcelReport.html">Build Quality Excel Report
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProgressExcelReport.html">Test Team Progress
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProductivityExcelReport.html">Test Team Productivity
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Read</span>  permissions in SharePoint Products for the team
+                    project. </p>
+                <p>To modify or customize the report, you must be a member of the <span class="ui">TfsWarehouseDataReaders
+                    </span> security role in SQL Server Analysis Services. You must also be assigned
+                    or belong to a group that has been assigned the <span class="ui">Members</span>  permissions
+                    in SharePoint Products for the team project. For more information, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">Grant
+                            Access to the Databases of the Data Warehouse for Visual Studio ALM</a></span> 
+                    and <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>. </p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Reports</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Testing Gaps reports show the cumulative count of test results for the test plans,
+                    test configurations, and test cases that are defined for a team project. All reports
+                    are based on PivotTables that access data that is stored in the data warehouse.
+                </p>
+                <h3 class="subHeading">Test Coverage of Use Cases</h3>
+                <div class="subsection">
+                    <p>The Use Case Status report indicates how many tests are passing or failing for
+                        each use case. It provides a horizontal bar chart that shows the count of test
+                        results for each test case and test configuration combination that the team has
+                        defined for each use case. The report presents the cumulative outcome of tests
+                        run for all test cases that are linked to use cases. The report displays results
+                        that are filtered by the following outcomes: <span class="ui">Passed</span> (green),
+                        <span class="ui">Failed</span> (red), <span class="ui">Never Run</span> (blue), or
+                        <span class="ui">Blocked</span> (yellow).</p>
+                    <img alt="Use Case Test Status Excel Report" 
+                        src="../art/ProcGuid_ExcelUseCaseTestStatus.png" /><p>
+                        The Use 
+                        Case Status by Config report presents the test results for each use case,
+                        grouped by test configuration. </p>
+                    <p>The following table describes the report filters and fields that are used in the
+                        PivotTables that generate the reports that are focused on test coverage of use cases. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Filters</p>
+                                </th>
+                                <th>
+                                    <p>Fields</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Team Project - Team Project Hierarchy</span>: Includes test results
+                                                that were collected for the selected team project.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Iteration Hierarchy</span>: Includes test results
+                                                that were run from test cases that were assigned to the selected iterations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Area Hierarchy</span>: Includes test results that
+                                                were run from test cases that were assigned to the selected product areas.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Plan - Test Plan Name</span>: Includes test results that were
+                                                run from test cases that belong to the selected test plans. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item Linked - Work Item Linked.Work Item Type</span>: Includes
+                                                test results that were run from test cases that are linked to the selected work
+                                                item type. The report counts test results for test cases only if they are linked
+                                                to a use case.</p>
+                                        </li>
+                                    </ul>
+                                    <p><span class="label">Filter specific to the Use Case Status by Config report</span> 
+                                        :</p>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test Suite - Test Suite Hierarchy</span>: Includes test results
+                                                that were run from test cases that belong to the selected test suites. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test Result- Outcome</span>: The outcome of the test. The report
+                                                uses this field to define the column labels and to filter the test results to include
+                                                Passed, Failed, Blocked, or Never Run. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">(Measure) Test - Point Count Trend</span>: Counts the most recent
+                                                version of each test result in a particular build. If a test is run multiple times
+                                                against a build, the Point Count Trend counts the most recent result for that test
+                                                using that build.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Work Item Link- Title</span>: The title of the work item that is
+                                                linked to the test case. In this report, the title of the use case is listed.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="label">Field specific to the Use Case Status by Config report</span>:</p>
+                                            <ul>
+                                                <li>
+                                                    <p><span class="ui">Test Configuration - Configuration Name</span>: The name of the
+                                                        test configuration to list in the report. </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Test Coverage by Product Area</h3>
+                <div class="subsection">
+                    <p>The Test Status by Area report indicates how many test cases are passing or failing
+                        for a team project by product area. The following table describes the report filters
+                        and fields that are used in the PivotTable reports that generate the Test Status
+                        by Area report. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Filters</p>
+                                </th>
+                                <th>
+                                    <p>Fields</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Team Project - Team Project Hierarchy</span>: Includes test results
+                                                that are collected for the selected team project.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Iteration Hierarchy</span>: Includes test results
+                                                that were run from test cases that were assigned to the selected iterations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Plan - Test Plan Name</span>: Includes test results that were
+                                                run from test cases that belong to the selected test plans. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Test Result- Outcome</span>: The outcome of the test. The report
+                                                uses this field to define the column labels and to filter the test results to include
+                                                Passed, Failed, Blocked, or Never Run. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">(Measure) Test - Point Count Trend</span>: Counts the most recent
+                                                version of each test result in a particular build. If a test is run multiple times
+                                                against a build, the Point Count Trend counts the most recent result for that test
+                                                using that build.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Area Hierarchy</span>: The set of test results to
+                                                include in the report based on the area paths that are assigned to the test cases
+                                                that were run.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Tests Cases That Have Never Run</h3>
+                <div class="subsection">
+                    <p>The Tests Not Executed report indicates how many test cases have never run. The test
+                        cases are grouped by test configuration and test result owner. The following table
+                        describes the report filters and fields that are used in the PivotTable reports
+                        that generate the Test Status by Area report. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Filters</p>
+                                </th>
+                                <th>
+                                    <p>Fields</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Team Project - Team Project Hierarchy</span>: Includes test results
+                                                that were collected for the selected team project.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Iteration Hierarchy</span>: Includes test results
+                                                that were run from test cases that were assigned to the selected iterations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Area Hierarchy</span>: Includes test results that
+                                                were run from test cases that were assigned to the selected product areas.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Plan - Test Plan Name</span>: Includes test results that were
+                                                run from test cases that belong to the selected test plans. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Suite - Test Suite Hierarchy</span>: Includes test results
+                                                that were run from test cases that belong to the selected test suites. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result- Outcome</span>: Includes test results with the selected
+                                                outcome. The report uses this field to filter the count of test cases to include
+                                                only those with an outcome of Never Run. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">(Measure) Test - Point Count Trend</span>: Counts the most recent
+                                                version of each test result in a particular build. If a test case is not included
+                                                in the build, it is counted as "Never Run." </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Configuration - Configuration Name</span>: The name of the
+                                                test configuration to list in the report. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Case- Title</span>: The title of the test case. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Test Result - Owner</span>: The name of the team member who ran
+                                                the test.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a name="RequiredActivities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Monitoring Testing Gaps</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the Testing Gaps reports to be useful and accurate, the team must perform the
+                    activities that are described in the following table:</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Worksheet report</p>
+                            </th>
+                            <th>
+                                <p>Required activities</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Define test cases and test plans, and assign test cases to the test plans. For more
+                                            information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                                                Defining Your Testing Effort Using Test Plans</mshelp:link></span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>Run tests, and, for manual tests, mark the results of each validation step in the
+                                            test case as passed or failed. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/7a154168-c409-4163-bbf2-29971a638458">
+                                                Running Tests</a></span>.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Define use cases, and link test cases to use cases. The recommended link type
+                                            to use is <span class="ui">Tested By</span>. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Define test configurations, and assign to test plans or test suites. For more information,
+                                            see <span sdata="link"><a href="http://msdn.microsoft.com/library/40d4a0f6-5978-404d-9627-fa81e950d718">
+                                                Defining Your Test Matrix Using Test Configurations</a></span>. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>(Optional) To support filtering, assign <span class="ui">Iteration</span> and <span
+                                            class="ui">Area</span>  paths to each test case. The <span class="ui">Test Result - Iteration
+                                                Hierarchy</span>  and <span class="ui">Test Result - Area Hierarchy</span>  fields
+                                            get their values from the <span class="ui">Iteration</span>  and <span class="ui">Area
+                                            </span>  paths that are assigned to their corresponding test cases.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span class="label">Configure a build system</span>. To use Team Foundation Build,
+                                            you must set up a build system. </p>
+                                        <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/e5a1f360-7c62-44fc-8823-c6ebcd62bc20">
+                                            Configure Your Build System</a></span>.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="label">Create build definitions</span>. You can create several build
+                                            definitions and then run each of them to produce code for a different platform.
+                                            Also, you can run each build for a different configuration.</p>
+                                        <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/61593e10-d24b-492f-b19a-af4d85abea6b">
+                                            Creating and Working with Build Definitions</a></span>.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="label">Define tests to run automatically as part of the build</span>. 
+                                            As part of the build definition, you can define tests to run as part of the build
+                                            or to fail if the tests fail.</p>
+                                        <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/43930b12-c21b-4599-a980-2995e3d16e31">
+                                            Define a Build Using the Default Template</a></span>.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="label">Configure tests to gather code coverage data</span>. For code
+                                            coverage data to appear in the report, team members must instrument tests to gather
+                                            that data.</p>
+                                        <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8dcf94f8-8b85-41ba-a5a2-d12aa5d2da85">
+                                            How to: Configure Code Coverage Using Test Settings for Automated Tests</a></span> 
+                                            and <span sdata="link"><a href="http://msdn.microsoft.com/library/164f5cb9-9dad-4a0b-83e3-68e83ca99431">
+                                                How to: Gather Code-Coverage Data with Generic Tests</a></span>.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="label">Run builds regularly</span>. You can run builds at set intervals
+                                            or after every check-in. You can create regular builds when you use the schedule
+                                            trigger.</p>
+                                        <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                                            Create a Basic Build Definition</a></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/5b8d6647-938a-4f7b-a72b-0f1921af849f">
+                                                Running and Monitoring Builds</a></span>.</p>
+                                        <div class="alert">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <th align="left">
+                                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                        </b></th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Although a team member can manually rate a build by using Build Explorer, this rating
+                                                            is not reflected in the Build Quality Indicators report. The build rating appears
+                                                            in the Build Summary report. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/fa9e34bb-8142-46e3-8bea-c4909a10e2bf">
+                                                                Rate the Quality of a Completed Build</a></span>  and <span sdata="link"><a href="BuildSummaryReport.html">
+                                                                    Build Summary Report</a></span>.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Updating" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Updating
+                and Customizing the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can update the Testing Gaps report by opening it in Office Excel and changing
+                    the filter options for the PivotTable report for one of the worksheets. You can
+                    customize each report to support other views, as the following table describes.
+                </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Worksheet</p>
+                            </th>
+                            <th>
+                                <p>View</p>
+                            </th>
+                            <th>
+                                <p>Action</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>Testing gaps for an iteration</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Iteration</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>Testing gaps for a product area</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Area</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>Testing gaps for a specific test plan or set of test plans</p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Test Plan</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>Testing gaps for a specific test suite </p>
+                            </td>
+                            <td>
+                                <p>Change the filter for <b>Test Suite Hierarchy</b>(default=All)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Use Case Status</p>
+                                    </li>
+                                    <li>
+                                        <p>Use Case Status by Config</p>
+                                    </li>
+                                    <li>
+                                        <p>Test Status by Area</p>
+                                    </li>
+                                    <li>
+                                        <p>Tests Not Executed</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>Testing gaps or code coverage that includes data from the most recent six, eight,
+                                    or more weeks</p>
+                            </td>
+                            <td>
+                                <p>In the Columns PivotTable Field List, add the <b>Date - Sets</b>field, and specify
+                                    <b>@@Last 6 weeks@@</b>or other set </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>For more information about how to work with and customize PivotTable and PivotChart
+                    reports, see the following pages on the Microsoft Web site:</p>
+                <ul>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165722">Ways to customize PivotTable
+                            reports</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165723">Edit or remove a workbook
+                            from Excel Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165724">Publish a workbook to Excel
+                            Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165725">Save a file to a SharePoint
+                            library or another Web location</a></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/0fa44e3e-3033-49e7-a796-eb4fbd12d984">Test Result Tables</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create and Modify Areas and Iterations</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestManagementReports.html">Test Management Reports</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ExcelReportsGovDev.html">Excel Reports (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

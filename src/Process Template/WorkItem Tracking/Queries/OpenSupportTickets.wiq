@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkItemQuery Version="1">
+  <Wiql>
+	SELECT	[System.Id], 
+		[Microsoft.VSTS.Common.Priority], 
+		[System.WorkItemType], 
+		[System.Title], 
+		[System.AssignedTo], 
+		[System.State] 
+	FROM	WorkItems 
+	WHERE	[System.TeamProject] = @project 
+	AND 	[System.WorkItemType] = 'Support Ticket' 
+	AND 	[System.State] &lt;&gt; 'Closed' 
+	AND 	[System.IterationPath] UNDER @project 
+	AND 	[System.AreaPath] UNDER @project 
+	ORDER BY [Microsoft.VSTS.Common.Priority], [System.Id]
+  </Wiql>
+</WorkItemQuery>

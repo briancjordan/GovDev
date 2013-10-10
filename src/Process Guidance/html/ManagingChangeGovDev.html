@@ -1,0 +1,207 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="change requests, managing" />
+    <meta name="System.Keywords" content="process guidance, managing change (CMMI)" />
+    <meta name="Microsoft.Help.Id" content="9c6fde5a-fdbd-4ac4-bd29-8049ff316351" />
+    <meta name="Description" content="You can use change request work items to track and control all changes to the product and supporting systems." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Managing Change (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Managing Change" /><mshelp:keyword Index="A" Term="9c6fde5a-fdbd-4ac4-bd29-8049ff316351" /><mshelp:keyword Index="K" Term="change requests, managing" /><mshelp:keyword Index="K" Term="process guidance, managing change (CMMI)" /><mshelp:attr Name="RevisionNumber" Value="18" /><mshelp:attr Name="AssetID" Value="9c6fde5a-fdbd-4ac4-bd29-8049ff316351" /><mshelp:attr Name="Abstract" Value="You can use change request work items to track and control all changes to the product and supporting systems. All change requests are initiated as the result of a deviation from the baseline, which consists of the original requirements that were iden ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10223.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Managing Change (CMMI)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Managing Change (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>
+                    You can use change request work items to track and control all changes to the project. All change requests are initiated as the result of a deviation
+                    from the baseline, which consists of the original requirements that were identified
+                    for the project. For example, if a meeting with a user uncovers new requirements,
+                    a change request should be created to propose updating the requirements baseline.
+                </p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Creating">Creating a Change Request</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Analyzing">Analyzing a Change Request</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Monitoring">Monitoring Change Requests</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Creating" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                a Change Request</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>When you realize that an original requirement must change, you create a change request
+                    work item and link it to the old requirement work item by using an Affects link
+                    type. A requirement work item that has details of what is new or has changed should
+                    also be created and linked to the change request. All change requests are extensively
+                    analyzed for impact on the user, product, and teams. During this analysis, use 
+                    cases
+                    may be broken out for estimation. These new use case work items should be linked to
+                    the new requirement work item to provide traceability. This is accomplished by adding
+                    the use cases on the Use Cases tab of the requirement work item form. </p>
+                <p>The change request and resultant new work items must contain details of all new work
+                    that is required and all existing work that is to be removed, modified, or obviated.
+                    As the following illustrations show, you can specify the change that you are requesting
+                    in the Title field, the team member who owns the change, and other information about
+                    the request:</p>
+                <img alt="Change Request Work Item Form" 
+                    src="../art/ProcGuid_ChangeRequest_A.png" /><p />
+                <p> </p>
+                <img alt="CMMI Change Request work item form - tabs" 
+                        src="../art/ProcGuid_ChangeRequest_B.png" /><p>
+                    For more information about how to complete the work item, see <span sdata="link">
+                    <a href="ChangeRequestGovDev.html">Change Request (GovDev)</a></span>.</p>
+            </div>
+            <a name="Analyzing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Analyzing
+                a Change Request</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Before a change request is analyzed, it should be triaged by a configuration control
+                    board. A configuration control board is a group of people who are responsible for
+                    approving and denying change requests and who ensure that changes are implemented
+                    correctly. You can indicate that a request must be triaged by setting the Triage
+                    field in the work item to Pending. For more information, see <span sdata="link"></span> <span sdata="link">
+                    <a
+                        href="ChangeRequestGovDev.html">Change Request (GovDev)</a></span>. Analysis of
+                    change requests can be a drain on resources, and it is important that the change
+                    request queue does not put undue demands on the team and affect the project timeline.
+                </p>
+                <p>A change request should be analyzed to determine the scope of its impact on existing
+                    and planned work. The effect must be known so that it can be used to estimate the
+                    cost in person-hours to implement the change. </p>
+                <p>Analyze the risk of accepting the change. Are external teams dependent upon the code
+                    or feature that would be changed, and could their schedules be adversely affected?
+                    Could assignment of resources to this change adversely affect other important feature
+                    areas or requirements of the product?</p>
+                <p>As part of your analysis, request input from stakeholders and add that input to the
+                    change request work item. If the change requires changes to other planning documents,
+                    note that in the change request, and change those documents as appropriate. This
+                    will maintain the revision history and enable everyone to see the details. This
+                    mitigates risk from bad communication.</p>
+                <p>If a change request is accepted, change the State from Proposed (the default for
+                    new change requests) to Active.</p>
+            </div>
+            <a name="Monitoring" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Monitoring
+                Change Requests</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>While a change request is active, you can monitor it by using the Change Request
+                    query located in the Change Managment work item query folder for the GovDev for 
+                    TFS 2010 v1.0 process template used for the project. Change requests should be processed
+                    in a reasonable amount of time.</p>
+                <p>If a change request does not receive the attention that it requires, escalate the
+                    matter by creating an issue work item. Link the new issue to the change request,
+                    and escalate the issue to get the change request impact assessment on track.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10223.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

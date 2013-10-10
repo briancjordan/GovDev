@@ -1,0 +1,6 @@
+﻿<Elements Id="286d1478-21c4-494c-9eaa-a9c52285ba5c" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="Workbooks" Url="Reports" Path="Reports">
+    <File Type="GhostableInLibrary" Url="Use Case Progress.xlsx" Path="Use Case Progress.xlsx" />
+    <File Type="GhostableInLibrary" Url="Use Case Test Status.xlsx" Path="Use Case Test Status.xlsx" />
+  </Module>
+</Elements>

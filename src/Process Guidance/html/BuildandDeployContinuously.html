@@ -1,0 +1,483 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="process guidance, building the application" />
+    <meta name="Microsoft.Help.Id" content="55083ffb-4677-41f1-b199-ca22dd2749a6" />
+    <meta name="Description" content="When many developers collaborate on complex software projects, it can be a long and unpredictable process to integrate different parts of code together." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Build and Deploy Continuously" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="55083ffb-4677-41f1-b199-ca22dd2749a6" /><MSHelp:Keyword Index="K" Term="process guidance, building the application" /><MSHelp:Attr Name="RevisionNumber" Value="27" /><MSHelp:Attr Name="AssetID" Value="55083ffb-4677-41f1-b199-ca22dd2749a6" /><MSHelp:Attr Name="Abstract" Value="When many developers collaborate on complex software projects, it can be a long and unpredictable process to integrate different parts of code together. However, you can make this process more efficient and more reliable if you build and deploy your  ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Build and Deploy Continuously</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Build and Deploy Continuously</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>When many developers collaborate on complex software projects, it can be a long and
+                    unpredictable process to integrate different parts of code together. However, you
+                    can make this process more efficient and more reliable if you build and deploy your
+                    project continuously.</p>
+                <p>Continuous integration (CI) is the process of integrating your code into a shared
+                    repository as frequently as possible. During code integration, a build break or
+                    a test failure can inform you, in a timely manner, of an error in your code.
+                </p>
+                <p>Martin Fowler has the following breakdown of practices for continuous integration:
+                </p>
+                <ul>
+                    <li>
+                        <p>Maintain a single source repository.</p>
+                    </li>
+                    <li>
+                        <p>Automate the build.</p>
+                    </li>
+                    <li>
+                        <p>Make your build self-sustaining.</p>
+                    </li>
+                    <li>
+                        <p>Check in at least once a day.</p>
+                    </li>
+                    <li>
+                        <p>Build each check-in on the CI server.</p>
+                    </li>
+                    <li>
+                        <p>Keep the build fast.</p>
+                    </li>
+                    <li>
+                        <p>Test in a clone of the production environment.</p>
+                    </li>
+                    <li>
+                        <p>Make it easy for anyone to get the most recent executable.</p>
+                    </li>
+                    <li>
+                        <p>Always be aware of what is happening.</p>
+                    </li>
+                    <li>
+                        <p>Automate deployment.</p>
+                    </li>
+                </ul>
+                <p>For more information, see the following page on Martin Fowler's Web site: <a href="http://go.microsoft.com/fwlink/?LinkId=178566">
+                    Continuous Integration</a>. </p>
+                <p>Visual Studio Application Lifecycle Management (ALM) helps you manage the end-to-end
+                    process of software development and supports the practice of continuous integration.
+                    By leveraging the capabilities of Visual Studio ALM, your project can avoid unexpected
+                    delays, cost overruns, and execution risks.</p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Art">Managing Dependencies</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Support">Continuous Integration in Visual Studio 2010</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Ready">Getting Ready and Started</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Source">Version Control</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Build">Build</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Testing">Testing and Deployment</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Integration">Project Integration and Communication</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Art" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Managing
+                Dependencies</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>Integrating code is a complex process because of the dependencies among code. For
+                    example, a library that draws a circle on a screen depends on the Sqrt() method
+                    of the system math libraries. If the Sqrt() method changes, you must update the
+                    library accordingly. Hardware and operating systems change much less frequently
+                    than your team project. However, ignoring changes under any circumstances can lead
+                    to disastrous results. You can integrate your code as early as possible to examine
+                    whether it is based on valid assumptions and whether it works as planned.</p>
+                <p>Changes in code can affect dependencies differently. The following illustration shows
+                    two situations. The example on the left shows a relatively isolated change. However,
+                    the example on the right shows a change with more potential impact because there
+                    are many dependencies on it.</p>
+                <img alt="Build and Deploy Code Diagram" src="../art/BD_ContinuouslyCode.png" /><p>The
+                    following illustration shows how constant changes can have compound effects if you
+                    do not integrate and upgrade your code continuously.</p>
+                <img alt="Continuous Build and Deploy Code Timeline" src="../art/BD_CodeDiagram.png" /><p>
+                    In step 1, you change code block h, which potentially affects all depending code
+                    blocks a, b, d, e, and f. In step 2, you change both code blocks a and b. If the
+                    team does not integrate between steps 1 and 2, blocks a and b might no longer be
+                    valid. In step 3, you change code block f. Assuming the team does not integrate
+                    between steps 2 and 3, code block b at this point has been affected, changed, and
+                    affected again. As a result, code block b can become challenging to fix.</p>
+            </div>
+            <a name="Support" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Continuous
+                Integration in Visual Studio 2010</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Visual Studio ALM provides integrated toolsets to support continuous integration.
+                    As the following illustration shows, these tools include version control, build,
+                    test, deployment to a lab environment, work item tracking, and the data warehousing
+                    functionality.</p>
+                <img alt="TFS in Continuous Build and Deploy" src="../art/BD_TFS.png" /><p>First, you
+                    can use Team Foundation version control to manage branches, changesets, and the
+                    integration between them. Each team member can use workspaces to work independently.
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/d74122a4-6a3d-45fb-82b7-3c1494ed4afd">
+                        Branching and Merging</a></span>  and <span sdata="link"><a href="http://msdn.microsoft.com/library/1d7f6ed8-ec7c-48f8-86da-9aea55a90d5a">
+                            Set Up your Development Machine to Work with your Team's Project</a></span>.</p>
+                <p>Second, you can use Team Foundation Build to compile, test, and deploy your software
+                    in an automated and distributed system. As the previous illustration shows, Team
+                    Foundation Build has two kinds of builds. One kind uses a continuous build type
+                    to build the development branch. The other kind uses a gated check-in build type
+                    to build the Main branch. Visual Studio Team Foundation Server supports five types
+                    of builds: manual, continuous (triggered by every check-in), rolling (accumulate
+                    check-ins until the previous build finishes), gated check-in, and scheduled. For
+                    more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                        Create a Basic Build Definition</a></span>, <span sdata="link"><a href="http://msdn.microsoft.com/library/8062e877-6824-44e3-b65c-dfcbbc97c206">
+                            Understanding a Team Foundation Build System</a></span>, and <span sdata="link"><a
+                                href="http://msdn.microsoft.com/library/28fabf92-d3e0-43bb-96b5-7e5c10baa336">Check
+                                In Pending Changes that Are Controlled by a Gated Check-in Build</a>
+                    </span>. </p>
+                <p>Third, lab management capabilities of Visual Studio ALM help define and deploy builds
+                    to both physical and virtual lab environments. To catch integration errors at runtime
+                    in a specific environment, you can deploy a build to a lab environment and then
+                    run test suites on this build. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b435eb39-dc7c-46fa-a91b-6e6dd614f01c">
+                        Using a Virtual Lab for Your Application Lifecycle</a></span>.</p>
+                <p>In addition, test capabilities in Visual Studio ALM are available on your team members'
+                    machines, on the build machine, and inside the lab environment. First, running test
+                    suites on the developer’s machine catches problems with the code that has been recently
+                    changed or created. Second, running tests on the build machine catches problems
+                    that relate to integration with other code. Third, running tests in the lab catches
+                    problems that relate to the variance in different environments. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/32acfeb1-b1aa-4afb-8cfe-cc209e6183fd">
+                        How to: Configure and Run Scheduled Tests After Building Your Application</a>
+                    </span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Running tests can generate code coverage metrics, which you can use to understand
+                                    how much code your test cases can cover. However, you cannot use code coverage to
+                                    measure test completeness or quality. For more information, see <span sdata="link"><a
+                                        href="http://msdn.microsoft.com/library/8dcf94f8-8b85-41ba-a5a2-d12aa5d2da85">How
+                                        to: Configure Code Coverage Using Test Settings for Automated Tests</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Fourth, Visual Studio Team Foundation Server is the repository that stores work items.
+                    You can create, manage, and track work items, such as bugs or tasks, that are assigned
+                    to your team members. If a build breaks during code integration, your team must
+                    fix the problem as soon as possible. You can configure Team Foundation Server to
+                    create work items for build breaks. For more information, see <span sdata="link"><a
+                        href="http://msdn.microsoft.com/library/d2d8637d-0ef8-4ca3-874e-a04713344032">Tracking
+                        Bugs, Tasks, and Other Work Items</a></span>. </p>
+                <p>Last, the databases of the warehouse for Team Foundation Server and for SQL Server
+                    Analysis Services aggregate and relate all the data that is provided by subsystems
+                    in Team Foundation Server. These subsystems include version control, build, test,
+                    deployment, and work item tracking. Therefore, your team can visualize the end-to-end
+                    process of continuous integration. For more information, see <span sdata="link"><a
+                        href="http://msdn.microsoft.com/library/0f398cef-add1-4112-85e8-016108de10b3">Generating
+                        Reports Using the Relational Warehouse Database for Visual Studio ALM</a></span>.</p>
+            </div>
+            <a name="Ready" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Getting
+                Ready and Started</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Your team can take the following progression to start using continuous integration
+                    and Team Foundation Server:</p>
+                <ol>
+                    <li>
+                        <p>Use Team Foundation version control to integrate code into a single code base.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Create a manual build type in Team Foundation Build. </p>
+                    </li>
+                    <li>
+                        <p>Run automated test cases to verify the quality of your build. If you do not have
+                            an appropriate test suite, create a placeholder test suite and import a few automated
+                            test cases. This suite can serve as a placeholder for future tests.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that you deliver the resulting binaries from a build to a shared location.
+                            This strategy can help you diagnose problems that appear during testing.</p>
+                    </li>
+                    <li>
+                        <p>Use Microsoft Test Manager to catch integration errors at runtime in a specific environment.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <a name="Source" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Version
+                Control</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>A version control system provides a shared repository to your code. A small team
+                    can work with a single branch. However, working with two or more branches is more
+                    feasible because you usually must develop multiple versions of code and release
+                    your project in different milestones. For more information about how to create and
+                    merge code branches, see the following page on the CodePlex Web site: <a href="http://go.microsoft.com/fwlink/?LinkId=178567">
+                        Team Foundation Server Branching Guide 2.0</a>. </p>
+            </div>
+            <a name="Build" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Build
+                </span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>In continuous integration, a build system generates the executable components that
+                    can be tested and deployed. A build system also provides feedback in the form of
+                    compilation errors and warnings. These errors are caused by changes that are introduced
+                    into your project source.</p>
+                <p>Team Foundation Build provides the following build types:</p>
+                <ul>
+                    <li>
+                        <p>Manual – Builds are queued by team members.</p>
+                    </li>
+                    <li>
+                        <p>Continuous – Builds are queued by a check-in to a version-control branch.</p>
+                    </li>
+                    <li>
+                        <p>Rolling – Builds accumulate until the previous build finishes.</p>
+                    </li>
+                    <li>
+                        <p>Gated check-in – Check-ins are accepted only if the submitted changes merge and build
+                            successfully.</p>
+                    </li>
+                    <li>
+                        <p>Scheduled – Builds occur on a defined schedule.</p>
+                    </li>
+                </ul>
+                <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                    Create a Basic Build Definition</mshelp:link></span>.</p>
+                <h3 class="subHeading">What are the expectations from team members to successfully implement
+                    continuous integration?</h3>
+                <div class="subsection">
+                    <p>Your team members must organize their sources so that they take no longer than 10
+                        minutes to build. For larger projects, this frequency might not be possible. By
+                        using Team Foundation Server, your team can configure various build definitions
+                        that build different subsets of the code base. If builds take a long time, you can
+                        use a rolling build type to continuously generate binaries for the unchanged code.
+                    </p>
+                    <p>If and when a build breaks, your team must fix the build immediately. Assuming that
+                        the main branch does not get affected by a bad reverse integration, most build breaks
+                        are either from a bad check-in at a work branch or a forward integration from the
+                        mainline branch. It is a good idea to assign the task of fixing build breaks to
+                        a team member for a period of time and then to rotate this assignment among members
+                        of your team.</p>
+                </div>
+                <h3 class="subHeading">How many builds should be run per day?</h3>
+                <div class="subsection">
+                    <p>When you integrate your code continuously, you can run a continuous build for each
+                        check-in that occurs in every branch. You can also run a rolling build that is independent
+                        of new checked-in code. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                            Create a Basic Build Definition</mshelp:link></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/e51e3bad-2d1d-4b7b-bfcc-c43439c6c8ef">
+                                Monitor Progress of a Running Build</a></span>. </p>
+                </div>
+                <h3 class="subHeading">How can Team Foundation Server help code build faster?</h3>
+                <div class="subsection">
+                    <p>Configuring the build definition to perform incremental builds will help increase
+                        the speed of the build. You can use build logs to identify slow parts of the build,
+                        where there is an opportunity to improve. For more information, see <span sdata="link">
+                            <a href="http://msdn.microsoft.com/library/c4be54f9-3afd-44b2-983f-efca10c1f6e6">Configure
+                                Team Foundation Build for an Incremental Build</a></span>.</p>
+                </div>
+                <h3 class="subHeading">How can Team Foundation Build help scale continuous integration?
+                </h3>
+                <div class="subsection">
+                    <p>Build controllers and build agents can help scale the continuous integration cycle.
+                    </p>
+                    <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8062e877-6824-44e3-b65c-dfcbbc97c206">
+                        Understanding a Team Foundation Build System</mshelp:link></span>. </p>
+                </div>
+            </div>
+            <a name="Testing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Testing
+                and Deployment</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <h3 class="subHeading">How does testing and deployment fit into continuous integration?
+                </h3>
+                <div class="subsection">
+                    <p>The following illustration shows how the features of testing and deployment in Visual
+                        Studio ALM fit into continuous integration.</p>
+                    <img alt="Fit testing into continuous integration" src="../art/BD_Lab.png" /><p>First,
+                        when you integrate your code continuously, you can find problems with the code from
+                        the build itself. The build either succeeded or did not compile, given the compiler
+                        that you used. You can generate a build report that contains both error and warning
+                        messages from the compiler. In Visual Studio ALM, the build report also provides
+                        information such as which bugs were fixed in this build, which changesets were included
+                        in this build, and whether code analysis was run during the build. By using Visual
+                        Studio ALM, you can verify whether the design of your code follows the rules that
+                        your team defines. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/70cbe55d-4b33-4355-b0a7-88c770a6f75c">
+                            How to: Validate .NET Code Against Layer Diagrams</a></span>.</p>
+                    <p>Second, you can find problems with your code by running unit tests. These tests diagnose
+                        problems differently from compilers. The rules of the compiler check problems with
+                        code syntax and language constructs. In contrast, the unit tests (which can run
+                        on a build after it is completed) can verify any functional aspect of the code.
+                        These unit tests can also provide metrics such as code coverage on a build, given
+                        a set of unit tests. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8dcf94f8-8b85-41ba-a5a2-d12aa5d2da85">
+                            How to: Configure Code Coverage Using Test Settings for Automated Tests</mshelp:link>
+                        </span>. </p>
+                    <p>By using Microsoft Test Manager, you can configure a set of environments in which
+                        you can run tests. Isolated unit tests can provide a level of functional verification.
+                        However, environments have the following important aspects:</p>
+                    <ul>
+                        <li>
+                            <p>Varying environments can affect how code works. For example, network settings and
+                                topology might be difficult to test without a lab management environment. </p>
+                        </li>
+                        <li>
+                            <p>Automating code deployment in a specific environment helps your team decrease deployment
+                                time and increase the number of deployment iterations. </p>
+                        </li>
+                    </ul>
+                    <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/e902fc3a-e1aa-4cf9-8401-acb025c0c294">
+                        How to: Create an Environment from Virtual Machine Templates</a></span>  and <span
+                            sdata="link"><a href="http://msdn.microsoft.com/library/f64b9297-2526-48e7-9758-205ed7a0e284">
+                                Setting Up Test Machines to Run Tests or Collect Data</a></span>. </p>
+                </div>
+                <h3 class="subHeading">How can I organize my test suites to enable continuous integration?
+                </h3>
+                <div class="subsection">
+                    <p>You can run the test suites that are most important for your continuous builds because
+                        too many tests can delay the completion of build. Make sure that you run these tests
+                        for the current iteration.</p>
+                    <p>On a nightly or scheduled build cycle, you can also run tests from previous builds
+                        and complete test passes that verify functionality in previous sprints. </p>
+                </div>
+                <h3 class="subHeading">How does continuous integration affect the test team?</h3>
+                <div class="subsection">
+                    <p>Continuous integration helps identify builds that contain errors so that your test
+                        team does not waste time working with and installing bad builds.</p>
+                </div>
+            </div>
+            <a name="Integration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Project Integration and Communication</span> 
+            </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>The effort of implementing continuous integration can be significant depending on
+                    the size of your project. Your team must define and schedule the work for continuous
+                    integration in the first sprint of the project.</p>
+                <p>If you want to adopt continuous integration in stages, you can start by implementing
+                    the automated build. Then, you can modify it to include running unit tests. Finally,
+                    you can add the capabilities of deploying the tested build to a lab environment,
+                    and then you can run tests inside the environment to verify whether a varying environment
+                    affects the code. </p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

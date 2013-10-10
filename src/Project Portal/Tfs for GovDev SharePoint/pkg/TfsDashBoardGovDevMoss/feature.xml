@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="2f1da286-e15f-4b99-9e83-afd81680e20c" Title="GovDev Dashboards with Excel Reporting" Description="Top Level Feature for activating GovDev for TFS SharePoint customizations based on server capabilities. Activate if the team project has reporting enabled and is using a supported edition of Microsoft Office SharePoint Server 2007 or Microsoft SharePoint Server 2010 with Excel Services." Version="1.0.0.0" Scope="Web" Hidden="FALSE" ReceiverAssembly="Microsoft.Dpe.Ps.Govdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9d438aa16c6f03bd" ReceiverClass="Microsoft.Dpe.Ps.Govdev.GovDevActivateReceiver" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Properties>
+    <Property Key="ProcessTemplate" Value="GovDev" />
+    <Property Key="DashboardLevel" Value="Moss" />
+    <Property Key="ActivationTimeout" Value="270" />
+    <!-- Increases the time in seconds for activation before it times out (default is 110 for ASP.NET) -->
+  </Properties>
+</Feature>

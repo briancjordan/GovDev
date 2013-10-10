@@ -1,0 +1,516 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="requirements, progress report" />
+    <meta name="Microsoft.Help.Id" content="c5ecc16d-9645-4b5f-97b9-e92f76a88852" />
+    <meta name="Description" content="The Requirements Progress report lists all requirements, filtered by product area and iteration in order of importance." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Requirements Progress Report (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Requirements Progress" /><MSHelp:Keyword Index="A" Term="c5ecc16d-9645-4b5f-97b9-e92f76a88852" /><MSHelp:Keyword Index="K" Term="requirements, progress report" /><MSHelp:Attr Name="RevisionNumber" Value="6" /><MSHelp:Attr Name="AssetID" Value="c5ecc16d-9645-4b5f-97b9-e92f76a88852" /><MSHelp:Attr Name="Abstract" Value="The Requirements Progress report lists all requirements, filtered by product area and iteration in order of importance." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10223.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Requirements Progress Report (CMMI)</title>
+</head>
+<body>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Requirements Progress Report (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>The Requirements Progress report lists all requirements, filtered by product area
+                    and iteration in order of importance.</p>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsCMMI.html">Reports (CMMI)</a></span>.</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span></p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report and Changing the Display</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span>
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>How much progress has the team made toward completing the work for each requirement?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>How much work must the team still perform to implement each requirement? </p>
+                                    </li>
+                                    <li>
+                                        <p>How much work did the team perform in the last calendar period?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span></p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in Reporting Services. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span></h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Requirements Progress report shows the status of completion as determined by
+                    the tasks that have been defined to implement the requirement, as the following
+                    illustration shows. The data in the report is derived from the data warehouse.
+                </p>
+                <img alt="Requirements Progress report" src="../art/ProcG_ReqProgress.png" /><p>This
+                    report displays the following information for each requirement that appears in the
+                    report: </p>
+                <ul>
+                    <li>
+                        <p><span class="ui">Progress % Completed</span>: Numeric value that represents the percentage
+                            of completed work based on the rollup of baseline and completed hours for all tasks
+                            that are linked to the requirement or its child requirements.</p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Hours Completed</span>: A visual representation of the completed
+                            hours, displayed as a dark green bar.</p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Recently Completed</span>: A visual representation of those hours
+                            completed within the time interval specified for <span class="ui">Recent (Calendar Days)
+                            </span>, displayed as a light green bar.</p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Hours Remaining</span>: Rollup of all remaining hours for all tasks
+                            that are linked to the requirement or its child requirements.</p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>The report displays active requirements in bold type and closed requirements in normal
+                                            type.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="subHeading">Requirements that Appear in the Report</h3>
+                <div class="subsection">
+                    <p>The Requirements Progress report lists and highlights requirements according to the
+                        following criteria:</p>
+                    <ul>
+                        <li>
+                            <p>Requirements appear in order of their importance, based on their assigned ranking.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Requirements appear in bold type when they are in the active or resolved state.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Requirements appear in normal type when they are in the closed state. </p>
+                        </li>
+                        <li>
+                            <p>Requirements appear in gray type when their assigned iteration or area is outside
+                                the filtered set but they have tasks or child requirements that are within the filtered
+                                set of iterations or product areas.</p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Required Activities for Tracking Work Items</h3>
+                <div class="subsection">
+                    <p>For the Requirements Progress report to be useful and accurate, the team must perform
+                        the following activities:</p>
+                    <ul>
+                        <li>
+                            <p>Define requirements, use cases and tasks, create a <span class="ui">Child</span> link from each
+                                use case to the requirement that it describes, from the task to the use case it 
+                                implements, and create a <span class="ui">Child</span> link from any sub-task to its parent task.</p>
+                            <p>For more information, see <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a> and <span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a>.
+                            </span>.</p>
+                        </li>
+                        <li>
+                            <p>Define and update the <span class="ui">Completed</span> and <span class="ui">Remaining
+                                </span> fields for each task or subtask during the iteration or release</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If you subdivide a task into sub-tasks, specify hours only for the sub-tasks. These
+                                                hours are rolled up as summary values for the parent task and requirement.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Specify the <span class="ui">Iteration</span> and <span class="ui">Area</span> paths
+                                for each requirement and task.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>For information about how to define iteration and area paths, see <span sdata="link">
+                                                <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                                                    and Modify Areas and Iterations</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span></h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Depending on your area of focus, you can filter the report in the following ways:
+                </p>
+                <ul>
+                    <li>
+                        <p>Specify the <span class="ui">Iteration</span> and <span class="ui">Area</span> paths
+                            of interest. </p>
+                    </li>
+                    <li>
+                        <p>Change the <span class="ui">Recent (Calendar) Days</span>.</p>
+                        <p>By default, the value of this field is seven days. </p>
+                    </li>
+                    <li>
+                        <p>Click
+                            <img alt="Expand" src="../art/Icon_Expand.gif" />
+                            or
+                            <img alt="Collapse" src="../art/Icon_Collapse.gif" />
+                            to expand or collapse a requirement and display child requirements. Parent requirements
+                            display a rollup of all task hours that are assigned to it and its child requirements.
+                        </p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report and Changing the
+                    Display</a>later in this topic.</p>
+                <h3 class="subHeading">Questions That the Report Answers</h3>
+                <div class="subsection">
+                    <p>You can review the report to determine how much work the team performed for the past
+                        week or recent period. Specifically, you can find answers to the following questions:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">On which requirements did the team make progress, and which are
+                                almost complete</span>?</p>
+                            <p>Requirements on which the team made progress will show a significant light green
+                                band within the progress bar. </p>
+                            <p>Requirements that are almost complete will indicate a high <span class="ui">Progress
+                                % Completed</span>, the progress bar will be almost completely green, and few hours
+                                will be listed in the <span class="ui">Hours Remaining</span> column. </p>
+                        </li>
+                        <li>
+                            <p><span class="label">Which requirements did the team not work on?</span></p>
+                            <p>Requirements that were not worked on will not show any light green band within the
+                                progress bar. </p>
+                        </li>
+                        <li>
+                            <p><span class="label">Which requirements have the most work still to be completed?</span>
+                            </p>
+                            <p>Requirements that require the most work to complete will show a significant blue
+                                band within the progress bar and a large number of hours in the <span class="ui">Hours
+                                    Remaining</span> column.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Is work on any requirement blocked?</span></p>
+                            <p>Requirements that show no light green band in the progress bar might indicate a blocking
+                                issue. </p>
+                            <p>If the team has not completed any work on a requirement for several weeks, you might
+                                want to determine why and identify any blocking or resource issues.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Can we deliver everything that we planned?</span><span class="label">
+                                Which goals should we re-scope or cut?</span></p>
+                            <p>Based on the requirements that are still active, you might want to defer some requirements
+                                to a later iteration so that the team can focus on completing other requirements
+                                in the current iteration.</p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Healthy Version of Report</h3>
+                <div class="subsection">
+                    <p>A healthy Requirements Progress report shows that the team recently completed work
+                        (light green) on all requirements that are expected to be in progress, as the following
+                        illustration shows. </p>
+                    <img alt="Example of Healthy Requirements Progress" src="../art/ProcGuid_Healthy.png" />
+                </div>
+                <h3 class="subHeading">Unhealthy Version of Report</h3>
+                <div class="subsection">
+                    <p>An unhealthy Requirements Progress report might show one or more of the following
+                        indications:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">One or more requirements show no work</span>.</p>
+                            <p>Requirements that have 0% progress or 0 hours remaining have no tasks or estimated
+                                effort defined for them. You might want to verify whether tasks to implement the
+                                requirement are both assigned correctly and linked to the requirement.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Many requirements have no recently completed work</span>.
+                            </p>
+                            <p>When several requirements indicate no or very small amounts of recently completed
+                                work, team progress is slow. You might investigate the cause of the slow progress
+                                and determine whether you should resolve or track blocking issues.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report and Changing the Display</span></h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can filter the Requirements Progress report or change its display in the following
+                    ways:</p>
+                <ul>
+                    <li>
+                        <p>Filter the list of requirements that appear by changing the iteration or area paths.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Change the time interval that determines what is considered recent.</p>
+                        <p>The amount of <span class="ui">Recently Completed</span> work is the work that the
+                            team performed or added during the interval specified by <span class="ui">Recent (Calendar)
+                                Days</span>. To determine whether the team performed any work in the last week,
+                            you set the value to 7 days. To determine how much work the team completed in the
+                            last month, you set the value to 30 days.</p>
+                    </li>
+                    <li>
+                        <p>Change the scale that is used to show progress.</p>
+                        <p>You can view the report in absolute scale or in 100% scale. Absolute scale shows
+                            progress relative to work that the team performed on all requirements in the report,
+                            and 100% scale shows progress specific to the baseline of work for each requirement.
+                        </p>
+                    </li>
+                </ul>
+                <p>The following illustration shows the available filters and display options.</p>
+                <img alt="Filters for Requirements Progress report" src="../art/ProcGuid_ProgressFilters.png" /><h3
+                    class="procedureSubHeading">To filter the requirements that appear in the report
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Iteration</span> or <span class="ui">Area</span> list, select
+                                the check box of each iteration or product area to include.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>For information about how to define iteration and area paths, see <span sdata="link">
+                                                <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                Create and Modify Areas and Iterations</mshelp:link></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span> to refresh the display based on the new
+                                filter criteria.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To change the time interval that determines recent activity
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Recent (Calendar) Days</span> box, type the number of days
+                                to be considered as the recent time interval. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span> to refresh the display based on the new
+                                interval.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To change the scale that displays requirement progress
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Display Option</span> list, click one of the following options:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">Absolute Scale</span>: Displays the progress of hours completed
+                                        and remaining as a percentage of the baseline, which appears relative to all requirements
+                                        in the report.</p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">100% Scale</span>: Displays the progress of hours completed and
+                                        remaining as a percentage of the baseline for each requirement, which is always
+                                        100%. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span> to refresh the display based on the new scale.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span></h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="RequirementCMMI.html">Requirement (GovDev)</a></span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="RequirementsOverviewReportCMMI.html">Requirements Traceability Report (GovDev)</a></span></div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsCMMI.html">Reports (GovDev)</a></span></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span>  
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="process guidance, product backlog" />
+    <meta name="System.Keywords" content="product backlog" />
+    <meta name="System.Keywords" content="use cases, defining" />
+    <meta name="Microsoft.Help.Id" content="70a01e94-2dc9-4090-823c-71ee8e156e74" />
+    <meta name="Description" content="Your team creates a product backlog, which usually contains use cases, to represent what its customers need and value." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Creating a Great Product Backlog" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="70a01e94-2dc9-4090-823c-71ee8e156e74" /><MSHelp:Keyword Index="K" Term="process guidance, product backlog" /><MSHelp:Keyword Index="K" Term="product backlog" /><MSHelp:Keyword Index="K" Term="use cases, defining" /><MSHelp:Attr Name="RevisionNumber" Value="13" /><MSHelp:Attr Name="AssetID" Value="70a01e94-2dc9-4090-823c-71ee8e156e74" /><MSHelp:Attr Name="Abstract" Value="Your team creates a product backlog, which usually contains use cases, to represent what its customers need and value. Over the course of the project, your team will add detailed information to the use cases, break them down into smaller storie ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Creating a Great Product Backlog</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Creating a Great Project Backlog</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Your team creates a product backlog, which usually contains use cases, to represent
+                    what its customers need and value. Over the course of the project, your team will
+                    add detailed information to the use cases, break them down into other use cases,
+                    prioritize and estimate them, and finally, implement them and deliver the results
+                    to your customers. By writing great use cases and continuously updating the product
+                    backlog, your team can more effectively deliver value to your customers.</p>
+                <p>When your team creates a use case, make sure that it represents customer value
+                    by answering the following questions:</p>
+                <ul>
+                    <li>
+                        <p>Who the user is</p>
+                    </li>
+                    <li>
+                        <p>What the user needs to do</p>
+                    </li>
+                    <li>
+                        <p>Why the user needs to do that</p>
+                    </li>
+                </ul>
+                <p>The use cases should also be defined in a way that allows them to be implemented 
+                    in any order. However, it is not always practical to make the use cases 
+                    completely independent.</p>
+                <p>Use cases that are valuable and independent, as previously described, make up the 
+                    project backlog. They are estimated and prioritized, and then your team starts
+                    to work on the highest ranked use cases. Before your team implements a use case,
+                    it must have the characteristics in the following list. Your product owner will
+                    work to make sure that the use cases that are ranked highest meet these criteria
+                    before bringing them to a sprint planning meeting.</p>
+                <ul>
+                    <li>
+                        <p>Small enough to be implemented in the sprint</p>
+                        <p>Use cases that are about to be implemented must be small enough to be finished
+                            in the sprint. Your product owner will work with your team to break down use cases
+                            that are too large. For example, the use case “As a customer support representative,
+                            I need access to customer information so that I can more quickly respond to customer
+                            questions” may be too large to finish in a sprint. It could be broken down into
+                            smaller uses cases or scenarios such as “As a customer support representative, I need to access the customer’s
+                            name and the recent call summary by using the customer's phone number” and “As a
+                            customer support representative, I need to access the customers’ full call history
+                            so that I can research the current problem in more detail.”</p>
+                    </li>
+                    <li>
+                        <p>Just detailed enough to describe and estimate the work that is required to implement
+                            the use case</p>
+                        <p>Before they are included in a sprint, use cases are estimated in story points. 
+                            These are intentionally rough estimates that are primarily used to manage the 
+                            backlog and to help prepare for the sprint. When a sprint starts, your team will 
+                            break the use case down into the tasks that are required to implement it. Your 
+                            team will work with your product owner in the project backlog grooming meeting to determine
+                            which use cases need more information before they can be broken down into tasks to
+                            estimate the hours of work. Your product owner can gather these details and record
+                            them in the use case’s description.</p>
+                        <p>Be careful not to add more details to the use case than necessary. The use case
+                            should be the basis for a conversation and negotiation with your product owner and
+                            customers that continues until the use case has been finished and accepted. Too
+                            much detail can impair the negotiation by creating an implication of precision that
+                            is not accurate.</p>
+                    </li>
+                    <li>
+                        <p>Acceptance criteria defined</p>
+                        <p>At the end of a sprint, your customers or your product owner will either accept the
+                            use case as finished or reject it. Before the sprint starts, the criteria for
+                            customer acceptance should be described as clearly as possible. Of course, a use
+                            case may not be accepted for reasons that were not anticipated. However, the conversations
+                            that your team has with customers to help define the acceptance criteria will help
+                            ensure that your team understands your customers’ expectations. The acceptance criteria
+                            can be used as the basis for acceptance tests so that you can more effectively evaluate
+                            whether you are finished with a use case.</p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Epics
+                and Themes</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>It is frequently said that use cases should be small. That is true for the use cases that are about to be implemented. However, the use cases that are ranked lower
+                    can be larger. In fact, keeping them large is a good way to keep your product backlog
+                    from becoming too large to manage. Use cases can be broken down into smaller
+                    use cases as they approach the top of the prioritized product backlog. It is
+                    helpful to think of large use cases as epics and themes.</p>
+                <ul>
+                    <li>
+                        <p>Epics are very large use cases that represent a significant amount of work. When
+                            you break an epic down, you may create many themes and other, smaller use cases.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Themes are use cases that are fairly large, generally larger than you would implement
+                            in a sprint. Before your team implements a theme, it must be broken down into smaller
+                            use cases.</p>
+                    </li>
+                </ul>
+                <p>When you prioritize the project backlog, break down epics and themes that are near
+                    the top, and prioritize the new, smaller use cases. When you are finished, the
+                    highest priority use cases should be small enough to implement. Lower in the
+                    prioritized backlog, most of the use cases are generally larger.</p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="Scrum.html">Scrum</a></span> 
+                </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="MeetingsGovDev.html">Meetings (GovDev)
+                    </a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

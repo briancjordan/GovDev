@@ -1,0 +1,499 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="save" content="history" />
+    <title>Shared Steps (Agile)</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="work item types, shared steps" />
+    <meta name="Microsoft.Help.Id" content="478f787a-4dca-48bc-9f54-3e8d24d57df0" />
+    <meta name="Description" content="Your team can use shared steps to streamline definition and maintenance of manual test cases. Many tests require the same sequence of steps to be performed for multiple test cases." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Shared Steps (Agile)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Shared Steps" /><MSHelp:Keyword Index="A" Term="478f787a-4dca-48bc-9f54-3e8d24d57df0" /><MSHelp:Keyword Index="K" Term="work item types, shared steps" /><MSHelp:Attr Name="RevisionNumber" Value="17" /><MSHelp:Attr Name="AssetID" Value="478f787a-4dca-48bc-9f54-3e8d24d57df0" /><MSHelp:Attr Name="Abstract" Value="Your team can use shared steps to streamline definition and maintenance of manual test cases. Many tests require the same sequence of steps to be performed for multiple test cases. By creating shared steps, you can define a sequence of steps once and ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Shared Steps (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Your team can use shared steps to streamline definition and maintenance of manual
+                    test cases. Many tests require the same sequence of steps to be performed for multiple
+                    test cases. By creating shared steps, you can define a sequence of steps once and
+                    insert it into many test cases. For example, if each test case requires a tester
+                    to log on to the application, you can create a set of shared steps to perform these
+                    actions. You can then add the shared steps to each test case and run the steps using
+                    Test Runner.</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You can define a test case by using Team Explorer, but it is best if you define test
+                                    cases by using Microsoft Test Manager. You can access Microsoft Test Manager from
+                                    Visual Studio Test Professional 2010, Visual Studio 2010 Professional, or Visual
+                                    Studio 2010 Ultimate. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b33158a5-30be-4c77-b443-56477ae16027">
+                                        Creating and Managing Tests</a></span>.</p>
+                                <p>To specify the sequence of action steps that define a set of shared steps, you must
+                                    use Microsoft Test Manager. You can view and modify other fields that are defined
+                                    for test cases and shared steps by using Team Explorer or Team Web Access. However,
+                                    you cannot modify the fields that appear on the <span class="ui">Steps</span>tab
+                                    in these clients. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Because you define shared steps only to streamline the definition of manual test
+                    cases, it is best that you define shared steps by using Microsoft Test Manager.
+                    For more information about how to define and use shared steps, see the topics that
+                    are listed in the following table.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">Task </span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span></p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Reduce test maintenance by sharing test steps across test cases
+                                    </span>. You define shared steps to capture a sequence of test and validation steps
+                                    that are inserted into the test steps of two or more manual test cases.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/5b7b1bfa-d958-442d-ab90-a0339b8baf0a">
+                                            How to: Share Common Test Case Steps Using Shared Steps</a></span></p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/f96aaa48-d36c-48ac-b5ad-4a506e2f9293">
+                                            How to: Create a Copy of Shared Steps</a></span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Run tests multiple times with different data</span>. You can
+                                    add parameters to your shared steps to use them in test cases where you want to
+                                    run the same test multiple times with different data.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/69596017-8d3a-4b1f-bdae-ee2d6b89727e">
+                                            How to: Add Parameters to Shared Steps</a></span></p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c2212f75-134d-42ab-9797-4d0c5c7a167c">
+                                            How to: Add Test Steps to a Manual Test Case from a Microsoft Excel or Microsoft
+                                            Word Document</a></span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Speed up test efforts</span>. You can make testing go more quickly
+                                    by recording and playing back the repeated steps of your manual tests. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/efd2922c-d53d-48d5-8ddd-c4bf39351524">
+                                            How to: Create an Action Recording for Shared Steps</a></span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Run manual tests from a test plan</span>. You can run manual
+                                    tests from your test plan by using Test Runner to record whether each step passes
+                                    or fails. You can save the test outcome and any data that is collected when you
+                                    run the test.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/aa9070f4-5f30-4ce9-83be-839319226755">
+                                            Running Manual Tests Using Test Runner</a></span></p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/44914be1-f8e8-4d68-b9fd-7e677e91457f">
+                                            How to: Use Shared Steps While Running a Test</a></span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Close shared steps that are no longer needed</span>. If you have
+                                    shared steps that are not being used, you can change the state from active to closed.
+                                    Closed shared steps still exist in your team project, but they appear only in the
+                                    results list for queries that specifically find shared steps that are closed.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/e3700a74-e454-457c-a522-3ebfd5156670">
+                                            How to: Change the State of Shared Steps to Closed</a></span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span></p>
+                <p>To view shared steps, you must be a member of the <span class="ui">Readers</span>
+                    group or your <span class="ui">View work items in this node</span>must be set to
+                    <span class="ui">Allow</span>. To create or modify shared steps, you must be a member
+                    of the <span class="ui">Contributors</span>group or your <span class="ui">Edit work
+                        items in this node</span>permissions must be set to <span class="ui">Allow</span>
+                    . For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Field
+                Reference</span></h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>For more information about the data fields and controls that are provided within
+                    the work item form for shared steps, see the following topics: </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                            (GovDev)</a></span></p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                            and Priorities</a></span></p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                            Descriptions, and History (GovDev)</a></span></p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/46df1a66-8493-4093-83e4-559dad5dfcec">
+                            Test Steps and Test Data</a></span></p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Shared
+                Steps Workflow</span></h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You can use the <span class="ui">Active</span>and <span class="ui">Closed</span>states
+                    to distinguish shared steps that are being used from shared steps that are not being
+                    used. All shared steps are created in the <span class="ui">Active</span>state. A
+                    shared steps work item is useful only if it is inserted into one or more test cases.
+                    You change the state to <span class="ui">Closed</span>when all the test cases that
+                    contain the shared steps are also closed.</p>
+                <p>After you save a shared steps work item, you can change its state from <a href="#Active">
+                    Active</a>to <a href="#Closed">Closed</a>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a shared steps work item in the <a href="#Active">Active</a>
+                                            state with the default reason, New.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a shared steps work item from <a href="#ActiveClosed">
+                                            Active to Closed</a>to indicate that the work item is no longer used in any test
+                                            cases.</p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Additional workflow transitions states</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member determines that the shared steps work item must be reactivated and
+                                            changes its state from <a href="#ClosedActive">Closed to Active</a>.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Shared Steps State Diagram</span></p>
+                                <img alt="Shared Steps state diagram" src="../art/ProcGuide_SharedSteps.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active (New)</h3>
+                <div class="subsection">
+                    <p>Shared steps remain active as long as the test cases into which they are inserted
+                        are not closed.</p>
+                    <p>The following data fields are automatically captured when you create shared steps:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Created By</span>: Name of the team member who created the work
+                                item.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created Date</span>: Date and time when the work item was created,
+                                as recorded by the server clock.</p>
+                        </li>
+                    </ul>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>You can close an active shared steps work item because of one of the following reasons:
+                        </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Obsolete</span>(default)</p>
+                                    </td>
+                                    <td>
+                                        <p>The shared steps is no longer required for acceptance testing of use casees.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Verify that all test cases that reference the shared steps are <span class="ui">Closed
+                                            </span>. </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Deferred</span></p>
+                                    </td>
+                                    <td>
+                                        <p>The shared steps will not be run during the current product cycle or iteration. You
+                                            can also specify this reason when the test cases in which the shared steps are inserted
+                                            are set to <span class="ui">Deferred</span>.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Duplicate</span></p>
+                                    </td>
+                                    <td>
+                                        <p>The shared steps work item is a duplicate of another shared steps work item.</p>
+                                    </td>
+                                    <td>
+                                        <p>Create a link to the duplicate work item that remains active.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when you close a shared steps work item:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the work
+                                    item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the work item was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>You can reactivate a shared steps work item. </p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>When you reactivate a shared steps work item, the Reason field is automatically set
+                            to <span class="ui">Reactivated</span>. </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reactivated</span></p>
+                                    </td>
+                                    <td>
+                                        <p>The shared steps is required to support definition of a test case. </p>
+                                    </td>
+                                    <td>
+                                        <p>Review all action and validation steps to make sure that they support the test cases
+                                            where the shared steps are inserted.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when you reactivate a shared steps work item:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the work item was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span></h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestCaseGovDev.html">Test Case (GovDev)</a></span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">
+                    Testing the Application</a></span></div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">GovDev for TFS 2010 v1.0</a></span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow (GovDev)</a></span></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span>
+        </div>
+    </div>
+</body>
+</html>

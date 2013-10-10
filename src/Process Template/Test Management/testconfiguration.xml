@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestConfigurations>
+    <TestConfiguration name="Windows 7 and IE 8" 
+                        description="Default operating system and browser for testing" state="active" isdefault="true">
+        <TestVariable 
+                        name="Operating System" value="Windows 7" />
+        <TestVariable
+                        name="Browser" value="Internet Explorer 8.0" />
+    </TestConfiguration>
+</TestConfigurations>

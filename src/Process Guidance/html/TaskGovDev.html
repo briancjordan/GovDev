@@ -1,0 +1,858 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="tasks [Visual Studio ALM]" />
+    <meta name="System.Keywords" content="tasks [Visual Studio ALM], defining and work item form (GovDev)" />
+    <meta name="System.Keywords" content="tasks [Visual Studio ALM], defining and work item form (CMMI)" />
+    <meta name="System.Keywords" content="work item types, tasks (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="91de7896-37fa-4a7d-aff5-e464e8a1a89a" />
+    <meta name="Description" content="You can learn how to fill in the details of a task work item in this topic. For information about what tasks are and how they are used in agile processes, see Product Backlog." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Task (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Task" /><MSHelp:Keyword Index="A" Term="91de7896-37fa-4a7d-aff5-e464e8a1a89a" /><MSHelp:Keyword Index="K" Term="tasks [Visual Studio ALM]" /><MSHelp:Keyword Index="K" Term="tasks [Visual Studio ALM], defining and work item form (GovDev)" /><MSHelp:Keyword Index="K" Term="tasks [Visual Studio ALM], defining and work item form (CMMI)" /><MSHelp:Keyword Index="K" Term="work item types, tasks (GovDev)" /><MSHelp:Attr Name="RevisionNumber" Value="24" /><MSHelp:Attr Name="AssetID" Value="91de7896-37fa-4a7d-aff5-e464e8a1a89a" /><MSHelp:Attr Name="Abstract" Value="You can learn how to fill in the details of a task work item in this topic. For information about what tasks are and how they are used in agile processes, see Product Backlog. For information about how to create a task work item, see Work Items and W ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Task (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Task (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can learn how to fill in the details of a task work item in this topic. For information
+                    about what tasks are and how they are used in agile processes, see <span sdata="link">
+                        <a href="http://msdn.microsoft.com/library/3edfa39e-8807-4dae-959b-84aa011624c6">Product
+                            Backlog</a></span>. For information about how to create a task work item,
+                    see <span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                        (GovDev)</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#CreateTasks">Defining a Task</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkingUseCases">Linking a Task to a Use Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkingTasks">Linking a Task to a Child Task</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details and Attachments to a Task</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#CloseTasks">Closing Completed Tasks</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Agile Processes</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="Scrum.html">Scrum</a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Workbooks</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IterationBacklogWorkbook.html">Iteration Task Backlog Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">GovDev Reports (Reporting Services)</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BurndownandBurnRateReportGovDev.html">Burndown and Burn
+                                            Rate Report (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RemainingWorkReport.html">Remaining Work Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="EffortSchedulesandTrackingHoursGovDev.html">Effort, Schedules,
+                                            and Tracking Hours (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a task, you must be a member of the <span class="ui">Readers</span> group
+                    or your <span class="ui">View work items in this node</span> must be set to <span
+                        class="ui">Allow</span>. To create or modify a task, you must be a member of
+                    the <span class="ui">Contributors</span> group or your <span class="ui">Edit work items
+                        in this node</span> permissions must be set to <span class="ui">Allow</span>.
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="CreateTasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Task</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>A task communicates the need to do some work. Each team member can define tasks to
+                    represent the work that they need to accomplish. For example, a developer can define
+                    development tasks to implement Use Cases. A tester can define test tasks to assign
+                    the job of writing and running test cases. A task can also be used to signal regressions
+                    or to suggest that exploratory testing should be performed. Also, a team member
+                    can define a task to represent generic work for the project. </p>
+                <p>The form for task work items stores data in the fields and tabs that are shown in
+                    the following illustration:</p>
+                <img alt="Work Item Form for Task" src="../art/ProcGuid_NewTask.png" /><p>When you define
+                    a task, all fields are optional except for <span class="ui">Title</span>.</p>
+                <h3 class="procedureSubHeading">To define a single task</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form for a task, specify one or more of the following
+                                types of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span>, verify and, if necessary, update the title to better
+                                        define the area of work to be accomplished. </p>
+                                    <p>The title provides a concise overview of the task to be completed. The title should
+                                        be descriptive enough to allow the team to understand what area of the product is
+                                        affected and how it is affected.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Activity</span> list, click the type of activity that represents
+                                        the task to be accomplished. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the appropriate owner for the
+                                        task.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>If you leave the task unassigned, it is automatically assigned to you. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign only one resource to each task. If more than one team member will
+                                                        work on the same task, divide it into separate tasks or subtasks, and assign a single
+                                                        team member to each. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Rank</span>, type a number or leave this field blank.</p>
+                                    <p>In general, teams work on items that have a lower value in this field first.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click a value to specify the importance
+                                        of the task on a scale of 1 to 4, 1 being most important.</p>
+                                    <p>The default value is 2. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration, or leave these fields blank to be assigned later
+                                        during a planning meeting. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The project administrator for each team project defines area and iteration paths
+                                                        for that project so that the team can track progress by those designations. For
+                                                        more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Original Estimate</span>, type a number that represents the hours
+                                        of work that the task will take to complete. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>If you subdivide a task into subtasks, specify hours for the subtasks only. In Team
+                                                        Foundation reports, hours that you define for the subtask are rolled up as summary
+                                                        values for the parent task and the Use Case. If you assign hours in both place,
+                                                        hours will be counted twice in those reports that track hours. For information about
+                                                        how to correct this condition, see <span sdata="link"><a href="http://msdn.microsoft.com/library/09e8e02d-9ecb-4012-9ee0-cebb89372096">
+                                                            Address Inaccuracies Published for Summary Values</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Completed</span>, type 0 to specify that no work has been completed.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Remaining</span>, type the same value that you specified in <span
+                                        class="ui">Original Estimate</span>.</p>
+                                    <p>If your team is using the <span class="ui">Original Estimate</span>, <span class="ui">
+                                        Completed</span>, and <span class="ui">Remaining</span> fields to determine team
+                                        capacity, burndown, and burn rate, you will want to update the <span class="ui">Completed
+                                        </span> and <span class="ui">Remaining</span> fields as you perform the work. Also,
+                                        these fields are synchronized with Office Project, which you can use to schedule
+                                        the project plan. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/be5cef4f-755f-4ffe-8dd7-876d1e02c330">
+                                            Scheduling Tasks and Assigning Resources Using Microsoft Project</a></span>.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) On the<span class="ui"> Details</span> tab, specify the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Description</span>, type as much detail as you want to describe
+                                        the work to be performed. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">History</span>, type comments that you want to capture as part
+                                        of the historical record. Every time that a team member updates the work item, its
+                                        history shows the date of the change, the team member who made the change, and the
+                                        fields that changed.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Link the task to other work items, such as Use Cases of child Tasks.
+                                For more information about these activities, see the following sections in this
+                                topic:</p>
+                            <ul>
+                                <li>
+                                    <p><a href="#LinkingUseCases">Linking a Task to a Use Case</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#LinkingTasks">Linking a Task to a Child Task</a></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the task, the identifier appears under the work item toolbar.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkingUseCases" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                a Task to a Use Case</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You link tasks to a use case to track the progress of work that has occurred to
+                    complete that use case. After you define a task, you can link it to the Use Case
+                    that it implements by using the following procedure.</p>
+                <h3 class="procedureSubHeading">To link a task to an existing Use Case </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Implementation</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Task </span> dialog box opens.</p>
+                            <img alt="Link task to Use Case dialog box" 
+                                src="../art/ProcGuid_LinkToUseCase.png" /><p>
+                                Leave the <span class="ui">Link Type</span> set to <span class="ui">Parent</span>,
+                                which is the only type of link that is supported for links that you add on the <span
+                                    class="ui">Implementation</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Saved query</span>, click the <span class="ui">Use Case 
+                                Planning</span> or  <span class="ui">Open Use Cases
+                                </span> team queries, and then click <span class="ui">Find</span>.</p>
+                        </li>
+                        <li>
+                            <p>Select the check box next to the Use Case you want to link to the task.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type a description for the tasks to
+                                which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the task and the Use Case that you linked are updated.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkingTasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="Img1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                a Task to a Child Task</span> </h1>
+            <div id="Div1" class="section" name="collapseableSection" style="">
+                <p>You link tasks to a use case to track the progress of work that has occurred to
+                    complete that use case. After you define a task, you can link it to the Use Case
+                    that it implements by using the following procedure.</p>
+                <h3 class="procedureSubHeading">To link a task to an existing Task </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Implementation</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Task </span> dialog box opens.</p>
+                            <img alt="Link task to Use Case dialog box" 
+                                src="../art/ProcGuid_LinkToChildTask.png" /><p>
+                                Leave the <span class="ui">Link Type</span> set to <span class="ui">Child</span> links that you add on the <span
+                                    class="ui">Implementation</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Saved query</span>, click the <span class="ui">Active Tasks
+                                </span> team query, and then click <span class="ui">Find</span>.</p>
+                        </li>
+                        <li>
+                            <p>Select the check box next to the Use Case you want to link to the task.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type a description for the tasks to
+                                which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the task and the Use Case that you linked are updated.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Details and Attachments to a Task</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can add information to a task that supports its implementation. You add details
+                    to tasks in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Type information in the <span class="ui">Description</span> or <span class="ui">History
+                            </span> field.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to a Web site or to a file that is stored on a server or Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a task</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Details</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Description</span>, type information.</p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">History</span>, type information.</p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. For more
+                                information, see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Descriptions, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to a task</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste a file that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, and then click <span class="ui">Browse</span>. In the
+                                        <span class="ui">Attachment</span> dialog box, type or browse to the name of the
+                                        file that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, you can optionally type additional
+                                        information about the attachment. To close the <span class="ui">Attachment </span> 
+                                        dialog box, click <span class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="CloseTasks" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Closing
+                Completed Tasks</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>When you complete a task, you change its <span class="ui">State</span> from <a
+                    href="#Active">Active</a>to <a href="#Closed">Closed</a>state. </p>
+                <h3 class="procedureSubHeading">To close a task</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the task.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Closed</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Reason</span> list, click the reason why you are closing the
+                                task.</p>
+                            <p>For more information about each option in the <span class="ui">Reason</span> list,
+                                see <a href="#ActiveClosed">Active to Closed</a>later in this topic.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a task in the <a href="#Active">Active</a>state with a default
+                                            reason of New.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state from <a href="#ActiveClosed">Active to Closed</a>
+                                            indicating that the task has been completed.</p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Additional workflow transitions states</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member determines that the task is not relevant and changes the state from
+                                            <a href="#ActiveClosed">Active to Closed</a>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member determines that the task was closed in error and reactivates the task,
+                                            changing the state from <a href="#ClosedActive">Closed to Active</a>.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Task State Diagram</span> </p>
+                                <img alt="Task state diagram" src="../art/ProcGuide_Task.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active</h3>
+                <div class="subsection">
+                    <p>The task remains in the active state as long as it is being implemented. The team
+                        member who has been assigned the task tracks the level of effort of the task by
+                        updating it with <span class="ui">Completed</span> and <span class="ui">Remaining
+                        </span> hours. </p>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>When you close a task, you must specify one of the following reasons why you are
+                            closing it: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Completed</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>When you complete the work that was required to implement the functionality that
+                                            was defined in the task. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Deferred</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the work cannot be implemented in the current iteration. You might defer a task
+                                            because the team does not have enough time or because blocking issues prevent work.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Update the Iteration field to the correct iteration in which the task will be implemented,
+                                            or set it to the backlog.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Obsolete</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the work the task represents no longer contributes to completion of the product.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Cut </span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the functionality for the task is removed from the product. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are automatically captured during the transition from active
+                            to closed:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the work
+                                    item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the work item was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>Any team member can reactivate a closed task if it comes back into scope.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>When you reactivate a task, the <span class="ui">Assigned To</span> field is automatically
+                            populated with the name of the team member who closed the task. The <span class="ui">
+                                Reason</span> field is set to <span class="ui">Reactivated</span>. </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reactivated</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the task is now necessary because of a change in functionality. </p>
+                                    </td>
+                                    <td>
+                                        <p>Review the information and linked work items that are defined for the task to determine
+                                            whether any data must be updated. </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured during the transition from closed to
+                            active:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the work item.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the work item was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    work item was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/d02ac295-f0dc-47d7-b5a3-3713b7f6bcf7">
+                    Plan the Sprint</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

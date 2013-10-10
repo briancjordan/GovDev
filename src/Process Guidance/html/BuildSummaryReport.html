@@ -1,0 +1,534 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="builds [Visual Studio ALM], Build Summary report" />
+    <meta name="Microsoft.Help.Id" content="ac74cae8-5c9b-43d6-b4ef-c889dcb9440f" />
+    <meta name="Description" content="The Build Summary lists builds and provides information about test results, test coverage, code churn, and quality notes for each build." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Build Summary Report" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Build Summary" /><MSHelp:Keyword Index="A" Term="ac74cae8-5c9b-43d6-b4ef-c889dcb9440f" /><MSHelp:Keyword Index="K" Term="builds [Visual Studio ALM], Build Summary report" /><MSHelp:Attr Name="RevisionNumber" Value="10" /><MSHelp:Attr Name="AssetID" Value="ac74cae8-5c9b-43d6-b4ef-c889dcb9440f" /><MSHelp:Attr Name="Abstract" Value="The Build Summary lists builds and provides information about test results, test coverage, code churn, and quality notes for each build." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Build Summary Report</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Build Summary Report</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>The Build Summary lists builds and provides information about test results, test
+                    coverage, code churn, and quality notes for each build.</p>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsGovDev.html">Reports (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Duration">Setting the Duration of the Iteration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>What is the status of all builds over time?</p>
+                                    </li>
+                                    <li>
+                                        <p>Which builds succeeded? </p>
+                                    </li>
+                                    <li>
+                                        <p>Which builds have a significant number of changes to the code? </p>
+                                    </li>
+                                    <li>
+                                        <p>How much of the code was executed by the tests?</p>
+                                    </li>
+                                    <li>
+                                        <p>Which builds are ready to install? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in Reporting Services. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The data that appears in the Build Summary report is derived from the data warehouse.
+                    The report presents a visual display of the percentage of tests that are passing,
+                    code that is being tested, and changes in code across several builds. </p>
+                <p>You can review the results for both manual and automatic builds, in addition to the
+                    most recent builds and continuous or frequent builds. The report lists the most
+                    recent builds first and contains build results that were captured during the specified
+                    time interval for all builds that were run, subject to the filters that you specified
+                    for the report.</p>
+                <p>At a glance, you can determine the success or failure of several build definitions
+                    for the time period under review, as the following illustration shows.</p>
+                <img alt="Example Build Summary report" src="../art/ProcGuid_Reports_BuildSummary.png" /><p>
+                    The following table describes the information that appears for each quality indicator:
+                </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Quality indicator</p>
+                            </th>
+                            <th>
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Build Progress</span> </p>
+                            </td>
+                            <td>
+                                <p>Specifies the status of the build. A build can be in one of the following states:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p><span class="ui">Failed</span>. The build failed to compile or tests failed to pass.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Partially Succeeded</span>. Only some portions of the build successfully
+                                            compiled.</p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Stopped</span>. The build was manually stopped. </p>
+                                    </li>
+                                    <li>
+                                        <p><span class="ui">Succeeded</span>. The build successfully compiled, and tests ran.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Build Quality</span> </p>
+                            </td>
+                            <td>
+                                <p>Specifies a manually assigned assessment of the quality of the build. You can add
+                                    or remove the build qualities that are defined for your team project. For more information,
+                                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/c596b769-c2c1-4a00-933a-b1a666df45bb">
+                                        Add or Remove Build Quality Values</a></span>.</p>
+                                <p>The column is empty if the build quality has not been rated.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">% Tests Passed</span> </p>
+                            </td>
+                            <td>
+                                <p>Displays a horizontal stacked bar chart that lists the percentage of tests that passed
+                                    superimposed on a green bar. The remaining bar segment is red, which indicates the
+                                    percentage of tests that failed. The total length of the chart always equals the
+                                    width of the column.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">% Code Coverage</span> </p>
+                            </td>
+                            <td>
+                                <p>Displays a horizontal stacked bar chart that lists the percentage of code that was
+                                    covered superimposed on a green bar. The remaining bar segment is light blue, which
+                                    indicates the percentage of code that was not tested in the build. The total length
+                                    of the chart always equals the width of the column.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">% Code Churn (lines)</span> </p>
+                            </td>
+                            <td>
+                                <p>Displays a horizontal bar chart that lists the percentage of code churn superimposed
+                                    on a gray bar. The code churn is calculated by determining the number of lines of
+                                    code that the team has added, deleted, or modified divided by the total number of
+                                    lines in the build. The bar length is proportionate to the percentage figure, scaled
+                                    across the report so that the maximum amount of code churn across all builds equals
+                                    the width of the column.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>You can filter the Build Summary report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the build definitions by specifying the platforms, configurations, build definitions,
+                            build qualities, or build progress to include in the report. </p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report</a>later in this
+                    topic.</p>
+                <h3 class="subHeading">Required Build Management Activities</h3>
+                <div class="subsection">
+                    <p>For the Build Summary report to be useful, team members must perform the following
+                        activities to manage builds: </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Configure a build system</span>. To use Team Foundation Build,
+                                you must set up a build system. </p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/e5a1f360-7c62-44fc-8823-c6ebcd62bc20">
+                                Configure Your Build System</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Create build definitions</span>. You can create several build
+                                definitions, each of which can be run to produce code for a different platform.
+                                Also, you can run each build for a different configuration.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/61593e10-d24b-492f-b19a-af4d85abea6b">
+                                Creating and Working with Build Definitions</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Define tests to run automatically as part of the build</span>. 
+                                As part of the build definition, you can define tests to run as part of the build
+                                or to fail if the tests fail.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/43930b12-c21b-4599-a980-2995e3d16e31">
+                                Define a Build Using the Default Template</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Configure tests to gather code coverage data</span>. For code
+                                coverage data to appear in the report, team members must instrument tests to gather
+                                that data.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8dcf94f8-8b85-41ba-a5a2-d12aa5d2da85">
+                                How to: Configure Code Coverage Using Test Settings for Automated Tests</a></span> 
+                                and <span sdata="link"><a href="http://msdn.microsoft.com/library/164f5cb9-9dad-4a0b-83e3-68e83ca99431">
+                                    How to: Gather Code-Coverage Data with Generic Tests</a></span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Run builds regularly</span>. Builds can be run at set intervals
+                                or after every check-in. You can schedule regular builds when you use the schedule
+                                trigger.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1c2eca2d-9a65-477e-9b23-0678ff7882ee">
+                                Create a Basic Build Definition</a></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/5b8d6647-938a-4f7b-a72b-0f1921af849f">
+                                    Running and Monitoring Builds</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>(Optional)<span class="label"> Rate completed builds</span>. A team member can manually
+                                rate a build by using Build Explorer.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/fa9e34bb-8142-46e3-8bea-c4909a10e2bf">
+                                Rate the Quality of a Completed Build</a></span>.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Duration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Setting
+                the Duration of the Iteration</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To understand the progress that the team is making in your current iteration, you
+                    must set the start and end dates for the report to match those of your current iteration
+                    cycle. </p>
+                <h3 class="procedureSubHeading">To change the duration of the iteration</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Next to <span class="ui">Iteration Start (Date)</span> or<span class="ui"> Iteration
+                                End (Date)</span>, click the calendar icon, and then click a date. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can review the Build Summary report to answer questions about the most recent
+                    builds. It contains more information than the Build Success Over Time report.
+                </p>
+                <h3 class="subHeading">Questions That the Report Answers</h3>
+                <div class="subsection">
+                    <p>You can use this report to find answers to these questions:</p>
+                    <ul>
+                        <li>
+                            <p>What is the status of all builds over time?</p>
+                        </li>
+                        <li>
+                            <p>Which builds succeeded? </p>
+                        </li>
+                        <li>
+                            <p>Which builds have a significant number of changes to the code? </p>
+                        </li>
+                        <li>
+                            <p>Which builds are ready to install?</p>
+                        </li>
+                        <li>
+                            <p>How much of the code did the tests execute?</p>
+                        </li>
+                    </ul>
+                    <p>The Build Summary report does not indicate the causes of problems, but it points
+                        to where you can look to determine the root cause of problems. This report also
+                        does not indicate the size or significance of build problems.</p>
+                </div>
+                <h3 class="subHeading">Healthy Version of Report</h3>
+                <div class="subsection">
+                    <p>A healthy Build Summary report show the following indicators:</p>
+                    <ul>
+                        <li>
+                            <p>Most builds are passing.</p>
+                        </li>
+                        <li>
+                            <p>Most tests are passing.</p>
+                        </li>
+                        <li>
+                            <p>Code coverage is high.</p>
+                        </li>
+                        <li>
+                            <p>Code churn shows few spikes. </p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Unhealthy Version of Report</h3>
+                <div class="subsection">
+                    <p>An unhealthy version of the Build Summary report will show one or more of the following
+                        indicators. You may want to investigate according to the following guidance:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Many builds are failing</span>. Investigate reasons why builds
+                                are failing.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Many tests are failing</span>. Investigate and fix tests that
+                                are failing to pass.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Code coverage is mostly blue</span>. You might want to write
+                                more automatic tests.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Code churn shows spikes</span>. You might want to verify that
+                                unusual peaks are accounted for.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can filter the Build Summary report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the set of builds that are represented in the report by specifying the platform,
+                            configuration, build definition, build quality, and build progress to include in
+                            the report. </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>You can configure build definitions to run no tests, some tests, or all tests. The
+                                            report will vary greatly based on the configuration of the build definitions.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <p>The following illustration shows the available filters:</p>
+                <img alt="Filters for Build Summary report" src="../art/ProcGuid_Reports_BuildSummary_Filters.png" /><p>
+                    You must apply the filters in the sequence that the following procedure specifies.
+                    The options that are available with some filters depend on the filters that you
+                    previously set. </p>
+                <h3 class="procedureSubHeading">To filter the builds that appear in the report</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Platform</span> list, select the check box of each platform
+                                to include. </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Configuration</span> list, select the check box of each configuration
+                                to include.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Build Definition</span> list, select the check box of each
+                                build definition to include.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Build Quality</span> list, select the check box of each build
+                                quality to include.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Progress</span> list, select the check box of each build progress
+                                to include.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Tasks</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/d5c41789-46af-4328-a432-3a536301d16c">View the Build Results Window</a></span> </div>
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BuildQualityIndicatorsReport.html">Build Quality Indicators Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BuildSuccessOverTimeReport.html">Build Success Over Time Report</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

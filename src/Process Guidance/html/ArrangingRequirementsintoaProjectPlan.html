@@ -1,0 +1,384 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="Microsoft.Help.Id" content="83ade2b1-dd94-489e-bf6d-42391eea6171" />
+    <meta name="Description" content="After you analyze your customer requirements sufficiently to understand what the product should do, you must work out a plan to implement the product." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Arranging Requirements into a Product Plan" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:keyword Index="A" Term="83ade2b1-dd94-489e-bf6d-42391eea6171" /><mshelp:attr Name="RevisionNumber" Value="15" /><mshelp:attr Name="AssetID" Value="83ade2b1-dd94-489e-bf6d-42391eea6171" /><mshelp:attr Name="Abstract" Value="After you analyze your customer requirements sufficiently to understand what the product should do, you must work out a plan to implement the product. Or, for an existing product, you must work out what functionality is missing and work out a plan fo ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10223.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Arranging Requirements into a Product Plan</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span>  
+					<span>    </span>  
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span>  
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span>  
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Arranging Requirements into a Project Plan</span>  
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span>  
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>After you analyze your customer requirements sufficiently to understand what the
+                    product should do, you must work out a plan to implement the product. Or, for an
+                    existing product, you must work out what functionality is missing and work out a
+                    plan for making the changes. But the requirements do not automatically tell you
+                    the plan. </p>
+                <p>This topic outlines a method of obtaining a plan, starting from a set of requirements.
+                    This is just one method among a variety that will work on Visual Studio, and you
+                    should adapt it so that it suits your needs.</p>
+                <p><span class="label">In this topic</span>  </p>
+                <p><a href="#ReqFeature">Requirements</a></p>
+                <p><a href="#Decomp">Use Case Decomposition</a></p>
+                <p><a href="#Assign">Assign Use Cases to Iterations</a></p>
+                <p><a href="#ProdPlan">Product Planning</a></p>
+                <p><a href="#IterPlan">Iteration Planning</a></p>
+            </div>
+            <a name="ReqFeature" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Requirements</span></h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+
+                <ul>
+                    <li>
+                        <p>Customer requirements are determined by discussion with the prospective users and
+                            other stakeholders.</p>
+                    </li>
+                    <li>
+                        <p>To help analyze these requirements, you will typically create storyboards and models,
+                            and you decompose the requirements into smaller use cases, forming a tree. You can link
+                            modeling elements such as use cases and activities to requirement work items.</p>
+                    </li>
+                    <li>
+                        <p>There are two kinds of customer requirements: </p>
+                        <ul>
+                            <li>
+                                <p>Functional requirements which represent sequences of interactions between the
+                                    users and product, in pursuit of specific goals. An example use case might have
+                                    the title "User buys a book."</p>
+                            </li>
+                            <li>
+                                <p>Quality of Service requirements include performance, security, usability, and other
+                                    criteria.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>You can represent these requirements as work items of type Requirement.
+            <a name="ReqFeature0" />
+                            These requirement work items should be linked to use cases and in turn tasks and system tests so that you can ensure
+                            that all the requirements are developed and tested.</a></p>
+                    </li>
+                    <li>
+                        <p>Use the Open Requirements, Requirements Delivevered and WorkBreakdown from 
+                            Requirements queries to list these requirements and related work items.</p>
+                    </li>
+                    <li>
+                        <p>Use the Requirements Progress and Requirements Traceability reports to monitor which requirements have been satisfied.
+                        </p>
+                    </li>
+                </ul>
+                <p>For more information, see <span sdata="link"><a href="DevelopingRequirementsandUseCases.html">
+                    Developing Requirements and Use Cases</a></span>, <span sdata="link">
+                    <a href="TeamQueriesGovDev.html">
+                        Team Queries (GovDev)</a></span>, <span sdata="link">
+                    <a href="RequirementsProgressReportGovDev.html">
+                            Requirements Progress Report (GovDev)</a></span>, 
+                    and <span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">
+                                Requirements Traceability Report (GovDev)</a></span>.
+                </p>
+                
+            </div>
+            <a name="Decomp" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Use Case Decomposition</span>
+            </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To help you arrange the requirements into iterations it becomes necessary to decompose the requirements
+                    into smaller steps or use cases describing the steps.</p>
+                <p>Storyboards often help with this activity. A storyboard is a sequence of pictures
+                    that illustrate the scenario. UML activity diagrams are useful for showing alternative
+                    paths, and UML sequence diagrams can help you discuss interactions between several
+                    actors. After you use these tools to analyze a scenario, you can enter the decomposed
+                    scenarios into Team Explorer. This lets you link test cases to the scenarios and
+                    thereby ensure that the requirements have been satisfied. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/fe5dbe96-79ab-483a-b9bc-44d0d1d3efc2">
+                        UML Activity Diagrams: Guidelines</a></span>  and <span sdata="link"><a href="http://msdn.microsoft.com/library/5990ef7c-ba60-4e20-a36d-e29c1fa6c8bb">
+                            UML Sequence Diagrams: Guidelines</a></span>. </p>
+                <p>In this example walkthrough, you enter a set of customer requirements in the form of
+                    a small tree of use cases.&nbsp; To make it clear which work item is a 
+                    requirement and which is a use case, we will use
+                    the moniker <span class="ui">Requirement #</span> for a requirement work item and <span class="ui">Use Case #</span> for a use case work item.</p>
+                <h3 class="procedureSubHeading">To open the requirements tree in Excel or Project</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In Team Explorer, open a GovDev for TFS 2010 v1.0 project.</p>
+                        </li>
+                        <li>
+                            <p>Expand <span class="ui">Work Items</span>, expand <span class="ui">Team Queries</span>, expand <span class="ui">Project 
+                                Management</span>, and run <span class="ui">Work Breakdown from
+                                    Requirements</span>. by opening it up in Microsoft Excel (Tree).</p>
+                        </li>
+                        <li>
+                            <p>If the <span class="ui">Iteration Path</span>  and <span class="ui">Requirements Type
+                                </span>  columns do not appear, click <span class="ui">Column Options</span>, and
+                                add them to the display list.</p>
+                            <p>You might also want to add the <span class="ui">Area Path</span>  column.</p>
+                        </li>
+                        <li>
+                            <p>In Office Excel, if the column headed <span class="ui">Title 1</span>  is not followed
+                                by columns that are headed <span class="ui">Title 2</span>  and <span class="ui">Title
+                                    3</span>, click the <span class="ui">Team</span>  tab, and then click <span class="ui">
+                                        Add Tree Level</span> to create the additional columns.</p>
+                        </li>
+                    </ol>
+                </div>
+                <p>You can now conveniently enter the requirements as a batch.</p>
+
+                <h3 class="procedureSubHeading">To enter the requirements and use cases </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the row immediately after the bottom row of existing work items (if any), enter
+                                the title of the top-level requirement in the <span class="ui">Title 1</span>  column:
+                            </p>
+                            <p><span class="input">Requirement 1</span></p>
+                            <p><span class="input">Requirement 2</span></p>
+                            <p><span class="input">Requirement 3</span>  </p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span>  column of all the new rows, set the
+                                type to <span class="ui">Requirement</span>. </p>
+                        </li>
+                        <li>
+                            <p>By default, all <span class="ui">Requirement Type</span> values are set to <span class="ui">Functional</span>.  
+                            If you want to change this value to one of the other type options, then you will need 
+                                to add the <span class="ui">Requirements Type</span></p> field to the MS Excel or MS Project view. 
+                        </li>
+                        <li>
+                            <p>In discussion with the business stakeholders, you determine the principal steps that
+                                make up the top-level requirement. </p>
+                            <p>In the rows that immediately follow the top-level requirement, you will enter in 
+                                the use cases as child work items of the requirements by first selecting the requirment and then clicking on <span class="ui">Add Child</span> in MS Excel.
+                                Then enter in the <span class="ui">Title 2</span> column:
+                                <p><span class="input">Use Case 1.1</span></p>
+                                <p><span class="input">Use Case 1.2</span></p>                              
+                                <p><span class="input">Use Case 2.1</span></p>
+                                <p><span class="input">Use Case 2.2</span></p>
+                        </li>
+                        
+                        <li>
+                            <p>In the <span class="ui">Work Item Type</span>  column of all the new rows, set the
+                                type to <span class="ui">Use Case</span>. </p>
+                        </li>
+                        <li>
+                            <p>To publish the requirements and use case to Team Foundation Server, select any cell in the table
+                                of work items, and then click <span class="ui">Publish</span>  on the <span class="ui">
+                                    Team</span>  tab. </p>
+                        </li>
+                    </ol>
+                </div>
+                <p>In a real situation, you might start by entering one level of requirments and then
+                    decomposing each requirement into smaller use cases in separate operations. </p>
+                <p>You now have a tree of customer requirements, which you can edit further in Office
+                    Excel or Team Explorer. </p>
+            </div>
+            <a name="Assign" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Assign
+                Use Cases to Iterations</span>  </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Assign the use cases to iterations by setting the iteration
+                    path field. You can do this in the Office Excel view. </p>
+                <p>In the following example, the most essential scenarios are implemented in iterations
+                    1 and 2, and other functions are added in later iterations. </p>
+                <ul>
+                    <li>
+                        <p><span class="label">Iteration 1</span></p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Use Case 1.1 </span></p>
+                            </li>
+                            <li>
+                                <p><span class="label">Use Case 1.2 -</span></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span class="label">Iteration 2</span></p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Use Case 2.1 </span></p>
+                            </li>
+                            <li>
+                                <p><span class="label">Use Case 2.2 -</span></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>You can take thsi a step further an define the tasks for each use case as the following
+                    picture illustrates.</p>
+                <img alt="Work Breakdown from Requirements" src="../art/Excel_WBS.PNG" /></div>
+            <a name="ProdPlan" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Product
+                planning</span>  </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>Before the start of every iteration, hold a meeting to review the product plan. The
+                    first product planning meeting creates the plan, and subsequent meetings review
+                    it based on earlier iterations. For more information, see <span sdata="link"></span>   <span sdata="link"></span>   <span sdata="link">
+                    <a href="PlanningtheProjectGovDev.html">
+                        Planning the Project (GovDev)</a></span>.</p>
+                <p>In a product plan review, discuss the features with business stakeholders, and be
+                    prepared to reprioritize them and arrange them into different iterations. The meeting
+                    should include business stakeholders and representatives of the development team.
+                </p>
+                <p>The meeting discusses the sequence in which features will be developed. This can 
+                    be done by projecting or screen-sharing the Office Excel view of the Open Requirements 
+                    and Use Case Planning
+                    queries and ordering the features by iteration. </p>
+                <p>Product planning considers the priorities and the development costs.
+                    Priorities come from the business stakeholders, with some guidance about risk from
+                    the developers. Cost estimates come from the developers. To get an accurate idea
+                    of the costs, the development team must have already done some work on the architecture
+                    of the product and might need some experience from the early iterations. For this
+                    reason, the cost estimates should be refined at every product plan review.</p>
+            </div>
+            <a name="IterPlan" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Iteration planning</span>  
+            </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>After the product plan review, plan the iteration. The product plan determines the
+                    features that will be delivered by the end of the iteration. The iteration plan
+                    determines what work the team will do to implement and test the features.</p>
+                <p>The following activities are part of iteration planning:</p>
+                <ul>
+                    <li>
+                        <p>Create tasks for development and testing, and link them as children to the use 
+                            cases to be implemented in the iteration.</p>
+                    </li>
+                    <li>
+                        <p>Create test cases for the aspects of the use casess that are to be developed
+                            in each iteration. The test cases should be linked to the use cases so that you 
+                            can monitor how complete they are. </p>
+                    </li>
+                </ul>
+                <p>For more information, see <span sdata="link"></span>   <span sdata="link">
+                    <a href="PlanninganIterationGovDev.html">Planning an Iteration (GovDev)</a></span>.</p>
+            </div>
+
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="DevelopingRequirementsandUseCases.html">Developing Requirements and Use Cases</a></span>
+                </div> 
+                <div class="seeAlsoStyle"><span sdata="link"><a href="CreatingaGreatProductBacklog.html">Creating a Great Project Backlog</a></span>
+                </div>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="RequirementGovDev.html">Requirement (GovDev)</a></span>
+                </div>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span>  
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="iterations, planning" />
+    <meta name="System.Keywords" content="requirements, planning an iteration" />
+    <meta name="Microsoft.Help.Id" content="63b93130-06bf-474c-883f-9514e3e92db0" />
+    <meta name="Description" content="Developing software in iterations means that you divide your work into incremental stages such that you have software with progressively more working features at the end of each iteration." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Planning an Iteration (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Planning an Iteration" /><MSHelp:Keyword Index="A" Term="63b93130-06bf-474c-883f-9514e3e92db0" /><MSHelp:Keyword Index="K" Term="iterations, planning" /><MSHelp:Keyword Index="K" Term="requirements, planning an iteration" /><MSHelp:Attr Name="RevisionNumber" Value="22" /><MSHelp:Attr Name="AssetID" Value="63b93130-06bf-474c-883f-9514e3e92db0" /><MSHelp:Attr Name="Abstract" Value="Developing software in iterations means that you divide your work into incremental stages such that you have software with progressively more working features at the end of each iteration. Ideally, you have something to show the customer after even t ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10223.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Planning an Iteration (CMMI)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Planning an Iteration (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Developing software in iterations means that you divide your work into incremental
+                    stages such that you have software with progressively more working features at the
+                    end of each iteration. Ideally, you have something to show the customer after even
+                    the first iteration. Iterations let you receive feedback early so that you can make
+                    course corrections early.</p>
+                <p>The matter of planning iterations comes down to deciding how long you want your iterations
+                    to be, determining how much work your team can get done in that time, and planning
+                    what work should be included in each iteration.</p>
+                <p>The GovDev for TFS 2010 v1.0 template supplies an Iteration Path field in each 
+                    work item to help you track your work by iteration. You can customize that path 
+                    to reflect the iterations that you plan to perform.</p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#PlanningTimeBound">Estimate the appropriate work load for an iteration</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><a href="#Handoff">Schedule an iteration demonstration and handoff</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Launch">Launch an iteration</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Tracking">Track an iteration</a></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Create
+                tasks to implement and tests to verify each use case</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The iteration plan is represented by the list of tasks and test cases that are scheduled for the
+                    iteration. Each task and test case is linked to the use case that it implements. </p>
+                <p>The tasks and test cases assigned to each iteration are visible in the Iteration 
+                    Backlog query and on the Project/Progress and Test Dashboards. 
+                    For more information, see <span sdata="link">
+                    <a href="DashboardsGovDev.html">
+                        Dashboards (GovDev)</a></span>.</p>
+                <p>At the start of the iteration, the team reviews the use cases that are scheduled
+                    for this iteration and creates task and test case work items. The task work items describe the
+                    work (such as design, development) and the test case work itmes describe the 
+                    steps for testing the use case. </p>
+                <p>The tasks can be most easily created and linked to the use case by using
+                    Office Excel and the Iteration Task Backlog workbook. For more information, see
+                    <span sdata="link"><a href="IterationBacklogWorkbook.html">
+                        Iteration Task Backlog Workbook</a></span>.</p>
+                <p>During the iteration, team members update the completion status and work remaining
+                    fields of the tasks and test cases. If the team keeps this information current, the Progress dashboard
+                    and other reports indicate how much work remains and the slope of the burndown chart
+                    indicates whether the work is likely to be completed on time.</p>
+            </div>
+            <a name="PlanningTimeBound" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Estimate
+                the appropriate work load for the iteration</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>It is most likely that, during project planning, it was agreed that product increments
+                    should be developed in a series of time-bound iterations. Typically, these iterations
+                    vary from one week to four weeks. </p>
+                <p>The template provides the following reports, which are useful when estimating how
+                    much work to plan for an iteration. </p>
+                <ul>
+                    <li>
+                        <p><span class="label">Status on All Interations:</span> This report helps you track team
+                            performance over successive iterations. Use the report to see how many use cases
+                            and how many hours were completed in an iteration.</p>
+                    </li>
+                    <li>
+                        <p><span class="label">Requirements Progress and Requirements Traceability:</span> This report lists all requirements, 
+                            use cases, tasks, and test cases,
+                            filtered by area and iteration. This report can
+                            show you how much work was completed by the team in an iteration.</p>
+                    </li>
+                    <li>
+                        <p><span class="label">Burndown and Burn Rate:</span> Burndown shows the trend of completed
+                            and remaining work over a specified time period. The burn rate shows the completed
+                            and required rate of work based on the length of the iteration.</p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Handoff" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Schedule
+                an iteration demonstration and handoff</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You should plan time to demonstrate the incremental functionality to stakeholders,
+                    to gather the team for a retrospective, and to hand off the completed work for validation
+                    tests.</p>
+                <p>Typically, you should allocate time on the last day of the iteration to demonstrate
+                    the working functionality to stakeholders. </p>
+                <p>Record the feedback, and save it on the project portal. If the demonstration brings
+                    new tasks or requirements to light, create work items as necessary. These should
+                    then be fed into future iteration plans.</p>
+            </div>
+            <a name="Launch" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Launch
+                an iteration</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Kick off the iteration with a mini-version of the project launch. Bring the team
+                    together. Outline the goals and the scope of the iteration. Discuss and present
+                    the plan and any targets. Ensure that all team members have enough context to continue
+                    with the work in a self-organizing manner. Make time and space for questions from
+                    team members, and record any issues or risks that are brought up during the meeting.
+                    Store these as minutes in the project portal. As a project manager, follow up by
+                    creating risk and issue work items, as appropriate.</p>
+            </div>
+            <a name="Tracking" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Track
+                an iteration</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Throughout the iteration, you should monitor its progress daily by using the reports
+                    that are provided with the template. You will want to pay extra attention to the
+                    Remaining Work, Unplanned Work, Requirements and Requirements Taraceaility reports to make sure that
+                    the iteration is tracking against expectations. For more information, 
+                    see <span sdata="link"><a href="RemainingWorkReport.html">Remaining Work</a></span>, 
+                    <span sdata="link"><a href="UnplannedWork.html">Unplanned Work</a></span>, 
+                    <span sdata="link"><a href="UnplannedWork.html">Requirements Progress</a></span> 
+                    and <span sdata="link"><a href="RequirementsOverviewReportCMMI.html">Requirements Traceability</a></span> reports.</p>
+            </div>
+            <a name="AdditionalResources" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional
+                resources           <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>For more information, see the following Web resources:</p>
+                <p><a href="http://go.microsoft.com/fwlink/?LinkId=179023">Project Retrospectives: A
+                    Handbook for Team Reviews</a>, Norman Kerth; Dorset House, 2001.</p>
+                <p><a href="http://go.microsoft.com/fwlink/?LinkId=179024">Agile Retrospectives: Making
+                    Good Teams Great</a>, Esther Derby and Diana Larsen; Pragmatic Bookshelf, 2006.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10223.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

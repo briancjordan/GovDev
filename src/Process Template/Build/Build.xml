@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+  <task id="BuildTask" name="Create Build Process Templates" plugin="Microsoft.ProjectCreationWizard.Build" completionMessage="Build tasks completed.">
+    <dependencies />
+    <taskXml>
+      <ProcessTemplate Type="Default" Filename="Build\Templates\DefaultTemplate.xaml" Description="This is the default build process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
+      <ProcessTemplate Type="Upgrade" Filename="Build\Templates\UpgradeTemplate.xaml" Description="This is the upgrade build process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
+      <Permission allow="ViewBuilds, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Readers" />
+      <Permission allow="EditBuildQuality, ViewBuilds, QueueBuilds, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Contributors" />
+      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Builders" />
+      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition, OverrideBuildCheckInValidation" identity="$$COLLECTIONADMINGROUP$$" />
+    </taskXml>
+  </task>
+</tasks>

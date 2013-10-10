@@ -1,0 +1,412 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="process guidance, agile principles" />
+    <meta name="Microsoft.Help.Id" content="38dff548-4865-4211-a148-75a5fdb1812e" />
+    <meta name="Description" content="Jeff Sutherland invented Scrum in 1993 and worked with Ken Schwaber to formalize Scrum at OOPSLA'95. Together, they extended and enhanced Scrum at many software companies and helped write the Agile Manifestohttp://go.microsoft.com/fwlink/?LinkId=161241." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Agile Principles and Values, by Jeff Sutherland" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="38dff548-4865-4211-a148-75a5fdb1812e" /><MSHelp:Keyword Index="K" Term="process guidance, agile principles" /><MSHelp:Attr Name="RevisionNumber" Value="14" /><MSHelp:Attr Name="AssetID" Value="38dff548-4865-4211-a148-75a5fdb1812e" /><MSHelp:Attr Name="Abstract" Value="Jeff Sutherland invented Scrum in 1993 and worked with Ken Schwaber to formalize Scrum at OOPSLA'95. Together, they extended and enhanced Scrum at many software companies and helped write the Agile Manifestohttp://go.microsoft.com/fwlink/?LinkId=1612 ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Agile Principles and Values, by Jeff Sutherland</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Agile Principles and Values, by Jeff Sutherland</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p>Jeff Sutherland invented Scrum in 1993 and worked with Ken Schwaber to formalize
+                                    Scrum at OOPSLA'95. Together, they extended and enhanced Scrum at many software
+                                    companies and helped write the <a href="http://go.microsoft.com/fwlink/?LinkId=161241">
+                                        Agile Manifesto</a>. Jeff's blog reviews the origins and best practices of Scrum
+                                    at <a href="http://go.microsoft.com/fwlink/?LinkId=198189">http://scrum.jeffsutherland.com
+                                    </a>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Agile development is a term that was derived from the Agile Manifesto, which was
+                    written in 2001 by a group that included the creators of Scrum, Extreme Programming
+                    (XP), Dynamic Systems Development Method (DSDM), and Crystal; a representative of
+                    feature-driven development; and several other thought leaders in the software industry.
+                    The Agile Manifesto established a common set of overarching values and principles
+                    for all of the individual agile methodologies at the time. It details four core
+                    values for enabling high-performing teams.</p>
+                <ul>
+                    <li>
+                        <p>Individuals and their interactions</p>
+                    </li>
+                    <li>
+                        <p>Delivering working software</p>
+                    </li>
+                    <li>
+                        <p>Customer collaboration</p>
+                    </li>
+                    <li>
+                        <p>Responding to change</p>
+                    </li>
+                </ul>
+                <p>These core values are supported by 12 principles, which you can find at the following
+                    Web site: <a href="http://go.microsoft.com/fwlink/?LinkId=161241">Manifesto for Agile
+                        Software Development</a>.</p>
+                <p>These values are not just something the creators of the Agile Manifesto intended
+                    to give lip service to and then forget. They are working values. Each individual
+                    agile methodology approaches these values in a slightly different way, but all of
+                    these methodologies have specific processes and practices that foster one or more
+                    of these values. </p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Individuals
+                and Interactions</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>Individuals and interactions are essential to high-performing teams. Studies of “communication
+                    saturation” during one project showed that, when no communication problems exist,
+                    teams can perform 50 times better than the industry average. To facilitate communication,
+                    agile methods rely on frequent inspect-and-adapt cycles. These cycles can range
+                    from every few minutes with pair programming, to every few hours with continuous
+                    integration, to every day with a daily standup meeting, to every iteration with
+                    a review and retrospective. </p>
+                <p>Just increasing the frequency of feedback and communication, however, is not enough
+                    to eliminate communication problems. These inspect-and-adapt cycles work well only
+                    when team members exhibit several key behaviors:</p>
+                <ul>
+                    <li>
+                        <p>respect for the worth of every person</p>
+                    </li>
+                    <li>
+                        <p>truth in every communication</p>
+                    </li>
+                    <li>
+                        <p>transparency of all data, actions, and decisions</p>
+                    </li>
+                    <li>
+                        <p>trust that each person will support the team</p>
+                    </li>
+                    <li>
+                        <p>commitment to the team and to the team’s goals</p>
+                    </li>
+                </ul>
+                <p>To foster these types of behavior, agile management must provide a supportive environment,
+                    team coaches must facilitate their inclusion, and team members must exhibit them.
+                    Only then can teams achieve their full potential. </p>
+                <p>Moving toward these types of behavior is more difficult than it might appear. Most
+                    teams avoid truth, transparency, and trust because of cultural norms or past negative
+                    experiences from conflict that was generated by honest communications. To combat
+                    these tendencies, leadership and team members must facilitate positive conflict.
+                    Doing so not only helps create productive behavior but also has several other benefits:
+                </p>
+                <ul>
+                    <li>
+                        <p>Process improvement depends on the team to generate a list of impediments or problems
+                            in the organization, to face them squarely, and then to systematically eliminate
+                            them in priority order.</p>
+                    </li>
+                    <li>
+                        <p>Innovation occurs only with the free interchange of conflicting ideas, a phenomenon
+                            that was studied and documented by Takeuchi and Nonaka, the godfathers of Scrum.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Aligning the team toward a common goal requires the team to surface and resolve conflicting
+                            agendas.</p>
+                    </li>
+                    <li>
+                        <p>Commitment to work together happens only when people agree on common goals and then
+                            struggle to improve both personally and as a team.</p>
+                    </li>
+                </ul>
+                <p>This last bullet, about commitment, is especially important. It is only when individuals
+                    and teams are committed that they feel accountable for delivering high value, which
+                    is the bottom line for software development teams. Agile methodologies facilitate
+                    commitment by encouraging teams to pull from a prioritized work list, manage their
+                    own work, and focus on improving their work practices. This practice is the basis
+                    of self-organization, which is the driving force for achieving results in an agile
+                    team.</p>
+                <p>To create high-performing teams, agile methodologies value individuals and interactions
+                    over processes and tools. Practically speaking, all of the agile methodologies seek
+                    to increase communication and collaboration through frequent inspect-and-adapt cycles.
+                    However, these cycles work only when agile leaders encourage the positive conflict
+                    that is needed to build a solid foundation of truth, transparency, trust, respect,
+                    and commitment on their agile teams. </p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Working
+                Software over Comprehensive Documentation</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Working software is one of the big differences that agile development brings. All
+                    of the agile methodologies that are represented in the Agile Manifesto stress delivering
+                    small pieces of working software to the customer at set intervals. </p>
+                <p>All agile teams must establish what they mean when they say “working software,” which
+                    is frequently known as the definition of done. At a high level, a piece of functionality
+                    is complete only when its features pass all tests and can be operated by an end
+                    user. At a minimum, teams must go beyond the unit test level and test at the system
+                    level. The best teams also include integration testing, performance testing, and
+                    customer acceptance testing in their definition of what it means to be done with
+                    a piece of functionality.</p>
+                <p>One CMMI Level 5 company has shown, through extensive data on many projects, that
+                    defining acceptance tests along with the feature, implementing features serially
+                    and in priority order, immediately running acceptance tests on each feature, and
+                    fixing any bugs that are identified as highest priority will systematically double
+                    the speed of production and reduce defects by 40 percent. This from a company that
+                    already has one of the lowest defect rates in the world.</p>
+                <p>The Agile Manifesto recommends that teams deliver working software at set intervals.
+                    Agreeing on a definition of done is one of the practical ways that agile teams bring
+                    about the high performance and high quality that is needed to accomplish this goal.
+                </p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Customer
+                Collaboration over Contract Negotiation</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Over the past two decades, project success rates have more than doubled worldwide.
+                    This is attributed to smaller projects and frequent deliveries, which allow the
+                    customer to provide feedback on working software at regular intervals. The writers
+                    of the manifesto were clearly on to something when they stressed that getting the
+                    customer involved in the software development process is essential to success.
+                </p>
+                <p>The agile methodologies foster this value by having a customer advocate work hand-in-hand
+                    with the development team. The first Scrum team, for example, had thousands of customers.
+                    Because it was not feasible to involve them all in product development, they selected
+                    a customer proxy, called a product owner, to represent not only all the customers
+                    in the field, but also management, sales, support, client services, and other stakeholders.
+                    The product owner was responsible for updating the list of requirements every four
+                    weeks as the team released working software, taking into account the current reality
+                    and actual feedback from customers and stakeholders. This allowed the customer to
+                    help shape the software that was being created. </p>
+                <p>The first XP team began with an internal IT project. They were able to have a company
+                    end user on their team work with them daily. About 10 percent of the time, consultancies
+                    and internal teams can find an end user who can work with the team on a day-to-day
+                    basis. The other 90 percent of the time, they must appoint a proxy. This customer
+                    proxy, whom XP teams call the customer, works with end users to provide a clear,
+                    prioritized list of features for developers to implement.</p>
+                <p>Collaborating with the customer (or customer proxy) on a daily basis is one of the
+                    key reasons why industry data shows that agile projects have more than twice the
+                    success rate of traditional projects on average worldwide. Agile methodologies recognize
+                    this and, as such, have created a place on their development teams that is specifically
+                    for the customer representative.</p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Responding
+                to Change over Following a Plan</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Responding to change is essential for creating a product that will please the customer
+                    and provide business value. Industry data shows that over 60 percent of product
+                    or project requirements change during the development of software. Even when traditional
+                    projects finish on time, on budget, with all features in the plan, customers are
+                    often unhappy because what they find is not exactly what they wanted. “Humphrey’s
+                    Law” says that customers never know what they want until they see working software.
+                    If customers do not see working software until the end of a project, it is too late
+                    to incorporate their feedback. Agile methodologies seek customer feedback throughout
+                    the project so that they can incorporate feedback and new information as the product
+                    is being developed. </p>
+                <p>All agile methodologies have built-in processes to change their plans at regular
+                    intervals based on feedback from the customer or customer proxy. Their plans are
+                    designed to always deliver the highest business value first. Because 80 percent
+                    of the value is in 20 percent of the features, well-run agile projects tend to finish
+                    early, whereas most traditional projects finish late. As a result, customers are
+                    happier, and developers enjoy their work more. Agile methodologies are based on
+                    the knowledge that, in order to succeed, they must plan to change. That is why they
+                    have established processes, such as reviews and retrospectives, that are specifically
+                    designed to shift priorities regularly based on customer feedback and business value.
+                </p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Agile
+                is an Umbrella – Methodologies are Implementations</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Agile development is not a methodology in itself. It is an umbrella term that describes
+                    several agile methodologies. At the signing of the Agile Manifesto in 2001, these
+                    methodologies included Scrum, XP, Crystal, FDD, and DSDM. Since then, Lean practices
+                    have also emerged as a valuable agile methodology and so are included under the
+                    agile development umbrella in the illustration later in this topic.</p>
+                <p>Each agile methodology has a slightly different approach for implementing the core
+                    values from the Agile Manifesto, just as many computer languages manifest the core
+                    features of object-oriented programming in different ways. A recent survey shows
+                    that about 50 percent of agile practitioners say that their team is doing Scrum.
+                    Another 20 percent say that they are doing Scrum with XP components. An additional
+                    12 percent say that they are doing XP alone. Because more than 80 percent of agile
+                    implementations worldwide are Scrum or XP, GovDev for TFS 2010 v1.0
+                    focuses on the core processes and practices of Scrum and XP.</p>
+                <img alt="The Agile Umbrella" src="../art/TeamProj_AgileUmbrella.png" /><p>Scrum is
+                    a framework for agile development processes. It does not include specific engineering
+                    practices. Conversely, XP focuses on engineering practices but does not include
+                    an overarching framework of development processes. That does not mean that Scrum
+                    does not recommend certain engineering practices or that XP has no process. For
+                    example, the first Scrum implemented all of the engineering practices that are now
+                    known as XP. However, the Scrum framework for software development was designed
+                    to get a team started in two or three days, whereas engineering practices often
+                    take many months to implement. Therefore, it left the question of when (and whether)
+                    to implement specific practices up to each team. Scrum co-creators Jeff Sutherland
+                    and Ken Schwaber recommend that Scrum teams get started immediately and create a
+                    list of impediments and a process improvement plan. As engineering practices are
+                    identified as impediments, teams should look to XP practices as a way to improve.
+                    The best teams run Scrum supplemented with XP practices. Scrum helps XP to scale,
+                    and XP helps Scrum to work well.</p>
+                <p>The following table shows how key terms in Scrum and XP can be interchanged.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Scrum</p>
+                            </th>
+                            <th>
+                                <p>XP</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>product owner</p>
+                            </td>
+                            <td>
+                                <p>customer</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>scrummaster</p>
+                            </td>
+                            <td>
+                                <p>XP coach</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>team</p>
+                            </td>
+                            <td>
+                                <p>team</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>sprint</p>
+                            </td>
+                            <td>
+                                <p>iteration</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>sprint planning meeting</p>
+                            </td>
+                            <td>
+                                <p>planning game</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/52aa8bc9-fc7e-4fae-9946-2ab255ca7503">Planning and Tracking Projects</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">GovDev for TFS 2010 v1.0</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

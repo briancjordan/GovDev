@@ -1,0 +1,555 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="issues, workbook (GovDev)" />
+    <meta name="System.Keywords" content="workbooks, issues" />
+    <meta name="Microsoft.Help.Id" content="cda8e090-0066-4022-b671-54813bffa3c7" />
+    <meta name="Description" content="You can use the Issues workbook to review and rank problems that might block team progress. The default workbook query displays a flat list of all issues that are defined for the team project." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Issues Workbook" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="cda8e090-0066-4022-b671-54813bffa3c7" /><MSHelp:Keyword Index="K" Term="issues, workbook (GovDev)" /><MSHelp:Keyword Index="K" Term="workbooks, issues" /><MSHelp:Attr Name="RevisionNumber" Value="14" /><MSHelp:Attr Name="AssetID" Value="cda8e090-0066-4022-b671-54813bffa3c7" /><MSHelp:Attr Name="Abstract" Value="You can use the Issues workbook to review and rank problems that might block team progress. The default workbook query displays a flat list of all issues that are defined for the team project. " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Issues Workbook</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Issues Workbook</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Issues workbook to review and rank problems that might block team
+                    progress. The default workbook query displays a flat list of all issues that are
+                    defined for the team project. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Issues workbook is stored on the server that hosts SharePoint Products for your
+                                    team project. If a project portal has not been enabled for your team project, you
+                                    cannot access the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                        Access a Team Project Portal and Process Guidance</a></span>.</p>
+                                <p>When you open the workbook, click <span class="ui">Edit Workbook</span> next to <span
+                                    class="ui">Server Workbook</span> so that you can modify the workbook. For more information,
+                                    see <span sdata="link"><a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span>.</p>
+                                <p>If you cannot open the workbook, you can open the Issues team query by using Team
+                                    Explorer or Office Excel. This topic describes how to manage issues by using Office
+                                    Excel. For information about how to manage issues within the list of query results,
+                                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/6d094fa0-ae0c-4ce3-a3cf-c2488ddc0322">
+                                        Modify Work Items within a List View</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Issues Listed in the Workbook</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Rank">Ranking and Prioritizing Issues</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Add">Adding Issues</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Reorder">Reordering the List of Issues</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddLink">Linking an Issue to Another Work Item</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Filter">Filtering the List of Issues</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AdditionalResources">Additional Resources for Modifying Issues Using Office
+                                            Excel</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">To access the Issues workbook</span></p>
+                                <ul>
+                                    <li>
+                                        <p>Open Team Explorer, open the <span class="ui">Shared Documents</span> folder, and
+                                            then open the workbook, as the following illustration shows: </p>
+                                        <img alt="Issues workbook under Shared Documents" src="../art/ProcGuid_Issues_Workbook.png" />
+                                    </li>
+                                    <li>
+                                        <p>Or, open Team Explorer, open the <span class="ui">Work Items</span> folder, and then
+                                            open the <span class="ui">Open Issues</span> team query in the Project 
+                                            Management query folder, as the following illustration
+                                            shows:</p>
+                                        <img alt="Issues query under Team Queries" src="../art/ProcGuid_Issues_Query.png" />
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a team query, you must be assigned or belong to a group that has been assigned
+                    <span class="ui">Read</span> permissions for the team query folder for the team project.
+                    To modify a query, you must be assigned or belong to a group that has been assigned
+                    <span class="ui">Contribute</span> or <span class="ui">Full Control</span> permissions
+                    for the team query. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/682f0eb0-462d-41e2-b6a2-41949d1b90fb">
+                        Organize and Set Permissions on Work Item Queries</a></span>.</p>
+                <p>To create or modify work items, you must be a member of the <span class="ui">Contributors
+                    </span> group or your <span class="ui">View work items in this node</span> and <span
+                        class="ui">Edit work items in this node</span> permissions must be set to <span class="ui">
+                            Allow</span>. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/39997de5-b7fb-4777-b779-07de0543abe6">
+                                Team Foundation Server Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Issues
+                Listed in the Workbook</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can use the Issues workbook to manage active issues. The Issues worksheet references
+                    the Issues team query, which is configured to find all issues that are defined for
+                    the team project. The following illustration shows an example of the workbook opened
+                    in Office Excel.</p>
+                <img alt="Example of Issues Workbook" src="../art/ProcGuid_WorkbookIssues.png" />
+            </div>
+            <a name="Rank" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Ranking
+                and Prioritizing Issues</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You can rank, prioritize, and specify due dates to issues that are listed in the
+                    workbook.</p>
+                <h3 class="procedureSubHeading">To rank and prioritize issues</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Issues workbook, click the <span class="ui">Issues</span> worksheet.</p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span> group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the list contains the most current information.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Review the rank and priority of each issue in the list, and update the following
+                                fields as needed: </p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Stack Rank</span>, type a number that indicates how important the issue
+                                        is to the completion of the iteration.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, Click the priority for resolving the
+                                        issue. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Target Resolved Date</span>, click the date by which the issue must be resolved.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook. </p>
+                            <p>You can later open the local copy of the workbook, refresh the list, and make additional
+                                changes. You do not need to open the workbook from Team Explorer every time.
+                            </p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>You can use the undo feature in Excel to undo recent changes that you made to work
+                                                items before you publish the changes.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                                Publish Work Items in Office Excel</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Save and close the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Add" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Issues to the Workbook</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can add issues to the database for tracking work items by adding them to the
+                    Issues workbook and publishing the workbook.</p>
+                <h3 class="procedureSubHeading">To add issues to the database for tracking work items
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Issues workbook, click the <span class="ui">Issues</span> worksheet.</p>
+                        </li>
+                        <li>
+                            <p>If you have opened a saved workbook, on the <span class="ui">Team</span> tab, in the
+                                <span class="ui">Work Items</span> group, click <span class="ui">Refresh</span>.
+                            </p>
+                            <p>This step helps make sure that the work item list has the most current information.
+                            </p>
+                        </li>
+                        <li>
+                            <p>For each issue that you want to add, click the row at the bottom of the list, and
+                                specify the following information for each issue that you want to add:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span>, type an entry that indicates the nature of the
+                                        problem or block.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span> list, click <span class="ui">Issue</span>.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Before you can publish a work item, you must specify its type.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Stack Rank</span>, <span class="ui">Priority</span>, and 
+                                <span class="ui">
+                                Target Resolved Date</span>, specify values.</p>
+                            <p>For more information, see <a href="#Rank">Ranking and Prioritizing Issues</a>earlier
+                                in this topic.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) To show more Team Foundation fields in the list of work items, on the
+                                <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> group,
+                                click <span class="ui">Choose Columns</span>.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                                Add or Remove Columns in a Work Item List</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>Add information to the remaining fields as appropriate.</p>
+                            <p>For more information about each field, see <span sdata="link"><a href="IssueGovDev.html">
+                                Issue (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> tab, in the <span class="ui">Work Items</span> 
+                                group, click <span class="ui">Publish</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Reorder" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Reordering
+                the List of Issues</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can reorder the issues that are listed in the Issues workbook by using the Office
+                    Excelfeature for sorting rows.</p>
+                <h3 class="procedureSubHeading">To reorder the list of issues in the workbook</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the
+                                <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                down arrow next to <span class="ui">Rank </span> or <span class="ui">Priority</span>, and then click the appropriate option. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddLink" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking
+                an Issue to Another Work Item</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>You can link an issue to another work item, such as a use case or a task, from
+                    Office Excel.</p>
+                <h3 class="procedureSubHeading">To link an issue to an existing work item</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the Issues workbook, click the row that lists the issue to which you want to add
+                                a link.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Team</span> menu, click <span class="ui">Links and Attachments
+                                </span>.</p>
+                            <p>The <span class="ui">View/Edit Work Item Links and Attachments</span> dialog box opens.
+                            </p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Links</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>.</p>
+                            <p>The <span class="ui">Add Link to Issue </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link type</span> list, click the type that represents the
+                                relationship that you want to create.</p>
+                            <p>For example, click <span class="ui">Related</span> to establish a peer-to-peer relationship.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Perform one of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Work item IDs</span>, type the IDs of the work items that you
+                                        want to find. Separate IDs by commas or spaces. </p>
+                                </li>
+                                <li>
+                                    <p>Click <span class="ui">Browse</span> to specify work items from a list.</p>
+                                    <p>The <span class="ui">Choose linked work items</span> dialog box appears.</p>
+                                    <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" /><p>
+                                        In the <span class="ui">Saved query</span> list, click a query that contains the
+                                        work items that you want to add. For example, you can click <span class="ui">Open Use Cases</span> or <span class="ui">Open Tasks</span>.</p>
+                                    <p>Click <span class="ui">Find</span>, and then select the check box next to each work
+                                        item that you want to link to the issue.</p>
+                                    <p>Click <span class="ui">OK</span>.</p>
+                                </li>
+                                <li>
+                                    <p>(Optional) Type a description for the items that you are linking to. </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">View/Edit Work Item Links and Attachments</span> dialog box,
+                                click <span class="ui">Publish</span>, and then click <span class="ui">Close</span>.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Filter" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the List of Issues</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>You can filter the issues that are listed in the Issues workbook by using the Office
+                    Excel features for filtering rows in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Filter on <span class="ui">State</span> to show only <span class="ui">Active</span> 
+                            or <span class="ui">Closed</span> issues.</p>
+                    </li>
+                    <li>
+                        <p>Filter on <span class="ui">Area</span> or <span class="ui">Iteration</span> to show
+                            only the issues that are assigned to specific product areas or iterations. </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Your project administrator defined the <span class="ui">Area</span> and <span class="ui">
+                                            Iteration</span> tree hierarchies for the team project so that the team can track
+                                            progress by these distinctions. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                Create and Modify Areas and Iterations</a></span>.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To filter the issues that are listed in the workbook
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the
+                                <img alt="Down arrow" src="../art/WIT_DownArrow.gif" />
+                                down arrow next to <span class="ui">State</span>, <span class="ui">Area</span>,
+                                or <span class="ui">Iteration</span>, and then select the check box of each state,
+                                product area, or iteration to include. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) Save the workbook.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AdditionalResources" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional
+                Resources for Modifying Issues By Using Office Excel</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>For more information about how to modify issues by using Office Excel, see the following
+                    topics: </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/bd661b9f-cddc-4b5f-a5e9-f14b714179ca">
+                            Create, Open, and Modify Work Items Using Office Excel</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c425563e-dd9d-49ac-8444-02c5f34e028a">
+                            Add or Remove Columns in a Work Item List</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/b4456d9b-9754-4e15-aa66-045b172aa3bd">
+                            Publish Work Items in Office Excel</mshelp:link></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3060a8cd-702c-4be8-9c05-c14636a77d9b">
+                            Connect a Microsoft Office Document to Team Foundation Server</a></span> </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c9e48dcd-f6a9-4d7c-9616-5bfd1516f8e8">
+                            Sort, Filter, or Format a Work Item List</a></span> </p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

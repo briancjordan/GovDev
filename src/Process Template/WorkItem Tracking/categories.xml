@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cat:CATEGORIES xmlns:cat="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/categories">
+  <!-- Usage: for resilience in Test system. Even if WITs have different name, they can be referred to by the category -->
+  <CATEGORY name="Bug Category" refname="Microsoft.BugCategory">
+    <DEFAULTWORKITEMTYPE name="Bug" />
+  </CATEGORY>
+  <CATEGORY name="Requirement Category" refname="Microsoft.RequirementCategory">
+    <DEFAULTWORKITEMTYPE name="Use Case" />
+  </CATEGORY>
+  <CATEGORY name="Test Case Category" refname="Microsoft.TestCaseCategory">
+    <DEFAULTWORKITEMTYPE name="Test Case" />
+  </CATEGORY>
+  <CATEGORY name="Shared Step Category" refname="Microsoft.SharedStepCategory">
+    <DEFAULTWORKITEMTYPE name="Shared Steps" />
+  </CATEGORY>
+</cat:CATEGORIES>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkItemQuery Version="1">
+  <Wiql>
+	SELECT	[System.Id], 
+		[System.WorkItemType], 
+		[System.Title], 
+		[System.State], 
+		[System.AssignedTo], 
+		[Microsoft.VSTS.Scheduling.RemainingWork], 
+		[Microsoft.VSTS.Scheduling.CompletedWork], 
+		[Microsoft.VSTS.Scheduling.StoryPoints], 
+		[Microsoft.VSTS.Common.StackRank], 
+		[Microsoft.VSTS.Common.Priority], 
+		[Microsoft.VSTS.Common.Activity], 
+		[System.IterationPath], 
+		[System.AreaPath] 
+	FROM	WorkItemLinks 
+	WHERE	(Source.[System.TeamProject] = @project 
+	AND	Source.[System.AreaPath] UNDER @project 
+	AND	Source.[System.IterationPath] UNDER @project 
+	AND	(Source.[System.WorkItemType] = 'Requirement' 
+	OR	Source.[System.WorkItemType] = 'Use Case' 
+	OR	Source.[System.WorkItemType] = 'Task')) 
+	AND	([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') 
+	AND	(Target.[System.WorkItemType] = 'Task' 
+	OR	Target.[System.WorkItemType] = 'Bug') 
+	ORDER BY [System.Id] MODE (Recursive)
+   </Wiql>
+</WorkItemQuery>

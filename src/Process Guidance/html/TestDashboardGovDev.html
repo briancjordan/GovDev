@@ -1,0 +1,789 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="dashboards, Test (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="701fd381-fff0-4508-9316-852a45b6afb4" />
+    <meta name="Description" content="By using the Test dashboard, you can monitor test activities, report on progress, find gaps in test coverage, and identify test areas that may require additional investigation." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Test Dashboard (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Test" /><MSHelp:Keyword Index="A" Term="701fd381-fff0-4508-9316-852a45b6afb4" /><MSHelp:Keyword Index="K" Term="dashboards, Test (GovDev)" /><MSHelp:Attr Name="RevisionNumber" Value="15" /><MSHelp:Attr Name="AssetID" Value="701fd381-fff0-4508-9316-852a45b6afb4" /><MSHelp:Attr Name="Abstract" Value="By using the Test dashboard, you can monitor test activities, report on progress, find gaps in test coverage, and identify test areas that may require additional investigation. This dashboard displays five reports that provide information about testi ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Test Dashboard (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Test Dashboards (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>By using the Test dashboard, you can monitor test activities, report on progress,
+                    find gaps in test coverage, and identify test areas that may require additional
+                    investigation. This dashboard displays five reports that provide information about
+                    testing that has occurred in the most recent four weeks. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You access dashboards through your team project portal. You can access the Test dashboard
+                                    only if that portal has been enabled and is provisioned to use Microsoft Office
+                                    SharePoint Server 2007. For more information, see <span sdata="link"><a href="DashboardsGovDev.html">
+                                        Dashboards (GovDev)</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                            Access a Team Project Portal and Process Guidance</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data That Appears in the Dashboard</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Activities">Required Activities for Tracking Testing</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Progress">Monitoring Test Progress</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Gaps">Determining Gaps in Testing</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Trends">Monitoring Test Failures and Regressions</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Customizing">Customizing the Test Dashboard</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this dashboard to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the authoring of Test Cases on track?</p>
+                                    </li>
+                                    <li>
+                                        <p>Has the team defined Test Cases for all Use Cases?</p>
+                                    </li>
+                                    <li>
+                                        <p>What are the proportions of Test Cases that are passing, failing, and blocked?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Do test failure metrics indicate a problem that requires further investigation?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>What is the status of last night's build?</p>
+                                    </li>
+                                    <li>
+                                        <p>What are the most recent check-ins?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the dashboard, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Read</span> permission in SharePoint Products for the team project.
+                    To modify, copy, or customize a dashboard, you must be assigned or belong to a group
+                    that has been assigned the <span class="ui">Members</span> permission in SharePoint
+                    Products for the team project. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span>.</p>
+                <p>To modify a report in Office Excel, you must be a member of the <span class="ui">
+                    TfsWarehouseDataReaders</span> security role in SQL Server Analysis Services and
+                    you must be assigned or belong to a group that has been assigned the <span class="ui">
+                        Members</span> permission in SharePoint Products for the team project. For more
+                    information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">
+                        Grant Access to the Databases of the Data Warehouse for Visual Studio ALM</a>
+                    </span>.</p>
+                <p>To view a work item, you must be a member of the <span class="ui">Readers</span> group
+                    or your <span class="ui">View work items in this node</span> permission must be set
+                    to <span class="ui">Allow</span>. To create or modify a work item, you must be a
+                    member of the <span class="ui">Contributors</span> group or your <span class="ui">Edit
+                        work items in this node</span> permission must be set to <span class="ui">Allow
+                    </span>. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                That Appears in the Test Dashboard</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can use the Test dashboard to understand how well the team is progressing in
+                    testing the use cases. Specifically, this dashboard displays the Web parts that
+                    the following illustration shows and the following table describes.</p>
+                <img alt="Web Parts for Test Progress Dashboard" src="../art/ProcGuid_DashboardTest.png" /><div
+                    class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The <span class="ui">Test Plan Progress</span>,<span class="ui"> Test Case Readiness
+                                    </span>, <span class="ui">Use Case Test Status</span>, and<span class="ui"> Test Activity
+                                    </span> reports are available only when the team creates test plans and runs tests
+                                    by using Test Runner and Microsoft Test Manager. For information about how to define
+                                    test suites and test plans, see <span sdata="link"><a href="http://msdn.microsoft.com/library/c42dca33-6308-4790-a646-2f80ca36b96f">
+                                        Organizing Test Cases Using Test Suites</a></span>.</p>
+                                <p>Burndown, progress, trend charts, and reports
+                                    <img alt="Step 1" src="../art/ProcGuid_1.gif" />
+                                    through
+                                    <img alt="Step 5" src="../art/ProcGuid_6.gif" />
+                                    do not appear when the server that hosts Analysis Services for the team project
+                                    is not available.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Web part</p>
+                            </th>
+                            <th>
+                                <p>Data displayed</p>
+                            </th>
+                            <th>
+                                <p>Related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 1" src="../art/ProcGuid_1.gif" /></td>
+                            <td>
+                                <p>Stacked area graph of the test results of all Test Cases grouped into their most
+                                    recent recorded outcome during the past four weeks. Outcomes include <span class="ui">
+                                        Never Run</span>, <span class="ui">Blocked</span>, <span class="ui">Failed</span>, and <span class="ui">Passed</span>.</p>
+                                <img alt="Test Plan Progress Excel Report" src="../art/ProcGuid_AgileTest.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 2" src="../art/ProcGuid_2.gif" /></td>
+                            <td>
+                                <p>Stacked area graph that shows how many Test Cases have been in the <span class="ui">
+                                    Design</span> or <span class="ui">Ready</span> state for the most recent four weeks.
+                                </p>
+                                <img alt="Test Case Readiness Excel Report" src="../art/ProcGuid_ExcelTestCase.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 3" src="../art/ProcGuid_3.gif" /></td>
+                            <td>
+                                <p>Horizontal bar chart that shows the count of test results for each combination of
+                                    Test Case and test configuration that is defined for each use case. The chart
+                                    groups the test results according to their most recent test run, where the options
+                                    are <span class="ui">Passed</span> (green), <span class="ui">Failed</span> (red),
+                                    <span class="ui">Blocked</span> (purple), or <span class="ui">Not Run</span> (gray).</p>
+                                <img alt="Use Case Test Status Excel Report" 
+                                    src="../art/ProcGuid_ExcelUseCaseTestStatus.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestingGapsExcelReportGovDev.html">Testing Gaps Excel Report (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 4" src="../art/ProcGuid_4.gif" /></td>
+                            <td>
+                                <p>Line chart that shows the cumulative count of all results run for all manual Test
+                                    Cases during the most recent four weeks. </p>
+                                <img alt="Test Activity Excel Report" src="../art/ProcGuid_TestActivity.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestActivityExcelReport.html">Test Activity Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 5" src="../art/ProcGuid_6.gif" /></td>
+                            <td>
+                                <p>Stacked area graph that shows the cumulative count of all failed outcome results
+                                    for Test Cases, sorted by failure type, during the most recent four weeks. Failure
+                                    types include <span class="ui">Regression</span>, <span class="ui">New Issue</span>, and <span class="ui">Known Issue</span>. </p>
+                                <img alt="Failure Analysis Excel Report" src="../art/ProcGuid_FailureAnalysis.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="FailureAnalysisExcelReport.html">Failure Analysis Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 6" src="../art/ProcGuid_6a.gif" /></td>
+                            <td>
+                                <p>List of upcoming events. This list is derived from a SharePoint Web part.</p>
+                                <img alt="Import Events Web part" src="../art/SharePoint_Dashboard.png" /></td>
+                            <td>
+                                <p>Not applicable</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 7" src="../art/ProcGuid_7.gif" /></td>
+                            <td>
+                                <p>Count of active, resolved, and closed work items. You can open the list of work items
+                                    by clicking each number. This list is derived from a Team Web Access Web part.
+                                </p>
+                                <img alt="Project Work Items Web part" src="../art/TWSA_DashProjectWI.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                                    (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="9" src="../art/ProcGuid_9.gif" /></td>
+                            <td>
+                                <p>List of recent builds and their build status. You can view more details by clicking
+                                    a specific build. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Builds Web part" src="../art/TWSA_DashBuilds.png" /><p><span class="label">
+                                    Legend</span>:</p>
+                                <p>
+                                    <img alt="Build in Progress" src="../art/Icon_BuildStatus_1.gif" />: Build in Progress
+                                </p>
+                                <p>
+                                    <img alt="Build Not Started" src="../art/Icon_BuildStatus_2.gif" />: Build Not Started
+                                </p>
+                                <p>
+                                    <img alt="Build Succeeded" src="../art/Icon_BuildStatus_3.gif" />: Build Succeeded
+                                </p>
+                                <p>
+                                    <img alt="Build Failed" src="../art/Icon_BuildStatus_4.gif" />: Build Failed
+                                </p>
+                                <p>
+                                    <img alt="Build Stopped" src="../art/Icon_BuildStatus_5.gif" />: Build Stopped
+                                </p>
+                                <p>
+                                    <img alt="Build Partially Succeeded" src="../art/Icon_BuildStatus_6.gif" />: Build
+                                    Partially Succeeded</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/5c0de804-7ff9-468b-9053-fd068ea1a2bc">
+                                    Managing and Viewing Completed Builds</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="10" src="../art/ProcGuid_10.gif" /></td>
+                            <td>
+                                <p>List of the most recent check-ins. You can view more details by clicking a specific
+                                    check-in. This list is derived from a Team Web Access Web part.</p>
+                                <img alt="Recent Checkins Web part" src="../art/TWSA_DashCheckins.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/dded21d3-4869-4e19-bca4-62e27179539c">
+                                    Using the Check In and Pending Changes Windows</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Activities" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Activities for Tracking Testing</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>For the reports in the Test dashboard to be useful and accurate, the team must perform
+                    the following activities: </p>
+                <ul>
+                    <li>
+                        <p>Define test cases and use cases, and create <span class="ui">Tested By</span> links
+                            from test cases to use cases. </p>
+                    </li>
+                    <li>
+                        <p>Define Test Plans, and assign Test Cases to Test Plans. For more information, see
+                            <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                                Defining Your Testing Effort Using Test Plans</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>For manual tests, mark the results of each validation step in the Test Case as passed
+                            or failed. </p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Testers must mark a test step with a status if it is a validation test step. The
+                                            overall result for a Test Case reflects the status of all the test steps that the
+                                            tester marked. Therefore, the Test Case will have a status of failed if the tester
+                                            marked any test step as failed or did not mark it. </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>For automated tests, each Test Case is automatically marked as passed or failed.
+                        </p>
+                    </li>
+                    <li>
+                        <p>(Optional) To support filtering, assign <span class="ui">Iteration</span> and <span
+                            class="ui">Area</span> paths to each Test Case. </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Progress" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Monitoring
+                Test Progress</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can use the first three reports in the Test Dashboard to monitor test progress
+                    and answer the questions in the following table. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Report</p>
+                            </th>
+                            <th>
+                                <p>Questions answered</p>
+                            </th>
+                            <th>
+                                <p>Notes</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Test Case Readiness</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>How many Test Cases has the test team defined?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many Tests Cases are ready to run today?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many Test Cases must the team still write and review?</p>
+                                    </li>
+                                    <li>
+                                        <p>Does the overall number of test cases appear to be sufficient for the number of use cases that the team is implementing?</p>
+                                    </li>
+                                    <li>
+                                        <p>What percentage of Test Cases can the test team run today?</p>
+                                    </li>
+                                    <li>
+                                        <p>Will the team be able to prepare all the Tests Cases by the end of the iteration?
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Healthy progress shows a steady increase in the number of Test Cases that the team
+                                            is designing and moving to the ready state.</p>
+                                    </li>
+                                    <li>
+                                        <p>Unhealthy progress shows that no or few Test Cases are ready to be run.</p>
+                                        <p>When all test cases remain in a design state for a long time, an issue may block
+                                            progress. You might want to investigate the cause of the blockage.</p>
+                                    </li>
+                                    <li>
+                                        <p>A gap in testing may develop if the number of Test Cases does not appear sufficient.
+                                        </p>
+                                        <p>The number of Test Cases that are defined for a project should be equal to or larger
+                                            than the number of use cases that the team is implementing. The number of Test
+                                            Cases does not appear sufficient. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Test Plan Progress</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>How many Test Cases are passing?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many Test Cases are failing?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many Test Cases are blocked?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many Test Cases have never run?</p>
+                                    </li>
+                                    <li>
+                                        <p>What percentage of Test Cases are passing across all Test Plans?</p>
+                                    </li>
+                                    <li>
+                                        <p>How much testing has the team completed?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team likely to finish the testing on time?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>As the development cycle progresses, the more Test Cases should pass, and fewer Test
+                                            Cases should stay in other states.</p>
+                                    </li>
+                                    <li>
+                                        <p>Unhealthy progress occurs when too many Test Cases fail. Depending on where you are
+                                            in the product cycle, you might investigate why so many test cases are failing.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>If the number of Test Cases that are failing or never run is flat, you might want
+                                            to investigate the specific causes that affect each area.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Use Case Test Status</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Are Test Cases being run for each Use Case?</p>
+                                    </li>
+                                    <li>
+                                        <p>If Test Cases are blocked or not being run, does the team understand the blocking
+                                            issues and are they being addressed? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Healthy progress shows most Test Cases for each Use Case are passing. </p>
+                                    </li>
+                                    <li>
+                                        <p>Unhealthy progress is indicated too many Test Cases for a specific Use Case, which
+                                            are in a <span class="ui">Never Run</span>, <span class="ui">Blocked</span>, or
+                                            <span class="ui">Failed</span> state. You might want to investigate the causes that
+                                            keep the Test Cases that are defined for a Use Case from passing.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Gaps" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Determining
+                Gaps in Testing</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can use the <span class="ui">Use Case Test Status</span> report to determine
+                    whether tests are covering all the code and to answer the following questions:
+                </p>
+                <ul>
+                    <li>
+                        <p>Which Use Cases have a low overall count of Test Cases?</p>
+                    </li>
+                    <li>
+                        <p>Which Use Cases have a high overall count of Test Cases that are blocked or have
+                            never been run?</p>
+                    </li>
+                    <li>
+                        <p>Does the Test Case coverage for each Use Case meet expectations?</p>
+                    </li>
+                    <li>
+                        <p>Which Use Cases have a high rate of test failures? </p>
+                    </li>
+                    <li>
+                        <p>What is the average number of Test Cases that are defined for each Use Case?
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Trends" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Monitoring
+                Test Failures and Regressions</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>By monitoring test failures, you can identify and address problems in the code early.
+                    You can use the last two reports in the Test Dashboard to gain better insight into
+                    the number of tests that are failing. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Report</p>
+                            </th>
+                            <th>
+                                <p>Questions answered</p>
+                            </th>
+                            <th>
+                                <p>Notes</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Manual Test Activity</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Is the number of tests that the team has never run decreasing?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team minimizing the overall number of blocked tests?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are fewer tests failing over time?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are more tests passing? </p>
+                                    </li>
+                                    <li>
+                                        <p>Does the test activity contain spikes that you cannot account for?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>The <span class="ui">Manual Test Activity</span> report indicates the results for
+                                    each Test Case run for each test configuration and for all test plans. Spikes that
+                                    might occur may be early indicators of problems in either the test activity or the
+                                    quality of code that the team is checking in. </p>
+                                <p>You might want to check the metrics for recent builds, bug status, and code churn
+                                    to determine whether any of them can help explain the changes. </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Test Failure Analysis</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>How many tests are regressing?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team keeping the overall number of regressions or test failures within expected
+                                            ranges or team goals?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team addressing issues as they are identified and known issues in a timely
+                                            manner? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>A healthy Test Failure Analysis report shows moderate numbers of new issues, known
+                                    issues, and regressions. If any spikes occur in these areas, the team might need
+                                    to investigate further. Spikes may indicate problems in either the test activity
+                                    or the quality of code that the team is checking in. </p>
+                                <p>Also, you might want to check the metrics for recent builds, bug status, and code
+                                    churn to determine whether any of them can help explain the changes. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Customizing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Customizing
+                the Test Dashboard</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>You can customize the Test dashboard in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the filters of each report in Office Excel to focus on specific product areas
+                            or iterations. </p>
+                    </li>
+                    <li>
+                        <p>Filter the <span class="ui">Manual Test Activity</span> report in Office Excel for
+                            specific test plans or on Test Cases that are either manual or automated. </p>
+                    </li>
+                    <li>
+                        <p>Add existing Excel reports such as <span class="ui">Bug Status</span>, <span class="ui">
+                            Code Churn</span>, and <span class="ui">Code Coverage</span> to the dashboard.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Create and add reports in Office Excel that show progress by specific members of
+                            the team. For an example, see <span sdata="link"><a href="BugsbyAssignmentExcelReport.html">
+                                Bugs by Assignment Excel Report</a></span>.</p>
+                    </li>
+                </ul>
+                <p>For more information about how to work with and customize reports in Office Excel,
+                    see the following pages on the Microsoft Web site:</p>
+                <ul>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165722">Ways to customize PivotTable
+                            reports</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165723">Edit or remove a workbook
+                            from Excel Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165724">Publish a workbook to Excel
+                            Services</a></p>
+                    </li>
+                    <li>
+                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=165725">Save a file to a SharePoint
+                            library or another Web location</a></p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                    Defining Your Testing Effort Using Test Plans</mshelp:link></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/aa9070f4-5f30-4ce9-83be-839319226755">
+                    Running Manual Tests Using Test Runner</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/0632f265-63fe-4859-a413-9bb934c66835">
+                    Running Automated Tests</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestCaseGovDev.html">Test Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestCaseReadinessReport.html">
+                    Test Case Readiness Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestPlanProgressReport.html">Test
+                    Plan Progress Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="DashboardsGovDev.html">Dashboards
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

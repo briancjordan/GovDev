@@ -1,0 +1,459 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="Microsoft.Help.Id" content="631ec793-644f-4eff-8403-e48e746e369e" />
+    <meta name="Description" content="You can use the Bug Trends report to help track the rate at which your team is discovering and resolving bugs. This report shows a rolling or moving average of bugs being reported, resolved, and closed over time." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Bug Trends Report" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Bug Trends" /><MSHelp:Keyword Index="A" Term="631ec793-644f-4eff-8403-e48e746e369e" /><MSHelp:Attr Name="RevisionNumber" Value="13" /><MSHelp:Attr Name="AssetID" Value="631ec793-644f-4eff-8403-e48e746e369e" /><MSHelp:Attr Name="Abstract" Value="You can use the Bug Trends report to help track the rate at which your team is discovering and resolving bugs. This report shows a rolling or moving average of bugs being reported, resolved, and closed over time. When you manage a large team or a lar ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Bug Trends Report</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Bug Trends Report</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use the Bug Trends report to help track the rate at which your team is discovering
+                    and resolving bugs. This report shows a rolling or moving average of bugs being
+                    reported, resolved, and closed over time. When you manage a large team or a large
+                    number of bugs, you can monitor the Bug Trends report weekly to gain insight into
+                    how well the team is finding, resolving, and closing bugs.</p>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsGovDev.html">Reports (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Duration">Setting the Duration of the Iteration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>How many bugs is the team reporting, resolving, and closing per day? </p>
+                                    </li>
+                                    <li>
+                                        <p>What is the overall trend at which the team is processing bugs? </p>
+                                    </li>
+                                    <li>
+                                        <p>Are bug activation and resolution rates declining toward the end of the iteration
+                                            as expected?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in SQL Server Reporting Services. For more
+                    information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Bug Trends report calculates a rolling average of the number of bugs that the
+                    team has opened, resolved, and closed based on the filters that you specify. The
+                    rolling average is based on the seven days before the date for which it is calculated.
+                    That is, the report averages the number of bugs in each state for each of the seven
+                    days before the date, and then the result is divided by seven. The data is derived
+                    from the data warehouse. </p>
+                <p>The following illustration displays an example of the Bug Trends report.</p>
+                <img alt="Example of Bug Trends report" src="../art/ProcGuid_Bugs_BugTrends.png" /><p>
+                    This report displays up to three line graphs, and each graph represents the rolling
+                    averages of the numbers of activated, resolved, and closed bugs. </p>
+                <p>You can filter the report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the bugs that are counted in the report by specifying iteration and area paths
+                            or bug state, priority, or severity. </p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report</a>later in this
+                    topic.</p>
+                <h3 class="subHeading">Required Activities for Tracking Bugs</h3>
+                <div class="subsection">
+                    <p>For the Bug Trends report to be useful and accurate, the team must perform the following
+                        activities:</p>
+                    <ul>
+                        <li>
+                            <p>Define bugs, and specify their <span class="ui">Iteration</span> and <span class="ui">
+                                Area</span> paths. </p>
+                        </li>
+                        <li>
+                            <p>Update the <span class="ui">State</span> of each bug as it is fixed, verified, and
+                                then closed.</p>
+                        </li>
+                        <li>
+                            <p>Specify the <span class="ui">Priority</span> and<span class="ui"> Severity</span> of
+                                each bug during triage.</p>
+                        </li>
+                    </ul>
+                    <p>You can use the Triage workbook to quickly update the iteration, area, state, priority,
+                        and severity of bugs. For more information, see <span sdata="link"><a href="TriageWorkbook.html">
+                            Triage Workbook</a></span>. </p>
+                </div>
+            </div>
+            <a name="Duration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Setting
+                the Duration of the Sprint or Iteration</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To understand the bug trends for your current iteration, the start and end dates
+                    for the report must match those of your current iteration cycle. </p>
+                <h3 class="procedureSubHeading">To change the duration of the iteration</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Next to <span class="ui">Iteration Start (Date)</span> or<span class="ui"> Iteration
+                                End (Date)</span>, click the calendar icon, and then click a date. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You should expect bug rates to vary based on where you are in your product development
+                    cycle. The team should find fewer bugs in early iterations than in later iterations.
+                    The team should close the most bugs in iterations that are near the end of a product
+                    cycle.</p>
+                <p>You interpret bug rates best by reviewing them relative to all of the current team
+                    project activities and the other metrics that the Bug Status and Reactivations reports
+                    provide. For example, the team might find bugs especially quickly in poorly written
+                    code, in newly integrated code, with improved testing, or during an exceptional
+                    event such as a bug bash. On the other hand, bugs are more difficult to find in
+                    a high quality product and with ineffective testing. You can use the metrics for
+                    code coverage, code churn, and test rates to help further assess the meaning of
+                    the bug trends.</p>
+                <p>As the product stabilizes toward the end of a product cycle, the team should find
+                    bugs less frequently.</p>
+                <p>The Bug Trends report might show one or more of the indicators that the following
+                    table describes in the left-hand column. You can review the questions in the right-hand
+                    column for areas to address in more detail.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Indicator</p>
+                            </th>
+                            <th>
+                                <p>Questions to ask</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">The team is finding about the same number of bugs in successive
+                                    time periods</span>. If the team finds the same number of bugs week after week or
+                                    iteration after iteration, you might investigate the underlying cause. Early in
+                                    the testing cycle, the tests might not be rigorous or advanced enough to find many
+                                    bugs. In early iterations, this situation is expected. However, as the product matures,
+                                    tests should exercise broader scenarios and integrations. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Are the test cases adequate to test the use cases that are being developed?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Have the tests become stale or are they testing the wrong functionality?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the test team rigorously testing each use case?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">The team is finding many bugs in each time period</span>. The
+                                    team might find bugs easily in sloppy code, in newly integrated code, with effective
+                                    testing, or during a specific event, such as a bug bash. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Do the metrics for code coverage, code churn, or test progress indicate a problem
+                                            with the code or testing?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">The team is finding few bugs in each time period</span>. The
+                                    team might struggle to find bugs in a high-quality solution or with ineffective
+                                    testing.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Do the metrics for code coverage, code churn, or test progress indicate a problem
+                                            with the code or testing?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">The team is resolving many bugs in each time period</span>. A
+                                    high resolve rate usually indicates that the team is making good progress.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Are resolved bugs getting promptly closed? The closed rate should resemble the resolved
+                                            rate. </p>
+                                    </li>
+                                    <li>
+                                        <p>Are bug reactivations remaining within expected boundaries? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">The team is resolving bugs quickly but not closing them</span>.  
+                                    Team members who are assigned to verify bug fixes might be spread too thin, or
+                                    different priorities might keep those team members from closing resolved bugs.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Are test resources overallocated? </p>
+                                    </li>
+                                    <li>
+                                        <p>Should the team revisit test priorities?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="subHeading">Healthy Version of Report</h3>
+                <div class="subsection">
+                    <p>A healthy Bug Trends report shows that the team finds more bugs at the start of a
+                        development cycle and fewer bugs toward the end of a release. The team should resolve
+                        and close more bugs toward the end of the project. </p>
+                    <p>When the team resolves bugs faster than it finds them, the number of active bugs
+                        will start to decrease. When the team starts to find fewer bugs, the product is
+                        stabilizing.</p>
+                </div>
+                <h3 class="subHeading">Unhealthy Version of Report</h3>
+                <div class="subsection">
+                    <p>An unhealthy Bug Trends report might show that the team is finding bugs more quickly
+                        as the ship date approaches and resolving bugs more slowly. In this situation, the
+                        team's bug backlog is growing because bugs are not getting fixed, and you might
+                        want to investigate the causes. The following illustration shows a report for a
+                        team that is finding many bugs, resolving fewer bugs than it finds, and closing
+                        fewer bugs than it resolves. </p>
+                    <img alt="Unhealthy version of Bug Trends Report" src="../art/ProcGuid_BugTrends_DataUnhealthy.png" />
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report and Changing the Display</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can filter the Bug Trends report or change its display in the following ways:
+                </p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the bugs that are counted in the report by specifying iteration and area paths,
+                            state, priority, or severity.</p>
+                    </li>
+                </ul>
+                <p>The following illustration shows the available filters.</p>
+                <img alt="Filters for Bug Trends report" src="../art/ProcGuid_BugTrendsFilters.png" /><h3
+                    class="procedureSubHeading">To filter the bugs that are counted in the report
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Perform one or both of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Iteration</span> and <span class="ui">Area</span> lists, select
+                                        the check box of each iteration or product area to include.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">State</span>, <span class="ui">Priority</span>, or <span
+                                        class="ui">Severity</span> lists, select the check box of each state, priority, and
+                                        severity to include.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugsDashboard.html">Bugs Dashboard</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugStatusReport.html">Bug Status Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReactivationsReport.html">Reactivations Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

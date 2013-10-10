@@ -1,0 +1,369 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="save" content="history" />
+    <title>Effort, Schedules, and Tracking Hours (GovDev)</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="scheduling, work item fields" />
+    <meta name="System.Keywords" content="tasks [Visual Studio ALM], effort and scheduling field definitions (Agile)" />
+    <meta name="System.Keywords" content="work item fields, effort and scheduling field definitions (Agile)" />
+    <meta name="Microsoft.Help.Id" content="78fe418f-fbd8-4ae2-97d7-c754c14dd3cd" />
+    <meta name="Description" content="You use the fields that are grouped under Effort (hours) to track estimated, completed, and remaining work for a Task and to report on the progress toward completing tasks." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Effort, Schedules, and Tracking Hours (Agile)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Effort, Schedules, and Tracking Hours" /><MSHelp:Keyword Index="A" Term="78fe418f-fbd8-4ae2-97d7-c754c14dd3cd" /><MSHelp:Keyword Index="K" Term="scheduling, work item fields" /><MSHelp:Keyword Index="K" Term="tasks [Visual Studio ALM], effort and scheduling field definitions (Agile)" /><MSHelp:Keyword Index="K" Term="work item fields, effort and scheduling field definitions (Agile)" /><MSHelp:Attr Name="RevisionNumber" Value="10" /><MSHelp:Attr Name="AssetID" Value="78fe418f-fbd8-4ae2-97d7-c754c14dd3cd" /><MSHelp:Attr Name="Abstract" Value="You use the fields that are grouped under Effort (hours) to track estimated, completed, and remaining work for a Task and to report on the progress toward completing tasks. By tracking hours, you gain more detailed insight into which use casees are ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Effort, Schedules, and Tracking Hours (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You use the fields that are grouped under <span class="ui">Effort (hours)</span>to
+                    track estimated, completed, and remaining work for a Task and to report on the progress
+                    toward completing tasks. By tracking hours, you gain more detailed insight into
+                    which use casees are almost finished and what the team burn rate is. Several reports
+                    and dashboards provide charts that display the data that these fields contain.
+                </p>
+                <p>You specify the level of effort for the Tasks that you are assigned. For more information
+                    about how to track hours, see <span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                        </a></span>.</p>
+                <p><span class="label">In this topic</span></p>
+                <ul>
+                    <li>
+                        <p><a href="#FieldsOnForm">Fields Used to Track Hours</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#SchedulingFields">Fields Calculated by Office Project</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="FieldsOnForm" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Fields
+                Used to Track Hours</span></h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The following table describes the fields that you can use to track hours. This information
+                    is tracked only for task work items in the process template of MSF for Agile Software
+                    Development v5.0. For information about data types and default field attributes,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/c735a582-954a-418e-8b12-1b5c0b9857b9">
+                        Working with Work Item Fields</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">Field name</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Description</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Reference name</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Data type</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default value of the reportable type attribute</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default value of the index attribute</span></p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Activity</span></p>
+                            </td>
+                            <td>
+                                <p>The type of activity that is required to perform a Task. </p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Common.Activity</p>
+                            </td>
+                            <td>
+                                <p>String</p>
+                            </td>
+                            <td>
+                                <p>Dimension</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Original Estimate</span></p>
+                            </td>
+                            <td>
+                                <p>The number of hours that are required to complete a Task.</p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.OriginalEstimate</p>
+                            </td>
+                            <td>
+                                <p>Double</p>
+                            </td>
+                            <td>
+                                <p>Measure, Sum</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Remaining</span></p>
+                            </td>
+                            <td>
+                                <p>The number of hours that remain to finish a Task.</p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.RemainingWork</p>
+                            </td>
+                            <td>
+                                <p>Double</p>
+                            </td>
+                            <td>
+                                <p>Measure, Sum</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Completed</span></p>
+                            </td>
+                            <td>
+                                <p>The number of hours that were spent working on a Task.</p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.CompletedWork</p>
+                            </td>
+                            <td>
+                                <p>Double</p>
+                            </td>
+                            <td>
+                                <p>Measure, Sum</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="SchedulingFields" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Scheduling
+                Fields That Office Project Calculates</span></h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>The following table lists fields that are calculated if you create a project plan
+                    in Office Project and then synchronize that plan with Tasks that are stored in Team
+                    Foundation Server. These fields do not appear on the work item form, but they are
+                    calculated for both use cases and Tasks that are linked to use cases. You
+                    can view their read-only values in results from a query or from Office Excel and
+                    Office Project. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/be5cef4f-755f-4ffe-8dd7-876d1e02c330">
+                        Scheduling Tasks and Assigning Resources Using Microsoft Project</a></span>.
+                </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">Field name</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Description</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Reference name</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Data type</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default value of the reportable type attribute</span></p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default value of the index attribute</span></p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Due Date</p>
+                            </td>
+                            <td>
+                                <p>The forecasted due date for a Task to be completed. </p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.DueDate</p>
+                            </td>
+                            <td>
+                                <p>DateTime</p>
+                            </td>
+                            <td>
+                                <p>Dimension</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Finish Date</p>
+                            </td>
+                            <td>
+                                <p>The date and time when the schedule indicates that the Task will be completed.
+                                </p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.FinishDate</p>
+                            </td>
+                            <td>
+                                <p>DateTime</p>
+                            </td>
+                            <td>
+                                <p>Dimension</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Start Date</p>
+                            </td>
+                            <td>
+                                <p>The date and time when the schedule indicates that the Task will start.</p>
+                            </td>
+                            <td>
+                                <p>Microsoft.VSTS.Scheduling.StartDate</p>
+                            </td>
+                            <td>
+                                <p>DateTime</p>
+                            </td>
+                            <td>
+                                <p>Dimension</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span></h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a>
+                </span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/0d7ae7ad-a329-4356-a0b2-57d31a96f16f">
+                    Customizing Microsoft Project Field Mappings</a></span></div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/9720b88e-474c-451b-b3fe-5253ba24a653">
+                    Using System Fields and Fields Defined by the MSF Process Templates</a></span>
+                </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/c9b6d41c-47ce-4a29-8a1c-ba44d8c4809a">
+                    Finding Bugs, Tasks, and Other Work Items</a></span></div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemFieldsGovDev.html">Work Item Fields (GovDev)</a></span></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site. </span>
+        </div>
+    </div>
+</body>
+</html>

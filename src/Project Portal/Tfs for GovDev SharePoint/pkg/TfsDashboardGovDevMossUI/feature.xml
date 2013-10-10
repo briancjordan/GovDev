@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="f8edf4c0-efb5-4be5-b31f-03a52396e171" Title="GovDev Moss Dashboard Customization for Team Foundation Server" Description="Contains MOSS customizations of the GovDev for TFS Process Template" Version="1.0.0.0" Scope="Web" Hidden="FALSE" ReceiverAssembly="Microsoft.Dpe.Ps.Govdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9d438aa16c6f03bd" ReceiverClass="Microsoft.Dpe.Ps.Govdev.GovDevMossUIReceiver" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Properties>
+    <Property Key="ProcessTemplate" Value="GovDev" />
+    <Property Key="DashboardLevel" Value="Moss" />
+  </Properties>
+  <ElementManifests />
+</Feature>

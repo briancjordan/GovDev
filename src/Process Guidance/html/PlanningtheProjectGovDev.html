@@ -1,0 +1,315 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="planning, project (CMMI)" />
+    <meta name="System.Keywords" content="process guidance, project planning (CMMI)" />
+    <meta name="Microsoft.Help.Id" content="26f38202-a173-4d10-9d56-03c9ff69546d" />
+    <meta name="Description" content="The desired outcome of planning a project is a plan that includes a scope, a schedule, a budget, a risk management plan, and a commitment and approval from all stakeholders." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Planning the Project (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Planning the Project" /><mshelp:keyword Index="A" Term="26f38202-a173-4d10-9d56-03c9ff69546d" /><mshelp:keyword Index="K" Term="planning, project (CMMI)" /><mshelp:keyword Index="K" Term="process guidance, project planning (CMMI)" /><mshelp:attr Name="RevisionNumber" Value="30" /><mshelp:attr Name="AssetID" Value="26f38202-a173-4d10-9d56-03c9ff69546d" /><mshelp:attr Name="Abstract" Value="The desired outcome of planning a project is a plan that includes a scope, a schedule, a budget, a risk management plan, and a commitment and approval from all stakeholders. With an agreed-upon project plan, you want to progress with analysis, design ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10223.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Planning the Project</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Planning the Project (GovDev)</span></td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>The desired outcome of planning a project is a plan that includes a scope, a schedule,
+                    a budget, a risk management plan, and a commitment and approval from all stakeholders.
+                    With an agreed-upon project plan, you want to progress with analysis, design, development,
+                    testing, and eventually delivery.</p>
+                <p>You can reduce risk by using an iterative development method. Iterations let you
+                    demonstrate a partly working product at the end of each iteration and act on feedback
+                    from that demonstration. Therefore, the plan provides an overall shape and is subject
+                    to review and refinement before the start of each iteration. </p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Gathering">Gathering and Modeling the Requirements</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Features">Creating Incremental Requirements</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#EnterProductReqs">Entering and Editing Requirements</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Map">Prioritizing Requirements</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#ReviseProductReqs">Revising Requirements</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Gathering" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Gathering
+                and Modeling the Requirements</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>This activity is about discussing what the system should do, with business stakeholders,
+                    prospective users, and subject matter experts. It is important to understand the
+                    business context. If you have been asked to write an application for police officers,
+                    it helps to understand their jargon, procedures, and rules. </p>
+                <p>UML models are a useful tool for expressing and thinking about complex relationships.
+                    You can draw them in Visual Studio and link them to other documents and to Team
+                    Foundation work items. For more information see <span sdata="link"><a href="http://msdn.microsoft.com/library/359900f8-6d69-493d-bfdf-2c9069c74a26">
+                        Modeling User Requirements</a></span>.</p>
+                <p>Update and refine the requirements model throughout the project. As each iteration
+                    approaches, add more detail to the aspects of the model that are relevant to that
+                    iteration. From the model, you can derive verification tests.</p>
+                <p>For more information, see <span sdata="link"><a href="DevelopingRequirementsandUseCases.html">Developing Requirements and Use Cases</a></span> 
+                    and <span sdata="link"><a href="http://msdn.microsoft.com/library/40f87192-ba85-4552-8804-314a678261ae">Developing Tests from a Model</a></span>.</p>
+            </div>
+            <a name="Features" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                Incremental Requirements</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>The requirements as you have gathered them from your customers are not directly appropriate
+                    for the purpose of scheduling incremental development. For example, to clarify the
+                    procedure when a user buys something from a Web site, you might have written a detailed
+                    series of steps: customer browses catalog, adds item to cart, checks out cart, supplies
+                    address, and pays; warehouse schedules delivery; and so on. These steps are not incremental requirements 
+                    but rather multiple use cases that roll up to the the overall requirement. Requirements define an overall set of functionality that is broken up into use 
+                    cases that are allocated across iterations to deliver incremental functionality and to minimize the risk due to to incomplete, misunderstood or changing 
+                    requirements. This is <strong>one of the key porints</strong> of the GovDev for TFS 2010 porocess templates.</p>
+                <p>If you work with an existing product, the principle is the same, but you start from
+                    the existing functionality. If you are unfamiliar with its internal design, the
+                    cost of updates can be difficult to estimate. It is worth being liberal with your
+                    estimates for the earlier changes.</p>
+                <p>For more information, see <span sdata="link"><a href="ArrangingRequirementsintoaProjectPlan.html">Arranging Requirements into a Project Plan</a></span>.</p>
+            </div>
+            <a name="EnterProductReqs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Entering
+                and Editing Requirements</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Record the product requirements as requirement work items in Team Foundation,
+                    and set the requirements type to Functional (default) (or Feature, 
+                    Non-Functional, Performance, etc. as appropriate). You can create requirement work items
+                    in Team Explorer. If you have several work items that you want to create at the
+                    same time, you can use the Office Excel view of the Product Requirements query.
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/fbd7b5e1-e4c4-4976-9596-236e980fdb3b">
+                        Working in Microsoft Excel and Microsoft Project Connected to Team Foundation Server
+                        </a></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/f12ae7e2-1893-4386-9a9b-f0e699a2ccad">
+                            Performing Top-Down Planning Using a Tree List of Work Items (In Excel)</a></span>. 
+                    You can define the requirement in a work item by specifying a variety of information, as the following illustrations show:</p>
+                <img alt="Requirement work item form" src="../art/ProcGuid_NewRequirement.png" /></p>
+            </div>
+            <a name="Map" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Prioritizing 
+                Requirements</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Representatives of the business stakeholders and the development team should work
+                    together to prioritize requirements so that the subsequent use case decompositon 
+                    can be assigned to iterations. Typically, you do this in
+                    a meeting, where you share or project the Office Excel view of the Open Requirements
+                    query.</p>                
+                <h3 class="subHeading">Some guidelines on prioritization
+                </h3>
+                <div class="subsection">
+                    <p>Many detailed schemes exist for prioritization. We will examine some of these when
+                        we consider iteration planning. For now, at the project level, we include some guidelines
+                        that may be useful to help manage risk and optimize added value.</p>
+                    <ol>
+                        <li>
+                            <p>Prioritize minimal end-to-end scenarios.</p>
+                            <p>Aim to achieve a simple end-to-end scenario as early in the project as possible.
+                                Later, add more features to the different parts of the scenario. This practice ensures
+                                that the principal functions of the platform and the principal ideas in the requirements
+                                are tried early. </p>
+                            <p>By contrast, do not divide the schedule according to the architecture. A schedule
+                                that completes the database, then the business logic, and then the user interface
+                                will probably require a great deal of rework to integrate the parts at the end.
+                                In the same manner, a horizontal split such as {sales component; warehouse component;
+                                payment component} is not recommended. It would probably produce a wonderful system
+                                for selling on the Web but run out of time before the business has a means of getting
+                                money from its customers. Complete components can be scheduled for later iterations
+                                only if they are truly optional add-ons.</p>
+                        </li>
+                        <li>
+                            <p>Prioritize technical risk.</p>
+                            <p>If a requirement includes a technically risky element, develop it early in the schedule.
+                                Take a “fail early” approach to risk. If something cannot be accomplished, you want
+                                to know this early in the project so that it can be canceled or replaced with an
+                                alternative approach. So prioritize technically risky requirements into early iterations.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Prioritize reduction of uncertainty.</p>
+                            <p>The business stakeholders will not be sure about some requirements. It is difficult
+                                to predict what product behavior will work best in the business context. Prioritize
+                                work that is likely to reduce the uncertainties. This can often be achieved by developing
+                                a simpler version of the scenario with which users can experiment. Defer the full
+                                scenario to a later iteration, in which the results of these experiments can be
+                                considered.</p>
+                        </li>
+                        <li>
+                            <p>Prioritize highly valuable requirements.</p>
+                            <p>If possible, try to establish an opportunity-cost-of-delay function for each scenario.
+                                Use these to determine the requirements that can potentially bring more value to
+                                the customers earlier. Prioritize these requirements for development of use 
+                                cases that are to be put into earlier iterations. This
+                                may buy you the option of releasing a partial product early.</p>
+                        </li>
+                        <li>
+                            <p>Group requirements that are common to multiple personas.</p>
+                            <p>If you have requirements that have utility for two or more personas, group these together.
+                                Rank them by the number of personas that require the scenario. Prioritize the 
+                                requirements
+                                that apply to a larger number of personas into early iterations.</p>
+                        </li>
+                        <li>
+                            <p>Rank personas.</p>
+                            <p>Personas represent market segments or user groups. Marketing people or business owners
+                                should be able to articulate the priority of such segments or groups based on utility
+                                to be delivered or the value of the segment. If segments or user groups can be ranked
+                                in priority, show this by listing the personas for each segment by rank. Identify
+                                the requirements for the highest ranked personas, and prioritize these into earlier
+                                iterations in the schedule.</p>
+                        </li>
+                    </ol>
+                    <p>In general, we want to prioritize the reduction of risk because of the possibility
+                        of failure. We want to prioritize common functionality because it is likely to be
+                        required and unlikely to change. We want to prioritize more valuable requirements.
+                        We want to enable the option for early release of the product to a subset of personas
+                        by prioritizing all requirements that are required to satisfy the needs of any one
+                        persona.</p>
+                </div>
+            </div>
+            <a name="ReviseProductReqs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Revising
+                Requirements</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>Revisit this activity before each iteration to consider revised and new requirements,
+                    revised priorities, and revised estimates. There will be more revisions in the first
+                    few iterations. </p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="DevelopingRequirementsandUseCases.html">Developing Requirements and Use Cases</a></span>
+                </div>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="ArrangingRequirementsintoaProjectPlan.html">Arranging Requirements into a Project Plan</a></span>
+                </div>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="RequirementGovDev.html">Requirement (GovDev)</a></span>
+                </div>
+                <div class="seeAlsoStyle">
+                    <span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span>
+                </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/52aa8bc9-fc7e-4fae-9946-2ab255ca7503">
+                    Planning and Tracking Projects</a></span>
+                </div>
+
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10223.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

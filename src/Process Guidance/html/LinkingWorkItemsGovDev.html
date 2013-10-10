@@ -1,0 +1,759 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="linking [Visual Studio ALM], work item form" />
+    <meta name="System.Keywords" content="linking [Visual Studio ALM], work items (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="ca05800c-905a-407f-bea8-a7ee32b65973" />
+    <meta name="Description" content="You create relationships between Use Cases, tasks, test cases, and other work items through the Implementation, Links, All Links and Test Cases tabs on the forms for those work items." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Linking Work Items (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Linking Work Items" /><mshelp:keyword Index="A" Term="ca05800c-905a-407f-bea8-a7ee32b65973" /><mshelp:keyword Index="K" Term="linking [Visual Studio ALM], work item form" /><mshelp:keyword Index="K" Term="linking [Visual Studio ALM], work items (GovDev)" /><mshelp:attr Name="RevisionNumber" Value="11" /><mshelp:attr Name="AssetID" Value="ca05800c-905a-407f-bea8-a7ee32b65973" /><mshelp:attr Name="Abstract" Value="You create relationships between Use Cases, tasks, test cases, and other work items through the Implementation, Links, All Links and Test Cases tabs on the forms for those work items. This topic describes the controls and data fields that are asso ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Linking Work Items (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Linking Work Items (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <a name="Top" />
+            <div class="introduction">
+                <p>You create relationships between requirements, use cases, tasks, test cases, and other work
+                    items through the 
+                    tabs on the forms for those work items. This topic describes the controls and data
+                    fields that are associated with creating links and hyperlinks.</p>
+                <p>For more information about how to use links, see <span sdata="link"><a href="http://msdn.microsoft.com/library/2db0e4b4-bc1d-4753-b0df-9d37d866d1ed">
+                    Choosing Link Types to Effectively Track Your Project</a></span>. For more information
+                    about how to create links, see <span sdata="link"><a href="http://msdn.microsoft.com/library/eb47069f-e49b-424d-a674-91cb733f3518">
+                        Creating Relationships Between Work Items and Other Resources</a></span>.
+                </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A few reports provided in the process template for GovDev for TFS 2010
+                                    require that you create links between specific work items. Specifically, the
+                                    Requirements Traceability Report and Use Case Progress Report require that you create links between
+                                    requirements and use cases, use cases and tasks and between use cases and test cases. For more information,
+                                    see <span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">Requirements Traceability Report
+                                        (GovDev)</a></span> and <span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements
+                                            Progress Report (GovDev)</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Toolbar">Link Toolbar Buttons</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#LinksControl">Link Controls and Restrictions</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#DefaultLinkListFields">Default Link List Data Fields</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#AdditionalFields">Additional Link Related Fields that Support Query and
+                            Reporting</a></p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Toolbar" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Link
+                Toolbar Buttons</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>Each tab provides a toolbar, which contains the buttons that the following illustration
+                    summarizes:</p>
+                <img alt="Work item form link toolbar controls" src="../art/ProcGuid_LinkToolbar.png" /><p>
+                    The following buttons become available only after you perform a specific action:
+                </p>
+                <ul>
+                    <li>
+                        <p>The button to create a work item that is linked to the open work item (<img alt="Add New Linked Work Item"
+                            src="../art/Icon_addNewLinkedWorkItem.gif" />) becomes available only after you
+                            save the open work item. </p>
+                    </li>
+                    <li>
+                        <p>The buttons to open the list of work items in a query (<img alt="Open in Query"
+                            src="../art/Icon_openInQuery.gif" />) and in a Microsoft Office client (<img alt="Open in Microsoft Office"
+                                src="../art/ProcGuid_OpenOffice.png" />) become available only when at least
+                            one work item is listed in the links control tab. </p>
+                    </li>
+                    <li>
+                        <p>The buttons to open a work item (<img alt="Open Work Item" src="../art/Icon_openWorkItem.gif" />),
+                            edit a link (<img alt="Edit link" src="../art/Icon_WITLinkEdit.gif" />), and delete
+                            a link (<img alt="Delete link" src="../art/Icon_WITLinkDelete.gif" />) become available
+                            only after you click one or more work items listed in the links control tab.
+                        </p>
+                    </li>
+                </ul>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="LinksControl" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Link
+                Controls and Restrictions</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Much of the traceability inherent in the GovDev for TFS 2010 process template is 
+                    due to the link control and restrictions listed below. All tabs that support creating links between work items are implemented by using
+                    the <b>LinksControl</b> element on the work item form. This element controls filtering
+                    and restricting the types of work items to which you can link, the types of links
+                    that you can create, and whether you can link to work items in another team project.
+                    For more information about how to restrict links, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b43e4e57-3a42-4705-9e52-eec2f8fb5f72">
+                        LinksControlOptions Elements</a></span>.</p>
+                <p>The following table summarizes the restrictions for all types of work items.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Work item type</p>
+                            </th>
+                            <th>
+                                <p>Tab name</p>
+                            </th>
+                            <th>
+                                <p>Link restrictions</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Requirement</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Use Cases</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Child</span> link to Use Case work item type.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <p>Requirement</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Change Requests</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Affected By</span> link to Change Request work item 
+                                            type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <p>Use Case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Requirement</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Parent</span> link to Requirement work item type.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Use Case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Tasks</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Child</span> link to Task work item type.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Use Case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Cases</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Tested By</span> link to Test Case work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Use Case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Bugs</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>AAllows only <span class="ui">Child</span> link to Bug work item type. </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Task</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Use Case</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Parent</span> link to Use Case work item type.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Task</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Implementation</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Parent</span> and <span class="ui">Child</span> links 
+                                            to other Task work item type.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Tested Use Cases</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Tests</span> link to Use Case work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Test case</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Bugs Found</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Tests</span> link to Bug work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Bug</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Test Cases</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Tested By</span> and <span class="ui">Changeset</span> links.</p>
+                                    </li>
+                                    <li>
+                                        <p>Allows links only to test case work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Bug</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Use Case</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Parent</span> link to Use Case work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Change Request</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Requirements</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Affects</span> link to Requirement work item type.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <p>Change Request</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">External Links</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only Link To operations via <span class="ui">HyperLinks</span> link.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <p>Support Ticket</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">Links</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Related</span> and <span class="ui">HyperLinks </span> links.</p>
+                                    </li>
+                                    <li>
+                                        <p>Allows only <span class="ui">Related </span>links to Change Request and Bug work item types.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <p>Issue</p>
+                            </td>
+                            <td>
+                                <p><span class="ui">All Links</span> </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Allows only <span class="ui">Affects</span> and <span class="ui">HyperLinks </span> links.</p>
+                                    </li>
+                                    <li>
+                                        <p>Allows <span class="ui">Affects</span> link to Bug, Requirement, Task, Test Case, 
+                                            Use Case work item types.</p>
+                                    </li>
+                                    <li>
+                                        <p>Excludes links to work items in other team projects. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="DefaultLinkListFields" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Default
+                Data Fields in Lists of Links</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>All lists of links display the following data fields:</p>
+                <ul>
+                    <li>
+                        <p>Work item <span class="ui">ID</span> </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Work Item Type</span> </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Title</span> </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">Assigned to</span> </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">State</span> </p>
+                    </li>
+                    <li>
+                        <p><span class="ui">[Link Comment]</span> </p>
+                    </li>
+                </ul>
+                <p>You can add or remove columns from the list of links, and you can customize the default
+                    columns and the column order. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b43e4e57-3a42-4705-9e52-eec2f8fb5f72">
+                        LinksControlOptions Elements</mshelp:link></span>.</p>
+                <p>For more information about these fields, see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                    Titles, IDs, Descriptions, and History (GovDev)</a></span> and <span sdata="link"><a
+                        href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow (GovDev)</a>
+                    </span>.</p>
+                <p>The following table describes the <span class="ui">[Link Comment]</span> data field.
+                    For information about data types and default field values, see <span sdata="link"><a
+                        href="http://msdn.microsoft.com/library/c735a582-954a-418e-8b12-1b5c0b9857b9">Working
+                        with Work Item Fields</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">Field Name</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Description</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Reference Name</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Data Type</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default Value for the Reportable Type Attribute</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default Value for the Index Attribute</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="ui">Link Comment</span> </p>
+                            </td>
+                            <td>
+                                <p>Contains comments from the team member who created the link. You can configure this
+                                    attribute field to appear as a column in a list of links on a work item form.
+                                </p>
+                            </td>
+                            <td>
+                                <p>System.Links.Comment </p>
+                            </td>
+                            <td>
+                                <p>PlainText</p>
+                            </td>
+                            <td>
+                                <p>None</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="AdditionalFields" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Additional
+                Fields and Support Query and Reporting</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>The following table lists fields that do not appear on the work item forms but that
+                    are tracked for each type of work item when you link them. You can use these fields
+                    to filter queries and create reports.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">Field Name</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Description</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Reference Name</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Data Type</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default Value for the Reportable Type Attribute</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Default Value for the Index Attribute</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>External Link Count</p>
+                            </td>
+                            <td>
+                                <p>The number of links from the work item to artifacts that are not work items and that
+                                    are registered through the Team Foundation Linking Service. For more information,
+                                    see this topic on the Microsoft Web site: <a href="http://go.microsoft.com/fwlink/?LinkId=150885">
+                                        Linking Service</a>.</p>
+                            </td>
+                            <td>
+                                <p>System.ExternalLinkCount</p>
+                            </td>
+                            <td>
+                                <p>Integer</p>
+                            </td>
+                            <td>
+                                <p>None</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Hyper Link Count</p>
+                            </td>
+                            <td>
+                                <p>The number of hyperlinks that are defined for the work item.</p>
+                            </td>
+                            <td>
+                                <p>System.HyperLinkCount</p>
+                            </td>
+                            <td>
+                                <p>Integer</p>
+                            </td>
+                            <td>
+                                <p>None</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Related Link Count</p>
+                            </td>
+                            <td>
+                                <p>The number of links from the work item to other work items.</p>
+                            </td>
+                            <td>
+                                <p>System.RelatedLinkCount</p>
+                            </td>
+                            <td>
+                                <p>Integer</p>
+                            </td>
+                            <td>
+                                <p>None</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Link Description</p>
+                            </td>
+                            <td>
+                                <p>Contains the work item type, ID, and title of the work item that is the target of
+                                    the link. You can configure this link attribute field to appear as a column in a
+                                    list of links on a work item form.</p>
+                            </td>
+                            <td>
+                                <p>System.Links.Description</p>
+                            </td>
+                            <td>
+                                <p>PlainText</p>
+                            </td>
+                            <td>
+                                <p>None</p>
+                            </td>
+                            <td>
+                                <p>False</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Reference</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/b43e4e57-3a42-4705-9e52-eec2f8fb5f72">
+                    LinksControlOptions Elements</mshelp:link></span> </div>
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/9720b88e-474c-451b-b3fe-5253ba24a653">
+                    Using System Fields and Fields Defined by the MSF Process Templates</a></span> 
+                </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/0d0d51f7-b8d0-4e5d-82b9-766ee12690ba">
+                    Customizing How Work Items are Related through Link Types</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemFieldsGovDev.html">Work
+                    Item Fields (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

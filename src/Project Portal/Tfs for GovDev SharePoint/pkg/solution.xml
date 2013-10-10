@@ -1,0 +1,14 @@
+﻿<solution id="1fc362b3-3c74-4478-adef-b6fbe83407b5" name="TfsDashboardGovDevMoss">
+  <features>
+    <feature id="b361868f-68df-42f9-ac40-b1366d77b1bf">
+      <featureElements>
+        <featureElement id="286d1478-21c4-494c-9eaa-a9c52285ba5c" name="Element1" />
+      </featureElements>
+    </feature>
+    <feature id="9993ad09-5b76-40eb-b010-1c84f9f03eda">
+      <featureElements>
+        <featureElement id="624e7a98-42cc-4b70-b891-14adbc0b579f" name="Element1" />
+      </featureElements>
+    </feature>
+  </features>
+</solution>

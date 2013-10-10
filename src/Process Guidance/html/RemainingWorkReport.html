@@ -1,0 +1,518 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="tasks [Visual Studio ALM], remaining work report" />
+    <meta name="Microsoft.Help.Id" content="61990591-ac5a-4cec-80f6-6627a723a910" />
+    <meta name="Description" content="After the team has estimated its tasks and begun work, you can use the Remaining Work report to track the team's progress and identify any problems in the flow of work." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Remaining Work Report" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Remaining Work" /><MSHelp:Keyword Index="A" Term="61990591-ac5a-4cec-80f6-6627a723a910" /><MSHelp:Keyword Index="K" Term="tasks [Visual Studio ALM], remaining work report" /><MSHelp:Attr Name="RevisionNumber" Value="12" /><MSHelp:Attr Name="AssetID" Value="61990591-ac5a-4cec-80f6-6627a723a910" /><MSHelp:Attr Name="Abstract" Value="After the team has estimated its tasks and begun work, you can use the Remaining Work report to track the team's progress and identify any problems in the flow of work. " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Remaining Work Report</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Remaining Work Report</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>After the team has estimated its tasks and begun work, you can use the Remaining
+                    Work report to track the team's progress and identify any problems in the flow of
+                    work. </p>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsGovDev.html">Reports (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Duration">Setting the Duration of the Iteration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report and Changing the Display</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>What is the cumulative flow of work?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team likely to finish the iteration on time? </p>
+                                    </li>
+                                    <li>
+                                        <p>Is the amount of work or number of work items in the iteration growing? </p>
+                                    </li>
+                                    <li>
+                                        <p>Does the team have too much work in progress? </p>
+                                    </li>
+                                    <li>
+                                        <p>How is the team doing in estimating work for the iteration?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in Reporting Services. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Remaining Work report summarizes the data that was captured during the specified
+                    time interval for each task, Use Case, or bug based on the filter criteria that
+                    were specified for the report. The data is derived from the data warehouse.</p>
+                <p>You can view this report in either the <span class="ui">Hours of Work</span> view
+                    or the <span class="ui">Number of Work Items</span> view. The first view displays
+                    the total number of hours of work for the specified time period and the team's progress
+                    toward completing that work. The second view displays the number of work items for
+                    the specified time period and the number of work items in each state. Each view
+                    provides an area graph that charts the progress of completed work against the total
+                    estimated work for the specified time duration. </p>
+                <p>You can filter the report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the tasks, use cases, and bugs that are counted in the report by specifying
+                            iteration and area paths, types of work items, and states.</p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report and Changing the
+                    Display</a>later in this topic.</p>
+                <h3 class="subHeading">Hours of Work</h3>
+                <div class="subsection">
+                    <p>The following illustration shows an example of the Remaining Work report in the <span
+                        class="ui">Hours of Work</span> view. This example is healthy in that a steady rate
+                        of work is being completed. However, the team significantly underestimated the amount
+                        of work that was required to complete the iteration, as shown by the hours remaining
+                        at the start and the hours completed at the end. </p>
+                    <img alt="Example of Remaining Work report" src="../art/ProcGuide_ReportsRemainingWork.png" />
+                </div>
+                <h3 class="subHeading">Number of Work Items</h3>
+                <div class="subsection">
+                    <p>The following illustration shows the same report as in the previous illustration
+                        but in the <span class="ui">Number of Work Items</span> view, with the work items
+                        grouped by state. Although the team made good progress resolving and closing work
+                        items, the estimate of work items increased from the start of the iteration to almost
+                        three times more by the end of the iteration. </p>
+                    <img alt="Example of number of work items report" src="../art/ProcGuid_NumberOfWi_RemainingWork.png" /><p>
+                        The following table summarizes the data that the report shows, subject to which
+                        filters and display option you specify. </p>
+                    <div class="caption"></div>
+                    <div class="tableSection">
+                        <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                            <tr>
+                                <th>
+                                    <p>Hours</p>
+                                </th>
+                                <th>
+                                    <p>Number of Work Items</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Hours Remaining</span>: The cumulative value of all remaining hours
+                                                for all tasks. </p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Hours Completed</span>: The cumulative value of all completed hours
+                                                for all tasks.</p>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <p><span class="ui">Active</span>: The cumulative value of all use cases, tasks, and bugs
+                                                that are in the <span class="ui">Active</span> (blue) state.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Resolved</span>: The cumulative value of all use cases or bugs and
+                                                that are in the <span class="ui">Resolved</span> (gold) state.</p>
+                                        </li>
+                                        <li>
+                                            <p><span class="ui">Closed</span>: The cumulative value of all use cases, tasks, and bugs
+                                                in the <span class="ui">Closed</span> (green) state. </p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h3 class="subHeading">Required Activities for Tracking Work Items</h3>
+                <div class="subsection">
+                    <p>For the Remaining Work report to be useful and accurate, the team must perform the
+                        following activities to track work items:</p>
+                    <ul>
+                        <li>
+                            <p>Define tasks, use cases, and bugs, and specify the <span class="ui">Iteration</span> 
+                                and <span class="ui">Area</span> paths for each work item. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>For information about how to define iteration and area paths, see <span sdata="link">
+                                                <a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                                                    and Modify Areas and Iterations</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Specify and update the <span class="ui">Hours</span> <span class="ui">Completed</span> 
+                                and <span class="ui">Hours</span> <span class="ui">Remaining</span> fields for each
+                                task or subtask as the team makes progress on each work item.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If you subdivide a task into subtasks, specify hours only for the subtasks. These
+                                                hours are rolled up as summary values for the parent task and Use Case. For more
+                                                information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/09e8e02d-9ecb-4012-9ee0-cebb89372096">
+                                                    Address Inaccuracies Published for Summary Values</a></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Update the <span class="ui">State</span> of each use case, task, and bug as it progresses
+                                from active to closed. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Duration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Setting
+                the Duration of the Iteration</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To understand the progress made for your current iteration, the start and end dates
+                    for the report must match those of your current iteration cycle. </p>
+                <h3 class="procedureSubHeading">To change the duration of the iteration</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Next to <span class="ui">Iteration Start (Date)</span> or<span class="ui"> Iteration
+                                End (Date)</span>, click the calendar icon, and then click a date. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>The Remaining Work report displays information that you can use to understand how
+                    well the team is progressing and whether the team will finish the tasks within the
+                    allocated time.</p>
+                <h3 class="subHeading">Questions That the Report Answers</h3>
+                <div class="subsection">
+                    <p>You can review the report to determine the progress within an iteration or over time.
+                        Specifically, you can find answers to these questions:</p>
+                    <ul>
+                        <li>
+                            <p>How fast is the team burning down remaining work? </p>
+                        </li>
+                        <li>
+                            <p>Is work being added during the iteration? Is the team expanding the scope of the
+                                work?</p>
+                        </li>
+                        <li>
+                            <p>How much progress can the team make in the available time?</p>
+                        </li>
+                        <li>
+                            <p>Approximately when can the team finish the work?</p>
+                        </li>
+                        <li>
+                            <p>Is too much work in progress?</p>
+                        </li>
+                        <li>
+                            <p>Is the flow of work being impeded or blocked?</p>
+                        </li>
+                        <li>
+                            <p>When will the team finish the current iteration?</p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Healthy Version of Report</h3>
+                <div class="subsection">
+                    <p>A healthy Remaining Work report shows steady progress in resolving and closing tasks,
+                        as the following illustration shows. The rectangular shape of the diagram indicates
+                        that the estimated work closely matched the required work.</p>
+                    <img alt="Healthy version of Remaining Work report" src="../art/ProcGuid_HealthyWork.png" />
+                </div>
+                <h3 class="subHeading">Unhealthy Version of Report</h3>
+                <div class="subsection">
+                    <p>The following illustration shows an unhealthy version of the Remaining Work report.
+                        Little progress is made for several weeks at a time, as indicated by the flat line
+                        of work items remaining in an unchanged state. Also, the number of work items increases
+                        past the midpoint of the iteration, which indicates that more features have been
+                        introduced. </p>
+                    <img alt="Unhealthy version of Remaining Work report" src="../art/ProcGuid_UnhealthyWork.png" /><p>
+                        An unhealthy Remaining Work report might show one or more of the following indicators:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Number of hours completed or number of work items resolved or
+                                closed remains flat</span>.</p>
+                            <p>This situation indicates that one or more issues might be blocking progress or that
+                                the team has not resolved and closed work items that it has completed, fixed, and
+                                verified.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Number of remaining hours or active work items increases</span>.</p>
+                            <p>This situation indicates that either the team did not accurately estimate the work
+                                at the start of the iteration or that the team added features after the iteration
+                                started. When required effort is larger than estimated effort, team members might
+                                be underestimating the difficulty, time, or other factors. This area is worth inquiring
+                                about to determine root causes. For example, you might want to determine how granular
+                                the tasks are. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report and Changing the Display</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can filter the Remaining Work report or change its display in the following ways:
+                </p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the Use Cases, bugs, and tasks that appear in the report by specifying
+                            iteration and area paths, types of work items, and work item states.</p>
+                    </li>
+                    <li>
+                        <p>Switch the view in which the report appears.</p>
+                    </li>
+                </ul>
+                <p>The following illustration shows the available filters and display options:</p>
+                <img alt="Filters for Remaining Work report" src="../art/ProcGuid_RemainingWork.png" /><h3
+                    class="procedureSubHeading">To filter the tasks, use cases, and bugs that appear
+                    in the report</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Perform one or more of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Iteration</span> or <span class="ui">Area</span> list, select
+                                        the check box of each iteration or product area to include.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span> or <span class="ui">State</span> list,
+                                        select the check box of each work item type or state to include.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To switch between displaying the number of work hours
+                    and number of work items </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the <span class="ui">Measurement</span> list, click <span class="ui">Hours of Work
+                                </span> or <span class="ui">Number of Work Items</span>. </p>
+                            <ul>
+                                <li>
+                                    <p>The <span class="ui">Hours of Work</span> view displays the cumulative value of work
+                                        hours for all tasks based on the filters that you applied to the report. </p>
+                                </li>
+                                <li>
+                                    <p>The <span class="ui">Number of Work Items</span> view displays the cumulative states
+                                        of all work items based on the filters that you applied to the report.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="IterationBacklogWorkbook.html">
+                    Iteration 
+                    Task Backlog Workbook</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a>
+                </span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)
+                    </a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)
+                    </a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

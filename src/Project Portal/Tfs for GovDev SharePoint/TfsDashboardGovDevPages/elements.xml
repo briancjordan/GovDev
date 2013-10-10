@@ -1,0 +1,264 @@
+﻿<Elements Id="624e7a98-42cc-4b70-b891-14adbc0b579f" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="ContributionPage" List="101" Url="Dashboards">
+    <File Name="Contribution.aspx" Type="GhostableInLibrary" Url="dashboardlayouts.aspx" Path="dashboardlayouts.aspx">
+      <Property Name="Title" Value="Team Contribution" />
+      <!-- Header Text -->
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="1">
+        <![CDATA[
+          <WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+            <FrameType>None</FrameType>
+            <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+            <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+            <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">&lt;div class="ms-dashboard-header"&gt;&lt;p&gt;The Contribution dashboard displays the various contributions by team members to help you track progress toward completing your project.&lt;/p&gt;&lt;/div&gt;</Content>
+          </WebPart>
+        ]]>
+      </AllUsersWebPart>      
+      
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="2">
+        <![CDATA[
+        <?xml version="1.0" encoding="utf-8"?>
+          <WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+            <Title>Contribution By Team Member Report</Title>
+            <FrameType>Default</FrameType>
+            <Description>Displays Reporting Services Contribution By Team Member Report.</Description>
+            <IsIncluded>true</IsIncluded>
+            <ZoneID>Header</ZoneID>
+            <PartOrder>0</PartOrder>
+            <FrameState>Normal</FrameState>
+            <Height>600pt</Height>
+            <Width>850pt</Width>
+            <AllowRemove>false</AllowRemove>
+            <AllowZoneChange>false</AllowZoneChange>
+            <AllowMinimize>false</AllowMinimize>
+            <AllowConnect>false</AllowConnect>
+            <AllowEdit>false</AllowEdit>
+            <AllowHide>false</AllowHide>
+            <IsVisible>true</IsVisible>
+            <DetailLink>../_layouts/TfsRedirect.aspx?tf%3aType=Report&amp;tf%3aReportName=Project+Management%2fContribution+By+Team+Member&amp;tf%3aShowToolbar=1&amp;IsDashboard=false</DetailLink>
+            <HelpLink />
+            <HelpMode>Modeless</HelpMode>
+            <Dir>Default</Dir>
+            <PartImageSmall />
+            <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+            <PartImageLarge>/_layouts/images/mscntvwl.gif</PartImageLarge>
+            <IsIncludedFilter />
+            <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+            <TypeName>Microsoft.SharePoint.WebPartPages.PageViewerWebPart</TypeName>
+            <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/PageViewer">~site/_layouts/TfsRedirect.aspx?tf:Type=Report&amp;tf:ReportName=Project Management/Contribution By Team Member&amp;tf:ShowToolbar=0&amp;IsDashboard=true</ContentLink>
+            <SourceType xmlns="http://schemas.microsoft.com/WebPart/v2/PageViewer">URL</SourceType>
+          </WebPart>
+        ]]>
+      </AllUsersWebPart>
+
+      <!-- Important Dates -->
+      <View WebPartZoneID="Right" WebPartOrder="1"
+            List="Lists/Important Dates" Name="Important Dates"
+            DisplayName="Important Dates" RecurrenceRowset="TRUE" BaseViewID="0" />
+
+      <!-- TSWA: My Team's Work Items -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="2">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.WorkItemSummaryWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="PersistenceStorage" type="string">&lt;properties&gt;&lt;property name="QS/WPQ/C" value="field=name%3DSystem.Id%26width%3D70&amp;amp;field=name%3DSystem.Title%26width%3D450&amp;amp;order=name%3DSystem.Id%26dir%3Dasc" /&gt;&lt;/properties&gt;</property>
+                  <property name="Query" type="string">SELECT [System.Id], [System.Title] FROM WorkItems WHERE ([System.TeamProject] = @project AND ([System.WorkItemType] = 'Bug' OR [System.WorkItemType] = 'Task' OR [System.WorkItemType] = 'Test Case' OR [System.WorkItemType] = 'Use Case' OR [System.WorkItemType] = 'Requirement'  OR [System.WorkItemType] = 'Change Request' OR [System.WorkItemType] = 'Support Ticket')) ORDER BY [System.Id]</property>
+                  <property name="QueryTimeOut" type="int">10</property>
+                  <property name="ServerQuery" type="bool">False</property>
+                  <property name="Title" type="string">Project Work Items;</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+
+       <!-- TSWA: Recent Builds -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="3">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.CompletedBuildsWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="Columns" type="string">Status|Name</property>
+                  <property name="DateFilter" type="string">l7d</property>
+                  <property name="DisplayColumnHeaders" type="bool">True</property>
+                  <property name="NumberOfItems" type="int">5</property>
+                  <property name="Title" type="string">Recent Builds</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+
+      <!-- TSWA: Recent Checkins -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="4">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.RecentCheckinsWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="Columns" type="string">ChangesetId|Comment</property>
+                  <property name="DateFilter" type="string">*</property>
+                  <property name="DisplayColumnHeaders" type="bool">True</property>
+                  <property name="NumberOfItems" type="int">5</property>
+                  <property name="Title" type="string">Recent Checkins</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+      
+    </File>
+  </Module>
+  
+  <Module Name="TraceabilityPage" List="101" Url="Dashboards">
+    <File Name="Traceability.aspx" Type="GhostableInLibrary" Url="dashboardlayouts.aspx" Path="dashboardlayouts.aspx">
+      <Property Name="Title" Value="Traceability" />
+
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="1">
+        <![CDATA[
+          <WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+            <FrameType>None</FrameType>
+            <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+            <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+            <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">&lt;div class="ms-dashboard-header"&gt;&lt;p&gt;The Requirements Traceability dashboard displays each requirement's design, implementation and test cases to help you track progress toward completing your project.&lt;/p&gt;&lt;/div&gt;</Content>
+          </WebPart>
+        ]]>
+      </AllUsersWebPart>
+
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="2">        
+        <![CDATA[
+        <?xml version="1.0" encoding="utf-8"?>
+          <WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+            <Title>Requirements Traceability Report</Title>
+            <FrameType>Default</FrameType>
+            <Description>Displays Reporting Services Requirements Traceability Report.</Description>
+            <IsIncluded>true</IsIncluded>
+            <ZoneID>Header</ZoneID>
+            <PartOrder>0</PartOrder>
+            <FrameState>Normal</FrameState>
+            <Height>550pt</Height>
+            <Width />
+            <AllowRemove>false</AllowRemove>
+            <AllowZoneChange>false</AllowZoneChange>
+            <AllowMinimize>false</AllowMinimize>
+            <AllowConnect>false</AllowConnect>
+            <AllowEdit>false</AllowEdit>
+            <AllowHide>false</AllowHide>
+            <IsVisible>true</IsVisible>
+            <DetailLink>../_layouts/TfsRedirect.aspx?tf%3aType=Report&amp;tf%3aReportName=Project+Management%2fRequirements+Traceability&amp;tf%3aShowToolbar=1&amp;IsDashboard=false&amp;ExpandOrCollapse=Expand</DetailLink>
+            <HelpLink />
+            <HelpMode>Modeless</HelpMode>
+            <Dir>Default</Dir>
+            <PartImageSmall />
+            <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+            <PartImageLarge>/_layouts/images/mscntvwl.gif</PartImageLarge>
+            <IsIncludedFilter />
+            <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+            <TypeName>Microsoft.SharePoint.WebPartPages.PageViewerWebPart</TypeName>
+            <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/PageViewer">~site/_layouts/TfsRedirect.aspx?tf:Type=Report&amp;tf:ReportName=Project Management/Requirements Traceability&amp;tf:ShowToolbar=0&amp;IsDashboard=true</ContentLink>
+            <SourceType xmlns="http://schemas.microsoft.com/WebPart/v2/PageViewer">URL</SourceType>
+          </WebPart>
+        ]]>
+      </AllUsersWebPart>
+
+      <!-- Important Dates -->
+      <View WebPartZoneID="Right" WebPartOrder="1"
+            List="Lists/Important Dates" Name="Important Dates"
+            DisplayName="Important Dates" RecurrenceRowset="TRUE" BaseViewID="0" />
+
+      <!-- TSWA: My Team's Work Items -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="2">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.WorkItemSummaryWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="PersistenceStorage" type="string">&lt;properties&gt;&lt;property name="QS/WPQ/C" value="field=name%3DSystem.Id%26width%3D70&amp;amp;field=name%3DSystem.Title%26width%3D450&amp;amp;order=name%3DSystem.Id%26dir%3Dasc" /&gt;&lt;/properties&gt;</property>
+                  <property name="Query" type="string">SELECT [System.Id], [System.Title] FROM WorkItems WHERE ([System.TeamProject] = @project AND ([System.WorkItemType] = 'Bug' OR [System.WorkItemType] = 'Task' OR [System.WorkItemType] = 'Test Case' OR [System.WorkItemType] = 'Use Case' OR [System.WorkItemType] = 'Requirement'  OR [System.WorkItemType] = 'Change Request' OR [System.WorkItemType] = 'Support Ticket')) ORDER BY [System.Id]</property>
+                  <property name="QueryTimeOut" type="int">10</property>
+                  <property name="ServerQuery" type="bool">False</property>
+                  <property name="Title" type="string">Project Work Items;</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+
+      <!-- TSWA: Recent Builds -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="3">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.CompletedBuildsWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="Columns" type="string">Status|Name</property>
+                  <property name="DateFilter" type="string">l7d</property>
+                  <property name="DisplayColumnHeaders" type="bool">True</property>
+                  <property name="NumberOfItems" type="int">5</property>
+                  
+                  <property name="Title" type="string">Recent Builds</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+
+      <!-- TSWA: Recent Checkins -->
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="4">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="Microsoft.TeamFoundation.WebAccess.WebParts.RecentCheckinsWebPart, Microsoft.TeamFoundation.WebAccess.WebParts, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+                <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="Columns" type="string">ChangesetId|Comment</property>
+                  <property name="DateFilter" type="string">*</property>
+                  <property name="DisplayColumnHeaders" type="bool">True</property>
+                  <property name="NumberOfItems" type="int">5</property>
+                  <property name="Title" type="string">Recent Checkins</property>
+                  <property name="Width" type="unit">188pt</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+        ]]>
+      </AllUsersWebPart>
+      
+    </File>
+  </Module> 
+</Elements>

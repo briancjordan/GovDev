@@ -1,0 +1,1209 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp"
+xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
+xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <title>Change Request (CMMI)</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="change requests" />
+    <meta name="System.Keywords" content="work item types, change request (CMMI)" />
+    <meta name="Microsoft.Help.Id" content="4ec69d5f-d3e0-42d8-b81f-c17abdcf5852" />
+    <meta name="Description" content="In this topic, you can learn how to fill in the details of a change request work item. A team can use the change request work item to track a proposed change to some part of the product." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Change Request (CMMI)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Change Request" /><MSHelp:Keyword Index="A" Term="4ec69d5f-d3e0-42d8-b81f-c17abdcf5852" /><MSHelp:Keyword Index="K" Term="change requests" /><MSHelp:Keyword Index="K" Term="work item types, change request (CMMI)" /><MSHelp:Attr Name="RevisionNumber" Value="21" /><MSHelp:Attr Name="AssetID" Value="4ec69d5f-d3e0-42d8-b81f-c17abdcf5852" /><MSHelp:Attr Name="Abstract" Value="In this topic, you can learn how to fill in the details of a change request work item. A team can use the change request work item to track a proposed change to some part of the product. You can create a change request whenever a change is proposed t ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10223.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Change Request</span>
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>In this topic, you can learn how to fill in the details of a change request work
+                    item. A team can use the change request work item to track a proposed change to
+                    some part of the product. You can create a change request whenever a change is proposed
+                    to any requirement that is under change control. For more information, see <span
+                        sdata="link"><a href="ManagingChangeGovDev.html">Managing Change (GovDev)</a></span>.</p>
+                <p>For information about how to create this type of work item, see <span sdata="link">
+                    <a href="WorkItemsandWorkflowCMMI.html">Work Items and Workflow (CMMI)</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#CreateCR">Defining a Change Request</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkCR">Linking a Change Request to a Requirement</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details, Attachments, or Hyperlinks to a Change Request
+                                            </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#ChangeState">Changing the State of a Change Request</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Process Guidance</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ManagingChangeGovDev.html">Managing Change (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Workbooks</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, 
+                                            IDs, Description, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and
+                                            Workflow (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/27761225-0298-456f-a5bc-f55efbe29529">
+                                            Areas and Iterations</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)</a>
+                                        </span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">
+                                            Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a change request, you must be a member of the <span class="ui">Readers</span> 
+                    group or your <span class="ui">View work items in this node</span> must be set to
+                    <span class="ui">Allow</span>. To modify a change request, you must be a member
+                    of the <span class="ui">Contributors</span> group or your <span class="ui">Edit work
+                        items in this node</span> permissions must be set to <span class="ui">Allow</span>. 
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">Managing Permissions</a></span>.</p>
+            </div>
+            <a name="CreateCR" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Change Request</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The work item form for a change request stores data in the fields and tabs that are
+                    the following illustration shows:</p>
+                <img alt="Change Request Work Item Form" 
+                    src="../art/ProcGuid_ChangeRequest_A.png" /><p>
+                </p>
+                <img alt="CMMI Change Request work item form - tabs" 
+                    src="../art/ProcGuid_ChangeRequest_B.png" /><p>
+                    When you define a change request, you must define the <span class="ui">Title</span>. 
+                    You can leave all other fields blank or accept their default values.</p>
+                <h3 class="procedureSubHeading">To define a single change request</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form, specify one or more of the following types
+                                of information:</p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Title</span> (Required), type a short description. </p>
+                                    <p>Good titles indicate the area of the product that is affected and how it is affected.
+                                        At any time, you can update the text to more accurately define the change and the
+                                        areas of work that are affected</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the name of the team member
+                                        who is responsible for addressing the change request.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>If you leave the change request unassigned, it is automatically assigned to you.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">State</span> list, leave the default value, <span class="ui">
+                                        Proposed</span>.</p>
+                                    <p>By default, the value of the <span class="ui">Reason</span> field is <span class="ui">
+                                        New</span>. For more information about this field and how you can use it to track
+                                        workflow, see <a href="#ChangeState">Changing the State of a Change Request</a>later
+                                        in this topic.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> and <span class="ui">Iteration</span> lists, click
+                                        the appropriate area and iteration. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Your project administrator defined the <span class="ui">Area</span> and <span class="ui">
+                                                        Iteration</span> tree hierarchies so that team members can track progress by those
+                                                        designations. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">
+                                                            Create and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the level of importance for the
+                                        change request on a scale of 1 (most important) to 4 (least important).</p>
+                                    <p>By default, this value is 2.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Triage</span> list, click the triage substate.</p>
+                                    <p>This field identifies the level of triage that has been decided for any change request
+                                        that is in the <span class="ui">Proposed</span> state. Valid values are <span class="ui">
+                                            Pending</span> (default), <span class="ui">More Info</span>, <span class="ui">Info Received
+                                        </span>, and <span class="ui">Triaged</span>. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Blocked</span> list, click <span class="ui">Yes</span> if an
+                                        issue is preventing the team from implementing the change request.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Details</span> tab, provide as much detail as you want to
+                                describe exactly what the team must change. </p>
+                            <p>Provide as much detail as possible in the change request to ensure that a developer
+                                can implement it and a tester can test it. Your team can use this information to
+                                create work items for tasks and test cases. For more information, see <span sdata="link">
+                                    <a href="TaskGovDev.html">Task (GovDev)</a></span> and <span sdata="link">
+                                <a href="TestCaseGovDev.html">
+                                        Test Case (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Justification</span> tab, provide as much detail as you want
+                                to describe the value to the customer or the product that the change request implements.
+                            </p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Analysis</span> tab, click each text box, and provide details
+                                for the impact that the change request will have on the following areas:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">Impact on architecture</span> </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Impact on user experience</span> </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Impact on test</span> </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Impact on design/development</span> </p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Impact on technical publications</span> </p>
+                                </li>
+                            </ul>
+                            <p>You can indicate the specific areas that are affected, in addition to the costs to
+                                implement the change.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Other</span> tab, specify the following types of information:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Original Estimate</span> box, type a number that represents
+                                        the hours of work that the change request will take to implement.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>In general, you define the following field later in the development cycle and not
+                                                        when you first define the change request.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Integrated in</span> list, click the build name or number
+                                        in which the change request is integrated by the development team.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">All Links</span> tabs, link the change request to one or more
+                                other work items, such as requirements or tasks.</p>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Attachments</span> tab, you can attach specifications, images,
+                                or other files that provide more details about the change request to be implemented.
+                            </p>
+                            <p>For more information, see the following sections later in this topic:</p>
+                            <ul>
+                                <li>
+                                    <p><a href="#LinkCR">Linking a Change Request to a Requirement</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#AddDetails">Adding Details, Attachments, or Hyperlinks to a Change Request
+                                        </a></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the change request, the identifier appears in the title under the
+                                                work item toolbar.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkCR" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking a Change Request to a Requirement</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>By creating relationships between change requests and requirements, you can plan
+                    projects more effectively, track dependencies more accurately, view hierarchical
+                    relationships more clearly, and find relevant information more quickly. From the
+                    work item form for a change request, you can create a work item that is automatically
+                    linked to the change request, or you can create links to existing work items.
+                </p>
+                <p>You use the <span class="ui">Links</span> tab to create specific types of links to
+                    specific types of work items. For more information, see <span sdata="link"></span> <span sdata="link">
+                    <a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)</a></span>.</p>
+                <h3 class="procedureSubHeading">To link a change request to an existing requirement
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Requirements</span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>.</p>
+                            <p>The <span class="ui">Add Link to Change Request </span> dialog box opens.</p>
+                            <img alt="Add link to requirement dialog box" 
+                                src="../art/ProcGuid_ChangeRequestLinkToRequirement.png" />
+                            <p>
+                                Leave the <span class="ui">Link Type</span> set to <span class="ui">Affects</span>,
+                                which is the only type of link that is supported for links that you add on the <span
+                                    class="ui">Requirements</span> tab. </p>
+                        </li>
+<li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The <span class="ui">Choose Linked Work Items</span> dialog box appears.</p>
+                            <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Saved query</span>, click the <span class="ui">Open Requirements</span> 
+                                team queries, and then click <span class="ui">Find</span>.</p>
+                        </li>
+                        <li>
+                            <p>Select the check box next to the Requirement you want to link to the Chnage 
+                                Request.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In <span class="ui">Comment</span>, type a description for the 
+                                Requirement to
+                                which you are linking. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the Change Request and the Requirement that you linked are updated.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding
+                Details, Attachments, or Hyperlinks to a Change Request</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>As more information becomes available, you can add it to a change request in the
+                    following ways:</p>
+                <ul>
+                    <li>
+                        <p>Type information in the text boxes on the <span class="ui">Details</span>, <span
+                            class="ui">Justification</span>, or <span class="ui">Analysis</span> tab.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to a Web site or to a file that is stored on a server or Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a change request </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Details</span>, <span class="ui">Justification</span>,
+                                or <span class="ui">Analysis</span> tab, and type information in the boxes. </p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Every time that a team member updates the work item, its history shows the date of
+                                                the change, the name of the team member who made the change, and the fields that
+                                                changed.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For more information, see <span sdata="link">
+                                <a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Description, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to a change request </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">Attachments </span> tab, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste a file that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, click <span class="ui">Browse</span>, and, in the <span
+                                            class="ui">Attachment</span> dialog box, type or browse to the name of the file
+                                        that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, type additional information
+                                        about the attachment. To close the <span class="ui">Attachment</span> dialog box,
+                                        click <span class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add a hyperlink to a change request </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>On the <span class="ui">All Links </span> tab, click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, click <span class="ui">Hyperlink</span>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Address</span> box, perform one of the following actions:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>If the target is a Web site, type the URL or copy it from your Internet browser,
+                                        and paste it into the <span class="ui">Address</span> box.</p>
+                                </li>
+                                <li>
+                                    <p>If the target is a server location, type its UNC address.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>(Optional) In the <span class="ui">Comment</span> box, type additional information
+                                about the hyperlink.</p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="ChangeState" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Changing
+                the State of a Change Request</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>The triage team or product planning meeting can review these work items to analyze,
+                    accept, and reject proposed changes. When a change request is accepted, the team
+                    can generate tasks to implement the change. After the team implements the change,
+                    the team eventually closes the change request. </p>
+                <p>For more information about the data fields that you can use to track work item states,
+                    see <span sdata="link"></span> <span sdata="link">
+                    <a href="AssignmentsandWorkflowGovDev.html">Assignments,
+                        Workflow, and Planning (GovDev)</a></span>.</p>
+                <p>You can use the following states to track the progress of change requests:</p>
+                <ul>
+                    <li>
+                        <p><a href="#Proposed">Proposed</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Active">Active</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Resolved">Resolved</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Closed">Closed</a></p>
+                    </li>
+                </ul>
+                <p>Any team member can change the state of a change request.</p>
+                <p>By default, each change request is in the <span class="ui">Proposed</span> state when
+                    you create the work item. When a team accepts a change request for the current iteration,
+                    the work item moves to the <span class="ui">Active</span> state, and the team analyzes
+                    it to determine its implementation details and create tasks. When the tasks are
+                    complete and system tests show that the team has successfully implemented the change
+                    request, a team member moves it to the <span class="ui">Resolved</span> state. Finally,
+                    when the team validates a change request, a team member moves it to the <span class="ui">
+                        Closed</span> state. </p>
+                <h3 class="procedureSubHeading">To change the state of a change request</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the change request.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click <span class="ui">Active</span>, <span
+                                class="ui">Resolved</span>, or <span class="ui">Closed</span>. </p>
+                            <ul>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Proposed</span> to <span class="ui">
+                                        Active</span>, the <span class="ui">Reason</span> field automatically changes to
+                                        <span class="ui">Accepted</span>. </p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Active</span> to <span class="ui">Resolved
+                                        </span>, the <span class="ui">Reason</span> field automatically changes to <span class="ui">
+                                            Code Complete and System Test Passed</span>. </p>
+                                </li>
+                                <li>
+                                    <p>If you change the state from <span class="ui">Resolved</span> to <span class="ui">
+                                        Closed</span>, the <span class="ui">Reason</span> field changes to <span class="ui">Validation
+                                            Test Passed</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a change request in the <span class="ui">Proposed</span> state
+                                            with the default reason, <span class="ui">New</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Proposed
+                                            </span> to <span class="ui">Active</span> with the default reason, <span class="ui">Accepted
+                                            </span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from<span class="ui"> Active
+                                            </span> to <span class="ui">Resolved</span> when it is code complete and system tests
+                                            have passed.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Resolved
+                                            </span> to <span class="ui">Closed</span> when the team has validated that it successfully
+                                            meets customer expectations. </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Atypical transitions</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Proposed
+                                            </span> to <span class="ui">Closed</span> with the default reason, <span class="ui">Rejected
+                                            </span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Active
+                                            </span> to <span class="ui">Proposed</span> with the default reason, <span class="ui">
+                                                Investigation Complete</span>.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Active
+                                            </span> to <span class="ui">Closed</span> after the team determines that the change
+                                            request is out of scope or not relevant.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Resolved
+                                            </span> to <span class="ui">Active </span> after the changed code fails a validation
+                                            test.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of the change request from <span class="ui">Closed
+                                            </span> to <span class="ui">Active</span> after the team determines that the work
+                                            item was closed in error or is now in scope. </p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Change Request State Diagram</span> </p>
+                                <img alt="Workflow for Change Request" 
+                                    src="../art/ProcGuid_ChangeReqStates.png" /><p />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Proposed" />
+                <h3 class="subHeading">Proposed (New)</h3>
+                <div class="subsection">
+                    <p>A team member can create a change request work item when the team finds a bug or
+                        another event identifies a necessary change in a work product that is under change
+                        control.</p>
+                    <p>The following data fields are automatically captured when a team member creates a
+                        change request:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Created By</span>: Name of the team member who created the change
+                                request.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created Date</span>: Date and time when the change request was
+                                created, as recorded by the server clock.</p>
+                        </li>
+                    </ul>
+                    <a name="ProposedActive" />
+                    <h4 class="subHeading">From Proposed to Active</h4>
+                    <div class="subsection">
+                        <p>Change requests describe changes to the product or a baseline. A change control board
+                            must review, investigate, and accept or reject each change that the team proposes.
+                        </p>
+                        <p>A team member can move a change request from the <span class="ui">Proposed</span> 
+                            state to the <span class="ui">Active</span> state for the reasons in the following
+                            table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Accepted</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the change control board approves the change request for the team to implement
+                                            in the current iteration.</p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the change request to the team member who will implement it.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Investigate</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the change control board determines that the impact of the request must be investigated
+                                            before the board will accept it. </p>
+                                    </td>
+                                    <td>
+                                        <p>Return the change request to the <span class="ui">Proposed</span> state when the investigation
+                                            is complete.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member changes the state of a
+                            change request to <span class="ui">Active</span>:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who activated the
+                                    change request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the change request
+                                    was activated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ProposedClosed" />
+                    <h4 class="subHeading">From Proposed to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close a change request that is in the <span class="ui">Proposed
+                            </span> state because of the reason in the following table: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Rejected</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the change control board determines that the team cannot implement the request
+                                            or the customer does not need it.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes a change request:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the change
+                                    request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the change request was
+                                    closed, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Active" />
+                <h3 class="subHeading">Active</h3>
+                <div class="subsection">
+                    <p>The team should implement only those change requests that are in the <span class="ui">
+                        Active</span> state. For active change requests, team members should create tasks
+                        for writing code, testing, and documenting the change. When all tasks are complete,
+                        a member of the team moves the change request to the <span class="ui">Resolved</span> 
+                        state. You can also close a change request if the team abandons it or determine
+                        that it is out of scope.</p>
+                    <a name="ActiveResolved" />
+                    <h4 class="subHeading">From Active to Resolved</h4>
+                    <div class="subsection">
+                        <p>A team member can resolve an active change request for the reason in the following
+                            table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Code Complete and System Tested </span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team has checked in code to implement a change request and all system tests
+                                            have passed.</p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the change request to the team member who will test it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member resolves an active change
+                            request:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Resolved By</span>: Name of the team member who resolved the
+                                    change request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Resolved Date</span>: Date and time when the change request was
+                                    resolved, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ActiveClosed" />
+                    <h4 class="subHeading">From Active to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close an active change request because of one of the reasons in
+                            the following table: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Abandoned</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the change request is no longer considered necessary to implement. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Out of Scope</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the team has insufficient resources or another issue is blocking the team's
+                                            ability to implement the change request for the current iteration. </p>
+                                    </td>
+                                    <td>
+                                        <p>Update the <span class="ui">Iteration</span> field to specify in which iteration the
+                                            team might implement the change request. If the change request is deferred to the
+                                            next release of the software, leave the <span class="ui">Iteration</span> field blank,
+                                            but describe in detail why the change request was deferred and when the team should
+                                            implement it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes an active change
+                            request:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the change
+                                    request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the change request was
+                                    closed, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ActiveProposed" />
+                    <h4 class="subHeading">From Active to Proposed</h4>
+                    <div class="subsection">
+                        <p>When the change request was activated as <span class="ui">Investigate</span>, you
+                            change its state to <span class="ui">Proposed</span> after the team completes its
+                            investigation. The following data fields are captured when you change the state
+                            of an active change request to <span class="ui">Proposed</span>:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Changed By</span>: Name of the team member who changed the state
+                                    of the change request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Resolved" />
+                <h3 class="subHeading">Resolved</h3>
+                <div class="subsection">
+                    <p>After a team implements a change request, the lead developer sets the state of the
+                        request to <span class="ui">Resolved</span> and assigns it to a tester so that testing
+                        can start.</p>
+                    <p>A resolved change request has been implemented and passes system tests. However,
+                        the team must validate resolved change requests with the customer to ensure that
+                        the team has implemented the request according to customer expectations. If validation
+                        tests pass, the team closes the change request. Otherwise, it is reactivated for
+                        further work.</p>
+                    <a name="ResolvedClosed" />
+                    <h4 class="subHeading">From Resolved to Closed</h4>
+                    <div class="subsection">
+                        <p>A team member can close a resolved change request for the reason in the following
+                            table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Validation Test Passed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the change request has passed all validation tests. </p>
+                                    </td>
+                                    <td>
+                                        <p>Assign the change request to the product owner.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are automatically captured when a team member closes a
+                            resolved change request:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the change
+                                    request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the change request was
+                                    closed, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <a name="ResolvedActive" />
+                    <h4 class="subHeading">From Resolved to Active</h4>
+                    <div class="subsection">
+                        <p>A team member can reactivate a resolved change request for the reason in the following
+                            table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Validation Test Failed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the validation test or tests indicate that one or more customer expectations
+                                            have not been met.</p>
+                                    </td>
+                                    <td>
+                                        <p>The tester creates bugs for the test failures and assigns the change request to the
+                                            lead developer, who determines how to address the problems.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when a team member reactivates a resolved
+                            change request:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the change request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the change request
+                                    was reactivated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>The team should no longer work on a closed change request. A change request is closed
+                        either when the change control board has rejected it or when the team has successfully
+                        implemented, verified, and validated the request.</p>
+                    <p>A member of the team, usually a business analyst or program manager, can reactivate
+                        a closed change request if it comes back into scope.</p>
+                    <a name="ClosedActive" />
+                    <h4 class="subHeading">From Closed to Active</h4>
+                    <div class="subsection">
+                        <p>A team member can reactivate a closed change request for the reason in the following
+                            table:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Closed in error</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When a team member accidentally closed a change request. </p>
+                                    </td>
+                                    <td>
+                                        <p>Make sure that the implementation tasks, test cases, and details for the change request
+                                            are well defined and sufficient to support its development.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>The following data is automatically captured when a team member reactivates a closed
+                                    change request:</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the change request.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the change request
+                                    was reactivated, as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    change request was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10223.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

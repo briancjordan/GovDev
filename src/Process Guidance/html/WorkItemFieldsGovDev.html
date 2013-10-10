@@ -1,0 +1,377 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, work item fields" />
+    <meta name="System.Keywords" content="process guidance, work item fields (GovDev)" />
+    <meta name="System.Keywords" content="work item fields, agile process template" />
+    <meta name="Microsoft.Help.Id" content="b56bdfa9-6ed0-4f3b-a53b-636764c3a969" />
+    <meta name="Description" content="You use work item fields to track data for a work item type, to define the filter criteria for queries, and to generate reports. Work item types that are defined for the process template for GovDev for TFS 2010 v5." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Work Item Fields (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Work Item Fields" /><MSHelp:Keyword Index="A" Term="b56bdfa9-6ed0-4f3b-a53b-636764c3a969" /><MSHelp:Keyword Index="K" Term="agile process template, work item fields" /><MSHelp:Keyword Index="K" Term="process guidance, work item fields (GovDev)" /><MSHelp:Keyword Index="K" Term="work item fields, agile process template" /><MSHelp:Attr Name="RevisionNumber" Value="12" /><MSHelp:Attr Name="AssetID" Value="b56bdfa9-6ed0-4f3b-a53b-636764c3a969" /><MSHelp:Attr Name="Abstract" Value="You use work item fields to track data for a work item type, to define the filter criteria for queries, and to generate reports. Work item types that are defined for the process template for GovDev for TFS 2010 v1.0 share many work ite ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Work Item Fields (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Work Item Fields (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You use work item fields to track data for a work item type, to define the filter
+                    criteria for queries, and to generate reports. Work item types that are defined
+                    for the process template for GovDev for TFS 2010 v1.0 share many
+                    work item fields. </p>
+                <p>Not all fields that are tracked in the database for tracking work items appear on
+                    any work item form. You can review the information in this topic to learn more about
+                    the work item fields that are used to track information, the restrictions for specific
+                    fields, and the fields that are reported and indexed. If you want to customize a
+                    work item type, you can review the information for each data field that is already
+                    defined for that type. </p>
+                <p>Also, you can learn more about the toolbar controls that appear on the links and
+                    attachment tabs on the work item forms.</p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Common
+                Tasks</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Tasks</p>
+                            </th>
+                            <th>
+                                <p>Related content</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Identify additional fields that you can use to track workflow
+                                    changes</span>. You use status and assignment fields to track the progress of work
+                                    items from the active to the closed state. In addition to the fields that appear
+                                    on the work item form, you can use 10 more fields to track status changes.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Work with tree path reference fields</span>. You use the area
+                                    and iteration classification fields to categorize work items into product areas
+                                    and iteration or sprint cycles.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define rank, priority, and other planning fields</span>. You
+                                    use planning, ranking, and priority fields to plan what work should be completed
+                                    first.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Work with task scheduling fields</span>. You use the task scheduling
+                                    fields to track estimated, completed, and remaining work for a task. In addition
+                                    to the fields that you can track on the task work item form, you can use three additional
+                                    fields that support integration with Office Project.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="EffortSchedulesandTrackingHoursGovDev.html">Effort, Schedules,
+                                            and Tracking Hours (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Use description and history fields</span>. You use the title
+                                    and ID fields to uniquely identify work items within a list. You use the description
+                                    and history fields to provide additional information that others need to implement
+                                    the work item and to track changes that are made to the work item. In addition to
+                                    the fields that you can track on the task work item form, you can use six additional
+                                    fields to filter queries and create reports. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Understand restrictions around linking work items</span>. You
+                                    use links to create relationships between Use Cases, tasks, test cases, and other
+                                    work items. Most links are restricted as to the types of links that you can create
+                                    and types of work items that can you can link.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define fields that track build numbers and test cases</span>.
+                                    You use build and test data fields to track information that helps the team resolve
+                                    bugs or implement tests. In addition to the fields that appear on the work item
+                                    form, you can use five additional fields to filter queries and create reports.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildandTestIntegration.html">Build and Test Integration
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Attach files</span>. You can attach an e-mail thread, a document,
+                                    an image, a log file, or another type of file to a work item. In addition, you can
+                                    use the AttachedFileCount field to filter queries and create reports.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Related
+                Topics</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Tasks</p>
+                            </th>
+                            <th>
+                                <p>Related content</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Learn about the data types and field attributes that you can
+                                    specify</span>. You can define fields to store specific types of data, such as text,
+                                    numbers, or HTML content. You can set additional attributes that are based on how
+                                    you want to use the field for reporting or query purposes.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c735a582-954a-418e-8b12-1b5c0b9857b9">
+                                            Working with Work Item Fields</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Add, remove, or customize how you use a work item field to track
+                                    data</span>. You use work item fields to track data for a work item type, to define
+                                    the filter criteria for queries, and to generate reports. For any data element that
+                                    you want to track, you must add a <b>FIELD</b>element to the definition file for
+                                    the appropriate type of work item.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/e8f5efb8-f98d-43ac-a347-a52371f20c21">
+                                            Customizing and Using Work Item Fields</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Customize objects for tracking work items</span>. You can customize
+                                    fields, workflow, and forms that your team uses to track progress. </p>
+                                <p>You can customize all objects for tracking work items by modifying an XML file and
+                                    importing it to the server that hosts the team project collection. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/558d9b2a-b71a-4f26-8ac1-a0fde70b727d">
+                                            Customizing Project Tracking Data, Forms, Workflow, and Other Objects</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Specify fields to perform specific actions</span>. Team Foundation
+                                    manages system fields, which you can use to track all types of work items. You add
+                                    all other fields to a team project collection through the work item type definitions.
+                                </p>
+                                <p>For best results, you should use fields that already exist if they meet your needs.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/9720b88e-474c-451b-b3fe-5253ba24a653">
+                                            Using System Fields and Fields Defined by the MSF Process Templates</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

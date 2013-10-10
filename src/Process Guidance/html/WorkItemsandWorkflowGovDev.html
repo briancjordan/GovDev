@@ -1,0 +1,823 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, work item types" />
+    <meta name="System.Keywords" content="process guidance, work items and workflow (GovDev)" />
+    <meta name="System.Keywords" content="process guidance, work items and workflow (CMMI)" />
+    <meta name="System.Keywords" content="work items" />
+    <meta name="System.Keywords" content="work items, agile" />
+    <meta name="System.Keywords" content="workflows [Visual Studio ALM], agile process template" />
+    <meta name="Microsoft.Help.Id" content="d16d04fd-c073-45c0-b1b9-3724f0a7519b" />
+    <meta name="Description" content="You can use work items to track, monitor, and report on the development of a product and its features." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Work Items and Workflow (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Work Items and Workflow" /><MSHelp:Keyword Index="A" Term="d16d04fd-c073-45c0-b1b9-3724f0a7519b" /><MSHelp:Keyword Index="K" Term="agile process template, work item types" /><MSHelp:Keyword Index="K" Term="process guidance, work items and workflow (GovDev)" /><MSHelp:Keyword Index="K" Term="process guidance, work items and workflow (CMMI)" /><MSHelp:Keyword Index="K" Term="work items" /><MSHelp:Keyword Index="K" Term="work items, agile" /><MSHelp:Keyword Index="K" Term="workflows [Visual Studio ALM], agile process template" /><MSHelp:Attr Name="RevisionNumber" Value="15" /><MSHelp:Attr Name="AssetID" Value="d16d04fd-c073-45c0-b1b9-3724f0a7519b" /><MSHelp:Attr Name="Abstract" Value="You can use work items to track, monitor, and report on the development of a product and its features. A work item is a database record that you create in Visual Studio Team Foundation Server to record the definition, assignment, priority, and state  ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Work Items and Workflow (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Work Items and Workflow (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>You can use work items to track, monitor, and report on the development of a product
+                    and its features. A work item is a database record that you create in Visual Studio
+                    Team Foundation Server to record the definition, assignment, priority, and state
+                    of work. The process template for GovDev for TFS 2010 v1.0 defines
+                    six types of work items: Use Cases, tasks, test cases, shared steps, bugs, and
+                    issues.</p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><a href="#Define">Defining Requirements, Use Cases, Tasks, and Other Work Items</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Create">Creating a Requirement, Use Case, a Task, or Another Type of Work Item</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><a href="#CreatingManyWorkItems">Creating Many Requirements, Use Cases, Tasks, or Other Work
+                            Items at One Time</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#AddLink">Creating a Work Item that Automatically Links to Another Work
+                            Item</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Testing">Creating Test Cases and Test Plans By Using Test and Lab Manager
+                            </a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Integration">Opening and Tracking Bugs By Using Test Runner and Test and
+                            Lab Manager</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#ViewingMy">Viewing Work Items Assigned to You</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#Related">Customizing Work Item Types and Related Tasks</a></p>
+                    </li>
+                </ul>
+                <p>By defining individual work items and storing them in a common database and metrics
+                    warehouse, you can answer questions on project health whenever they come up. Work
+                    items, links between work items, and file attachments are all stored in the Team
+                    Foundation database for tracking work items, as the following illustration shows.
+                </p>
+                <img alt="Conceptual overview of work item usage" src="../art/ProcGuide_WIT_Database_WI.png" />
+            </div>
+            <a name="Define" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                Requirements, Use Cases, Tasks, and Other Work Items</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can specify and update information for work items on the work item form. The
+                    topics in this section provide details about how you work within each work item
+                    form. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Tasks</p>
+                            </th>
+                            <th>
+                                <p>Related content</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Track Requirements and Use Cases</span>.
+                                    A team creates Requirements and Use Cases to define the features and functions
+                                    to be implemented. A use case describes customer goals at a high level and are
+                                    fundamental elements of the team's planning effort because they help the team estimate,
+                                    prioritize, define, schedule, and verify work that relates to each use case.
+                                </p>
+                                <p>You can use the Requirements Traceability and Requirments Progress Reports to track the status
+                                    of Requirements/Use Cases and team progress.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementGovDev.html">Requirement (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">Requirements Traceability Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements Progress Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Track and estimate work</span>. A team creates tasks to track
+                                    the level of effort that is required to implement a use case or other areas of
+                                    work that are identified for the project. Tasks should represent a small unit of
+                                    work that can be accomplished within one to two days. You can break larger tasks
+                                    down into smaller subtasks.</p>
+                                <p>You can create a task to track work to develop code, design and run tests, address
+                                    bugs, and perform regression testing. In addition, you can create tasks to support
+                                    generic work that must be performed.</p>
+                                <p>By tracking work hours for each task, the team can gain insight into the progress
+                                    that it has made on the project. </p>
+                                <p>You can use the Remaining Work and Burndown and Burn Rate reports to monitor team
+                                    progress, identify problems in the flow of work, and determine the team burn rate.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RemainingWorkReport.html">Remaining Work Report</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BurndownandBurnRateReportGovDev.html">Burndown and Burn
+                                            Rate Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Test the application</span>. A team uses test cases to define
+                                    tests that will support testing of Use Cases. You can define manual test cases
+                                    that specify a sequence of action and validation steps to run, or you can specify
+                                    automated test cases that reference an automation file. </p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>The recommended client for creating and defining test cases is Microsoft Test Manager.
+                                                    By using this tool, you can also create test suites and test configurations that
+                                                    address the complete range of testing criteria for your project. In test configurations,
+                                                    you specify the software environment under which you want to run your test cases
+                                                    and test suites. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">
+                                                        Testing the Application</a></span>.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p>You can use the Test Case Readiness report to determine the progress that the team
+                                    is making toward defining test cases. You can use the Test Plan Progress report
+                                    to determine how many tests are passing or failing.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseGovDev.html">Test Case (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define shared steps</span>. A team uses shared steps to streamline
+                                    definition and maintenance of manual test cases. In shared steps, you define a sequence
+                                    of action and validation steps to run as part of a test case. Many tests require
+                                    the same sequence of steps to be performed for multiple test cases. By creating
+                                    shared steps, you can define a sequence of steps once and insert it into many test
+                                    cases.</p>
+                                <div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>The recommended client for creating and defining shared steps is Microsoft Test Manager.
+                                                    You can view these types of work items by using Team Explorer and Team Web Access;
+                                                    however, you cannot use Team Web Access to modify or update certain fields.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="SharedStepsGovDev.html">Shared Steps (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Open and track bugs</span>. You can track a code defect by creating
+                                    a bug work item. By creating a bug, you can accurately report the defect in a way
+                                    that helps other members of the team to understand the full impact of the problem.
+                                    In the bug, you should describe the steps that led to the unexpected behavior so
+                                    that others can reproduce it, and the test results should clearly show the problem.
+                                    The clarity and completeness of this description often affects the probability that
+                                    the bug will be fixed. </p>
+                                <p>You can use the Triage workbook to rank and assign bugs to be worked on for an iteration
+                                    or release. You can use the Bug Status report to track the team's progress toward
+                                    resolving and closing bugs.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugStatusReport.html">Bug Status Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Define and manage risks, issues, and impediments</span>. You
+                                    can define known or potential problems, impediments, or risks to your project by
+                                    creating issue work items. </p>
+                                <p>When concrete action is required, an issue might translate into one or more tasks
+                                    to be performed to mitigate the issue. For example, a technical issue can lead to
+                                    an architectural prototyping effort. Teams should always encourage its members to
+                                    identify issues and ensure that they contribute as much information as possible
+                                    about issues that jeopardize team success. Individuals should be empowered to identify
+                                    issues without fear of retribution for honestly expressing tentative or controversial
+                                    views. Teams who create and sustain positive environments for managing issues will
+                                    identify and address issues earlier, faster, and with less confusion and conflict
+                                    than teams who sustain negative risk environments. </p>
+                                <p>You can use the Issues workbook to review, rank, and manage issues.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssueGovDev.html">Issue (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssuesWorkbook.html">Issues Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Create" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                a Requirement, Use Case, a Task, or Another Type of Work Item</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You can create a work item by opening Team Web Access or Team Explorer and following
+                    the procedure in this section. After you create a work item, you can always modify
+                    and add details as a sprint progresses.</p>
+                <h3 class="procedureSubHeading">To create a requirement, use case, task, or another type of work
+                    item</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open either Team Web Access or Team Explorer, and connect to the team project collection
+                                that contains the team project in which you want to create the work item. </p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/1372e56c-b34f-42c2-b72c-94b57620c75c">
+                                Connect to and Access Team Projects in Team Foundation Server</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Perform one of the following steps:</p>
+                            <ul>
+                                <li>
+                                    <p>In Team Web Access, find the quick launch area of the navigation pane, and then click
+                                        the <span class="ui">New Work Item</span> arrow. On the <span class="ui">Work Item Types
+                                        </span> menu, click the type of work item that you want to create. </p>
+                                </li>
+                                <li>
+                                    <p>In Team Explorer, open the <span class="ui">Team </span> menu, point to <span class="ui">
+                                        Add Work Item</span>, and click the type of work item.</p>
+                                </li>
+                            </ul>
+                            <p>A work item form opens of the type that you specified.</p>
+                            <img alt="Use Case Work Item Form" src="../art/NewUseCase.PNG" /></li>
+                        <li>
+                            <p>Define the remaining fields as the type of work item requires.</p>
+                            <p>For more information, see <a href="#Define">Defining Use Cases, Tasks, or Other
+                                Work Items</a> earlier in this topic.</p>
+                        </li>
+                        <li>
+                            <p>On the work item toolbar, click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the work item, the identifier appears in the title under the work
+                                                item toolbar.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="CreatingManyWorkItems" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                Many Requirements, Use Cases, Tasks, or Other Work Items at One Time</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can quickly define requirements, use cases, tasks, issues,
+                    and bugs by using the workbooks that are provided with the process template for
+                    GovDev for TFS 2010 v1.0. For more information, see the following
+                    topics:</p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span> 
+                        </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/67595fec-a872-43e3-b934-9dd1a766218c">
+                            Managing Work Items Using Microsoft Excel Bound to Team Foundation Server</a></span> 
+                        </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/f12ae7e2-1893-4386-9a9b-f0e699a2ccad">
+                            Performing Top-Down Planning Using a Tree List of Work Items (In Excel)</a></span> 
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="AddLink" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                a Work Item that Automatically Links to Another Work Item</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>You can create a work item that automatically links to an existing use case or
+                    other work item. You can perform this action from an open work item or from a list
+                    of results for a work item query. </p>
+                <h3 class="procedureSubHeading">To create a work item that is linked to an existing
+                    work item</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open either Team Web Access or Team Explorer, and connect to the project collection
+                                that contains the team project where you want to define the linked work item.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Right-click the <span class="ui">Open Work Items </span> team query, and then click
+                                <span class="ui">Open</span>. </p>
+                        </li>
+                        <li>
+                            <p>Perform one of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In Team Web Access, click the arrow next to the existing work item to which you want
+                                        to link the new work item, and then click <span class="ui">Add New Linked Work Item
+                                        </span>. </p>
+                                </li>
+                                <li>
+                                    <p>In Team Explorer, right-click the existing work item to which you want to link the
+                                        new work item, and then click <span class="ui">Add New Linked Work Item</span>.
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>The <span class="ui">Add new Linked Work Item</span> dialog box opens.</p>
+                            <img alt="Add a new linked task to an issue or bug" 
+                                src="../art/ProcGuid_UseCaseLinkToNewBug.png" />
+                        </li>
+                        <li>
+                            <p>Define the following fields:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Link Type</span> list, click <span class="ui">Tests</span> 
+                                        if you are linking the new work item to an existing test case or use case. Click
+                                        <span class="ui">Related</span> if you are linking the new work item to an existing
+                                        task, issue, or another bug.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Work Item Type</span> list, click the type of work item that
+                                        you want to create. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Title</span>, type a descriptive name that indicates the use case,
+                                        task, or other type of work item to be tracked. </p>
+                                </li>
+                                <li>
+                                    <p>(Optional) In <span class="ui">Comment</span>, type additional information.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                            <p>A work item form opens with the information that you have provided. </p>
+                        </li>
+                        <li>
+                            <p>Define the remaining fields as the type of work item requires.</p>
+                            <p>For more information, see <a href="#Define">Defining Use Cases, Tasks, or Other
+                                Work Items</a>earlier in this topic.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="Testing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Creating
+                Test Cases and Test Plans By Using Test and Lab Manager</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>By using Microsoft Test Manager, you can create not only test cases but also test
+                    suites and test configurations that support testing your project. You can use test
+                    configurations to define the software environment under which you want to run your
+                    test cases and test suites.</p>
+                <div class="caption">Test Plans, Test Suites, and Test Configurations</div>
+                <br />
+                <img alt="Components of a Test Plan" src="../art/PlanSuiteCase.png" /><p>You can group
+                    your test cases together by organizing them into a hierarchy of test suites in your
+                    test plan. By creating test suites, you can run sets of test cases as a group. For
+                    more information about how to use Microsoft Test Manager to define test cases, test
+                    suites, and test plans, see <span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">
+                        Testing the Application</mshelp:link></span>. </p>
+            </div>
+            <a name="Integration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Opening
+                and Tracking Bugs using Test Runner and Test and Lab Manager</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>By using Microsoft Test Manager, you can submit bugs that automatically contain information
+                    about the test case and test environment that you ran, in addition to the specific
+                    test step on which you discovered a code defect. Bugs that you create by using Microsoft
+                    Test Manager automatically link the bug to the test case that found the bug.
+                </p>
+                <p>You can create bugs in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>From Microsoft Test Manager when you run a test by using Test Runner, view a test
+                            result, or view your bugs</p>
+                    </li>
+                    <li>
+                        <p>From Team Web Access or Team Explorer</p>
+                    </li>
+                    <li>
+                        <p>From Office Excel (useful if you are submitting multiple bugs at the same time)
+                        </p>
+                    </li>
+                </ul>
+                <p>For information about how to submit, track, and verify bugs and fixes by using Microsoft
+                    Test Manager, see the related content in the following table. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Tasks</p>
+                            </th>
+                            <th>
+                                <p>Related content</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create a bug</span>. When you notice unexpected behavior of the
+                                    application during ad hoc testing, you can quickly create a bug.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3884cbe6-95f7-434a-b02a-e498f084ce63">
+                                            How to: Submit a Bug Using Microsoft Test Manager</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Collect diagnostic data to support debugging</span>. By using
+                                    Test Runner, you can collect diagnostic trace data on an application that was written
+                                    with managed code, which a developer can then use with Intellitrace to isolate errors.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/944ae9af-5a55-4c58-b520-0108c03b3564">
+                                            Including Diagnostic Trace Data with Bugs that are Difficult to Reproduce</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create a recorded action log file and add it to a bug</span>.
+                                    You can record actions as text in a log file when you run manual tests. You can
+                                    automatically add this file to any bug that you create as you run your manual test.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3971f3e1-2022-413b-a16f-215771337648">
+                                            How to: Use Recorded Actions in Bugs to Create Test Cases</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create a test case from a bug and a recorded action log file</span>. 
+                                    You can use an action log to create a manual test case from a bug or a test result.
+                                    By taking this approach, you can create test cases without having to type in all
+                                    the steps.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c1f24abc-aa50-479a-b024-e9d28f229e71">
+                                            How to: Use Recorded Actions to Create Test Cases</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Verify and update the status of a bug based on test results</span>. 
+                                    If you submit a bug that is based on a test case, you can verify that bug directly
+                                    from the <span class="ui">My Bugs</span> list in Microsoft Test Manager. To take
+                                    this approach, a test result must be associated with that test case. You can quickly
+                                    rerun the test, change the status of the bug based on the results, and add comments
+                                    to the bug.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/4ad4fd2a-89b7-43a1-8b21-b020910d9ef2">
+                                            How to: Verify a Bug is Fixed Using Microsoft Test Manager</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="ViewingMy" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Viewing
+                Work Items That Are Assigned to You</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>As a team member, you can quickly find the work items that are assigned to you by
+                    either opening the My Work Items team query or by accessing My Dashboard. For more
+                    information, see the following topics:</p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="TeamQueriesGovDev.html">Team Queries (GovDev)</a></span> 
+                        </p>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="MyDashboardGovDev.html">My Dashboard (GovDev)</a></span> 
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <a name="Related" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle7)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle7, event)" tabindex="0">
+                <img id="sectionToggle7" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Customizing
+                Work Item Types and Related Tasks</span> </h1>
+            <div id="sectionSection7" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Tasks</p>
+                            </th>
+                            <th>
+                                <p>Related content</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Learn about the fields that you can use to track information
+                                    across all types of work items</span>. The database for tracking work items tracks
+                                    fields that do not appear on the work item forms. You can learn more about these
+                                    work item fields, restrictions on specific fields, and which fields that are reported
+                                    and indexed. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="WorkItemFieldsGovDev.html">Work Item Fields (GovDev)</a>
+                                        </span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Add, remove, or customize how you use each type of work item
+                                    to track data</span>. You can customize an existing type of work item or create
+                                    a type to meet your requirements. Each type of work item corresponds to an XML definition
+                                    file that is imported into a team project.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/d125917c-9e67-49e6-8274-8b169e76639a">
+                                            Working with Work Item Types</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Customize objects for tracking work items to support your requirements
+                                    for tracking projects</span>. You can customize data fields, workflow, and work
+                                    item forms that your team uses to track progress. </p>
+                                <p>To customize an object for tracking work items, you modify an XML file and import
+                                    it into the server that hosts the project collection.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/558d9b2a-b71a-4f26-8ac1-a0fde70b727d">
+                                            Customizing Project Tracking Data, Forms, Workflow, and Other Objects</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Add, remove, or modify the states or transitions that control
+                                    workflow</span>. You control the workflow by defining its initial state, its valid
+                                    states, the valid transitions between those states, and the users or groups who
+                                    have permission to perform those transitions. The <b>WORKFLOW</b>section of the
+                                    work item type controls how a work item is tracked. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/ac0c3aa2-dfc3-4737-aeff-fe8923bd5ce5">
+                                            Defining and Customizing Work Item Workflow</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Modify and customize the form for a type of work item</span>.
+                                    You can control how a work item type displays user-interface elements through the
+                                    <b>FORM</b>section of the definition for the type of work item. Each type of work
+                                    item must have only one form. You can describe the whole form, which includes all
+                                    its tabs, fields, and groups.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/1454e50d-b39f-4670-b0b7-6e77b742ac85">
+                                            Designing and Customizing a Work Item Form</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

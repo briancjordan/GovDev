@@ -1,0 +1,859 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, Excel reports" />
+    <meta name="System.Keywords" content="documents [Visual Studio ALM], agile process template Excel reports" />
+    <meta name="System.Keywords" content="Excel reports" />
+    <meta name="System.Keywords" content="Excel reports, agile process template" />
+    <meta name="System.Keywords" content="Microsoft Excel [Team Foundation], reports (GovDev)" />
+    <meta name="System.Keywords" content="process guidance, Excel Reports (GovDev)" />
+    <meta name="Microsoft.Help.Id" content="9faa625b-d87b-46a9-96ec-0618fe93db96" />
+    <meta name="Description" content="You can use the Microsoft Excel reports to display information from the data warehouse for your team project. This topic describes reports that are provided with the process template for GovDev for TFS 2010 v1.0." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Excel Reports (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Excel Reports" /><mshelp:keyword Index="A" Term="9faa625b-d87b-46a9-96ec-0618fe93db96" /><mshelp:keyword Index="K" Term="agile process template, Excel reports" /><mshelp:keyword Index="K" Term="documents [Visual Studio ALM], agile process template Excel reports" /><mshelp:keyword Index="K" Term="Excel reports" /><mshelp:keyword Index="K" Term="Excel reports, agile process template" /><mshelp:keyword Index="K" Term="Microsoft Excel [Team Foundation], reports (GovDev)" /><mshelp:keyword Index="K" Term="process guidance, Excel Reports (GovDev)" /><mshelp:attr Name="RevisionNumber" Value="25" /><mshelp:attr Name="AssetID" Value="9faa625b-d87b-46a9-96ec-0618fe93db96" /><mshelp:attr Name="Abstract" Value="You can use the Microsoft Excel reports to display information from the data warehouse for your team project. This topic describes reports that are provided with the process template for GovDev for TFS 2010 v1.0. " /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Excel Reports (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Excel Reports (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <p><font color="DarkGray">Updated: July 2010</font></p>
+            <a name="Top" />
+            <div class="introduction">
+                <p>You can use the Microsoft Excel reports to display information from the data warehouse
+                    for your team project. This topic describes reports that are provided with the process
+                    template for GovDev for TFS 2010 v1.0. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>If your team project portal is based on Microsoft Office SharePoint Server 2007 Enterprise
+                                    Edition or Microsoft SharePoint Server 2010 Enterprise Edition, you can view these
+                                    reports in your team project's dashboards. For more information, see <span sdata="link">
+                                        <a href="DashboardsGovDev.html">Dashboards (GovDev)</a></span>.</p>
+                                <p>If the project collection where your team project is stored is provisioned with SQL
+                                    Server Reporting Services, you can use Report Manager to view and filter the same
+                                    information that the Excel reports provide. For more information, see <span sdata="link">
+                                        <a href="ReportsGovDev.html">Reports (GovDev)</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#RequiredPermissions">Required Permissions</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Configuration">Required Configurations to Use Excel Reports</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Project">Project Management</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Bugs">Bug Backlog Management </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Build">Build Management </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Test">Test Management </a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Quality">Software Quality and Release Management</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>You can access the Microsoft Excel reports from the <span class="ui">Documents</span> 
+                                    folder, as the following illustration shows.</p>
+                                <img alt="Excel Reports" src="../art/dv_TeamProjectExcelReports.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="RequiredPermissions" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Permissions</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>To view or modify an Excel report that is stored under the Documents node for a team
+                    project, you must be assigned or belong to a group that has been assigned <span class="ui">
+                        Read</span>  permissions for Team Foundation. You must also have <span class="ui">Visitors
+                    </span> or <span class="ui">Members</span>  permissions, respectively, in SharePoint
+                    Products for the team project.</p>
+                <p>In addition, all Microsoft Excel reports that appear in the enterprise dashboards
+                    contain data from the Analysis Services cube. You can view enterprise dashboards
+                    only if the team project portal is hosted on a server that is running Microsoft
+                    Office SharePoint Server 2007 Enterprise Edition or Microsoft SharePoint Server
+                    2010 Enterprise Edition. </p>
+                <p>To view, refresh, or create an Excel report from an enterprise dashboard, you must
+                    configure the SharePoint web application definition to either use Single Sign-On
+                    or Windows Authentication. The following restrictions apply based on the authentication
+                    service that you configure.</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Important note" title="Important note" src="../icons/alert_caution.gif" /><b>Important
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You must configure the SharePoint web application for Single Sign-On if you do not
+                                    want to add users as members of the <span class="label">TfsWarehouseDataReaders</span> 
+                                    security role in SQL Server Analysis Services. In addition, you must configure the
+                                    application for Single Sign-on if the team project portal is configured to use NTLM
+                                    authentication and is not installed on the data-tier server.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <ul>
+                    <li>
+                        <p><span class="label">For Single Sign-On Authentication (Recommended)</span> </p>
+                        <p>To authenticate viewers of enterprise dashboards by using Single Sign-On, you must
+                            perform the following actions:</p>
+                        <ul>
+                            <li>
+                                <p>You must configure the SharePoint web application to use Single Sign-on. For more
+                                    information about how to configure Single Sign-on, see <span sdata="link"><a href="http://msdn.microsoft.com/library/d6b27916-5526-4e5b-956b-91ee8c8d0f17">
+                                        Configure Settings for Dashboard Compatibility</a></span>.</p>
+                            </li>
+                            <li>
+                                <p>You must add dashboard viewers to a group that is granted access to the Single Sign-on
+                                    enterprise application definition.</p>
+                                <p />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span class="label">For Windows Authentication</span> </p>
+                        <p>To authenticate viewers of enterprise dashboards by using Windows Authentication,
+                            you must perform the following actions: </p>
+                        <ul>
+                            <li>
+                                <p>You must either host the team project portal on the data-tier server, or you must
+                                    configure the SharePoint web application to use Kerberos authentication.</p>
+                            </li>
+                            <li>
+                                <p>You must add users as members of the <span class="label">TfsWarehouseDataReaders</span> 
+                                    security role in SQL Server Analysis Services. </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>The following table summarizes the required permissions based on activity. For information
+                    about how to grant these permissions to team members, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> and <span sdata="link"><a href="http://msdn.microsoft.com/library/c7488754-77af-4fb4-8eca-1af0d206c9c8">
+                            Grant Access to the Databases of the Data Warehouse for Visual Studio ALM</a>
+                    </span>. For information about permissions that are required to work with Excel
+                    reports in general, see <span sdata="link"><a href="http://msdn.microsoft.com/library/3e8f6a65-ac27-4cf6-be2b-209cabd97ff3">
+                        Assigning Permissions to View and Manage Reports for Visual Studio ALM</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Activity</p>
+                            </th>
+                            <th>
+                                <p>Team Foundation Server</p>
+                            </th>
+                            <th>
+                                <p>Team project portal</p>
+                            </th>
+                            <th>
+                                <p>SQL Server Analysis Services cube (Tfs_Analysis)</p>
+                            </th>
+                            <th>
+                                <p>Notes</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>View or refresh an Excel report that is opened from the Documents node of Team Explorer
+                                </p>
+                            </td>
+                            <td>
+                                <p>Readers</p>
+                            </td>
+                            <td>
+                                <p>Visitors</p>
+                            </td>
+                            <td>
+                                <p>TfsWarehouseDataReader role </p>
+                            </td>
+                            <td>
+                                <p>To access the Documents node for a team project, you must be a member of the <span
+                                    class="ui">Team Foundation Valid Users</span>  security group. If the required security
+                                    permissions are set explicitly, your <span class="ui">View project-level information
+                                    </span> permission on the team project must be set to <span class="ui">Allow</span>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>View or refresh an Excel report that appears in an enterprise dashboard</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>Visitors</p>
+                            </td>
+                            <td>
+                                <p>Requirements depend on the authentication that is configured for the SharePoint web
+                                    application</p>
+                            </td>
+                            <td>
+                                <p>In addition to <span class="ui">Visitors</span> or <span class="ui">Read</span>  permissions,
+                                    you must belong to a group that is granted access to the the <span sdata="langKeyword"
+                                        value="TfsWarehouseDataReader"><span class="keyword">TfsWarehouseDataReader</span> 
+                                    </span> role or to the Single Sign-on enterprise application definition for the SharePoint
+                                    web application.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Run a work item query, and use the <span class="ui">Create Report in Microsoft Excel
+                                    </span> feature</p>
+                            </td>
+                            <td>
+                                <p>Readers</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>TfsWarehouseDataReader role</p>
+                            </td>
+                            <td>
+                                <p>In addition to these permissions, you may need permission to open a team query. For
+                                    more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/682f0eb0-462d-41e2-b6a2-41949d1b90fb">
+                                        Organize and Set Permissions on Work Item Queries</a></span>.</p>
+                                <p>Also, if you want to save the resulting workbook to the project portal, you belong
+                                    to the <span class="ui">Members</span>  group for the portal.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Open a dashboard and use the <span class="ui">New Excel Report</span>  feature
+                                </p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>Visitors</p>
+                            </td>
+                            <td>
+                                <p>TfsWarehouseDataReader role</p>
+                            </td>
+                            <td>
+                                <p>The <span class="ui">New Excel Report</span>  button is available only if reporting
+                                    is configured for the project collection that hosts the team project.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Create a report from Microsoft Excel that connects directly to the Analysis Services
+                                    cube</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>TfsWarehouseDataReader role</p>
+                            </td>
+                            <td>
+                                <p>If you want to save the resulting workbook to the project portal, you must belong
+                                    to the <span class="ui">Members</span>  group for the portal.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Manage Excel reports from the Documents node</p>
+                            </td>
+                            <td>
+                                <p>Readers</p>
+                            </td>
+                            <td>
+                                <p>Members</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>To save files under the Documents node, you must be a must belong to the <span
+                                    class="ui">Members</span>  group for the team project portal. For more information,
+                                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/405eea1b-d607-4cae-a98b-cca50c6ce41e">
+                                        Managing Documents and Document Libraries</a></span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Configuration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Required
+                Configurations to Use Excel Reports</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>To access and use the Microsoft Excel reports, the following configurations must
+                    be met:</p>
+                <ul>
+                    <li>
+                        <p>To access an Microsoft Excel report, your team project must have been provisioned
+                            with a project portal. </p>
+                        <p>Microsoft Excel reports are stored on the server that hosts SharePoint Products for
+                            your team project. If a project portal has not been enabled for your team project,
+                            you cannot access the workbook. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                Access a Team Project Portal and Process Guidance</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>To open a report in Microsoft Excel that connects to the operational data store for
+                            Team Foundation, you must have the Team Foundation Office Integration add-in installed
+                            on your client computer. This add-in is installed when you install any product in
+                            Visual Studio ALM. </p>
+                    </li>
+                </ul>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Project" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Project
+                Management</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>Team members can use the reports in the following table to help track the rate of
+                    the team's progress toward completing tasks, implementing use cases, and meeting
+                    their iteration plan.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Data in the report</p>
+                            </th>
+                            <th>
+                                <p>Report name and related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A visual representation of the cumulative count of all hours for all tasks for the
+                                    past four weeks. </p>
+                                <img alt="Burndown chart" src="../art/ProcGuid_AgileBurn.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BurndownExcelReport.html">Burndown Excel Report</a></span> 
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A visual representation of the cumulative count of all active and closed tasks for
+                                    the past four weeks.</p>
+                                <img alt="Task Progress Excel Report" src="../art/ProcGuid_ExcelTask.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TaskProgressExcelReport.html">Task Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A visual representation of the cumulative count of all use cases, grouped by their
+                                    state, for the past four weeks.</p>
+                                <img alt="Example Use Cases report" src="../art/ProcGuid_ExcelReport.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="UseCaseProgressExcelReportGovDev.html">Use Case Progress
+                                    Excel Report (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Line chart that shows the rolling average of the number of issues that the team has
+                                    opened and closed for the past four weeks. The rolling average is based on the seven
+                                    days before the date for which it is calculated.</p>
+                                <img alt="7-Day Issue Trend Excel Report" src="../art/ProcGuid_7Day.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="IssueTrendsExcelReport.html">Issue Trends Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Bugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Bug
+                Backlog Management</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>Team members can use the reports in the following table to help track the bugs that
+                    the team finds and the progress that the team makes toward fixing them. These reports
+                    appear in the Bugs dashboard. For more information, see <span sdata="link"><a href="BugsDashboard.html">
+                        Bugs Dashboard</a></span>. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Data in the report</p>
+                            </th>
+                            <th>
+                                <p>Report name and related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A visual representation of the cumulative count of all bugs, grouped by their state
+                                    for the past four weeks.</p>
+                                <img alt="Bug Progress Excel Report" src="../art/ProcGuid_ExcelBug.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugProgressExcelReport.html">Bug Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Line chart that shows the rolling average of the number of bugs that the team has
+                                    opened, resolved, and closed for the past four weeks. The rolling average is based
+                                    on the seven days before the date for which it is calculated.</p>
+                                <img alt="Bug Trends report" src="../art/ProcGuid_BugTrends.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugTrendsExcelReport.html">Bug Trends Excel Report</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A visual representation of the cumulative count of all bugs, grouped by their priority
+                                    for the past four weeks.</p>
+                                <img alt="Bugs by priority chart" src="../art/ProcGuid_ByPriority.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyPriorityExcelReport.html">Bugs by Priority Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A horizontal bar chart with the total count of Bugs that each team member has currently
+                                    assigned to them in the active state, grouped by priority.</p>
+                                <img alt="Bugs by Assignment chart" src="../art/ProcGuid_ByAssignment.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyAssignmentExcelReport.html">Bugs by Assignment
+                                    Excel Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A stacked area graph of the number of bugs that have been reactivated from the resolved
+                                    or closed state within the past four weeks.</p>
+                                <img alt="Bug Reactivations Excel Report" src="../art/ProcGuid_AgileExR.png" /><div
+                                    class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>The Bug Reactivations report appears on the Quality dashboard. For more information,
+                                                    see <span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard (GovDev)
+                                                        </a></span>.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugReactivationsExcelReport.html">Bug Reactivations Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Build" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Build
+                Management</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Team members can use the reports in the following table to help track how source
+                    files are changing over time and how well the source code is being tested over time.
+                    These reports appear in the Build dashboard. For more information, see <span sdata="link">
+                        </span>  <span sdata="link">
+                        <a href="BuildDashboardGovDev.html">Build Dashboard (GovDev)</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Data in the report</p>
+                            </th>
+                            <th>
+                                <p>Report name and related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Line chart that depicts the percentage of code that was tested under Build Verification
+                                    Test over the last four weeks. </p>
+                                <img alt="Code Coverage Report" src="../art/ProcGuid_CodeCoverage.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeCoverageExcelReport.html">Code Coverage Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area chart that depicts the number of lines of code that the team added,
+                                    removed, and changed in the checkins before the build within the last four weeks.
+                                </p>
+                                <img alt="Code Churn Report" src="../art/ProcGuid_CodeChurn.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeChurnExcelReport.html">
+                                    Code Churn Excel Report (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked column that shows the count of builds that <span class="ui">Failed</span> 
+                                    or <span class="ui">Succeeded</span> within the last four weeks.</p>
+                                <img alt="Build Status report" src="../art/ProcGuid_AgileExcel.png" /><div class="alert">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th align="left">
+                                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                </b></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>The Builds Status report appears on the Quality dashboard. For more information,
+                                                    see <span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard (GovDev)
+                                                        </a></span>.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BuildsStatusExcelReport.html">Builds Status Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Test" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Test
+                Management</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <p>Team members can use the reports in the following table to help monitor test activities,
+                    report on progress, find gaps in test coverage, and identify test areas that may
+                    require further investigation. These reports appear in the Test dashboard. For more
+                    information, see <span sdata="link"></span>  <span sdata="link">
+                    <a href="TestDashboardGovDev.html">Test Dashboard
+                        (GovDev)</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Data in the report</p>
+                            </th>
+                            <th>
+                                <p>Report name and related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area graph of the test results grouped into their last recorded outcome -
+                                    <span class="ui">Never Run</span>, <span class="ui">Blocked</span>, <span class="ui">
+                                        Failed</span>, or <span class="ui">Passed</span> - within the past four weeks.
+                                </p>
+                                <img alt="Test Plan Progress Excel Report" src="../art/ProcGuid_AgileTest.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area graph that shows how many test cases are in the <span class="ui">Design
+                                    </span> or <span class="ui">Ready</span> state for the past four weeks.</p>
+                                <img alt="Test Case Readiness Excel Report" src="../art/ProcGuid_ExcelTestCase.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Horizontal bar chart that shows the count of test results for each test case and
+                                    test configuration combination that is defined for each use case. The chart groups
+                                    the test results according to their most recent test run, where the options are
+                                    <span class="ui">Passed</span> (green), <span class="ui">Failed</span> (red), <span
+                                        class="ui">Blocked</span> (purple), or <span class="ui">Not Run</span> (gray).</p>
+                                <img alt="Use Case Test Status Excel Report" 
+                                    src="../art/ProcGuid_ExcelUseCaseTestStatus.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestingGapsExcelReportGovDev.html">Testing Gaps Excel Report (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Line chart that shows the cumulative count of all results run for manual tests during
+                                    the past four weeks. </p>
+                                <img alt="Test Activity Excel Report" src="../art/ProcGuid_TestActivity.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestActivityExcelReport.html">Test Activity Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area graph that shows the cumulative count of all failed outcome results
+                                    for tests, according to their failure type of <span class="ui">Regression</span>, <span class="ui">New Issue</span>, or <span class="ui">Known Issue</span>, during
+                                    the past four weeks. </p>
+                                <img alt="Failure Analysis Excel Report" src="../art/ProcGuid_FailureAnalysis.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="FailureAnalysisExcelReport.html">Failure Analysis Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <a name="Quality" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Software
+                Quality and Release Management</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <p>Team members can use the reports in the following table to obtain an overview of
+                    progress occurring in the test, development, and build areas. These reports appear
+                    in the Quality dashboard. For more information, see <span sdata="link"><a href="QualityDashboardGovDev.html">
+                        Quality Dashboard (GovDev)</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Data in the report</p>
+                            </th>
+                            <th>
+                                <p>Report name and related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area graph of the test results grouped into their last recorded outcome -
+                                    <span class="ui">Never Run</span>, <span class="ui">Blocked</span>, <span class="ui">
+                                        Failed</span>, or <span class="ui">Passed</span> - within the past four weeks.
+                                </p>
+                                <img alt="Test Plan Progress Excel Report" src="../art/ProcGuid_AgileTest.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked column that shows the count of builds that <span class="ui">Failed</span> 
+                                    or <span class="ui">Succeeded</span> within the last four weeks.</p>
+                                <img alt="Build Status report" src="../art/ProcGuid_AgileExcel.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BuildsStatusExcelReport.html">Builds Status Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A stacked area graph of the cumulative count of all Bugs, grouped by their state
+                                    for the past four weeks.</p>
+                                <img alt="Bug Progress Excel Report" src="../art/ProcGuid_ExcelBug.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugProgressExcelReport.html">Bug Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>A stacked area graph of the number of bugs that have been reactivated from the resolved
+                                    or closed state within the past four weeks.</p>
+                                <img alt="Bug Reactivations Excel Report" src="../art/ProcGuid_AgileExR.png" />
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugReactivationsExcelReport.html">Bug Reactivations Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Line chart that depicts the percentage of code that was tested under Build Verification
+                                    Test over the last four weeks. </p>
+                                <img alt="Code Coverage Report" src="../art/ProcGuid_CodeCoverage.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeCoverageExcelReport.html">Code Coverage Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Stacked area chart that depicts the number of lines of code that the team added,
+                                    removed, and changed in the checkins before the build within the last four weeks.
+                                </p>
+                                <img alt="Code Churn Report" src="../art/ProcGuid_CodeChurn.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="CodeChurnExcelReport.html">
+                                    Code Churn Excel Report (GovDev)</mshelp:link></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><a href="#Top">Back to top</a></p>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span> 
+            </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="DashboardsGovDev.html">Dashboards (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/1f28ba6c-c5e5-46d3-9209-ede24ae78e48">Creating, Customizing, and Managing Reports for Visual Studio ALM</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">GovDev for TFS 2010 v1.0</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

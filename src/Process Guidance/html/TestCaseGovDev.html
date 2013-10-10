@@ -1,0 +1,1048 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="test cases, work item form" />
+    <meta name="System.Keywords" content="work item types, test cases" />
+    <meta name="Microsoft.Help.Id" content="c4316246-2675-4a03-a939-c308065883f5" />
+    <meta name="Description" content="A team uses test cases to define both manual and automated tests that can be run and managed by using Microsoft Test Manager." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Test Case (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><mshelp:toctitle Title="Test Case" /><mshelp:keyword Index="A" Term="c4316246-2675-4a03-a939-c308065883f5" /><mshelp:keyword Index="K" Term="test cases, work item form" /><mshelp:keyword Index="K" Term="work item types, test cases" /><mshelp:attr Name="RevisionNumber" Value="32" /><mshelp:attr Name="AssetID" Value="c4316246-2675-4a03-a939-c308065883f5" /><mshelp:attr Name="Abstract" Value="A team uses test cases to define both manual and automated tests that can be run and managed by using Microsoft Test Manager. By using Microsoft Test Manager, you can create not only test cases but also test suites and test configurations that suppor ..." /><mshelp:attr Name="CommunityContent" Value="1" /><mshelp:attr Name="ShippedIn" Value="vs.90" /><mshelp:attr Name="TopicVersion" Value="10.0.10236.10000" /><mshelp:attr Name="Catalog Container" Value="System_Default_Catalog" /><mshelp:attr Name="Content Set Container" Value="System_Default_Content_Set" /><mshelp:attr Name="TopicType" Value="kbArticle" /><mshelp:attr Name="Locale" Value="en-us" /></xml>
+    <title>Test Case (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Test Case (GovDev)</span>
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>A team uses test cases to define both manual and automated tests that can be run
+                    and managed by using Microsoft Test Manager. By using Microsoft Test Manager, you
+                    can create not only test cases but also test suites and test configurations that
+                    support testing your project. You can use test configurations to define how you
+                    want to run your test cases and test suites. You can group your test cases together
+                    by organizing them into a hierarchy of test suites in your test plan. By creating
+                    test suites, you can run sets of test cases as a group. For more information, see
+                    <span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                        Defining Your Testing Effort Using Test Plans</a></span>.</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>You can define a test case by using Team Explorer, but it is best if you define test
+                                    cases by using Microsoft Test Manager. You can access Microsoft Test Manager from
+                                    Visual Studio Test Professional 2010, Visual Studio 2010 Professional, or Visual
+                                    Studio 2010 Ultimate. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b33158a5-30be-4c77-b443-56477ae16027">
+                                        Creating and Managing Tests</a></span>.</p>
+                                <p>To define the sequence of action steps that define a manual test or a set of shared
+                                    steps, you must use Microsoft Test Manager. You can view and modify other fields
+                                    that are defined for test cases and shared steps by using Team Explorer or Team
+                                    Web Access. However, you cannot modify the fields that appear on the <span class="ui">
+                                        Steps</span> tab in these clients. </p>
+                                <p>If you upgraded a team project, you may need to perform additional tasks before you
+                                    can use test cases and interface with Microsoft Test Manager. For more information,
+                                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/d2a264e1-7dd3-4cbd-ab50-735290a1ea74">
+                                        Enabling Interfacing with Microsoft Test Manager for Upgraded Team Projects</a>
+                                    </span>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Many tests require the tester to perform the same sequence of steps for multiple
+                    test cases. By creating <span class="term">shared steps</span>, you can define a
+                    sequence of steps once and insert it into many test cases. For example, if each
+                    test case requires a tester to log on to the application, you can create a set of
+                    shared steps to perform these actions. You can then add the shared steps to each
+                    test case and run the steps by using Test Runner. Because you use shared steps only
+                    to streamline the definition of manual test cases, you should use Microsoft Test
+                    Manager to create shared steps. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/5b7b1bfa-d958-442d-ab90-a0339b8baf0a">
+                        How to: Share Common Test Case Steps Using Shared Steps</a></span>.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p><span class="label">In this topic</span> </p>
+                            </th>
+                            <th>
+                                <p><span class="label">Related topics</span> </p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="#CreateTestCases">Defining a Test Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#LinkingUseCases">Linking a Test Case to a Use Case</a></p>
+                                    </li>                                    
+                                    <li>
+                                        <p><a href="#LinkingBugs">Linking a Test Case to a Bug</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#AddDetails">Adding Details and Attachments to a Test Case</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#CloseTestCases">Changing the State of a Test Case</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Agile Processes</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestEarlyandOften.html">Test Early and Often</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">GovDev Reports (Reporting Services)</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Field Reference</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">Titles, IDs,
+                                            Descriptions, and History (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">Assignments and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="PlanningRankingandPriorities.html">Planning, Ranking,
+                                            and Priorities</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="AreasandIterations.html">Areas and Iterations</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="LinkingWorkItemsGovDev.html">Linking Work Items (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view a test case, you must be a member of the <span class="ui">Readers</span> group
+                    or your <span class="ui">View work items in this node</span> must be set to <span
+                        class="ui">Allow</span>. To create or modify a test case, you must be a member
+                    of the <span class="ui">Contributors</span> group or your <span class="ui">Edit work
+                        items in this node</span> permissions must be set to <span class="ui">Allow</span>. 
+                    For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                        Managing Permissions</a></span>.</p>
+            </div>
+            <a name="CreateTestCases" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Defining
+                a Test Case</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>You can define a test case by using Team Explorer or Team Web Access and later add
+                    it to a test plan by using Microsoft Test Manager. When you define a test case,
+                    you specify the fields that the following illustration shows. </p>
+                <img alt="Work Item Form for Test Case" src="../art/ProcGuid_New_TestCase.png" /><p>
+                    When you define a test case, all fields are optional except for <span class="ui">Title
+                    </span>.</p>
+                <p>You can always modify fields and add more detail as you work on the test case. To
+                    perform this procedure by using Microsoft Test Manager, see <span sdata="link"><a
+                        href="http://msdn.microsoft.com/library/65e1b24f-2ea2-4390-88bd-f82df6ba42d0">How
+                        to: Create a Manual Test Case</a></span>. </p>
+                <h3 class="procedureSubHeading">To define a test case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In the top section of the work item form for a test case, specify one or more of
+                                the following fields:</p>
+                            <ul>
+                                <li>
+                                    <p>(Required) In <span class="ui">Title</span>, type a descriptive phrase that defines
+                                        the criteria to test. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Assigned To</span> list, click the appropriate owner for the
+                                        test case. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can assign work items only to members of the <span class="ui">Contributors</span> 
+                                                        group. </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>If you leave the test case unassigned, it is automatically assigned to you. </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">State</span> list, leave the default value, <span class="ui">
+                                        Design</span>. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can run a test case that is in the <span class="ui">Design</span> state.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Priority</span> list, click the level of importance for the
+                                        test case on a scale of 1 (most important) to 4 (least important).</p>
+                                    <p>The default value of this field is 2. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">Automation Status</span>, leave the default value,<span class="ui">
+                                        Not Automated</span>, for manual cases, or click <span class="ui">Planned</span> 
+                                        if you plan to automate the test case.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>If you add an automation method from the <span class="ui">Associated Automation</span> 
+                                                        tab, the value of this field is automatically updated to <span class="ui">Automated
+                                                        </span>. For more information about how to convert a manual test case into an automated
+                                                        test case, see <a href="#AssociatedAutomation">Associating an Automated Test with a
+                                                            Manual Test Case</a>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> list, click the appropriate area in the team project
+                                        for the test case.</p>
+                                    <p>This value should match the area that is specified for the Use Case that the test
+                                        case addresses. The default value is the top area node that is defined for the project.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">Iteration</span> list, click the iteration in your team project
+                                        for the test case.</p>
+                                    <p>The default value is the top iteration node that is defined for the project.</p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>The project administrator for each team project defines <span class="ui">Area</span> 
+                                                        and <span class="ui">Iteration</span> paths for that project so that the team can
+                                                        track progress by those designations. For more information, see <span sdata="link"><a
+                                                            href="http://msdn.microsoft.com/library/6b0d2df4-c638-4637-af93-86db64ca73ab">Create
+                                                            and Modify Areas and Iterations</a></span>.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click the <span class="ui">Summary</span> tab, and specify one or both of the following
+                                fields: </p>
+                            <ul>
+                                <li>
+                                    <p>In <span class="ui">Description</span>, provide as much detail as you want to describe
+                                        the test case. </p>
+                                </li>
+                                <li>
+                                    <p>In <span class="ui">History</span>, add comments that you want to capture as part
+                                        of the historical record.</p>
+                                    <p>Every time that a team member updates the work item, its history shows the date of
+                                        the change, the team member who made the change, and the fields that changed.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Link the test case to the Use Case that it tests.</p>
+                            <p>For more information, see <a href="#LinkingTestCases">Linking a Test Case to a Use
+                                Case</a> later in this topic.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>After you save the test case, the identifier appears under the work item toolbar.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>On the <span class="ui">Steps</span> tab, click <span class="ui">Open to edit</span> 
+                                to define the action and validation steps and parameters to be performed as part
+                                of the test.</p>
+                            <p>Microsoft Test Manager will open and display the test case. </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>You can define test steps only by using Microsoft Test Manager.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b33158a5-30be-4c77-b443-56477ae16027">
+                                Creating and Managing Tests</mshelp:link></span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkingUseCases" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking a Test Case to a Use Case</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>You link test cases to a Use Case to track the progress of testing made for the
+                    Use Case. After you have defined your test cases, you can link them to the use
+                    cases that they implement by using the following procedure.</a></p>
+                <h3 class="procedureSubHeading">To link a test case to a Use Case </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Tested Work Items </span> tab. </p>
+                            <img alt="Test Cases tab" src="../art/ProcGuid_TestCaseLinkToUseCase.png" /></li>
+                        <li>
+                            <p>Click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Test Case </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default value, <span class="ui">
+                                Tests</span>.</p>
+                            <p>You can specify only the <span class="ui">Tests</span> type of link when you create
+                                a link from the <span class="ui">Tested Use Cases </span> tab and 
+                                you will only be able to line a Use Case work item. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">Browse</span>.</p>
+                            <p>The following dialog box appears:</p>
+                            <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" />
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Saved query</span>, click the <span class="ui">Use Case 
+                                Planning</span> or  <span class="ui">Open Use Cases
+                                </span> team queries, and then click <span class="ui">Find</span>.</p>
+                        </li>
+                        <li>
+                            <p>Select the check box next to the Use Case to which you want to link to the test
+                                case.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In the <span class="ui">Comment</span> text box, type a description for
+                                the link. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the Use Case and test case that you linked are updated. A <span class="ui">
+                                                Tested By</span> link is added to the Use Case. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="LinkingBugs" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="Img1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Linking a Test Case to a Bug</span> </h1>
+            <div id="Div1" class="section" name="collapseableSection" style="">
+                <p>You link test cases to a Use Case to track the progress of testing made for the
+                    Use Case. After you have defined your test cases, you can link them to the use
+                    cases that they implement by using the following procedure.</a></p>
+                <h3 class="procedureSubHeading">To link a test case to a Use Case </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Tested Work Items </span> tab. </p>
+                            <img alt="Test Cases tab" src="../art/ProcGuid_TestCaseLinkToUseCase.png" /></li>
+                        <li>
+                            <p>Click
+                                <img alt="Add Links" src="../art/Icon_addLinks.gif" />
+                                <span class="ui">Link to</span>. </p>
+                            <p>The <span class="ui">Add Link to Test Case </span> dialog box opens.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Link Type</span> list, leave the default value, <span class="ui">
+                                Tests</span>.</p>
+                            <p>You can specify only the <span class="ui">Tests</span> type of link when you create
+                                a link from the <span class="ui">Bugs Found </span>tab and you will only 
+                                be able to link a bug work item. </p>
+                        </li>
+                        <li>
+                            <p>Click  <span class="ui">Browse</span>.</p>
+                            <p>The following dialog box appears:</p>
+                            <img alt="Choose linked work items dialog box" src="../art/WIT_ChooseLinked.png" />
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Saved query</span> list, click the <span class="ui">
+                                Active Bugs</span> team query, and then click <span class="ui">Find</span>.</p>
+                        </li>
+                        <li>
+                            <p>Select the check box next to the Use Case to which you want to link to the test
+                                case.</p>
+                            <p>For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/962b01e8-9b2f-46bf-b13e-15020f35b665">
+                                Find Work Items to Link or Import</a></span>. </p>
+                        </li>
+                        <li>
+                            <p>(Optional) In the <span class="ui">Comment</span> text box, type a description for
+                                the link. </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">OK</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Both the Use Case and test case that you linked are updated. A <span class="ui">
+                                                Tested By</span> link is added to the Use Case. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="AddDetails" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Adding Details and Attachments to a Test Case</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can add information to a test case that provides more information to implement
+                    the test case. You add details to test cases in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>In the <span class="ui">Description</span> or <span class="ui">History</span> field,
+                            type information.</p>
+                    </li>
+                    <li>
+                        <p>Attach a file.</p>
+                        <p>For example, you can attach an e-mail thread, a document, an image, a log file, or
+                            another type of file. </p>
+                    </li>
+                    <li>
+                        <p>Add a hyperlink to Web site or to a file that is stored on a server or Web site.
+                        </p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To add details to a test case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Summary</span> tab. </p>
+                        </li>
+                        <li>
+                            <p>In <span class="ui">Description</span>, type information.</p>
+                        </li>
+                        <li>
+                            <p>(Optional) In the <span class="ui">History</span> field, type information.</p>
+                            <p>You can format information to provide emphasis or capture a bulleted list. For more
+                                information, see <span sdata="link"><a href="TitlesIDsDescriptionsandHistoryGovDev.html">
+                                    Titles, IDs, Descriptions, and History (GovDev)</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To add an attachment to a test case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Click the <span class="ui">Attachments </span> tab. </p>
+                        </li>
+                        <li>
+                            <p>Perform one of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>Drag a file into the attachment area.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Paste" src="../art/Icon_pasteWIT.gif" />
+                                        or press CTRL-V to paste a file that you have copied.</p>
+                                </li>
+                                <li>
+                                    <p>Click
+                                        <img alt="Add Attachment" src="../art/Icon_addAttachment.gif" />
+                                        <span class="ui">Add</span>, click <span class="ui">Browse</span>, and, in the <span
+                                            class="ui">Attachment</span> dialog box, type or browse to the name of the file
+                                        that you want to attach. </p>
+                                    <p>(Optional) In the <span class="ui">Comment</span> box, type additional information
+                                        about the attachment. To close the <span class="ui">Attachment</span> dialog box,
+                                        click <span class="ui">OK</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="CloseTestCases" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Changing
+                the State of a Test Case</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>When you create a test case, its state is automatically set to <span class="ui">Design
+                    </span>. You change the state to <span class="ui">Ready</span> after you define all
+                    action and validation steps for the test case and the test case is approved as ready
+                    to run. When a test case is no longer required, you change its state from <a href="#Ready">
+                        Ready</a>to <a href="#Closed">Closed</a>. For more information about data fields
+                    that track state changes, see <span sdata="link"><a href="AssignmentsandWorkflowGovDev.html">
+                        Assignments and Workflow (GovDev)</a></span>.</p>
+                <p>For information about how to perform this procedure by using Microsoft Test Manager,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/746ba098-59f2-425b-994f-6e2caf7b76b6">
+                        How to: Change the State of a Test Case to Closed</a></span>. You can edit multiple
+                    test cases at the same time in Office Excel by opening the Open Test Cases team
+                    query and updating the <span class="ui">State</span> field for those test cases that
+                    you want to update. </p>
+                <p>After you save a test case, you can change its state to one of those that the following
+                    procedure describes.</p>
+                <h3 class="procedureSubHeading">To change the state of a test case</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Open the test case.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">State</span> list, click one of the following values:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="ui">Design</span>: The test case is being designed and has not yet been
+                                        reviewed and approved. </p>
+                                    <div class="alert">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th align="left">
+                                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                                    </b></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>You can run a test case that is in the <span class="ui">Design</span> state.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Ready</span>: The test case has been reviewed and approved and is
+                                        ready to be run.</p>
+                                </li>
+                                <li>
+                                    <p><span class="ui">Closed</span>: The test case is no longer required for future iterations
+                                        of this team project.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>In the <span class="ui">Reason</span> list, leave the default value, <span class="ui">
+                                Obsolete</span>. If you are closing the test case for some other reason, click <span
+                                    class="ui">Deferred</span> or <span class="ui">Duplicate</span>. </p>
+                        </li>
+                        <li>
+                            <p>Click
+                                <img alt="Save" src="../art/Icon_saveWIT.gif" />
+                                <span class="ui">Save Work Item</span>. </p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">Typical workflow progression</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member creates a test case in the <a href="#Design">Design</a>state with a
+                                            default reason of New,</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a test case from <a href="#DesignReady">Design
+                                            to Ready</a>to indicate that it is ready to be used for acceptance testing of the
+                                            Use Cases it tests.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a test case from <a href="#DesignOrReadyToClosed">
+                                            Ready to Closed</a>to indicate that it is no longer being used.</p>
+                                    </li>
+                                </ul>
+                                <p><span class="label">Additional workflow transitions states</span>:</p>
+                                <ul>
+                                    <li>
+                                        <p>A team member changes the state of a test case from <a href="#DesignOrReadyToClosed">
+                                            Design to Closed</a>to indicate that a test case that has been defined for a use case is not relevant or is a duplicate of another test case.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a test case from <a href="#ReadyDesign">Ready
+                                            to Design</a>to indicate that additional test criteria has been discovered that
+                                            must be added to a test case.</p>
+                                    </li>
+                                    <li>
+                                        <p>A team member changes the state of a test case from <a href="#ClosedDesignReady">
+                                            Closed to Design</a>to indicate that a test case was closed in error or the use case that it tests is now in scope.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Test Case State Diagram</span> </p>
+                                <img alt="Test case state diagram" src="../art/ProcGuide_TestCase.png" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <a name="Design" />
+                <h3 class="subHeading">Design [New]</h3>
+                <div class="subsection">
+                    <p>A team member creates a test case, provides a descriptive title, and defines the
+                        steps and parameters to run. After the team member has defined all steps for the
+                        test case and it is ready to run, the team member changes the state from <a href="#DesignReady">
+                            Design to Ready</a>.</p>
+                    <p>The following data fields are automatically captured when a team member creates a
+                        test case:</p>
+                    <ul>
+                        <li>
+                            <p><span class="label">Assigned To</span>: Name of the team member who created the test
+                                case.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created By</span>: Name of the team member who created the test
+                                case.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">Created Date</span>: Date and time when the test case was created,
+                                as recorded by the server clock.</p>
+                        </li>
+                    </ul>
+                    <a name="DesignReady" />
+                    <h4 class="subHeading">From Design to Ready</h4>
+                    <div class="subsection">
+                        <p>When you can change the state of a test case from <span class="ui">Design</span> to
+                            <span class="ui">Ready</span>, the <span class="ui">Reason</span> field is automatically
+                            set to <span class="ui">Completed</span>. </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Completed</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>All action and validation steps for the test case are defined.</p>
+                                    </td>
+                                    <td>
+                                        <p>Review the test cases that are defined for similar Use Cases to determine whether
+                                            you can define any shared steps that will minimize maintenance of the test cases.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <a name="DesignOrReadyToClosed" />
+                    <h4 class="subHeading">From Design or Ready to Closed</h4>
+                    <div class="subsection">
+                        <p>You can close a test case from the <span class="ui">Design</span> or <span class="ui">
+                            Ready</span> state because of one of the following reasons: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Obsolete</span> (default)</p>
+                                    </td>
+                                    <td>
+                                        <p>The test case is no longer required for acceptance testing of Use Cases. </p>
+                                    </td>
+                                    <td>
+                                        <p>Verify that all Use Cases that are linked to the test case are in a <span class="ui">
+                                            Close</span> d state. </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Deferred</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>The test case will not be run during the current product cycle or iteration. You
+                                            can also specify this reason when the Use Case that is being tested is <span class="ui">
+                                                Closed</span> because it is <span class="ui">Out of Scope</span> or <span class="ui">Abandoned
+                                            </span>.</p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Duplicate</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>When the test case duplicates another test case.</p>
+                                    </td>
+                                    <td>
+                                        <p>Create a link to the duplicate test case that remains open.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member closes a test case:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Closed By</span>: Name of the team member who closed the test
+                                    case.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Closed Date</span>: Date and time when the test case was closed,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    test case was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Ready" />
+                <h3 class="subHeading">Ready</h3>
+                <div class="subsection">
+                    <p>When a test case is well defined and ready to be run, you change the state to <span
+                        class="ui">Ready</span>. </p>
+                    <a name="ReadyDesign" />
+                    <h4 class="subHeading">From Ready to Design</h4>
+                    <div class="subsection">
+                        <p>You can change the state of a test case from <span class="ui">Ready</span> to <span
+                            class="ui">Design</span> for the following reasons:</p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Update Test Case</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>Changes to the test case must be made to address the acceptance criteria for the
+                                            test. For example, you can change the sequence of steps, add new steps, and change
+                                            or add parameters. </p>
+                                    </td>
+                                    <td>
+                                        <p>None.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data is automatically captured when a team member reactivates a test
+                            case:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the test case.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the test case was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    test case was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a name="Closed" />
+                <h3 class="subHeading">Closed</h3>
+                <div class="subsection">
+                    <p>You can reactivate a closed test case if the Use Cases that it tests come back
+                        into scope. </p>
+                    <a name="ClosedDesignReady" />
+                    <h4 class="subHeading">From Closed to Design or Ready</h4>
+                    <div class="subsection">
+                        <p>When you update the state of a test case from Closed to Design or Ready, the default
+                            and only value for Reason is listed in the following table: </p>
+                        <div class="caption"></div>
+                        <div class="tableSection">
+                            <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                                <tr>
+                                    <th>
+                                        <p>Reason</p>
+                                    </th>
+                                    <th>
+                                        <p>When to use</p>
+                                    </th>
+                                    <th>
+                                        <p>Additional actions to take</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><span class="ui">Reactivated</span> </p>
+                                    </td>
+                                    <td>
+                                        <p>The test case is required to support acceptance testing of a Use Case.</p>
+                                    </td>
+                                    <td>
+                                        <p>Review all action and validation steps to make sure that they are sufficient to test
+                                            the Use Case.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The following data fields are captured when a team member updates the state of a
+                            test case from <span class="ui">Closed</span> to <span class="ui">Design</span> or
+                            <span class="ui">Ready</span>:</p>
+                        <ul>
+                            <li>
+                                <p><span class="label">Activated By</span>: Name of the team member who reactivated
+                                    the test case.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">Activated Date</span>: Date and time when the test case was reactivated,
+                                    as recorded by the server clock.</p>
+                            </li>
+                            <li>
+                                <p><span class="label">State Change Date</span>: Date and time when the state of the
+                                    test case was changed.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="UseCaseGovDev.html">Use Case
+                    (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="SharedStepsGovDev.html">Shared
+                    Steps (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/796b7d6d-ad45-4772-9719-55eaf5490dac">
+                    Testing the Application</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">
+                    Work Items and Workflow (GovDev)</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

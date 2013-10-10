@@ -1,0 +1,852 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, dashboards" />
+    <meta name="System.Keywords" content="dashboards" />
+    <meta name="System.Keywords" content="dashboards, Agile process template" />
+    <meta name="System.Keywords" content="documents [Visual Studio ALM], agile process template dashboards" />
+    <meta name="Microsoft.Help.Id" content="d1576274-544b-4100-844a-2895e7acf2e4" />
+    <meta name="Description" content="Agile teams can quickly find important information about their team projects by using dashboards. Dashboards show project data, support investigation, and help teams perform common tasks more quickly." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Dashboards (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Dashboards" /><MSHelp:Keyword Index="A" Term="d1576274-544b-4100-844a-2895e7acf2e4" /><MSHelp:Keyword Index="K" Term="agile process template, dashboards" /><MSHelp:Keyword Index="K" Term="dashboards" /><MSHelp:Keyword Index="K" Term="dashboards, Agile process template" /><MSHelp:Keyword Index="K" Term="documents [Visual Studio ALM], agile process template dashboards" /><MSHelp:Attr Name="RevisionNumber" Value="40" /><MSHelp:Attr Name="AssetID" Value="d1576274-544b-4100-844a-2895e7acf2e4" /><MSHelp:Attr Name="Abstract" Value="Agile teams can quickly find important information about their team projects by using dashboards. Dashboards show project data, support investigation, and help teams perform common tasks more quickly. " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Dashboards (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Dashboards (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Agile teams can quickly find important information about their team projects by using
+                    dashboards. Dashboards show project data, support investigation, and help teams
+                    perform common tasks more quickly. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>To access dashboards, your team project must have a project portal enabled and be
+                                    associated with a SharePoint site. For more information, see <span sdata="link"><a
+                                        href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">Access
+                                        a Team Project Portal and Process Guidance</a></span>. To view the project portal,
+                                    you must also be a member of the <span class="ui">Visitors</span> or <span class="ui">
+                                        Members</span> group for the portal.</p>
+                                <p>To update or refresh Excel reports that appear in the dashboard, you must belong
+                                    to a group that is granted access to the Single Sign-on enterprise application definition,
+                                    or you must belong to the <span class="label">TfsWarehouseDataReaders</span> security
+                                    role in SQL Server Analysis Services. For more information, see <span sdata="link"><a
+                                        href="ExcelReportsGovDev.html">Excel Reports (GovDev)</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Available">Dashboards Available to You</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Sample">Sample Dashboard</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Accessing">Accessing a Dashboard</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#DashboardToolbar">Using the Dashboard Toolbar</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#WorkItemToolbar">Using the Work Item Toolbar</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">To access a dashboard, right-click your team project, and open
+                                    the project portal</span></p>
+                                <img alt="Access a dashboard through the team project portal" src="../art/ProcGuid_Portal.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the dashboard, you must be assigned or belong to a group that has been assigned
+                    <span class="ui">Read</span> permissions in SharePoint Products for the team project.
+                    To create or modify work items from the dashboard, you must be a member of the <span
+                        class="ui">Contributors</span> group or your <span class="ui">Edit work items in this
+                            node</span> permissions must be set to <span class="ui">Allow</span>. For
+                    more information, see <span sdata="link"><a href="ExcelReportsGovDev.html">Excel Reports
+                        (GovDev)</a></span>, <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                            Add Users to Team Projects</a></span>, or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                                Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Available" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Dashboards
+                Available to You</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The dashboards and dashboard customization features that are available to you depend
+                    on the version of SharePoint Products that is installed on your portal, as the following
+                    table indicates. Also, the PivotChart reports and Excel Web Access Web parts that
+                    appear in dashboards require that your team project is provisioned with SQL Server
+                    Analysis Services.</p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Windows SharePoint Services 3.0 or </p>
+                                <p>SharePoint Foundation 2010</p>
+                            </th>
+                            <th>
+                                <p>Microsoft Office SharePoint Server 2007 Standard Edition or</p>
+                                <p>SharePoint Server 2010 Standard Edition</p>
+                            </th>
+                            <th>
+                                <p>Microsoft Office SharePoint Server 2007 Enterprise Edition or</p>
+                                <p>SharePoint Server 2010 Enterprise Edition</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Quickly access work items that are assigned to you</span>. You
+                                    can use My dashboard to view and open the bugs, tasks, and test cases that are assigned
+                                    to you.</p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="MyDashboardGovDev.html">My Dashboard (GovDev)</a></span> 
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Review progress with the team</span>. Agile teams can use the
+                                    Project dashboard to view their own status and progress and to answer the following
+                                    questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the team on track?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team likely to finish the iteration on time?</p>
+                                    </li>
+                                    <li>
+                                        <p>Will the team complete the planned work based on the current burn rate?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="ProjectDashboardGovDev.html">Project Dashboard (GovDev)
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Track progress toward completing an iteration</span>. Agile teams
+                                    can use the Progress dashboard to view its own progress and to answer the following
+                                    questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the team on track?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team delivering value (closing use cases)?</p>
+                                    </li>
+                                    <li>
+                                        <p>How well did the team plan the iteration?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many hours remain in the iteration?</p>
+                                    </li>
+                                    <li>
+                                        <p>How much work has been added to the iteration?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="ProgressDashboardGovDev.html">Progress Dashboard (GovDev)
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Troubleshoot software quality issues with with the team</span>. 
+                                    Agile teams can use the Quality dashboard to view the quality of the software
+                                    that they are creating and to answer the following questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the team testing the correct functionality?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team fixing bugs effectively?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are tests stale?</p>
+                                    </li>
+                                    <li>
+                                        <p>Does the team have sufficient tests?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard (GovDev)
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor test progress and find gaps in test coverage</span>.
+                                    Agile teams can use the Test dashboard to track its own progress toward testing
+                                    Use Cases and to answer the following questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Is authoring of test cases on track?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team analyzing automated test results?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are automated tests broken?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team's automation of test cases on track?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="TestDashboardGovDev.html">Test Dashboard (GovDev)</a></span> 
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor bug activity</span>. Agile teams can use the Bugs dashboard
+                                    to track its own progress toward finding and resolving code defects and to answer
+                                    the following questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>Is the team fixing bugs quickly enough to finish on time? </p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team fixing high priority bugs first? </p>
+                                    </li>
+                                    <li>
+                                        <p>What is the distribution of bugs by priority? </p>
+                                    </li>
+                                    <li>
+                                        <p>How many bugs are being reactivated? </p>
+                                    </li>
+                                    <li>
+                                        <p>Is the team resolving and closing reactivated bugs quickly enough?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsDashboard.html">Bugs Dashboard</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor code coverage, code churn, and build activity</span>.
+                                    Agile teams can use the Build dashboard to track the quality of the builds and to
+                                    answer the following questions:</p>
+                                <ul>
+                                    <li>
+                                        <p>How much code is being tested?</p>
+                                    </li>
+                                    <li>
+                                        <p>How much is the code changing every day?</p>
+                                    </li>
+                                    <li>
+                                        <p>Is the quality of the builds improving?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="BuildDashboardGovDev.html">Build Dashboard (GovDev)</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Trace requirements, use cases, task, test cases, bugs and code activity</span>.
+                                    Agile teams can use the Requirements Traceability dashboard to trace all 
+                                    artifacts in the project and to
+                                    answer the following questions:</p>
+                                <ul>
+                                    <li>
+                                        <p> How much work does each requirement need?</p>
+                                    </li>
+                                    <li>
+                                        <p>How much work has the team completed for each requirement?</p>
+                                    </li>
+                                    <li>
+                                        <p>Are the tests for each requirement passing?</p>
+                                    </li>
+                                    <li>
+                                        <p> How many active bugs does each requirement have?</p>
+                                    </li>
+                                    <li>
+                                        <p> How many code changes have been checked in for each requirement?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></p>
+                            </td>
+                            <td>
+                                <p><img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="TraceabilityDashboardGovDev.html">Requirements 
+                                    Traceability Dashboard (GovDev)</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the team contribution</span>.
+                                    Agile teams can use the Team Contribution dashboard to track the contribution of 
+                                    each team member toward project completion:</p>
+                                <ul>
+                                    <li>
+                                        <p>How many hours are being completed by the team?</p>
+                                    </li>
+                                    <li>
+                                        <p>How many check-ins has each team member made?</p>
+                                    </li>
+                                    <li>
+                                        <p>What is the code churn for each team member?</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></p>
+                            </td>
+                            <td>
+                                <p><img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></p>
+                            </td>
+                            <td>
+                                <img alt="check mark" src="../art/Icon_WITcheckgreen.png" /></td>
+                            <td>
+                                <p><span sdata="link"><a href="ContributionDashboardGovDev.html">Team Contribution&nbsp; Dashboard (GovDev)</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Sample" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Dashboards
+                and Web Parts</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>Dashboards use SharePoint Products to display Web parts. You can add many types of
+                    Web parts to a dashboard. However, the two Web parts that are specific to the display
+                    of project data for Team Foundation are Excel Web Access and Team Web Access Web
+                    parts. Web parts for Excel Web Access display PivotChart reports or other data that
+                    is derived from Office Excel worksheets that access the Analysis Services database
+                    for Visual Studio ALM. Web parts for Visual Studio ALM show lists of work items,
+                    work item counts, and other project data that is derived from Team Foundation databases.
+                </p>
+                <p>The following illustration and table show and describe a sample dashboard, Bugs dashboard.
+                    For more information, see <span sdata="link"><a href="BugsDashboard.html">Bugs Dashboard
+                        </a></span>.</p>
+                <img alt="Bugs Dashboard" src="../art/ProcGuid_DashBugs.png" /><div class="caption">
+                </div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Dashboard element</p>
+                            </th>
+                            <th>
+                                <p>Element title</p>
+                            </th>
+                            <th>
+                                <p>Source data</p>
+                            </th>
+                            <th>
+                                <p>Data displayed</p>
+                            </th>
+                            <th>
+                                <p>Related topic</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 1" src="../art/ProcGuid_1.gif" /></td>
+                            <td>
+                                <p><span class="ui">Bug Progress</span> </p>
+                            </td>
+                            <td>
+                                <p>Bug Progress Excel Report</p>
+                            </td>
+                            <td>
+                                <p>A visual representation of the cumulative count of all bugs, grouped by their state
+                                    for the past four weeks.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugProgressExcelReport.html">Bug Progress Excel Report
+                                    </a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 2" src="../art/ProcGuid_2.gif" /></td>
+                            <td>
+                                <p><span class="ui">7-Day Bug Trend Rates</span> </p>
+                            </td>
+                            <td>
+                                <p>Bug Trends Excel Report</p>
+                            </td>
+                            <td>
+                                <p>Line chart that shows the rolling average of the number of bugs that the team has
+                                    opened, resolved, and closed for the past four weeks. The rolling average is based
+                                    on the seven days before the date for which it is calculated.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugTrendsExcelReport.html">Bug Trends Excel Report</a>
+                                </span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 3" src="../art/ProcGuid_3.gif" /></td>
+                            <td>
+                                <p><span class="ui">Active Bugs by Priority</span> </p>
+                            </td>
+                            <td>
+                                <p>Bugs by Priority Excel Report </p>
+                            </td>
+                            <td>
+                                <p>A visual representation of the cumulative count of all bugs, grouped by their priority,
+                                    for the past four weeks.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyPriorityExcelReport.html">Bugs by Priority Excel
+                                    Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 4" src="../art/ProcGuid_4.gif" /></td>
+                            <td>
+                                <p><span class="ui">Active Bugs by Assignment</span> </p>
+                            </td>
+                            <td>
+                                <p>Bugs by Assignment Excel Report </p>
+                            </td>
+                            <td>
+                                <p>A horizontal bar chart with the total count of active bugs, grouped by priority,
+                                    that are assigned to each team member.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="BugsbyAssignmentExcelReport.html">Bugs by Assignment
+                                    Excel Report</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 5" src="../art/ProcGuid_6.gif" /></td>
+                            <td>
+                                <p><span class="ui">Active Bugs</span> </p>
+                            </td>
+                            <td>
+                                <p>Web part for Team Web Access </p>
+                            </td>
+                            <td>
+                                <p>A visual representation of the cumulative count of all bugs, grouped by their state,
+                                    for the past four weeks.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 6" src="../art/ProcGuid_6a.gif" /></td>
+                            <td>
+                                <p><span class="ui">Important Dates</span> </p>
+                            </td>
+                            <td>
+                                <p>Web part for SharePoint Products</p>
+                            </td>
+                            <td>
+                                <p>A list of upcoming events </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Not applicable</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 7" src="../art/ProcGuid_7.gif" /></td>
+                            <td>
+                                <p><span class="ui">Project Work Items</span> </p>
+                            </td>
+                            <td>
+                                <p>Web part for Team Web Access </p>
+                            </td>
+                            <td>
+                                <p>A count of active, resolved, and closed work items. You can open the list of work
+                                    items by clicking each number. This list is derived from a Team Web Access Web part.
+                                </p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                                    (GovDev)</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="Step 8" src="../art/ProcGuid_8.gif" /></td>
+                            <td>
+                                <p><span class="ui">Recent Builds</span> </p>
+                            </td>
+                            <td>
+                                <p>Web part for Team Web Access</p>
+                            </td>
+                            <td>
+                                <p>A list of recent builds and their build status. You can view more details by clicking
+                                    a specific build. This list is derived from a Team Web Access Web part.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/5c0de804-7ff9-468b-9053-fd068ea1a2bc">
+                                    Managing and Viewing Completed Builds</a></span> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="9" src="../art/ProcGuid_9.gif" /></td>
+                            <td>
+                                <p><span class="ui">Recent Checkins</span> </p>
+                            </td>
+                            <td>
+                                <p>Web part for Team Web Access </p>
+                            </td>
+                            <td>
+                                <p>A list of the most recent check-ins. You can view more details by clicking a specific
+                                    check-in. This list is derived from a Team Web Access Web part.</p>
+                            </td>
+                            <td>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/dded21d3-4869-4e19-bca4-62e27179539c">
+                                    Using the Check In and Pending Changes Windows</a></span> </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Accessing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Accessing
+                a Dashboard</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can access a dashboard if the following conditions are true:</p>
+                <ul>
+                    <li>
+                        <p>Your team project is enabled with a project portal and associated with a SharePoint
+                            site.</p>
+                        <div class="alert">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <th align="left">
+                                        <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                        </b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>To determine whether a project portal is enabled for your team project, see <span
+                                            sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                            Access a Team Project Portal and Process Guidance</mshelp:link></span>.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <p>You are assigned or belong to a group that has been assigned the <span class="ui">
+                            Read</span> permissions in SharePoint Products for the team project. For more information,
+                            see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                                Add Users to Team Projects</mshelp:link></span></a>.</p>
+                    </li>
+                </ul>
+                <h3 class="procedureSubHeading">To access a dashboard</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In Team Explorer, right-click your team project, and then click
+                                <img alt="Open Team Project Portal" src="../art/Icon_portalTeamExplorer.gif" />
+                                <span class="ui">Show Project Portal</span>. </p>
+                            <p>A Web browser opens and displays the default dashboard for your team project.
+                            </p>
+                            <div class="alert">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th align="left">
+                                            <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                            </b></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>If you have a problem opening the dashboard, verify that your team project is enabled
+                                                with a portal. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                                    Access a Team Project Portal and Process Guidance</mshelp:link></span>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <p>In the navigation pane, click the title of the dashboard that you want to open.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <a name="DashboardToolbar" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Using
+                the Dashboard Toolbar</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <p>From the dashboard toolbar, you can create a work item, an Excel report, or a copy
+                    of the current dashboard, or you can open a work item based on its ID. The following
+                    illustration shows these functions.</p>
+                <img alt="Dashboard toolbar" src="../art/ProcGuid_Toolbar_Dashboard.png" /></div>
+            <a name="WorkItemToolbar" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Using
+                the Work Item Toolbar</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <p>Web parts for Team Web Access that display a list of work items also provide a work
+                    item toolbar. By using this toolbar, you can perform the functions that the following
+                    illustration summarizes.</p>
+                <img alt="Toolbar for Query Results Web Part" src="../art/ProcGuid_DashboardWorkbook_Toolbar.png" /><p>
+                    You can perform the following actions by using the work item toolbar in Web parts
+                    for Team Web Access. </p>
+                <ul>
+                    <li>
+                        <p>Create a task, bug, test case, or other work item. </p>
+                        <p>A blank work item form of the type that you specify opens in Team Web Access. For
+                            more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/24b2e064-16ac-4bf0-8de4-98a1f48b8c4b">
+                                Create a Work Item</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>Refresh the items in the list from the query that it references. </p>
+                    </li>
+                    <li>
+                        <p>Add or remove columns, and change the sort order of the items in the list.</p>
+                        <p>The <span class="ui">Column Options</span> dialog box opens in Team Web Access. For
+                            more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/a1a97266-1884-4e78-9e84-f761a56c2a04">
+                                Add, Remove, Reorder, and Sort Columns</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>Run the query behind the work item list.</p>
+                        <p>A browser window opens in Team Web Access with the results of the query. </p>
+                    </li>
+                    <li>
+                        <p>Copy work items to the Clipboard. </p>
+                    </li>
+                    <li>
+                        <p>Send work items to Office Outlook. </p>
+                        <p>A <span class="ui">Send Email</span> dialog box opens with the work items listed in
+                            a table. For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/5edac6b9-2642-419a-8745-9e91ee40993b">
+                                Share Work Items</a></span>.</p>
+                    </li>
+                    <li>
+                        <p>Create a linked work item. </p>
+                        <p>The <span class="ui">New Linked Work Item</span> dialog box opens in Team Web Access.
+                            For more information, see <span sdata="link"><a href="http://msdn.microsoft.com/library/d1204576-fdf2-4ed3-8c79-afa24b1386b6">
+                                Create a Linked Work Item</a></span>.</p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ArtifactsGovDev.html">Artifacts
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ExcelReportsGovDev.html">Excel
+                    Reports (GovDev)</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

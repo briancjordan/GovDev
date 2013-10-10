@@ -1,0 +1,355 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, roles" />
+    <meta name="Microsoft.Help.Id" content="c7b8a40c-bc64-42c0-9b24-bb2150680131" />
+    <meta name="Description" content="Members of a Scrum team perform at least one of three roles. Most individuals perform the team role, which has the responsibility to create the software." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Roles" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:Keyword Index="A" Term="c7b8a40c-bc64-42c0-9b24-bb2150680131" /><MSHelp:Keyword Index="K" Term="agile process template, roles" /><MSHelp:Attr Name="RevisionNumber" Value="10" /><MSHelp:Attr Name="AssetID" Value="c7b8a40c-bc64-42c0-9b24-bb2150680131" /><MSHelp:Attr Name="Abstract" Value="Members of a Scrum team perform at least one of three roles. Most individuals perform the team role, which has the responsibility to create the software. In addition, your product owner makes sure that your customers are represented on the team, and  ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Roles</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Roles</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray">
+                <p />
+            </font>
+            <div class="introduction">
+                <p>Members of a Scrum team perform at least one of three roles. Most individuals perform
+                    the team role, which has the responsibility to create the software. In addition,
+                    your product owner makes sure that your customers are represented on the team, and
+                    your ScrumMaster helps your team and your product owner follow Scrum processes effectively.
+                </p>
+                <p><span class="label">In this topic</span> </p>
+                <ul>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#team">
+                            Team</a></span> </p>
+                        <ul>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#goodteam">
+                                    What Makes a Good Team</a></span> </p>
+                            </li>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#teamresponsibilities">
+                                    Team Core Responsibilities</a></span> </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#scrummaster">
+                            ScrumMaster</a></span> </p>
+                        <ul>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#goodscrummaster">
+                                    What Makes a Good ScrumMaster</a></span> </p>
+                            </li>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#scrummasterresponsibilities">
+                                    ScrumMaster Core Responsibilities</a></span> </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#productowner">
+                            Product Owner</a></span> </p>
+                        <ul>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#goodproductowner">
+                                    What Makes a Good Product Owner</a></span> </p>
+                            </li>
+                            <li>
+                                <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c7b8a40c-bc64-42c0-9b24-bb2150680131#productownerresponsibilities">
+                                    Product Owner Core Responsibilities</a></span> </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a name="Team" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Team
+                </span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The team consists of the individuals who are responsible for creating the software.
+                    The team selects Use Cases at the start of the sprint, collaborates to implement
+                    and test the Use Cases during the sprint, and presents the finished software
+                    at the sprint review. The team is self-organizing because it manages itself and
+                    its work. The team is cross-functional because it contains the skills that it requires
+                    to deliver the Use Cases in the product backlog. GovDev for TFS 2010
+                    does not distinguish roles within the team by criteria such as engineering
+                    discipline or area of expertise.</p>
+                <a name="GoodTeam" />
+                <h3 class="subHeading">What Makes a Good Team</h3>
+                <div class="subsection">
+                    <p>A good software team is difficult to assemble and takes time to build. Examples of
+                        good teams are all around us: surgical teams, basketball teams, and sheepdogs and
+                        their handlers. Each team member may have his or her specialty, but the team works
+                        together and succeeds or fails together.</p>
+                    <p>Good software teams are also composed of individuals who pull together toward a common
+                        goal. A software team should not be just a collection of experts, each of whom takes
+                        a turn performing only the tasks in which they specialize. Instead, a team should
+                        be a group of people whose collective skills and expertise outweigh the skill of
+                        any individual. Through collaboration, communication, trust, and openness, a team
+                        can deliver success and grow beyond the individual capabilities of its members to
+                        become a high-performing unit.</p>
+                    <p>A good team has the people and skills that are required to deliver working software.
+                        The full-time members of the team should have most or all skills that are required
+                        to fulfill the project. Specialized individuals such as designers, operations people,
+                        architects, or experts in a specific technology might not be available full time.
+                        The team can pull in external specialists for short-term activities. However, full-time
+                        team members should comprise people who can cover most of the skills that are required
+                        to complete the work.</p>
+                </div>
+                <a name="TeamResponsibilities" />
+                <h3 class="subHeading">Team Core Responsibilities</h3>
+                <div class="subsection">
+                    <p>The primary responsibility of the team is to create software that meets both customer
+                        expectations and the team's criteria for finished software. The team's responsibilities
+                        start at the sprint planning meeting and end at the sprint review meeting. At the
+                        sprint planning meeting, the team divides Use Cases into tasks. At the sprint
+                        review meeting, the team presents working software to the product owner and possibly
+                        customers.</p>
+                    <p>The team is also responsible for its own results. The team manages itself in defining
+                        and completing the work that it has selected and in collaborating among team members
+                        to optimize team effectiveness. The team should always work to improve its results
+                        by engaging in the following activities:</p>
+                    <ul>
+                        <li>
+                            <p>Define criteria for what is finished, and finish each task before starting the next.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Adopt effective engineering practices.</p>
+                            <p>For more information, see <span sdata="link"><a href="EngineeringPractices.html">
+                                Engineering Practices</a></span>.</p>
+                        </li>
+                        <li>
+                            <p>Help the product owner craft and prioritize effective Use Cases.</p>
+                        </li>
+                        <li>
+                            <p>Estimate the Use Cases.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="ScrumMaster" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />ScrumMaster
+                </span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>As a ScrumMaster, you are responsible for building and maintaining a healthy team
+                    that conforms to the Scrum processes. You are the change agent who helps the team
+                    overcome impediments.</p>
+                <a name="GoodScrumMaster" />
+                <h3 class="subHeading">What Makes a Good ScrumMaster</h3>
+                <div class="subsection">
+                    <p>To be a good ScrumMaster, you should possess or build excellent communication, negotiation,
+                        and conflict resolution skills. You will use these skills daily to help your team
+                        develop. You must actively listen to not only the words that people say and write
+                        but also how they deliver their messages (their body language, facial expressions,
+                        vocal pace, and other nonverbal communication). You should ask questions that reveal
+                        hidden issues and confirm what you have understood people say. You should use these
+                        skills to identify potential issues on the team and help prevent them from becoming
+                        actual issues. It is cheaper to fix a bug soon after it is discovered, and it is
+                        easier and less disruptive to fix a team issue when it is small and manageable than
+                        when it is large and out of control. You should make the team, the product owner,
+                        and the other business stakeholders feel at ease as you drive the team to significantly
+                        increase its productivity. You should gather, analyze, and present data to the business
+                        stakeholders in a way that demonstrates how the team is improving and growing. For
+                        example, if your team has significantly increased the amount of value that it has
+                        delivered while generating fewer bugs, you must show that improvement to the business
+                        stakeholders.</p>
+                </div>
+                <a name="ScrumMasterResponsibilities" />
+                <h3 class="subHeading">ScrumMaster Core Responsibilities</h3>
+                <div class="subsection">
+                    <p>Your primary responsibility is to make sure that the team and the product owner follow
+                        the Scrum processes. For example, you should not let the daily Scrum meeting become
+                        an open discussion that lasts 45 minutes. You will also make sure that the product
+                        owner does not ask the team to add work to a sprint after it starts. You will prevent
+                        the team from presenting Use Cases in the sprint review meeting if those use cases
+                        are not completely finished.</p>
+                    <p>You will help clear blocking issues that the team may encounter. You might need to
+                        perform small tasks, such as approving a purchase order for a new build computer,
+                        or perform larger, more challenging tasks, such as resolving conflicts among members
+                        of your team. When the team engages in painful interaction, you must help the team
+                        to recover and work more effectively in the future.</p>
+                </div>
+            </div>
+            <a name="ProductOwner" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Product
+                Owner</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>As the product owner, your primary function is to act as an interface between the
+                    customers and the team. A variety of customers and stakeholders will pull you in
+                    many directions.</p>
+                <a name="GoodProductOwner" />
+                <h3 class="subHeading">What Makes a Good Product Owner</h3>
+                <div class="subsection">
+                    <p>You must analyze customer requirements and articulate them as Use Cases. You must
+                        have good negotiation skills so that you can help customers to understand the tradeoffs
+                        between requested features and the impact that they have on the schedule. You must
+                        work with customers to prioritize the product backlog so that the team produces
+                        the most valuable product or system, one increment at a time. You must have subject-matter
+                        expertise in the business area or industry of the system that is being built. For
+                        example, you must have a background in healthcare and healthcare insurance if your
+                        team is building a healthcare system for a hospital. Without this knowledge, you
+                        cannot effectively prioritize the product backlog or explain the product backlog
+                        items to the team. You will also benefit from basic financial skills, such as the
+                        ability to understand the payback period on a system, budget amortization, and capital
+                        and expense budgeting. Your understanding of the Scrum processes and your commitment
+                        to them is also important to the success of the team.</p>
+                </div>
+                <a name="ProductOwnerResponsibilities" />
+                <h3 class="subHeading">Product Owner Core Responsibilities</h3>
+                <div class="subsection">
+                    <p>Your core responsibilities are to represent customer and stakeholder requirements
+                        to the team, and to respond to the questions from the team. You must keep the product
+                        backlog current and prioritized. To maintain the product backlog, you must communicate
+                        regularly with customers, stakeholders, and the team. You should meet with stakeholders
+                        at least every one to two weeks. The order in which Use Cases are implemented
+                        will affect the payback period and the amount of work that the team must perform.
+                        The team will help you to understand how the sequence of Use Cases affects the
+                        work. You must help the stakeholders understand the effects of these ranking decisions.
+                        You also reduce the need for detailed specifications by being available to team
+                        members when they have questions about how to implement functionality. To keep the
+                        team moving, you must have these answers or be able to find them very quickly (in
+                        a few hours). If you are unavailable, team results will suffer.</p>
+                    <div class="alert">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th align="left">
+                                    <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                    </b></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>The level of detail in specifications depends on many factors, which include the
+                                        type of application that your team is developing. For many applications, correctly
+                                        elaborated Use Cases and open lines of communication are the most effective specifications.
+                                        However, an application that processes lab tests might require detailed specifications
+                                        so that the team can analyze in more detail the impact of changes that they make
+                                        over time.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>You will also work with both the team and the stakeholders to build acceptance tests.
+                        Acceptance tests help determine whether a particular Use Case is completed and
+                        ready for the sprint review. You must understand, identify, and articulate risk
+                        to both the team and the stakeholders.</p>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="Scrum.html">Scrum</a></span> 
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

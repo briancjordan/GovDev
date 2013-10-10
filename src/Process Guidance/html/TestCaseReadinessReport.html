@@ -1,0 +1,368 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="test cases, monitoring readiness" />
+    <meta name="System.Keywords" content="testing, test case readiness report" />
+    <meta name="Microsoft.Help.Id" content="c4e804d5-1549-41c0-a365-28fdec77bffe" />
+    <meta name="Description" content="After the team starts to define test cases, you can use the Test Case Readiness report to determine how many test cases have been defined and are ready to run." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Test Case Readiness Report" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Test Case Readiness" /><MSHelp:Keyword Index="A" Term="c4e804d5-1549-41c0-a365-28fdec77bffe" /><MSHelp:Keyword Index="K" Term="test cases, monitoring readiness" /><MSHelp:Keyword Index="K" Term="testing, test case readiness report" /><MSHelp:Attr Name="RevisionNumber" Value="10" /><MSHelp:Attr Name="AssetID" Value="c4e804d5-1549-41c0-a365-28fdec77bffe" /><MSHelp:Attr Name="Abstract" Value="After the team starts to define test cases, you can use the Test Case Readiness report to determine how many test cases have been defined and are ready to run.  " /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Test Case Readiness Report</title>
+</head>
+<body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" /><input type="hidden"
+	<input type="hidden" id="Hidden1" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Test Case Readiness Report</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>After the team starts to define test cases, you can use the Test Case Readiness report
+                    to determine how many test cases have been defined and are ready to run. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>The Test Case Readiness report is useful only if your team is testing your application
+                                    by using Test Runner and Microsoft Test Manager. For more information about how
+                                    to define and use test cases, see <span sdata="link"><a href="http://msdn.microsoft.com/library/b33158a5-30be-4c77-b443-56477ae16027">
+                                        Creating and Managing Tests</a></span>. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>For information about how to access, refresh, or manage reports, see <span sdata="link">
+                    <a href="ReportsGovDev.html">Reports (GovDev)</a></span>. </p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <img class="note" alt="Note" title="Note" src="../icons/alert_note.gif" /><b>Note
+                                </b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>This report requires that the team project collection that contains your team project
+                                    was provisioned with SQL Server Reporting Services. This report is not available
+                                    if
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span> does not appear when you open Team Explorer and expand
+                                    your team project node. </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Data">Data in the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Interpreting">Interpreting the Report</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Changing">Filtering the Report</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">You can use this report to answer the following questions</span> 
+                                    :</p>
+                                <ul>
+                                    <li>
+                                        <p>When will all the test cases be ready to run? </p>
+                                    </li>
+                                    <li>
+                                        <p>Will all the test cases be ready to run by the end of the iteration? </p>
+                                    </li>
+                                    <li>
+                                        <p>How many test cases must the team still write and review? </p>
+                                    </li>
+                                    <li>
+                                        <p>How many test cases are ready to be run? </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><span class="label">Required Permissions</span> </p>
+                <p>To view the report, you must be assigned or belong to a group that has been assigned
+                    the <span class="ui">Browser</span> role in Reporting Services. For more information,
+                    see <span sdata="link"><a href="http://msdn.microsoft.com/library/3cfefdd2-b161-4e04-8dc0-e2deeac50262">
+                        Add Users to Team Projects</a></span> or <span sdata="link"><a href="http://msdn.microsoft.com/library/8f1f5f39-ed0f-4539-bee1-7e7e77bb5728">
+                            Managing Permissions</a></span>.</p>
+            </div>
+            <a name="Data" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Data
+                in the Report</span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <p>The Test Case Readiness report provides an area graph that shows how many test cases
+                    are in the <span class="ui">Design</span> or <span class="ui">Ready</span> state over
+                    the time period that you specify. By reviewing this data, you can easily determine
+                    how quickly the team is designing test cases and making them ready for testing.
+                    When you create a test case, it is automatically set to the design state. After
+                    the team has reviewed and approved the test case, then a team member should change
+                    its state to <span class="ui">Ready</span>, which indicates that the test case is
+                    ready to be run. </p>
+                <p>The following illustration shows an example of a Test Case Readiness report.</p>
+                <img alt="Example Test Case Readiness Report" src="../art/ProcGuid_TestCaseReadiness.png" /><p>
+                    The data that appears in the report is derived from the data warehouse. The report
+                    summarizes the data that was captured for each test case during the time interval
+                    that you specified, based on the area path and other filters that you specified.
+                </p>
+                <p>You can filter the report in the following ways:</p>
+                <ul>
+                    <li>
+                        <p>Change the start and end dates for the report.</p>
+                    </li>
+                    <li>
+                        <p>Filter the test cases that are counted in the report by specifying area paths, priority,
+                            and state.</p>
+                    </li>
+                </ul>
+                <p>For more information, see <a href="#Changing">Filtering the Report</a>later in this
+                    topic.</p>
+                <h3 class="subHeading">Required Activities for Tracking Test Cases</h3>
+                <div class="subsection">
+                    <p>For the Test Case Readiness report to be useful and accurate, the team must perform
+                        the following activities:</p>
+                    <ul>
+                        <li>
+                            <p>Define test cases, and specify the <span class="ui">Iteration</span> and <span
+                                class="ui">Area</span> paths for each test case. </p>
+                        </li>
+                        <li>
+                            <p>Update the state of each test case as it progresses from <span class="ui">Design</span> 
+                                to <span class="ui">Ready</span> to <span class="ui">Closed</span>. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Interpreting" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interpreting
+                the Report</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>The Test Case Readiness report displays the number of all test cases, grouped by
+                    state. </p>
+                <h3 class="subHeading">Questions Answered by the Report</h3>
+                <div class="subsection">
+                    <p>You can review the report to determine the team's progress within an iteration or
+                        over time. For example, you can answer these questions:</p>
+                    <ul>
+                        <li>
+                            <p>How many test cases are ready to be run?</p>
+                        </li>
+                        <li>
+                            <p>How many test cases must the team still write and review?</p>
+                        </li>
+                        <li>
+                            <p>When will all the test cases be ready to run? </p>
+                        </li>
+                        <li>
+                            <p>Will all the test cases be ready to run by the end of the iteration? </p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="subHeading">Healthy Version of Report</h3>
+                <div class="subsection">
+                    <p>A healthy Test Case Readiness report will show a steady progress in test cases being
+                        designed and moving to the ready state, as the following illustration shows.
+                    </p>
+                    <img alt="Healthy version of Test Case Readiness" src="../art/ProcGuid_TestCaseReadiness_Healthy.png" />
+                </div>
+                <h3 class="subHeading">Unhealthy Version of Report</h3>
+                <div class="subsection">
+                    <p>The following illustration shows an unhealthy version of the Test Case Readiness
+                        report, in which the states do not change for several weeks at a time.</p>
+                    <img alt="Unhealthy version of Test Case Readiness" src="../art/ProcGuide_TestCaseReadiness_Unhealthy.png" /><p>
+                        An unhealthy Test Case Readiness report shows one or more of the following indicators:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><span class="label">No test cases are ready to be run</span>.</p>
+                            <p>When all test cases remain in a design state for a long time, some issue is blocking
+                                progress. You might want to investigate the cause of the blockage.</p>
+                        </li>
+                        <li>
+                            <p><span class="label">The number of test cases does not appear sufficient</span>.
+                            </p>
+                            <p>The number of test cases that are defined for a project should be equal to or larger
+                                than the number of Use Cases that the team is implementing. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a name="Changing" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Filtering
+                the Report</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <p>You can filter the Test Case Readiness report to show only those test cases that
+                    are defined for the product areas, states, and priorities that you specify. The
+                    following illustration shows the available filters:</p>
+                <img alt="Filters for Test Case Readiness report" src="../art/ProcGuid_Readiness.png" /><h3
+                    class="procedureSubHeading">To change the time interval of the report</h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>In <span class="ui">Iteration Start (Date)</span> or<span class="ui"> Iteration End
+                                (Date)</span>, click the calendar icon, and then click the appropriate date.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <h3 class="procedureSubHeading">To filter the test cases that are counted in the report
+                </h3>
+                <div class="subSection">
+                    <ol>
+                        <li>
+                            <p>Perform one or both of the following actions:</p>
+                            <ul>
+                                <li>
+                                    <p>In the <span class="ui">Area</span> list, select the check box of each product area
+                                        to include.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="ui">State</span> and <span class="ui">Priority</span> lists, select
+                                        the check box of each state and priority to include.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Click <span class="ui">View Report</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/082da920-198a-46f2-ba06-522ddc5b404c">
+                    Defining Your Testing Effort Using Test Plans</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestPlanProgressReport.html">Test
+                    Plan Progress Report</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="TestCaseGovDev.html">Test Case
+                    (GovDev)</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)
+                    </a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1476 @@
+﻿<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="save" content="history" />
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="agile process template, artifacts" />
+    <meta name="System.Keywords" content="artifacts" />
+    <meta name="System.Keywords" content="artifacts, agile" />
+    <meta name="System.Keywords" content="collaborating [Visual Studio ALM], agile artifacts" />
+    <meta name="Microsoft.Help.Id" content="4602e4f9-df84-487d-b8fc-5b4350f65db2" />
+    <meta name="Description" content="ScrumMasters can run their processes more easily and teams can work more effectively by using the artifacts that are provided with the process template for GovDev for TFS 2010 v1.0." />
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <meta name="DCSext.ProductFamily" content="LIB_DG" />
+    <meta name="DCSext.Product" content="ALM_TeamFoundation" />
+    <meta name="DCSext.Title" value="Artifacts (GovDev)" />
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <xml><MSHelp:TOCTitle Title="Artifacts" /><MSHelp:Keyword Index="A" Term="4602e4f9-df84-487d-b8fc-5b4350f65db2" /><MSHelp:Keyword Index="K" Term="agile process template, artifacts" /><MSHelp:Keyword Index="K" Term="artifacts" /><MSHelp:Keyword Index="K" Term="artifacts, agile" /><MSHelp:Keyword Index="K" Term="collaborating [Visual Studio ALM], agile artifacts" /><MSHelp:Attr Name="RevisionNumber" Value="26" /><MSHelp:Attr Name="AssetID" Value="4602e4f9-df84-487d-b8fc-5b4350f65db2" /><MSHelp:Attr Name="Abstract" Value="ScrumMasters can run their processes more easily and teams can work more effectively by using the artifacts that are provided with the process template for GovDev for TFS 2010 v1.0. These artifacts include work items, reports, workbook ..." /><MSHelp:Attr Name="CommunityContent" Value="1" /><MSHelp:Attr Name="ShippedIn" Value="vs.90" /><MSHelp:Attr Name="TopicVersion" Value="10.0.10236.10000" /><MSHelp:Attr Name="Catalog Container" Value="System_Default_Catalog" /><MSHelp:Attr Name="Content Set Container" Value="System_Default_Content_Set" /><MSHelp:Attr Name="TopicType" Value="kbArticle" /><MSHelp:Attr Name="Locale" Value="en-us" /></xml>
+    <title>Artifacts (GovDev)</title>
+</head>
+<body>
+	<input type="hidden" id="userDataCache" class="userDataStyle" />
+	<input type="hidden" id="hiddenScrollOffset" />
+	<img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+	<img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+	<img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+	<img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+	<img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+	<img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+	<img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+	<img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+	<div id="header">
+		<table id="topTable" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+						<img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> 
+						<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+						<label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> 
+					</span> 
+					<span>    </span> 
+					<span id="devlangsDropdown" class="filter" tabindex="0">
+						<img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> 
+						<label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label>
+						<label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label>
+						<label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label>
+						<label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label>
+						<label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label>
+						<label id="devlangsMenuFSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: F# </nobr></label>
+						<label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<div id="devlangsMenu">
+			<input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br />
+			<input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="CSharpCheckbox">C#</label><br />
+			<input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br />
+			<input id="FSharpCheckbox" type="checkbox" data="FSharp,fs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="FSharpCheckbox">F#</label><br />
+			<input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+			<label class="checkboxLabel" for="JScriptCheckbox">JScript</label><br />
+		</div>
+		<table id="bottomTable" cellpadding="0" cellspacing="0">
+			<tr id="headerTableRow1">
+				<td align="left">
+					<span id="runningHeaderText"> </span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow2">
+				<td align="left">
+					<span id="nsrTitle">Artifacts (GovDev)</span> 
+				</td>
+			</tr>
+			<tr id="headerTableRow3">
+				<td align="left">
+					<span id="headfeedbackarea" class="feedbackhead">
+						<a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+							Send Feedback
+						</a>
+					</span> 
+				</td>
+			</tr>
+		</table>
+		<table id="gradientTable">
+			<tr>
+				<td class="nsrBottom" background="../icons/gradient.gif" />
+			</tr>
+		</table>
+	</div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+            <font color="DarkGray"><p /></font>
+            <div class="introduction">
+                <p>Scrum Masters can run their processes more easily and teams can work more effectively
+                    by using the artifacts that are provided with the GovDev for TFS 2010 v1.0 process template. These artifacts include work items, reports, workbooks,
+                    and dashboards. </p>
+                <p>Teams can use work items to track information, analyze progress, and make decisions.
+                    The team can use built-in and custom reports that are based on the database for
+                    tracking work items or the SQL Server Analysis Services database to answer questions
+                    such as the following metrics:</p>
+                <ul>
+                    <li>
+                        <p>Are we on track?</p>
+                    </li>
+                    <li>
+                        <p>Is our bug debt growing or shrinking?</p>
+                    </li>
+                    <li>
+                        <p>What is our burn rate?</p>
+                    </li>
+                </ul>
+                <p>Teams can use workbooks to help maintain the product backlog, plan an iteration or
+                    sprint, and prioritize bugs. Dashboards and reports display critical information
+                    and support transparency and real-time metrics. Dashboards help the team visualize
+                    project information, which is especially useful for driving an iteration and conducting
+                    retrospectives. Dashboards also provide access to many features and functions that
+                    team members use every day. </p>
+                <p>Team members can access artifacts either from the team project node in Team Explorer
+                    or the team project portal. </p>
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p><span class="label">In this topic</span> </p>
+                                <ul>
+                                    <li>
+                                        <p><a href="#Overview">Overview</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#ProductBacklogMaintenance">Requirements and&nbsp;Backlog Maintenance</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#SprintBacklogMaintenance">Iteration Backlog Maintenance</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#BugBacklogManagement">Bug Backlog Management</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#ProjectManagement">Project Management</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#ReleasePlanning">Release Planning</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#TeamCollaboration">Team Collaboration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#TeamSystemIntegration">Integration</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#Customization">Customization</a></p>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p><span class="label">Default artifact structure in Team Explorer</span> </p>
+                                <img alt="GovDev team project artifact structure" src="../art/ProcGuid_Artifacts.png" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Overview" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">
+                <img id="sectionToggle0" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Overview
+                </span> </h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create and update use cases, tasks, bugs, and other types
+                                    of work items</span>. The team tracks work by creating and managing work items.
+                                    Each type of work item is based on a template that includes data fields, workflow
+                                    states, transition logic, and a work item form. Team members can create work items
+                                    that are based on only those types of work items that are defined for the team project.
+                                </p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines the following
+                                    types of work items: use cases, tasks, bugs, issues, test cases, and shared steps.
+                                    each type of work item is defined by an XML file that project administrators can
+                                    completely customize.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/558d9b2a-b71a-4f26-8ac1-a0fde70b727d">
+                                            Customizing Project Tracking Data, Forms, Workflow, and Other Objects</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">List use cases, tasks, bugs, and other work items by using
+                                    queries</span>. Each query defines a set of filter criteria that team members can
+                                    run to find specific groups of work items, such as open use cases or active bugs.
+                                    Team members can find predefined queries in the Team Queries folder.</p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines 15 queries.
+                                    Each team member can create and store queries that are just for themselves or that
+                                    they share with the team. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TeamQueriesGovDev.html">Team Queries (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c9b6d41c-47ce-4a29-8a1c-ba44d8c4809a">
+                                            Finding Bugs, Tasks, and Other Work Items</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/814c2dca-cf8f-44bf-bba1-a5d8e293fc05">
+                                            Query Fields, Operators, Values, and Variables</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/a48f7763-96bd-4558-8f1c-7e8aa5cebe55">
+                                            Sharing Work Items and Queries with Team Members</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Plan, manage, balance, and track workload for an iteration by
+                                    using workbooks</span>. Product owners can use workbooks to maintain the product
+                                    backlog, plan an iteration, triage bugs, and track issues. For example, product
+                                    owners can assign use cases, tasks, bugs, and issues to specific iterations by
+                                    using workbooks. </p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines four types
+                                    of workbooks that you can customize. Each workbook, an Office Excel .xlsx file or
+                                    macro-enabled .xlsm file, displays a predefined query in one worksheet and additional
+                                    worksheets for calculating project data. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="WorkbooksGovDev.html">Workbooks (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Use dashboards to review progress and quickly access assigned
+                                    work</span>. Team members can use dashboards to quickly find important information
+                                    about the team project. Dashboards show project data, support investigation, and
+                                    help the team perform common tasks more quickly.</p>
+                                <p>Dashboards display charts and graphs that are defined by an Office Excel report,
+                                    lists and controls in Team Web Access, or other objects on a SharePoint site. To
+                                    access dashboards, the team project must be configured for a project portal and
+                                    a SharePoint site. </p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines several
+                                    dashboards that project administrators can completely customize. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="DashboardsGovDev.html">Dashboards (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">View and track progress by using reports in Excel</span>. Reports
+                                    in Excel support two purposes. The first purpose is to present visual data within
+                                    the dashboards. The second purpose is to support reviewing and tracking progress
+                                    for your project. </p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines 17 reports
+                                    in Excel. Each report corresponds to an Office Excel workbook (.xlsx file) that
+                                    displays information that is stored in the Analysis Services database for the team
+                                    project. You can modify default reports in Excel and create custom reports by using
+                                    the Excel template that the process template provides.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ExcelReportsGovDev.html">Excel Reports (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/ae021d09-18d9-4fb0-bc06-fd6667a0b122">
+                                            Create a Report in Microsoft Excel for Visual Studio ALM</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/0e1e3343-434b-4e54-8c0e-d75df296e646">
+                                            Edit a Report in Microsoft Excel for Visual Studio ALM</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Review, analyze, and track progress by using Reporting Services
+                                    </span>. Team members can analyze the status and progress of their project by using
+                                    the reports in Reporting Services. These reports help answer questions about the
+                                    state of the team project by aggregating metrics from work items, version control,
+                                    test results, and builds.</p>
+                                <p>Before your team can access
+                                    <img alt="Report" src="../art/Icon_reportTE.gif" />
+                                    <span class="ui">Reports</span>, the team project collection where your team project
+                                    is stored must be provisioned with Reporting Services and Analysis Services.
+                                </p>
+                                <p>The process template for GovDev for TFS 2010 v1.0 defines 13 reports.
+                                    Each report is defined by a Report Definition Language (RDL) file that accesses
+                                    information from the Analysis Services database for the team project. Project administrators
+                                    can completely customize these reports. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/f382806c-9509-45bf-b175-51a2c853621a">
+                                            View, Organize, and Configure Reports Using Report Manager for Visual Studio ALM
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="ProductBacklogMaintenance" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">
+                <img id="sectionToggle1" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Requirements 
+                and Backlog Maintenance</span> </h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Capture and track use cases</span>. Product owners can capture
+                                    each feature, function, or requirement for a product as a use case. Use cases
+                                    support assigning story points, ranking, capturing customer requirements
+                                    and test criteria, and assigning the item to a specific iteration. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCaseGovDev.html">Use Case (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create and edit multiple use cases as a batch</span>. Product
+                                    owners can use the Product Backlog workbook to build the product backlog and balance
+                                    use cases across iterations. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCasePlanningWorkbook.html">Use Case Planning Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Capture, track, and link other types of work</span>. Team members
+                                    can also capture tasks, issues, and other types of work and link them to use cases
+                                    or each other. </p>
+                                <p>Project administrators can also create or customize each type of work item by adding
+                                    fields, changing the workflow, or modifying the form. For more information, see
+                                    <a href="#Customization">Customization</a>.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TaskGovDev.html">Task (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugGovDev.html">Bug (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssueGovDev.html">Issue (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseGovDev.html">Test Case (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">View hierarchical tree structures of requirements, use cases and tasks</span>. 
+                                    Product owners can create many small, focused use cases that, taken together,
+                                    implement several larger requirements. Team members can display a tree view of requirements, use case and tasks that are linked by parent-child relationships.</p>
+                                <p>Team members can view and modify tree hierarchies of work items through either Office
+                                    Excel or Team Explorer. In Team Explorer, team members can change the tree structure
+                                    by dragging items within the tree view.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/744aed59-6c89-426a-af1e-c1b5b653de3f">
+                                            View and Modify Work Items in a Tree View</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor progress and status of requirements</span>. By using
+                                    the Requirements Progress Report and Requirements Traceability Report, team members can review the level of effort that they
+                                    have spent implementing Requirements.
+            <a name="ProductBacklogMaintenance" />
+                                    Product owners can review these reports daily or weekly to monitor the progress of
+                                    the team during an iteration.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsProgressReportGovDev.html">Requirements Progress Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">
+                                            Requirements Traceability Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="SprintBacklogMaintenance" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle2)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">
+                <img id="sectionToggle2" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Iteration
+                Backlog Maintenance</span> </h1>
+            <div id="sectionSection2" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Quickly access Tasks and other daily functions for each team
+                                    member</span>. Team members can use the My dashboard to review and open the tasks,
+                                    bugs, and test cases that are assigned to them.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="MyDashboardGovDev.html">My Dashboard (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create and edit items in the iteration backlog as a batch</span>.  
+                                    Product owners can use the Iteration Task Backlog workbook to plan and track the progress
+                                    of work for a specific iteration. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IterationBacklogWorkbook.html">Iteration Task Backlog Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">View hierarchical tree structures of Use Cases and Tasks</span>.  
+                                    Team members can create a link between each task that they must complete and the
+                                    use case that it helps implement. by creating these links, team members can track
+                                    work hours for each use case. </p>
+                                <p>Team members can modify tree hierarchies of work items, either through Office Excel
+                                    or Team Explorer. In Team Explorer, you can change the tree structure by dragging
+                                    items in the tree view.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><a href="http://msdn.microsoft.com/library/744aed59-6c89-426a-af1e-c1b5b653de3f">
+                                            <span sdata="link">View and Modify Work Items in a Tree View</mshelp:link></span> </p>
+                                    </li>
+                                    </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the iteration progress and status</span>. Product owners
+                                    and team members can use the Progress dashboard and reports to view their progress.
+                                    These reports help teams determine whether they are on track, how much value they
+                                    are delivering by closing use cases, and how closely the iteration execution
+                                    matched their iteration plan. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ProgressDashboardGovDev.html">Progress Dashboard 
+                                            (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="ProjectDashboardGovDev.html">Project Dashboard (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BurndownandBurnRateReportGovDev.html">Burndown and Burn
+                                            Rate Report (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RemainingWorkReport.html">Remaining Work Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Generate custom views of reports</span>. Team members can generate
+                                    different views of reports by using built-in filter functions. For example, a team
+                                    member can change the display of the Burndown and Burn Rate report by filtering
+                                    the set of use cases, bugs, and tasks that the report displays.</p>
+                                <p>In addition, team members can customize each dashboard by changing the filter criteria
+                                    or fields of the Excel reports that appear in the dashboards. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>See each report for filter details: </p>
+                                        <ul>
+                                            <li>
+                                                <p><span sdata="link"><a href="ReportsGovDev.html">Reports (GovDev)</a></span> </p>
+                                            </li>
+                                            <li>
+                                                <p><span sdata="link"><a href="ExcelReportsGovDev.html">Excel Reports (GovDev)</a></span> 
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="BugBacklogManagement" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle3)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">
+                <img id="sectionToggle3" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Bug
+                Backlog Management</span> </h1>
+            <div id="sectionSection3" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Quickly access "My" active Bugs</span>. By using the My dashboard,
+                                    individual team members can review bugs that are assigned to them. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="MyDashboardGovDev.html">My Dashboard (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Review and triage the bug backlog</span>. By using the Triage
+                                    workbook, the team can rank, prioritize, and assign bugs to work on during an iteration.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TriageWorkbook.html">Triage Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor bug burndown, trends, and distribution by priority and
+                                    assignment</span>. By using the bug dashboards and reports, the team can track its
+                                    progress toward finding and resolving code defects. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugsDashboard.html">Bugs Dashboard</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugStatusReport.html">Bug Status Report</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BugTrendsReport.html">Bug Trends Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor the fault feedback ratio</span>. By using the Reactivations
+                                    report, the team can determine how effectively it is fixing bugs. Reactivations
+                                    generally refer to bugs that have been resolved or closed prematurely and then reopened.
+                                    The team can use the Reactivations report to show either bugs or use cases that
+                                    have been reactivated.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ReactivationsReport.html">Reactivations Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Submit Bugs that automatically contain test case and test environment
+                                    information</span>. Testers who use Microsoft Test Manager can submit bugs that
+                                    automatically contain information about the test case and test environment that
+                                    was run, in addition to the specific test step in which the tester discovered a
+                                    code defect. If a tester uses Microsoft Test Manager to create a bug, it is automatically
+                                    linked to the test case that was run when the bug was found. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/3884cbe6-95f7-434a-b02a-e498f084ce63">
+                                            How to: Submit a Bug Using Microsoft Test Manager</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/944ae9af-5a55-4c58-b520-0108c03b3564">
+                                            Including Diagnostic Trace Data with Bugs that are Difficult to Reproduce</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="ProjectManagement" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle4)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">
+                <img id="sectionToggle4" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Project
+                Management</span> </h1>
+            <div id="sectionSection4" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Plan, schedule, and manage tasks and resources</span>. Product
+                                    owners can plan projects, schedule tasks, assign resources, and track changes by
+                                    using Office Project. Office Project helps simplify scheduling by providing the
+                                    Team Foundation Gantt View and the Team Foundation Task Sheet View.</p>
+                                <p>In addition, data integration between Office Project and Team Foundation maintains
+                                    predecessor-successor and subordinate relationships in both the project plan and
+                                    the database for tracking work items. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/be5cef4f-755f-4ffe-8dd7-876d1e02c330">
+                                            Scheduling Tasks and Assigning Resources Using Microsoft Project</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/95ad5102-e346-4597-8d35-bf84cb692652">
+                                            Quick Tips and Operational Differences when Tracking Tasks Using Microsoft Project
+                                            and Team Foundation</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor task allocation to team members</span>. In the Progress
+                                    dashboard and reports, team members can view the workload that is assigned to themselves
+                                    and to other team members. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ProgressDashboardGovDev.html">Progress Dashboard (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BurndownandBurnRateReportGovDev.html">Burndown and Burn
+                                            Rate Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Manage and monitor issues and impediments to team progress</span>.  
+                                    Product owners can track known or potential problems, impediments, or risks to
+                                    their project by using the Issues workbook to define, review, rank, and manage issues.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssueGovDev.html">Issue (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="IssuesWorkbook.html">Issues Workbook</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Trace the implementation of requirements.</span> Determine the 
+                                    status of requirements and trace their progress down to the implementation code.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">
+                                            Requirements Traceability
+                                            Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Determine team member&#39;s contribution to project success.</span>&nbsp; 
+                                    View the hours and code churn of individual team members.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ContributionReportGovDev.html">Team Contribution
+                                            Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Determine the team's average burn rate or velocity.</span> By viewing the information in
+                                    the Status on All Iterations report, product owners can gain information toward
+                                    calculating the team's average burn rate.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="StatusonAllIterationsReport.html">Status on All Iterations
+                                            Report</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="ReleasePlanning" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle5)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle5, event)" tabindex="0">
+                <img id="sectionToggle5" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Release
+                Planning</span> </h1>
+            <div id="sectionSection5" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor team progress and team capacity</span>. During an iteration,
+                                    the team can review the rate of its progress by viewing the burndown of either Tasks
+                                    or other work items. </p>
+                                <p>Burndown shows the trend of completed and remaining work over a specified time period.
+                                    Burn rate provides calculations of the completed and required rate of work based
+                                    on the specified time period.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="ProgressDashboardGovDev.html">Progress Dashboard (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RemainingWorkReport.html">Remaining Work Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Perform what-if planning scenarios</span>. Product owners can
+                                    use the Use Case Planning and Iteration Task Backlog workbooks to balance workload across
+                                    several iterations and, within an iteration, across the team. By using these workbooks,
+                                    product owners can determine the team capacity, team velocity, adjust work based
+                                    on overallocated or underallocated capacity for both the team and its members, and
+                                    perform what-if analysis by changing iteration assignments, lengthening or shortening
+                                    the iteration, and accounting for holidays and other planned work interruptions.
+                                </p>
+                                <p>By using the Iteration Task Backlog workbook, product owners set each team member's individual
+                                    capacity per iteration, including their days off. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="UseCasePlanningWorkbook.html">Use Case Planning Workbook
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="IterationBacklogWorkbook.html">Iteration Task Backlog Workbook
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Manage cross-group dependencies</span>. Product owners can define
+                                    dependencies for a task or feature that another team or group owns, track and annotate
+                                    those dependencies, build relationships with another project group, and track how
+                                    dependencies change over time.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/7001c91d-2c44-49f9-9504-61e3ba1be042">
+                                            What's New in Tracking Work Items</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor product quality</span>. The team can track indicators
+                                    of overall product quality by using the Quality dashboard. Also, the team can use
+                                    build reports to track the quality and success of the team's builds over time.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildSuccessOverTimeReport.html">Build Success Over Time
+                                            Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildQualityIndicatorsReport.html">Build Quality Indicators
+                                            Report</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Report progress to upper management</span>. Product owners can
+                                    use several dashboards and reports to communicate status and progress and customize
+                                    reports to display the exact details that the team and management require. </p>
+                                <p>For example, the Quality dashboard provides an overview of progress in the test,
+                                    development, and build areas. The Requirements Traceability Report tracks how far each 
+                                    requirement, use case, task, etc., has been implemented and tested. The test reports track the team's progress
+                                    toward developing test cases and show how well they cover the use cases.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">
+                                            Requirements Traceability Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Support for multiple means of access</span>. Team members can
+                                    view dashboards and reports through a Web interface and export Reporting Services
+                                    reports into several formats, which include Excel, Adobe Acrobat (.pdf), and Word.
+                                </p>
+                            </td>
+                            <td>
+                                <p>On the Microsoft Web site:</p>
+                                <ul>
+                                    <li>
+                                        <p><a href="http://go.microsoft.com/fwlink/?LinkId=178711">Exporting Reports</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="TeamCollaboration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle6)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle6, event)" tabindex="0">
+                <img id="sectionToggle6" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Team
+                Collaboration</span> </h1>
+            <div id="sectionSection6" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Manage work handoffs and track work status</span>. By using work
+                                    items to maintain information in the Team Foundation database, team members can
+                                    ensure that no information or work is lost when they hand off tasks to each other.
+                                    Team members can use work items to define work to be accomplished for a project
+                                    and track progress. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="WorkItemsandWorkflowGovDev.html">Work Items and Workflow
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Support team communications</span>. Team members can use the
+                                    project portal to save and retrieve documents, view reports, exchange information
+                                    by posting messages, and use other collaborative features in SharePoint Products,
+                                    such as calendars, lists, wikis, and blogs.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p>Pages on the Microsoft Web site:</p>
+                                        <ul>
+                                            <li>
+                                                <p><a href="http://go.microsoft.com/fwlink/?LinkId=165061">Create a blog</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a href="http://go.microsoft.com/fwlink/?LinkId=165062">Demo: Boost teamwork with
+                                                    a wiki</a></p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/644ee4b7-3653-4943-9809-3d14d4d79c48">
+                                            Access a Team Project Portal and Process Guidance</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Share documents and files</span>. By using their team project
+                                    portal, team members can upload files that are maintained under version control,
+                                    attach files, and insert links to Web sites in any type of work item.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="Attachments.html">Attachments</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/6e0b5e3f-4217-41c6-bf25-f5e9f2621b26">
+                                            Add or Delete a Hyperlink in a Work Item</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Receive e-mail notifications when work changes</span>. Alerts
+                                    are e-mail notifications that Team Foundation sends when some event occurs, such
+                                    as the status of a work item or a build changes, a check-in occurs, or a build is
+                                    completed. Team members can configure when alerts are sent and to whom they are
+                                    sent.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/2e5c8ae2-407d-4c13-a64c-fddf2e563ff7">
+                                            Setting Alerts</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Find and share frequently used lists of work items</span>. Team
+                                    members can quickly access active work items by using the default team queries.
+                                    Queries find work items that match a specific set of criteria and are useful for
+                                    finding the current status on work items. For example, a query could find all bug
+                                    work items with a priority of 1 or all task work items that are assigned to the
+                                    Web development team.</p>
+                                <p>Also, team members can create and share individual queries and additional team queries
+                                    through e-mail or the team project portal.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TeamQueriesGovDev.html">Team Queries (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/a48f7763-96bd-4558-8f1c-7e8aa5cebe55">
+                                            Sharing Work Items and Queries with Team Members</mshelp:link></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Set access permissions to sensitive data or resources</span>.
+                                    Project administrators can restrict which team members can view or modify work items,
+                                    team queries, reports, or dashboards. Permissions to view or modify an artifact
+                                    are granted to team members, either individually or by role.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/30493f4c-d3e6-42f0-bca2-2ad749246944">
+                                            Configuring Users, Groups, and Permissions</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/682f0eb0-462d-41e2-b6a2-41949d1b90fb">
+                                            Organize and Set Permissions on Work Item Queries</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Educate new team members about team processes</span>. Work items,
+                                    dashboards, and reports in Reporting Services all provide links to process guidance
+                                    for each of these kinds of artifacts. If you add or customize one of these artifacts,
+                                    you can provide links to your own hosted process guidance. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/63eae10a-b4d6-4ef5-93fd-270d20a8a2cf">
+                                            Providing Process Guidance to Your Team</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Track the status of work items, and generate reports by using
+                                    queries</span>. Team members can generate a list of work items by using simple or
+                                    complex queries. </p>
+                                <p>You can send the details about a particular work item, a list of work items, or a
+                                    work item query by e-mail to team members, clients, or other interested people.
+                                    Also, you can create hyperlinks to these items that recipients can open, view, save,
+                                    and modify if they have the necessary access and permission in Visual Studio Team
+                                    Foundation Server. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c9b6d41c-47ce-4a29-8a1c-ba44d8c4809a">
+                                            Finding Bugs, Tasks, and Other Work Items</mshelp:link></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/814c2dca-cf8f-44bf-bba1-a5d8e293fc05">
+                                            Query Fields, Operators, Values, and Variables</mshelp:link></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/a48f7763-96bd-4558-8f1c-7e8aa5cebe55">
+                                            Sharing Work Items and Queries with Team Members</mshelp:link></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="TeamSystemIntegration" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle7)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle7, event)" tabindex="0">
+                <img id="sectionToggle7" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Integration
+                </span> </h1>
+            <div id="sectionSection7" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Track the implementation of use cases and other work items
+                                    </span>. Team members can create links from work items to changesets and source
+                                    code that is under version control. These links support an audit trail that the
+                                    team can use to understand issues that might arise later. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/c1891ca6-0516-421c-a7ce-ca0e7e2ac3ac">
+                                            Associate Work Items with Changesets</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/ff40ae97-be28-4eb7-94a4-922d30fa3c19">
+                                            View Details for Changesets</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create relationships to support integrated views of 
+                                    requirements, use cases,
+                                    tests, and backlog items</span>. Team members can link requirements to use 
+                                    cases, use cases to the test
+                                    cases that test them and bugs that affect them. This practice helps product owners
+                                    determine the test case readiness for any use case and the overall number of bugs
+                                    that have been logged against a use case. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="RequirementsTraceabilityReportGovDev.html">
+                                            Requirements Traceability Report
+                                            (GovDev)</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor builds, code coverage, and code churn</span>. Team members
+                                    can use build reports to track the quality and success of their builds over time.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="QualityDashboardGovDev.html">Quality Dashboard 
+                                            (GovDev)
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildQualityIndicatorsReport.html">Build Quality Indicators
+                                            Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildSuccessOverTimeReport.html">Build Success Over Time
+                                            Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildSummaryReport.html">Build Summary Report</a></span> 
+                                        </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor test progress and test coverage</span>. Team members
+                                    can use the test dashboard and test reports to track the progress of tests over
+                                    time. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestDashboardGovDev.html">Test Dashboard (GovDev)</a></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestCaseReadinessReport.html">Test Case Readiness Report
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestPlanProgressReport.html">Test Plan Progress Report
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Monitor progress and identify the volume, status, and effectiveness
+                                    of test activities</span>. Teams that are responsible for testing the product can
+                                    use the Test Management reports to monitor builds, test runs, test case authoring,
+                                    and more. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestManagementReports.html">Test Management Reports</a>
+                                        </span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="BuildQualityExcelReport.html">Build Quality Excel Report
+                                            </a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProductivityExcelReport.html">Test Team Productivity
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestTeamProgressExcelReport.html">Test Team Progress
+                                            Excel Report</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="TestingGapsExcelReportGovDev.html">Testing Gaps Excel
+                                            Report (GovDev)</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a name="Customization" />
+            <h1 class="heading"><span onclick="ExpandCollapse(sectionToggle8)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(sectionToggle8, event)" tabindex="0">
+                <img id="sectionToggle8" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Customization
+                </span> </h1>
+            <div id="sectionSection8" class="section" name="collapseableSection" style="">
+                <div class="caption"></div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <th>
+                                <p>Task</p>
+                            </th>
+                            <th>
+                                <p>Related topics</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Create or customize types of work items, types of links, categories,
+                                    and other artifacts</span>. Project administrators can create or customize a type
+                                    of work item, a type of link, or a work item category to meet their team's requirements
+                                    for tracking a project. </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/558d9b2a-b71a-4f26-8ac1-a0fde70b727d">
+                                            Customizing Project Tracking Data, Forms, Workflow, and Other Objects</mshelp:link>
+                                            </span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/0d0d51f7-b8d0-4e5d-82b9-766ee12690ba">
+                                            Customizing How Work Items are Related through Link Types</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/2fc6c411-89a9-4af5-8dd3-b2d4c2ecf540">
+                                            Grouping Work Item Types into Categories</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Add or customize data fields, work item forms, and workflow</span>.  
+                                    Project administrators can add or modify the data fields that track work item
+                                    information, in addition to modifying the form and the workflow for a type of work
+                                    item.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/e8f5efb8-f98d-43ac-a347-a52371f20c21">
+                                            Customizing and Using Work Item Fields</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/ac0c3aa2-dfc3-4737-aeff-fe8923bd5ce5">
+                                            Defining and Customizing Work Item Workflow</a></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/1454e50d-b39f-4670-b0b7-6e77b742ac85">
+                                            Designing and Customizing a Work Item Form</a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Customize dashboards</span>. Dashboards comprise one or more
+                                    Web parts, with each part being fully customizable. Each team member can customize
+                                    their My Dashboard to support their individual needs and other dashboards for themselves
+                                    or for use by the team. </p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">Generate ad-hoc reports</span>. Team members can create, share,
+                                    and manage Excel reports. After you create a report that shows data for your team
+                                    project in Office Excel, you can upload the report to your team's project portal.
+                                </p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/ae021d09-18d9-4fb0-bc06-fd6667a0b122">
+                                            Create a Report in Microsoft Excel for Visual Studio ALM</mshelp:link></span> 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/0e1e3343-434b-4e54-8c0e-d75df296e646">
+                                            Edit a Report in Microsoft Excel for Visual Studio ALM</mshelp:link></span> </p>
+                                    </li>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/a606b12a-ac2e-4a02-a8b0-56f18c3dcc82">
+                                            Upload and Refresh Excel Reports in the Team Project Portal for Visual Studio ALM
+                                            </a></span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><span class="label">View, organize, and configure reports</span>. Project administrators
+                                    can create and publish reports in SQL Server Report Designer and then use Report
+                                    Manager to view, organize, and configure those reports. By using Report Manager,
+                                    a project administrator can organize related reports into folders, adjust parameters
+                                    and data sources, and schedule automated reports.</p>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <p><span sdata="link"><a href="http://msdn.microsoft.com/library/f382806c-9509-45bf-b175-51a2c853621a">
+                                            View, Organize, and Configure Reports Using Report Manager for Visual Studio ALM</mshelp:link>
+                                            </span> </p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor: default;"
+                onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+                <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See
+                Also</span> </h1>
+            <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                <h4 class="subHeading">Concepts</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="Scrum.html">Scrum</a></span> 
+                </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/f6a3a082-3b6d-4cfa-a636-0102ae625513">
+                    Choose a Process Template</a></span> </div>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="http://msdn.microsoft.com/library/7aa237cb-71e3-400f-b42b-c1935eceaa39">
+                    Collaborating within a Team Using Team Project Resources</a></span> </div>
+                <h4 class="subHeading">Other Resources</h4>
+                <div class="seeAlsoStyle"><span sdata="link"><a href="GovDevv1.0.html">
+                    GovDev for TFS 2010 v1.0</a></span> </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+                <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+            </div>
+            <span id="feedbackarea">Send <a href="javascript:SubmitFeedback('bjordan@microsoft.com','','','10.0','10.0.10236.10000','%0\dThank%20you%20for%20your%20feedback.%20The%20GovDev%20team%20uses%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20Feedback');">
+                feedback </a>on this topic or submit an issue at the GovDev for TFS Codeplex Site.</span> 
+        </div>
+    </div>
+</body>
+</html>
