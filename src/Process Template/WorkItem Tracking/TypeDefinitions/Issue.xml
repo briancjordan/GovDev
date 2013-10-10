@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Issue">
-    <DESCRIPTION>Includes information to track changes through the MSF for CMMI Process Improvement life cycle.</DESCRIPTION>
+    <DESCRIPTION>Includes information to track issues through the life cycle.</DESCRIPTION>
     <FIELDS>
       <FIELD name="Id" refname="System.Id" type="Integer" />
       <FIELD name="Title" refname="System.Title" type="String">

@@ -255,7 +255,7 @@
       </TRANSITIONS>
     </WORKFLOW>
     <FORM>
-      <Layout>
+      <Layout HideControlBorders="true">
         <Group>
           <Column PercentWidth="100">
             <Control FieldName="System.Title" Type="FieldControl" Label="&amp;Title:" LabelPosition="Left" />

@@ -10,7 +10,7 @@
       </FIELD>
       <FIELD name="Requirement Type" refname="Microsoft.VSTS.CMMI.RequirementType" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Functional" />
           <LISTITEM value="Non-Functional" />
           <LISTITEM value="Feature" />
@@ -20,7 +20,7 @@
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="Functional" />
       </FIELD>
-      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true">
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
         <HELPTEXT>The person currently working on this requirement</HELPTEXT>
@@ -28,28 +28,30 @@
       <FIELD name="History" refname="System.History" type="History">
         <HELPTEXT>Discussion thread and other historical information</HELPTEXT>
       </FIELD>
-      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath">
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension">
         <HELPTEXT>The area of the product with which this requirement is associated</HELPTEXT>
       </FIELD>
-      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath">
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension">
         <HELPTEXT>The iteration of the product with which this requirement is associated</HELPTEXT>
       </FIELD>
-      <FIELD name="State" refname="System.State" type="String">
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension">
         <HELPTEXT>The workflow state of the requirement</HELPTEXT>
       </FIELD>
-      <FIELD name="Reason" refname="System.Reason" type="String">
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension">
         <HELPTEXT>The reason why the requirement is in the current state</HELPTEXT>
       </FIELD>
-      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" />
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
       <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true">
         <VALIDUSER />
         <ALLOWEXISTINGVALUE />
       </FIELD>
-      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" />
-      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" />
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
       <FIELD name="Description" refname="System.Description" type="PlainText">
         <HELPTEXT>User activity or constraint enabled when this is implemented, with links to supporting documents</HELPTEXT>
       </FIELD>
+      <FIELD name="Start Date" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Finish Date" refname="Microsoft.VSTS.Scheduling.FinishDate" type="DateTime" reportable="dimension" />
       <!-- *************** Common Fields ****************   -->
       <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
         <WHENCHANGED field="System.State">
@@ -95,7 +97,7 @@
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -109,7 +111,7 @@
       </FIELD>
       <FIELD name="Triage" refname="Microsoft.VSTS.Common.Triage" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Pending" />
           <LISTITEM value="More Info" />
           <LISTITEM value="Info Received" />
@@ -118,8 +120,22 @@
         <DEFAULT from="value" value="Pending" />
         <HELPTEXT>Status of triaging the requirement</HELPTEXT>
       </FIELD>
+      <!-- **************** Build Integration Fields *******************************************  -->
+      <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
+        <SUGGESTEDVALUES expanditems="true">
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+        <HELPTEXT>The build in which the requirement was integrated</HELPTEXT>
+      </FIELD>
+      <!-- **************** Scheduling Fields *************************************************  -->
+      <FIELD name="Size" refname="Microsoft.VSTS.Scheduling.Size" type="Double" reportable="measure">
+        <HELPTEXT>The size of work estimated for implementing this requirement</HELPTEXT>
+      </FIELD>
+      <FIELD name="Original Estimate" refname="Microsoft.VSTS.Scheduling.OriginalEstimate" type="Double" reportable="measure">
+        <HELPTEXT>The estimate for the amount of work (in person hours)</HELPTEXT>
+      </FIELD>
       <FIELD name="Blocked" refname="Microsoft.VSTS.CMMI.Blocked" type="String" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
@@ -127,7 +143,7 @@
       </FIELD>
       <FIELD name="Committed" refname="Microsoft.VSTS.CMMI.Committed" type="String">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
@@ -135,12 +151,31 @@
         <HELPTEXT>Has the requirement been committed?</HELPTEXT>
       </FIELD>
       <FIELD name="Impact Assessment HTML" refname="Microsoft.VSTS.CMMI.ImpactAssessmentHtml" type="HTML" />
-      <!-- **************** Build Integration Fields *******************************************  -->
-      <!-- **************** Scheduling Fields *************************************************  -->
+      <FIELD name="User Acceptance Test" refname="Microsoft.VSTS.CMMI.UserAcceptanceTest" type="String">
+        <REQUIRED />
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="Pass" />
+          <LISTITEM value="Fail" />
+          <LISTITEM value="Not Ready" />
+          <LISTITEM value="Ready" />
+          <LISTITEM value="Skipped" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Not Ready" />
+      </FIELD>
+      <FIELD name="Subject Matter Expert 1" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert1" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Subject Matter Expert 2" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert2" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Subject Matter Expert 3" refname="Microsoft.VSTS.CMMI.SubjectMatterExpert3" type="String">
+        <VALIDUSER />
+      </FIELD>
+      <FIELD name="Planning Points" refname="Microsoft.VSTS.Scheduling.StoryPoints" type="Double" reportable="measure" />
     </FIELDS>
     <WORKFLOW>
       <STATES>
-        <STATE value="Proposed">
+        <STATE value="New">
           <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
               <EMPTY />
@@ -224,7 +259,7 @@
         </STATE>
       </STATES>
       <TRANSITIONS>
-        <TRANSITION from="" to="Proposed">
+        <TRANSITION from="" to="New">
           <REASONS>
             <DEFAULTREASON value="New" />
           </REASONS>
@@ -234,7 +269,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Proposed" to="Active">
+        <TRANSITION from="New" to="Active">
           <REASONS>
             <REASON value="Investigate" />
             <DEFAULTREASON value="Accepted" />
@@ -249,7 +284,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Active" to="Proposed">
+        <TRANSITION from="Active" to="New">
           <REASONS>
             <REASON value="Postponed" />
             <DEFAULTREASON value="Investigation Complete" />
@@ -316,7 +351,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Proposed" to="Closed">
+        <TRANSITION from="New" to="Closed">
           <REASONS>
             <DEFAULTREASON value="Rejected" />
           </REASONS>
@@ -380,16 +415,19 @@
           </Column>
         </Group>
         <Group Label="Planning">
-          <Column PercentWidth="25">
+          <Column PercentWidth="20">
+            <Control FieldName="Microsoft.VSTS.Scheduling.StoryPoints" Type="FieldControl" Label="Planing Points:" LabelPosition="Left" />
+          </Column>
+          <Column PercentWidth="20">
             <Control Type="FieldControl" FieldName="Microsoft.VSTS.Common.Priority" Label="&amp;Priority:" LabelPosition="Left" />
           </Column>
-          <Column PercentWidth="25">
+          <Column PercentWidth="20">
             <Control Type="FieldControl" FieldName="Microsoft.VSTS.Common.Triage" Label="&amp;Triage:" LabelPosition="Left" />
           </Column>
-          <Column PercentWidth="25">
+          <Column PercentWidth="20">
             <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.Blocked" Label="&amp;Blocked:" LabelPosition="Left" />
           </Column>
-          <Column PercentWidth="25">
+          <Column PercentWidth="20">
             <Control Type="FieldControl" FieldName="Microsoft.VSTS.CMMI.Committed" Label="&amp;Committed:" LabelPosition="Left" />
           </Column>
         </Group>

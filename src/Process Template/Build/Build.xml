@@ -3,13 +3,20 @@
   <task id="BuildTask" name="Create Build Process Templates" plugin="Microsoft.ProjectCreationWizard.Build" completionMessage="Build tasks completed.">
     <dependencies />
     <taskXml>
-      <ProcessTemplate Type="Default" Filename="Build\Templates\DefaultTemplate.xaml" Description="This is the default build process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
+      <ProcessTemplate Type="Default" Filename="Build\Templates\DefaultTemplate.11.1.xaml" Description="This is the default build process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
       <ProcessTemplate Type="Upgrade" Filename="Build\Templates\UpgradeTemplate.xaml" Description="This is the upgrade build process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
-      <Permission allow="ViewBuilds, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Readers" />
-      <Permission allow="EditBuildQuality, ViewBuilds, QueueBuilds, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Contributors" />
-      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\Builders" />
-      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
-      <Permission allow="DeleteBuilds, DestroyBuilds, EditBuildQuality, ManageBuildQualities, RetainIndefinitely, ViewBuilds, ManageBuildQueue, QueueBuilds, StopBuilds, DeleteBuildDefinition, EditBuildDefinition, ViewBuildDefinition, OverrideBuildCheckInValidation" identity="$$COLLECTIONADMINGROUP$$" />
+      <ProcessTemplate Type="Custom" Filename="Build\Templates\AzureContinuousDeployment.11.xaml" Description="This is the build process template for continuous delivery in this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
+
+        <!-- Project-level groups -->
+      <Permission allow="ViewBuildDefinition, ViewBuilds" identity="[$$PROJECTNAME$$]\Readers" />
+      <Permission allow="ViewBuildDefinition, QueueBuilds, ViewBuilds, EditBuildQuality" identity="[$$PROJECTNAME$$]\Contributors" />
+      <Permission allow="ViewBuildDefinition, EditBuildDefinition, DeleteBuildDefinition, QueueBuilds, ManageBuildQueue, StopBuilds, ViewBuilds, EditBuildQuality, RetainIndefinitely, DeleteBuilds, ManageBuildQualities, DestroyBuilds, AdministerBuildPermissions" identity="[$$PROJECTNAME$$]\Build Administrators" />
+      <Permission allow="ViewBuildDefinition, EditBuildDefinition, DeleteBuildDefinition, QueueBuilds, ManageBuildQueue, StopBuilds, ViewBuilds, EditBuildQuality, RetainIndefinitely, DeleteBuilds, ManageBuildQualities, DestroyBuilds, AdministerBuildPermissions" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+
+      <!-- Collection-level groups -->
+      <Permission allow="EditBuildQuality, ManageBuildQueue, OverrideBuildCheckInValidation, QueueBuilds, UpdateBuildInformation, ViewBuildDefinition, ViewBuilds" identity="$$PROJECTCOLLECTIONBUILDSERVICESGROUP$$" />
+      <Permission allow="ViewBuildDefinition, EditBuildDefinition, DeleteBuildDefinition, QueueBuilds, ManageBuildQueue, StopBuilds, ViewBuilds, EditBuildQuality, RetainIndefinitely, DeleteBuilds, ManageBuildQualities, DestroyBuilds, AdministerBuildPermissions" identity="$$PROJECTCOLLECTIONBUILDADMINSGROUP$$" />
+      <Permission allow="ViewBuildDefinition, EditBuildDefinition, DeleteBuildDefinition, QueueBuilds, ManageBuildQueue, StopBuilds, ViewBuilds, EditBuildQuality, RetainIndefinitely, DeleteBuilds, ManageBuildQualities, DestroyBuilds, AdministerBuildPermissions, OverrideBuildCheckInValidation" identity="$$PROJECTCOLLECTIONADMINGROUP$$" />
     </taskXml>
   </task>
 </tasks>

@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProcessTemplate>
   <metadata>
-    <name>GovDev for TFS v1.0</name>
+    <name>GovDev for TFS 2.0</name>
     <description>This template allows you to organize and track the progress and health of projects by tying into a formal project mangement process while facilitating Agile processes as part of software design, build and test.</description>
-    <plugins>
+    <version type="ADCC42AB-9882-485E-A3ED-7678F01F66BC" major="2" minor="0"/>
+   <plugins>
       <plugin name="Microsoft.ProjectCreationWizard.Classification" wizardPage="false" />
       <plugin name="Microsoft.ProjectCreationWizard.Reporting" wizardPage="false" />
       <plugin name="Microsoft.ProjectCreationWizard.Portal" wizardPage="true" />

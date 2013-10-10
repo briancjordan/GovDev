@@ -24,6 +24,10 @@
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Requirement.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SupportTicket.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\UseCase.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewResponse.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackResponse.xml" />
       </WORKITEMTYPES>
     </taskXml>
   </task>
@@ -38,11 +42,23 @@
         <Permission allow="Read, Contribute, Delete, ManagePermissions, FullControl" identity="$$CREATOR_OWNER$$" />
         <Permission allow="Read" identity="[$$PROJECTNAME$$]\Readers" />
         <Permission allow="Read" identity="[$$PROJECTNAME$$]\Contributors" />
-        <Permission allow="Read" identity="[$$PROJECTNAME$$]\Builders" />
-        <Query name="My Bugs" fileName="WorkItem Tracking\Queries\MyBugs.wiq" />
-        <Query name="My Tasks" fileName="WorkItem Tracking\Queries\MyTasks.wiq" />
-        <Query name="My Test Cases" fileName="WorkItem Tracking\Queries\MyTestCases.wiq" />
-        <Query name="Use Case Planning" fileName="WorkItem Tracking\Queries\UseCasePlanning.wiq" />
+        <Permission allow="Read" identity="[$$PROJECTNAME$$]\Build Administrators" />
+        <QueryFolder name="Current Iteration">
+          <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
+          <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\ActiveTasks.wiq" />
+          <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\Iteration1Backlog.wiq" />
+          <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\Iteration1TaskBacklog.wiq" />
+          <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\Iteration1TestCaseBacklog.wiq" />
+          <Query name="Bug Triage" fileName="WorkItem Tracking\Queries\BugTriage.wiq" />
+          <Query name="Completed Tasks" fileName="WorkItem Tracking\Queries\CompletedTasks.wiq" />
+          <Query name="Open Issues" fileName="WorkItem Tracking\Queries\OpenIssues.wiq" />
+          <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
+          <Query name="Open Use Cases" fileName="WorkItem Tracking\Queries\OpenUseCases.wiq" />
+          <Query name="Resolved Bugs" fileName="WorkItem Tracking\Queries\ResolvedBugs.wiq" />
+          <Query name="Use Cases Delivered" fileName="WorkItem Tracking\Queries\UseCasesDelivered.wiq" />
+          <Query name="Use Cases without Tasks" fileName="WorkItem Tracking\Queries\UseCasesWithoutTasks.wiq" />
+          <Query name="Use Cases without Test Cases" fileName="WorkItem Tracking\Queries\UseCasesWithoutTestCases.wiq" />
+        </QueryFolder>
         <QueryFolder name="Project Management">
           <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\ActiveTasks.wiq" />
           <Query name="All Iterations Backlog" fileName="WorkItem Tracking\Queries\AllIterationsBacklog.wiq" />
@@ -61,39 +77,16 @@
           <Query name="Open Change Requests With Requirements" fileName="WorkItem Tracking\Queries\OpenChangeRequestsWithRequirements.wiq" />
           <Query name="Requirements with Open Change Requests" fileName="WorkItem Tracking\Queries\RequirementsWithOpenChangeRequests.wiq" />
         </QueryFolder>
-        <QueryFolder name="Iteration Management">
-          <QueryFolder name="Iteration 1">
-            <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
-            <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\ActiveTasks.wiq" />
-            <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\Iteration1Backlog.wiq" />
-            <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\Iteration1TaskBacklog.wiq" />
-            <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\Iteration1TestCaseBacklog.wiq" />
-            <Query name="Bug Triage" fileName="WorkItem Tracking\Queries\BugTriage.wiq" />
-            <Query name="Completed Tasks" fileName="WorkItem Tracking\Queries\CompletedTasks.wiq" />
-            <Query name="Open Issues" fileName="WorkItem Tracking\Queries\OpenIssues.wiq" />
-            <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
-            <Query name="Open Use Cases" fileName="WorkItem Tracking\Queries\OpenUseCases.wiq" />
-            <Query name="Resolved Bugs" fileName="WorkItem Tracking\Queries\ResolvedBugs.wiq" />
-            <Query name="Use Cases Delivered" fileName="WorkItem Tracking\Queries\UseCasesDelivered.wiq" />
-            <Query name="Use Cases without Tasks" fileName="WorkItem Tracking\Queries\UseCasesWithoutTasks.wiq" />
-            <Query name="Use Cases without Test Cases" fileName="WorkItem Tracking\Queries\UseCasesWithoutTestCases.wiq" />
-          </QueryFolder>
-          <QueryFolder name="Iteration 2">
-            <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\Iteration2Backlog.wiq" />
-            <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\Iteration2TaskBacklog.wiq" />
-            <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\Iteration2TestCaseBacklog.wiq" />
-          </QueryFolder>
-          <QueryFolder name="Iteration 3">
-            <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\Iteration3Backlog.wiq" />
-           <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\Iteration3TaskBacklog.wiq" />
-            <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\Iteration3TestCaseBacklog.wiq" />
-          </QueryFolder>
-        </QueryFolder>
         <QueryFolder name="Test Management">
           <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
           <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
           <Query name="Resolved Bugs" fileName="WorkItem Tracking\Queries\ResolvedBugs.wiq" />
         </QueryFolder>
+        <Query name="My Bugs" fileName="WorkItem Tracking\Queries\MyBugs.wiq" />
+        <Query name="My Tasks" fileName="WorkItem Tracking\Queries\MyTasks.wiq" />
+        <Query name="Feedback" fileName="WorkItem Tracking\Queries\Feedback.wiq" />
+        <Query name="My Test Cases" fileName="WorkItem Tracking\Queries\MyTestCases.wiq" />
+        <Query name="Use Case Planning" fileName="WorkItem Tracking\Queries\UseCasePlanning.wiq" />
       </QUERIES>
     </taskXml>
   </task>
@@ -103,6 +96,18 @@
     </dependencies>
     <taskXml>
       <CATEGORIES fileName="WorkItem Tracking\Categories.xml" />
+    </taskXml>
+  </task>
+  <task id="ProcessConfiguration" name="Process Configuration" plugin="Microsoft.ProjectCreationWizard.WorkItemTracking" completionMessage="Process configuration uploaded">
+    <dependencies>
+      <dependency taskId="WITs" />
+      <dependency taskId="Categories" />
+    </dependencies>
+    <taskXml>
+      <PROCESSCONFIGURATION>
+        <CommonConfiguration fileName="WorkItem Tracking\Process\CommonConfiguration.xml"/>
+        <AgileConfiguration fileName="WorkItem Tracking\Process\AgileConfiguration.xml"/>
+      </PROCESSCONFIGURATION>
     </taskXml>
   </task>
 </tasks>

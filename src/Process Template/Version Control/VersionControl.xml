@@ -5,11 +5,8 @@
     <taskXml>
       <permission allow="Read, PendChange, Checkin, Label, Lock, ReviseOther, UnlockOther, UndoOther, LabelOther, AdminProjectRights, CheckinOther, Merge, ManageBranch" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
       <permission allow="Read, PendChange, Checkin, Label, Lock, Merge" identity="[$$PROJECTNAME$$]\Contributors" />
-      <permission allow="Read, PendChange, Checkin, Label, Lock, Merge" identity="[$$PROJECTNAME$$]\Builders" />
+      <permission allow="Read, PendChange, Checkin, Label, Lock, Merge" identity="[$$PROJECTNAME$$]\Build Administrators" />
       <permission allow="Read" identity="[$$PROJECTNAME$$]\Readers" />
-      <checkin_note label="Code Reviewer" required="false" order="1" />
-      <checkin_note label="Security Reviewer" required="false" order="2" />
-      <checkin_note label="Performance Reviewer" required="false" order="3" />
       <exclusive_checkout required="false" />
       <get_latest_on_checkout required="false" />
     </taskXml>

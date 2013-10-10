@@ -55,7 +55,7 @@
       <mtbwa:GetBuildDirectory DisplayName="Get the Build Directory" Result="[buildDirectory]" />
       <If Condition="[Not String.IsNullOrEmpty(ConfigurationFolderPath)]" DisplayName="If Not String.IsNullOrEmpty(ConfigurationFolderPath)">
         <If.Then>
-          <mtbwa:TfsBuild BinariesSubdirectory="[BinariesSubdirectory]" BuildDirectory="[buildDirectory]" CommandLineArguments="[MSBuildArguments]" ConfigurationFolderPath="[ConfigurationFolderPath]" DisplayName="Run TfsBuild for Configuration Folder" DoNotDownloadBuildType="[DoNotDownloadBuildType]" LogFilePerProject="[LogFilePerProject]" RecursionType="[RecursionType]" SourcesSubdirectory="[SourcesSubdirectory]" TestResultsSubdirectory="[TestResultsSubdirectory]" ToolPlatform="[MSBuildPlatform]" Verbosity="[Verbosity]" />
+          <mtbwa:TfsBuild BinariesSubdirectory="[BinariesSubdirectory]" BuildDirectory="[buildDirectory]" CommandLineArguments="[MSBuildArguments]" ConfigurationFolderPath="[ConfigurationFolderPath]" DisplayName="Run TfsBuild for Configuration Folder" DoNotDownloadBuildType="[DoNotDownloadBuildType]" LogFilePerProject="[LogFilePerProject]" RecursionType="[RecursionType]" SourcesSubdirectory="[SourcesSubdirectory]" TargetsNotLogged="[New String() {&quot;GetNativeManifest&quot;, &quot;GetCopyToOutputDirectoryItems&quot;, &quot;GetTargetPath&quot;}]" TestResultsSubdirectory="[TestResultsSubdirectory]" ToolPlatform="[MSBuildPlatform]" Verbosity="[Verbosity]" />
         </If.Then>
       </If>
       <If Condition="[BuildDetail.CompilationStatus = Microsoft.TeamFoundation.Build.Client.BuildPhaseStatus.Unknown]" DisplayName="If CompilationStatus = Unknown">
