@@ -3,6 +3,24 @@
   <task id="GroupCreation1" name="Create Groups and Permissions" plugin="Microsoft.ProjectCreationWizard.Groups" completionMessage="Groups and Permissions created.">
     <taskXml>
       <groups>
+        <group name="@defaultTeam">
+          <permissions>
+            <permission name="GENERIC_READ" class="PROJECT" allow="true" />
+          </permissions>
+          <members>
+            <member name="@creator" />
+          </members>
+          <teamSettings areaPath="Area">
+            <iterationPaths backlogPath="Iteration">
+              <iterationPath path="Release 1\Iteration 1" />
+              <iterationPath path="Release 1\Iteration 2" />
+              <iterationPath path="Release 1\Iteration 3" />
+              <iterationPath path="Release 1\Iteration 4" />
+              <iterationPath path="Release 1\Iteration 5" />
+              <iterationPath path="Release 1\Iteration 6" />
+            </iterationPaths>
+          </teamSettings>
+        </group>
         <group name="Readers" description="Members of this group have access to the team project.">
           <permissions>
             <permission name="GENERIC_READ" class="PROJECT" allow="true" />
@@ -24,6 +42,9 @@
             <permission name="MANAGE_TEST_ENVIRONMENTS" class="PROJECT" allow="true" />
             <permission name="MANAGE_TEST_CONFIGURATIONS" class="PROJECT" allow="true" />
           </permissions>
+          <members>
+            <member name="@defaultTeam" />
+          </members>
         </group>
         <group name="Build Administrators" description="Members of this group can create, modify and delete build definitions and manage queued and completed builds.">
           <permissions>

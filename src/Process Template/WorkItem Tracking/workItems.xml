@@ -46,9 +46,9 @@
         <QueryFolder name="Current Iteration">
           <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
           <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\ActiveTasks.wiq" />
-          <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\Iteration1Backlog.wiq" />
-          <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\Iteration1TaskBacklog.wiq" />
-          <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\Iteration1TestCaseBacklog.wiq" />
+          <Query name="Iteration Backlog" fileName="WorkItem Tracking\Queries\IterationBacklog.wiq" />
+          <Query name="Iteration Task Backlog" fileName="WorkItem Tracking\Queries\IterationTaskBacklog.wiq" />
+          <Query name="Iteration Test Case Backlog" fileName="WorkItem Tracking\Queries\IterationTestCaseBacklog.wiq" />
           <Query name="Bug Triage" fileName="WorkItem Tracking\Queries\BugTriage.wiq" />
           <Query name="Completed Tasks" fileName="WorkItem Tracking\Queries\CompletedTasks.wiq" />
           <Query name="Open Issues" fileName="WorkItem Tracking\Queries\OpenIssues.wiq" />

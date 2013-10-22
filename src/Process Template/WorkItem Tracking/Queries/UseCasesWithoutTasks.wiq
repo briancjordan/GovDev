@@ -11,7 +11,7 @@
            )
        AND Source.[System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
        AND System.Links.LinkType &lt;&gt; ''
-       AND Target.[System.WorkItemType] = 'Test Case'
+       AND Target.[System.WorkItemType] = 'Task'
   ORDER BY [System.Id] mode(DoesNotContain)
   </Wiql>
 </WorkItemQuery>
