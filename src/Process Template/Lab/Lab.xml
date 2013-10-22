@@ -4,11 +4,11 @@
     <dependencies />
     <taskXml>
       <ProcessTemplate Type="Custom" Filename="Lab\Templates\LabDefaultTemplate.11.xaml" Description="This is the default Lab process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
-      <permission allow="Read, Create, Write, Edit, Delete, ManagePermissions, ManageChildPermissions, Start, Stop, ManageSnapshots, Pause, ManageLocation, DeleteLocation, ManageTestMachines" identity="$$PROJECTCOLLECTIONADMINGROUP$$" />
-      <permission allow="Read, Create, Write, Edit, Delete, ManageChildPermissions, Start, Stop, ManageSnapshots, Pause, ManageLocation, DeleteLocation, ManageTestMachines" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
-      <permission allow="Read, Create, Write, Edit, Start, Stop, ManageSnapshots, Pause" identity="[$$PROJECTNAME$$]\Contributors" />
+      <permission allow="Read, Create, Write, Edit, Delete, Start, Stop, Pause, ManageSnapshots, ManageLocation, DeleteLocation, ManagePermissions, ManageChildPermissions" identity="$$PROJECTCOLLECTIONADMINGROUP$$" />
+      <permission allow="Read, Create, Write, Edit, Delete, Start, Stop, Pause, ManageSnapshots, ManageLocation, DeleteLocation, ManageChildPermissions" identity="[$$PROJECTNAME$$]\$$PROJECTADMINGROUP$$" />
+      <permission allow="Read, Create, Write, Edit, Start, Stop, Pause, ManageSnapshots" identity="[$$PROJECTNAME$$]\Contributors" />
       <permission allow="Read" identity="[$$PROJECTNAME$$]\Readers" />
-      <permission allow="Read, Write, Edit, Start, Stop, ManageSnapshots, Pause" identity="$$BUILDSERVICEGROUP$$" />
+      <permission allow="Read, Write, Edit, Start, Stop, Pause, ManageSnapshots" identity="$$BUILDSERVICEGROUP$$" />
     </taskXml>
   </task>
 </tasks>

@@ -70,7 +70,7 @@
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -91,7 +91,7 @@
         </WHENNOTCHANGED>
       </FIELD>
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the change request was completed</HELPTEXT>
@@ -101,7 +101,7 @@
       </FIELD>
       <FIELD name="Triage" refname="Microsoft.VSTS.Common.Triage" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Pending" />
           <LISTITEM value="More Info" />
           <LISTITEM value="Info Received" />
@@ -111,7 +111,7 @@
         <HELPTEXT>Status of triaging the change request</HELPTEXT>
       </FIELD>
       <FIELD name="Blocked" refname="Microsoft.VSTS.CMMI.Blocked" type="String" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>

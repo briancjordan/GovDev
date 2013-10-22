@@ -54,7 +54,7 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -106,13 +106,13 @@
       <FIELD name="Local Data Source" refname="Microsoft.VSTS.TCM.LocalDataSource" type="HTML" />
       <FIELD reportable="dimension" type="String" name="Automation status" refname="Microsoft.VSTS.TCM.AutomationStatus">
         <WHEN field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
-          <ALLOWEDVALUES>
+          <ALLOWEDVALUES expanditems="true">
             <LISTITEM value="Not Automated" />
             <LISTITEM value="Planned" />
           </ALLOWEDVALUES>
         </WHEN>
         <WHENNOT field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
-          <ALLOWEDVALUES>
+          <ALLOWEDVALUES expanditems="true">
             <LISTITEM value="Automated" />
           </ALLOWEDVALUES>
           <COPY from="value" value="Automated" />
@@ -120,7 +120,7 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>

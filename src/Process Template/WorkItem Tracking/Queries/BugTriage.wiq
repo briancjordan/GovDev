@@ -20,7 +20,7 @@
            [System.IterationPath]
       FROM WorkItems 
      WHERE [System.TeamProject] = @project 
-       AND [System.IterationPath] UNDER '$$PROJECTNAME$$\Iteration 1'
+       AND [System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
        AND [System.WorkItemType] = 'Bug'
        AND [System.State] = 'Active'
        AND [System.AssignedTo] = '' 

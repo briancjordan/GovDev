@@ -23,12 +23,12 @@
        AND [System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward'
        AND (
                (Target.[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory'
-               AND Target.[System.IterationPath] UNDER '$$PROJECTNAME$$\Iteration 1'
+               AND Target.[System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
                AND Target.[System.State] IN ('New','Active','Closed')
                AND Target.[System.AreaPath] UNDER @project)
                OR
                (Target.[System.WorkItemType] IN GROUP 'Microsoft.RequirementCategory'
-               AND Target.[System.IterationPath] UNDER '$$PROJECTNAME$$\Iteration 1'
+               AND Target.[System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
                AND Target.[System.State] IN ('New','Active','Resolved','Closed')
                AND Target.[System.AreaPath] UNDER @project)
            )

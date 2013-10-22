@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Code Review Response">
     <DESCRIPTION>This is a child work item that should be parented to a Code Review Request work item. It is assigned to the reviewer and contains the current state of the review for this reviewer.</DESCRIPTION>
     <FIELDS>
       <!-- ********** Core fields ******************* -->
       <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
-        <ALLOWEXISTINGVALUE/>
-        <VALIDUSER/>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
       </FIELD>
       <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
         <REQUIRED />
       </FIELD>
-      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension"/>
-      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension"/>
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension" />
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension" />
       <FIELD name="Accepted Date" refname="Microsoft.VSTS.CodeReview.AcceptedDate" type="DateTime" reportable="dimension" />
-      <FIELD name="Accepted By" refname="Microsoft.VSTS.CodeReview.AcceptedBy" type="String" reportable="dimension" syncnamechanges="true"/>
+      <FIELD name="Accepted By" refname="Microsoft.VSTS.CodeReview.AcceptedBy" type="String" reportable="dimension" syncnamechanges="true" />
       <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
-      <FIELD name="Created By" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true"/>
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
       <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
-      <FIELD name="Changed By" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true"/>
-      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension"/>
-      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" reportable="dimension" syncnamechanges="true"/>
-      <FIELD name="State" refname="System.State" type="String" reportable="dimension"/>
-      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension"/>
-      <FIELD name="Reviewed By" refname="Microsoft.VSTS.Common.ReviewedBy" type="String"/>
-      <FIELD name="Closing Comment" refname="Microsoft.VSTS.CodeReview.ClosingComment" type="String"/>      
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Closed By" refname="Microsoft.VSTS.Common.ClosedBy" type="String" reportable="dimension" syncnamechanges="true" />
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension" />
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension" />
+      <FIELD name="Reviewed By" refname="Microsoft.VSTS.Common.ReviewedBy" type="String" />
+      <FIELD name="Closing Comment" refname="Microsoft.VSTS.CodeReview.ClosingComment" type="String" />
       <FIELD name="Closed Status Code" refname="Microsoft.VSTS.CodeReview.ClosedStatusCode" type="Integer">
         <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatus" value="">
           <COPY from="value" value="0" />
@@ -46,12 +46,12 @@
           <COPY from="value" value="5" />
         </WHEN>
         <ALLOWEDVALUES expanditems="true">
-          <LISTITEM value="0"/>
-          <LISTITEM value="1"/>
-          <LISTITEM value="2"/>
-          <LISTITEM value="3"/>
-          <LISTITEM value="4"/>
-          <LISTITEM value="5"/>
+          <LISTITEM value="0" />
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+          <LISTITEM value="5" />
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="0" />
       </FIELD>
@@ -74,7 +74,7 @@
         <WHEN field="Microsoft.VSTS.CodeReview.ClosedStatusCode" value="5">
           <COPY from="value" value="Removed" />
         </WHEN>
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Looks Good" />
           <LISTITEM value="With Comments" />
           <LISTITEM value="Needs Work" />
@@ -84,10 +84,10 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
+        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
       <!-- **************** Mirror field to determine the current state in code -->
       <FIELD name="State Code" refname="Microsoft.VSTS.Common.StateCode" type="Integer">
@@ -101,14 +101,13 @@
           <COPY from="value" value="2" />
         </WHEN>
         <ALLOWEDVALUES expanditems="true">
-          <LISTITEM value="0"/>
-          <LISTITEM value="1"/>
-          <LISTITEM value="2"/>
+          <LISTITEM value="0" />
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="0" />
       </FIELD>
     </FIELDS>
-
     <!-- *************** Workflow ****************   -->
     <WORKFLOW>
       <STATES>
@@ -140,7 +139,6 @@
             </FIELD>
           </FIELDS>
         </STATE>
-
         <STATE value="Accepted">
           <FIELDS>
             <FIELD refname="System.AssignedTo">
@@ -169,7 +167,6 @@
             </FIELD>
           </FIELDS>
         </STATE>
-        
         <STATE value="Closed">
           <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
@@ -184,14 +181,12 @@
           </FIELDS>
         </STATE>
       </STATES>
-
       <TRANSITIONS>
         <TRANSITION from="" to="Requested">
           <REASONS>
             <DEFAULTREASON value="New" />
           </REASONS>
         </TRANSITION>
-
         <TRANSITION from="Requested" to="Accepted">
           <ACTIONS>
             <ACTION value="Microsoft.VSTS.CodeReview.Accept" />
@@ -214,7 +209,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Requested" to="Closed">
           <ACTIONS>
             <ACTION value="Microsoft.VSTS.CodeReview.Decline" />
@@ -239,7 +233,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Accepted" to="Closed">
           <ACTIONS>
             <ACTION value="Microsoft.VSTS.CodeReview.Complete" />
@@ -265,7 +258,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Closed" to="Requested">
           <ACTIONS>
             <ACTION value="Microsoft.VSTS.CodeReview.Reassign" />
@@ -276,12 +268,11 @@
         </TRANSITION>
       </TRANSITIONS>
     </WORKFLOW>
-
     <FORM>
       <Layout HideControlBorders="true">
         <Group>
           <Column PercentWidth="100">
-            <Control ReadOnly="True" Type="FieldControl" FieldName="System.Title" EmptyText="&lt;Enter title here&gt;" />
+            <Control ReadOnly="True" Type="FieldControl" FieldName="System.Title" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
             <Control ReadOnly="True" Type="FieldControl" FieldName="System.AssignedTo" ControlFontSize="large" Label="Assi&amp;gned To" LabelPosition="Left" EmptyText="&lt;No one&gt;" />
             <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.Common.ReviewedBy" Label="Reviewed By" LabelPosition="Left" />
           </Column>
@@ -306,13 +297,10 @@
               <Column PercentWidth="100">
                 <Control ReadOnly="True" Type="FieldControl" FieldName="System.CreatedBy" Label="Created By" LabelPosition="Left" />
                 <Control ReadOnly="True" Type="FieldControl" FieldName="System.CreatedDate" Label="Created Date" LabelPosition="Left" />
-
                 <Control ReadOnly="True" Type="FieldControl" FieldName="System.ChangedBy" Label="Updated By" LabelPosition="Left" />
                 <Control ReadOnly="True" Type="FieldControl" FieldName="System.ChangedDate" Label="Updated Date" LabelPosition="Left" />
-
                 <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.AcceptedBy" Label="Accepted By" LabelPosition="Left" />
                 <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.AcceptedDate" Label="Accepted Date" LabelPosition="Left" />
-
                 <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.Common.ClosedBy" Label="Closed By" LabelPosition="Left" />
                 <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.Common.ClosedDate" Label="Closed Date" LabelPosition="Left" />
                 <Control ReadOnly="True" Type="FieldControl" FieldName="Microsoft.VSTS.CodeReview.ClosedStatus" Label="Closed Status" LabelPosition="Left" />
@@ -329,4 +317,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</witd:WITD>
+</Witd:WITD>

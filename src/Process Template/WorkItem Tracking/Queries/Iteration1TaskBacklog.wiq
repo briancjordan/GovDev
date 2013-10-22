@@ -17,7 +17,7 @@
 	FROM	WorkItemLinks 
 	WHERE	(Source.[System.TeamProject] = @project 
 	AND	Source.[System.AreaPath] UNDER @project 
-	AND	Source.[System.IterationPath] under '$$PROJECTNAME$$\Iteration 1' 
+	AND	Source.[System.IterationPath] under '$$PROJECTNAME$$\Release 1\Iteration 1' 
 	AND	(Source.[System.WorkItemType] = 'Use Case' OR Source.[System.WorkItemType] = 'Task')) 
 	AND	([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') 
 	AND	(Target.[System.WorkItemType] = 'Task') 

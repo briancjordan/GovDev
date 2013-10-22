@@ -72,7 +72,7 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Resolved Reason" refname="Microsoft.VSTS.Common.ResolvedReason" type="String" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="As Designed" />
           <LISTITEM value="Cannot Reproduce" />
           <LISTITEM value="Deferred" />
@@ -95,7 +95,7 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -105,7 +105,7 @@
         <HELPTEXT>Business importance. 1=must fix; 4=unimportant.</HELPTEXT>
       </FIELD>
       <FIELD name="Severity" refname="Microsoft.VSTS.Common.Severity" type="String" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1 - Critical" />
           <LISTITEM value="2 - High" />
           <LISTITEM value="3 - Medium" />
@@ -119,13 +119,13 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
       <FIELD name="Found In" refname="Microsoft.VSTS.Build.FoundIn" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was found</HELPTEXT>
@@ -199,7 +199,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Deferred" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="Deferred" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -209,7 +209,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Duplicate" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="Duplicate" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -219,7 +219,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="As Designed" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="As Designed" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -229,7 +229,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Cannot Reproduce" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="Cannot Reproduce" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -239,7 +239,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Obsolete" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="Obsolete" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -249,7 +249,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Fixed" />
-                  <ALLOWEDVALUES>
+                  <ALLOWEDVALUES expanditems="true">
                     <LISTITEM value="Fixed" />
                   </ALLOWEDVALUES>
                 </FIELD>

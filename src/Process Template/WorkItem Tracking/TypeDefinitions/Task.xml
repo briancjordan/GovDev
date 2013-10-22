@@ -3,13 +3,13 @@
   <WORKITEMTYPE name="Task">
     <DESCRIPTION>Tracks work that needs to be done.</DESCRIPTION>
     <FIELDS>
-      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension"/>
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
       <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
         <REQUIRED />
         <HELPTEXT>Work required and how this will implement a Use Case</HELPTEXT>
       </FIELD>
       <FIELD name="Activity" refname="Microsoft.VSTS.Common.Activity" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="Development" />
           <LISTITEM value="Testing" />
           <LISTITEM value="Requirements" />
@@ -52,7 +52,7 @@
         <HELPTEXT>The reason why the task is in its current state</HELPTEXT>
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -109,189 +109,189 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
     </FIELDS>
-        <WORKFLOW>
-            <STATES>
-                <STATE value="New">
-                    <FIELDS>
-        		<!-- <FIELD refname="Microsoft.VSTS.Common.ResolvedDate"> 
+    <WORKFLOW>
+      <STATES>
+        <STATE value="New">
+          <FIELDS>
+            <!-- <FIELD refname="Microsoft.VSTS.Common.ResolvedDate"> 
             			<EMPTY /> 
         		</FIELD> 
         		<FIELD refname="Microsoft.VSTS.Common.ResolvedBy"> 
             			<EMPTY /> 
         		</FIELD> -->
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-                            <EMPTY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
-                            <EMPTY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-                            <EMPTY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-                            <EMPTY />
-                        </FIELD>
-                    </FIELDS>
-                </STATE>
-                <STATE value="Active">
-                    <FIELDS>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-                            <EMPTY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
-                            <EMPTY />
-                        </FIELD>
-                    </FIELDS>
-                </STATE>
-                <STATE value="Closed">
-                    <FIELDS>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-                            <REQUIRED />
-                        </FIELD>
-                    </FIELDS>
-                </STATE>
-                <STATE value="Removed" />
-            </STATES>
-            <TRANSITIONS>
-                <TRANSITION from="" to="New">
-                    <REASONS>
-                        <DEFAULTREASON value="New" />
-                    </REASONS>
-                </TRANSITION>
-                <TRANSITION from="New" to="Active">
-                  <ACTIONS>
-                    <ACTION value="Microsoft.VSTS.Actions.StartWork" />
-                  </ACTIONS>
-                  <REASONS>
-                        <DEFAULTREASON value="Work started" />
-                    </REASONS>
-                    <FIELDS>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-                            <COPY from="currentuser" />
-                            <VALIDUSER />
-                            <REQUIRED />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-                            <SERVERDEFAULT from="clock" />
-                        </FIELD>
-                        <FIELD refname="System.AssignedTo">
-                            <DEFAULT from="currentuser" />
-                        </FIELD>
-                    </FIELDS>
-                </TRANSITION>
-                <TRANSITION from="Active" to="New">
-                  <ACTIONS>
-                    <ACTION value="Microsoft.VSTS.Actions.StopWork" />
-                  </ACTIONS>
-                  <REASONS>
-                        <DEFAULTREASON value="Work halted" />
-                    </REASONS>
-                </TRANSITION>
-                <TRANSITION from="Active" to="Closed">
-                    <ACTIONS>
-                        <ACTION value="Microsoft.VSTS.Actions.Checkin" />
-                    </ACTIONS>
-                    <REASONS>
-                        <DEFAULTREASON value="Completed" />
-                        <REASON value="Cut" />
-                        <REASON value="Deferred" />
-                        <REASON value="Obsolete" />
-                    </REASONS>
-                    <FIELDS>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-                            <READONLY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-                            <READONLY />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-                            <SERVERDEFAULT from="clock" />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
-                            <COPY from="currentuser" />
-                            <VALIDUSER />
-                            <REQUIRED />
-                        </FIELD>
-                    </FIELDS>
-                </TRANSITION>
-                <TRANSITION from="New" to="Closed">
-                  <ACTIONS>
-                    <ACTION value="Microsoft.VSTS.Actions.Checkin" />
-                  </ACTIONS>
-                  <REASONS>
-                    <DEFAULTREASON value="Completed" />
-                    <REASON value="Cut" />
-                    <REASON value="Deferred" />
-                    <REASON value="Obsolete" />
-                  </REASONS>
-                  <FIELDS>
-                    <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-                      <READONLY />
-                    </FIELD>
-                    <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-                      <READONLY />
-                    </FIELD>
-                    <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-                      <SERVERDEFAULT from="clock" />
-                    </FIELD>
-                    <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
-                      <COPY from="currentuser" />
-                      <VALIDUSER />
-                      <REQUIRED />
-                    </FIELD>
-                  </FIELDS>
-                </TRANSITION>
-                <TRANSITION from="Closed" to="Active">
-                    <REASONS>
-                        <DEFAULTREASON value="Reactivated" />
-                    </REASONS>
-                    <FIELDS>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-                            <COPY from="currentuser" />
-                            <VALIDUSER />
-                            <REQUIRED />
-                        </FIELD>
-                        <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-                            <SERVERDEFAULT from="clock" />
-                        </FIELD>
-                        <FIELD refname="System.AssignedTo">
-                            <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
-                        </FIELD>
-                    </FIELDS>
-                </TRANSITION>
-                <TRANSITION from="Closed" to="New">
-                <REASONS>
-                  <DEFAULTREASON value="Reactivated" />
-                </REASONS>
-                <FIELDS>
-                  <FIELD refname="System.AssignedTo">
-                    <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
-                  </FIELD>
-                </FIELDS>
-              </TRANSITION>
-                <TRANSITION from="New" to="Removed">
-                    <REASONS>
-                        <DEFAULTREASON value="Removed from the backlog" />
-                    </REASONS>
-                </TRANSITION>
-                <TRANSITION from="Active" to="Removed">
-                    <REASONS>
-                        <DEFAULTREASON value="Removed from the backlog" />
-                    </REASONS>
-                </TRANSITION>
-                <TRANSITION from="Removed" to="New">
-                    <REASONS>
-                        <DEFAULTREASON value="Reconsidering the Task" />
-                    </REASONS>
-                </TRANSITION>
-            </TRANSITIONS>
-        </WORKFLOW>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Active">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <EMPTY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <EMPTY />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Closed">
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </STATE>
+        <STATE value="Removed" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="New">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="New" to="Active">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StartWork" />
+          </ACTIONS>
+          <REASONS>
+            <DEFAULTREASON value="Work started" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <DEFAULT from="currentuser" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Active" to="New">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.StopWork" />
+          </ACTIONS>
+          <REASONS>
+            <DEFAULTREASON value="Work halted" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Active" to="Closed">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+          <REASONS>
+            <REASON value="Cut" />
+            <REASON value="Deferred" />
+            <REASON value="Obsolete" />
+            <DEFAULTREASON value="Completed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="New" to="Closed">
+          <ACTIONS>
+            <ACTION value="Microsoft.VSTS.Actions.Checkin" />
+          </ACTIONS>
+          <REASONS>
+            <REASON value="Cut" />
+            <REASON value="Deferred" />
+            <REASON value="Obsolete" />
+            <DEFAULTREASON value="Completed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <READONLY />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Closed" to="Active">
+          <REASONS>
+            <DEFAULTREASON value="Reactivated" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <COPY from="currentuser" />
+              <VALIDUSER />
+              <REQUIRED />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Closed" to="New">
+          <REASONS>
+            <DEFAULTREASON value="Reactivated" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="System.AssignedTo">
+              <COPY from="field" field="Microsoft.VSTS.Common.ClosedBy" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="New" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Active" to="Removed">
+          <REASONS>
+            <DEFAULTREASON value="Removed from the backlog" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Removed" to="New">
+          <REASONS>
+            <DEFAULTREASON value="Reconsidering the Task" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
     <FORM>
       <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
         <Group>

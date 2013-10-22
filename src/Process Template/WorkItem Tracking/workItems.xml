@@ -105,8 +105,8 @@
     </dependencies>
     <taskXml>
       <PROCESSCONFIGURATION>
-        <CommonConfiguration fileName="WorkItem Tracking\Process\CommonConfiguration.xml"/>
-        <AgileConfiguration fileName="WorkItem Tracking\Process\AgileConfiguration.xml"/>
+        <CommonConfiguration fileName="WorkItem Tracking\Process\CommonConfiguration.xml" />
+        <AgileConfiguration fileName="WorkItem Tracking\Process\AgileConfiguration.xml" />
       </PROCESSCONFIGURATION>
     </taskXml>
   </task>

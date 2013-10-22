@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Feedback Request">
     <DESCRIPTION>Represents the master work item for a feedback session. Child work items should be created of the type Feedback Response.</DESCRIPTION>
     <FIELDS>
@@ -13,8 +13,8 @@
         <HELPTEXT>Guidance on what areas of the product that feedback should be scoped to</HELPTEXT>
       </FIELD>
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
-        <ALLOWEXISTINGVALUE/>
-        <VALIDUSER/>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
         <HELPTEXT>The person requesting feedback</HELPTEXT>
       </FIELD>
       <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
@@ -45,7 +45,7 @@
       </FIELD>
       <!-- ********** Application Launch fields ******************* -->
       <FIELD name="Application Type" refname="Microsoft.VSTS.Feedback.ApplicationType" type="String">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Web application" />
           <LISTITEM value="Remote machine" />
           <LISTITEM value="Client application" />
@@ -62,13 +62,12 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the feedback was requested</HELPTEXT>
       </FIELD>
     </FIELDS>
-
     <!-- *************** Workflow ****************   -->
     <WORKFLOW>
       <STATES>
@@ -85,7 +84,6 @@
             </FIELD>
           </FIELDS>
         </STATE>
-
         <STATE value="Closed">
           <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
@@ -96,10 +94,8 @@
             </FIELD>
           </FIELDS>
         </STATE>
-
         <STATE value="Removed" />
       </STATES>
-
       <TRANSITIONS>
         <TRANSITION from="" to="Active">
           <REASONS>
@@ -112,7 +108,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Active" to="Closed">
           <REASONS>
             <DEFAULTREASON value="Closed" />
@@ -133,7 +128,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Closed" to="Active">
           <REASONS>
             <DEFAULTREASON value="Reactivated" />
@@ -144,7 +138,6 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-
         <TRANSITION from="Active" to="Removed">
           <REASONS>
             <DEFAULTREASON value="Cancelled Feedback Request" />
@@ -152,12 +145,11 @@
         </TRANSITION>
       </TRANSITIONS>
     </WORKFLOW>
-
     <FORM>
       <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
         <Group Margin="(0,0,0,5)">
           <Column PercentWidth="100">
-            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" />
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
           </Column>
         </Group>
         <Group>
@@ -171,7 +163,7 @@
                   <Column PercentWidth="100">
                     <Control FieldName="Microsoft.VSTS.Feedback.ApplicationType" Type="FieldControl" Label="Type" LabelPosition="Left" />
                     <Control FieldName="Microsoft.VSTS.Feedback.ApplicationStartInformation" Type="FieldControl" Label="Start Information" LabelPosition="Left" />
-                    <Control FieldName="Microsoft.VSTS.Feedback.ApplicationLaunchInstructions" Type="HtmlFieldControl" Label="Launch Instructions" LabelPosition="Left" Dock="Fill"/>
+                    <Control FieldName="Microsoft.VSTS.Feedback.ApplicationLaunchInstructions" Type="HtmlFieldControl" Label="Launch Instructions" LabelPosition="Left" Dock="Fill" />
                   </Column>
                 </Group>
               </Tab>
@@ -219,4 +211,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</witd:WITD>
+</Witd:WITD>

@@ -83,7 +83,7 @@
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -94,7 +94,7 @@
       </FIELD>
       <FIELD name="Triage" refname="Microsoft.VSTS.Common.Triage" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Pending" />
           <LISTITEM value="More Info" />
           <LISTITEM value="Info Received" />
@@ -105,7 +105,7 @@
       </FIELD>
       <!-- **************** Build Integration Fields *******************************************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the issue was resolved</HELPTEXT>
@@ -116,7 +116,7 @@
       </FIELD>
       <FIELD name="Severity" refname="Microsoft.VSTS.Common.Severity" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1 - Critical" />
           <LISTITEM value="2 - High" />
           <LISTITEM value="3 - Medium" />
@@ -129,7 +129,7 @@
       <FIELD name="Corrective Action Actual Resolution" refname="Microsoft.VSTS.CMMI.CorrectiveActionActualResolution" type="HTML" />
       <FIELD name="Target Resolve Date" refname="Microsoft.VSTS.CMMI.TargetResolveDate" type="DateTime" />
       <FIELD name="Escalate" refname="Microsoft.VSTS.CMMI.Escalate" type="String">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>

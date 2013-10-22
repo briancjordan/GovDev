@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Feedback Response">
     <DESCRIPTION>This is a child work item that should be parented to a Feedback Request work item. It is assigned to the reviewer and contains the current state of the review for this reviewer.</DESCRIPTION>
     <FIELDS>
@@ -13,8 +13,8 @@
         <HELPTEXT>Feedback response from the stakeholder</HELPTEXT>
       </FIELD>
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
-        <ALLOWEXISTINGVALUE/>
-        <VALIDUSER/>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER />
         <HELPTEXT>Person responsible for next set of actions on the feedback</HELPTEXT>
       </FIELD>
       <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
@@ -44,7 +44,7 @@
         <HELPTEXT>The iteration within which this feedback response was requested</HELPTEXT>
       </FIELD>
       <FIELD name="Rating" refname="Microsoft.VSTS.Common.Rating" type="String" reportable="dimension">
-        <ALLOWEDVALUES>
+        <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="0 - Not Rated" />
           <LISTITEM value="1 - Poor" />
           <LISTITEM value="2 - Fair" />
@@ -55,18 +55,17 @@
         <DEFAULT from="value" value="0 - Not Rated" />
         <HELPTEXT>Overall rating provided as part of feedback response</HELPTEXT>
       </FIELD>
-      <FIELD name="System Info" refname="Microsoft.VSTS.TCM.SystemInfo" type="HTML" >
+      <FIELD name="System Info" refname="Microsoft.VSTS.TCM.SystemInfo" type="HTML">
         <HELPTEXT>Test context, provided automatically by test infrastructure</HELPTEXT>
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES>
+        <SUGGESTEDVALUES expanditems="true">
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
     </FIELDS>
-
     <!-- *************** Workflow ****************   -->
     <WORKFLOW>
       <STATES>
@@ -80,7 +79,6 @@
             </FIELD>
           </FIELDS>
         </STATE>
-        
         <STATE value="Closed">
           <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
@@ -92,14 +90,12 @@
           </FIELDS>
         </STATE>
       </STATES>
-
       <TRANSITIONS>
         <TRANSITION from="" to="Active">
           <REASONS>
             <DEFAULTREASON value="New" />
           </REASONS>
         </TRANSITION>
-
         <TRANSITION from="Active" to="Closed">
           <REASONS>
             <DEFAULTREASON value="Reviewed" />
@@ -122,12 +118,11 @@
         </TRANSITION>
       </TRANSITIONS>
     </WORKFLOW>
-
     <FORM>
       <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
         <Group Margin="(0,0,0,5)">
           <Column PercentWidth="100">
-            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" />
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
           </Column>
         </Group>
         <Group>
@@ -208,4 +203,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</witd:WITD>
+</Witd:WITD>

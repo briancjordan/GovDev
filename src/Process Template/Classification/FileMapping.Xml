@@ -8,7 +8,7 @@
     <Mapping WorkItemTrackingFieldReferenceName="System.AreaPath" ProjectField="pjTaskOutlineCode9" />
     <Mapping WorkItemTrackingFieldReferenceName="System.AssignedTo" ProjectField="pjTaskResourceNames" />
     <Mapping WorkItemTrackingFieldReferenceName="System.Id" ProjectField="pjTaskText10" ProjectName="Work Item ID" />
-    <Mapping WorkItemTrackingFieldReferenceName="System.IterationPath" ProjectField="pjTaskOutlineCode10" />
+    <Mapping WorkItemTrackingFieldReferenceName="System.IterationPath" ProjectField="pjTaskOutlineCode10" ProjectName="Iteration" />
     <Mapping WorkItemTrackingFieldReferenceName="System.Reason" ProjectField="pjTaskText14" />
     <Mapping WorkItemTrackingFieldReferenceName="System.Rev" ProjectField="pjTaskText23" />
     <Mapping WorkItemTrackingFieldReferenceName="System.State" ProjectField="pjTaskText13" ProjectName="State" />

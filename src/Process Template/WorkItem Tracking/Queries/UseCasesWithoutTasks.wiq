@@ -9,7 +9,7 @@
                 Source.[System.TeamProject] = @project
             AND Source.[System.WorkItemType] = 'Use Case'
            )
-       AND Source.[System.IterationPath] UNDER '$$PROJECTNAME$$\Iteration 1'
+       AND Source.[System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
        AND System.Links.LinkType &lt;&gt; ''
        AND Target.[System.WorkItemType] = 'Test Case'
   ORDER BY [System.Id] mode(DoesNotContain)

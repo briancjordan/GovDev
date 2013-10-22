@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Support Ticket">
     <DESCRIPTION>A generic ticket work item used to track support requests and changes.</DESCRIPTION>
     <FIELDS>
@@ -7,8 +7,8 @@
         <HELPTEXT>The index of the first mail message in a threaded email conversation in Exchange.</HELPTEXT>
       </FIELD>
       <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
-        <HELPTEXT>Short description of the task used to differentiate it in a list or report</HELPTEXT>
         <REQUIRED />
+        <HELPTEXT>Short description of the task used to differentiate it in a list or report</HELPTEXT>
       </FIELD>
       <FIELD name="State" refname="System.State" type="String" reportable="dimension">
         <HELPTEXT>The workflow state of the task</HELPTEXT>
@@ -37,9 +37,9 @@
       </FIELD>
       <FIELD name="Iteration ID" refname="System.IterationId" type="Integer" />
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
-        <HELPTEXT>The person currently working on this support ticket</HELPTEXT>
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
+        <HELPTEXT>The person currently working on this support ticket</HELPTEXT>
       </FIELD>
       <FIELD name="Work Item Type" refname="System.WorkItemType" type="String" reportable="dimension" />
       <FIELD name="Activated Date" refname="Microsoft.VSTS.Common.ActivatedDate" type="DateTime" reportable="dimension">
@@ -66,13 +66,13 @@
         </WHENNOTCHANGED>
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <HELPTEXT>Sets the priority of the Request work item.</HELPTEXT>
         <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="1" />
+        <HELPTEXT>Sets the priority of the Request work item.</HELPTEXT>
       </FIELD>
       <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
       <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
@@ -82,13 +82,13 @@
         </WHENNOTCHANGED>
       </FIELD>
       <FIELD name="Issue" refname="Microsoft.VSTS.Common.Issue" type="String" reportable="dimension">
-        <HELPTEXT>Used to highlight a task, e.g., to mark it as an issue</HELPTEXT>
         <REQUIRED />
         <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="No" />
+        <HELPTEXT>Used to highlight a task, e.g., to mark it as an issue</HELPTEXT>
       </FIELD>
       <FIELD name="Description" refname="System.Description" type="PlainText" />
       <FIELD name="History" refname="System.History" type="History">
@@ -258,4 +258,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</witd:WITD>
+</Witd:WITD>
