@@ -5313,7 +5313,7 @@ SELECT (SUBSTRING(@TfsWorkItemTrackingDisplayUrl, 1, (SELECT PATINDEX('%tfs%',@T
       <DefaultValue>
         <Values>
           <Value>Requirement</Value>
-          <Value>User Story</Value>
+          <Value>Use Case</Value>
         </Values>
       </DefaultValue>
       <AllowBlank>true</AllowBlank>

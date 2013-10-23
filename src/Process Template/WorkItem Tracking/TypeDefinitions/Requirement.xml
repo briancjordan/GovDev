@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Requirement">
     <DESCRIPTION>Includes information to track the requirement through the application life cycle</DESCRIPTION>
     <FIELDS>
-      <FIELD name="Id" refname="System.Id" type="Integer" />
-      <FIELD name="Title" refname="System.Title" type="String">
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
         <REQUIRED />
         <HELPTEXT>Short description of the requirement used to differentiate it in a list or report</HELPTEXT>
       </FIELD>
       <FIELD name="Requirement Type" refname="Microsoft.VSTS.CMMI.RequirementType" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Functional" />
           <LISTITEM value="Non-Functional" />
           <LISTITEM value="Feature" />
@@ -21,9 +21,9 @@
         <DEFAULT from="value" value="Functional" />
       </FIELD>
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true">
-        <ALLOWEXISTINGVALUE />
-        <VALIDUSER />
         <HELPTEXT>The person currently working on this requirement</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <VALIDUSER/>
       </FIELD>
       <FIELD name="History" refname="System.History" type="History">
         <HELPTEXT>Discussion thread and other historical information</HELPTEXT>
@@ -41,13 +41,13 @@
         <HELPTEXT>The reason why the requirement is in the current state</HELPTEXT>
       </FIELD>
       <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
-      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true">
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true">
         <VALIDUSER />
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
       <FIELD name="Created By" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
-      <FIELD name="Description" refname="System.Description" type="PlainText">
+      <FIELD name="Description" refname="System.Description" type="HTML">
         <HELPTEXT>User activity or constraint enabled when this is implemented, with links to supporting documents</HELPTEXT>
       </FIELD>
       <FIELD name="Start Date" refname="Microsoft.VSTS.Scheduling.StartDate" type="DateTime" reportable="dimension" />
@@ -97,7 +97,7 @@
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -111,7 +111,7 @@
       </FIELD>
       <FIELD name="Triage" refname="Microsoft.VSTS.Common.Triage" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Pending" />
           <LISTITEM value="More Info" />
           <LISTITEM value="Info Received" />
@@ -122,20 +122,20 @@
       </FIELD>
       <!-- **************** Build Integration Fields *******************************************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the requirement was integrated</HELPTEXT>
       </FIELD>
       <!-- **************** Scheduling Fields *************************************************  -->
-      <FIELD name="Size" refname="Microsoft.VSTS.Scheduling.Size" type="Double" reportable="measure">
+      <FIELD name="Size" refname="Microsoft.VSTS.Scheduling.Size" type="Double" reportable="measure" formula="sum" >
         <HELPTEXT>The size of work estimated for implementing this requirement</HELPTEXT>
       </FIELD>
-      <FIELD name="Original Estimate" refname="Microsoft.VSTS.Scheduling.OriginalEstimate" type="Double" reportable="measure">
+      <FIELD name="Original Estimate" refname="Microsoft.VSTS.Scheduling.OriginalEstimate" type="Double" reportable="measure" formula="sum">
         <HELPTEXT>The estimate for the amount of work (in person hours)</HELPTEXT>
       </FIELD>
       <FIELD name="Blocked" refname="Microsoft.VSTS.CMMI.Blocked" type="String" reportable="dimension">
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
@@ -143,7 +143,7 @@
       </FIELD>
       <FIELD name="Committed" refname="Microsoft.VSTS.CMMI.Committed" type="String">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
@@ -153,7 +153,7 @@
       <FIELD name="Impact Assessment HTML" refname="Microsoft.VSTS.CMMI.ImpactAssessmentHtml" type="HTML" />
       <FIELD name="User Acceptance Test" refname="Microsoft.VSTS.CMMI.UserAcceptanceTest" type="String">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Pass" />
           <LISTITEM value="Fail" />
           <LISTITEM value="Not Ready" />
@@ -314,6 +314,12 @@
             <DEFAULTREASON value="Split" />
           </REASONS>
           <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <SERVERDEFAULT from="currentuser" />
+            </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
               <SERVERDEFAULT from="clock" />
             </FIELD>
@@ -356,6 +362,18 @@
             <DEFAULTREASON value="Rejected" />
           </REASONS>
           <FIELDS>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
+              <SERVERDEFAULT from="currentuser" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
+              <SERVERDEFAULT from="clock" />
+            </FIELD>
+            <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
+              <SERVERDEFAULT from="currentuser" />
+            </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
               <SERVERDEFAULT from="clock" />
             </FIELD>
@@ -494,4 +512,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</Witd:WITD>
+</witd:WITD>

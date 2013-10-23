@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Shared Steps">
     <DESCRIPTION>Server-side data for reusable set of test steps.</DESCRIPTION>
     <FIELDS>
@@ -17,7 +17,7 @@
       </FIELD>
       <FIELD name="Issue" refname="Microsoft.VSTS.Common.Issue" type="String" reportable="dimension">
         <REQUIRED />
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="Yes" />
           <LISTITEM value="No" />
         </ALLOWEDVALUES>
@@ -51,9 +51,9 @@
       </FIELD>
       <FIELD name="Iteration ID" refname="System.IterationId" type="Integer" />
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>The person currently working on these shared steps</HELPTEXT>
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
-        <HELPTEXT>The person currently working on these shared steps</HELPTEXT>
       </FIELD>
       <FIELD name="Work Item Type" refname="System.WorkItemType" type="String" reportable="dimension" />
       <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
@@ -68,7 +68,7 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
@@ -103,7 +103,7 @@
       <FIELD name="Parameters" refname="Microsoft.VSTS.TCM.Parameters" type="HTML" />
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
@@ -186,7 +186,7 @@
       <Layout HideReadOnlyEmptyFields="true" HideControlBorders="true">
         <Group Margin="(4,0,0,0)">
           <Column PercentWidth="100">
-            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" LabelPosition="Top" />
+            <Control FieldName="System.Title" Type="FieldControl" ControlFontSize="large" EmptyText="&lt;Enter title here&gt;" />
           </Column>
         </Group>
         <Group Margin="(10,0,0,0)">
@@ -210,9 +210,7 @@
         </Group>
         <TabGroup>
           <Tab Label="Steps">
-            <Control FieldName="Microsoft.VSTS.TCM.Steps" Type="TestStepsControl" LabelPosition="Top" Dock="Fill">
-              <CustomControlOptions />
-            </Control>
+            <Control FieldName="Microsoft.VSTS.TCM.Steps" Type="TestStepsControl" LabelPosition="Top" Dock="Fill" />
           </Tab>
           <Tab Label="Summary">
             <Group>
@@ -228,7 +226,8 @@
             <Control Type="LinksControl" LabelPosition="Top">
               <LinksControlOptions>
                 <LinkColumns>
-                  <LinkColumn RefName="System.Id" />
+                  <LinkColumn RefName="System.ID" />
+                  <LinkColumn RefName="System.WorkItemType" />
                   <LinkColumn RefName="System.Title" />
                   <LinkColumn RefName="System.AssignedTo" />
                   <LinkColumn RefName="System.State" />
@@ -247,4 +246,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</Witd:WITD>
+</witd:WITD>

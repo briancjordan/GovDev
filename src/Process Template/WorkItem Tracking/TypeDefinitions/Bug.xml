@@ -1,46 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Bug">
     <DESCRIPTION>Describes a divergence between required and actual behavior, and tracks the work done to correct the defect and verify the correction.</DESCRIPTION>
     <FIELDS>
-      <FIELD name="Id" refname="System.Id" type="Integer" />
-      <FIELD name="Title" refname="System.Title" type="String">
-        <REQUIRED />
+      <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
+      <FIELD name="Title" refname="System.Title" type="String" reportable="dimension" >
         <HELPTEXT>Stories affected and how</HELPTEXT>
+        <REQUIRED />
       </FIELD>
-      <FIELD name="System Info" refname="Microsoft.VSTS.TCM.SystemInfo" type="HTML">
-        <HELPTEXT>Test context, provided automatically by test infrastructure</HELPTEXT>
+      <FIELD name="System Info" refname="Microsoft.VSTS.TCM.SystemInfo" type="HTML" >
+          <HELPTEXT>Test context, provided automatically by test infrastructure</HELPTEXT>
       </FIELD>
       <FIELD name="Repro Steps" refname="Microsoft.VSTS.TCM.ReproSteps" type="HTML">
-        <HELPTEXT>How to see the bug. End by contrasting expected with actual behavior.</HELPTEXT>
+          <HELPTEXT>How to see the bug. End by contrasting expected with actual behavior.</HELPTEXT>
       </FIELD>
-      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true">
+      <FIELD name="Assigned To" refname="System.AssignedTo" type="String" reportable="dimension" syncnamechanges="true" >
+        <HELPTEXT>The person currently working on this bug</HELPTEXT>
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
-        <HELPTEXT>The person currently working on this bug</HELPTEXT>
       </FIELD>
-      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath">
+      <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension" >
         <HELPTEXT>The area of the product with which this bug is associated</HELPTEXT>
       </FIELD>
-      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath">
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension" >
         <HELPTEXT>The iteration within which this bug will be fixed</HELPTEXT>
       </FIELD>
       <FIELD name="History" refname="System.History" type="History">
         <HELPTEXT>Discussion thread plus automatic record of changes</HELPTEXT>
       </FIELD>
-      <FIELD name="State" refname="System.State" type="String">
+      <FIELD name="State" refname="System.State" type="String" reportable="dimension" >
         <HELPTEXT>Change on reviewing, fixing or verifying the fix. Active = not yet fixed; Resolved = fix not yet verified; Closed = fix verified.</HELPTEXT>
       </FIELD>
-      <FIELD name="Reason" refname="System.Reason" type="String">
+      <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension" >
         <HELPTEXT>The reason why the bug is in the current state</HELPTEXT>
       </FIELD>
-      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" />
-      <FIELD name="Changed By" refname="System.ChangedBy" type="String" syncnamechanges="true">
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Changed By" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true">
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
       </FIELD>
-      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" />
-      <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" />
+      <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
+      <FIELD name="Created By" refname="System.CreatedBy" type="String" reportable="dimension" syncnamechanges="true" />
       <FIELD name="State Change Date" refname="Microsoft.VSTS.Common.StateChangeDate" type="DateTime">
         <WHENCHANGED field="System.State">
           <SERVERDEFAULT from="clock" />
@@ -72,13 +72,14 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Resolved Reason" refname="Microsoft.VSTS.Common.ResolvedReason" type="String" reportable="dimension">
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="As Designed" />
           <LISTITEM value="Cannot Reproduce" />
           <LISTITEM value="Deferred" />
           <LISTITEM value="Duplicate" />
           <LISTITEM value="Fixed" />
           <LISTITEM value="Obsolete" />
+          <LISTITEM value="Copied to Backlog" />
         </ALLOWEDVALUES>
         <FROZEN />
         <HELPTEXT>The reason why the bug was resolved</HELPTEXT>
@@ -95,41 +96,42 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
-        <ALLOWEDVALUES expanditems="true">
-          <LISTITEM value="1" />
-          <LISTITEM value="2" />
-          <LISTITEM value="3" />
-          <LISTITEM value="4" />
-        </ALLOWEDVALUES>
-        <DEFAULT from="value" value="2" />
         <HELPTEXT>Business importance. 1=must fix; 4=unimportant.</HELPTEXT>
+        <ALLOWEDVALUES expanditems="true">
+          <LISTITEM value="1"/>
+          <LISTITEM value="2"/>
+          <LISTITEM value="3"/>
+          <LISTITEM value="4"/>
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="2" />        
       </FIELD>
       <FIELD name="Severity" refname="Microsoft.VSTS.Common.Severity" type="String" reportable="dimension">
+        <HELPTEXT>Assessment of the effect of the bug on the project</HELPTEXT>
         <ALLOWEDVALUES expanditems="true">
-          <LISTITEM value="1 - Critical" />
-          <LISTITEM value="2 - High" />
-          <LISTITEM value="3 - Medium" />
-          <LISTITEM value="4 - Low" />
+          <LISTITEM value="1 - Critical"/>
+          <LISTITEM value="2 - High"/>
+          <LISTITEM value="3 - Medium"/>
+          <LISTITEM value="4 - Low"/>
         </ALLOWEDVALUES>
         <DEFAULT from="value" value="3 - Medium" />
-        <HELPTEXT>Assessment of the effect of the bug on the project</HELPTEXT>
       </FIELD>
       <FIELD name="Stack Rank" refname="Microsoft.VSTS.Common.StackRank" type="Double" reportable="dimension">
         <HELPTEXT>Work first on items with lower-valued stack rank. Set in triage.</HELPTEXT>
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
-        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
       <FIELD name="Found In" refname="Microsoft.VSTS.Build.FoundIn" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <HELPTEXT>The build in which the bug was found</HELPTEXT>
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
-        <HELPTEXT>The build in which the bug was found</HELPTEXT>
       </FIELD>
+
     </FIELDS>
     <WORKFLOW>
       <STATES>
@@ -195,11 +197,21 @@
             <ACTION value="Microsoft.VSTS.Actions.Checkin" />
           </ACTIONS>
           <REASONS>
+            <DEFAULTREASON value="Fixed">
+              <FIELDS>
+                <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
+                  <COPY from="value" value="Fixed" />
+                  <ALLOWEDVALUES>
+                    <LISTITEM value="Fixed" />
+                  </ALLOWEDVALUES>
+                </FIELD>
+              </FIELDS>
+            </DEFAULTREASON>
             <REASON value="Deferred">
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Deferred" />
-                  <ALLOWEDVALUES expanditems="true">
+                  <ALLOWEDVALUES>
                     <LISTITEM value="Deferred" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -209,7 +221,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Duplicate" />
-                  <ALLOWEDVALUES expanditems="true">
+                  <ALLOWEDVALUES>
                     <LISTITEM value="Duplicate" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -219,7 +231,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="As Designed" />
-                  <ALLOWEDVALUES expanditems="true">
+                  <ALLOWEDVALUES>
                     <LISTITEM value="As Designed" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -229,7 +241,7 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Cannot Reproduce" />
-                  <ALLOWEDVALUES expanditems="true">
+                  <ALLOWEDVALUES>
                     <LISTITEM value="Cannot Reproduce" />
                   </ALLOWEDVALUES>
                 </FIELD>
@@ -239,22 +251,22 @@
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
                   <COPY from="value" value="Obsolete" />
-                  <ALLOWEDVALUES expanditems="true">
+                  <ALLOWEDVALUES>
                     <LISTITEM value="Obsolete" />
                   </ALLOWEDVALUES>
                 </FIELD>
               </FIELDS>
             </REASON>
-            <DEFAULTREASON value="Fixed">
+            <REASON value="Copied to Backlog">
               <FIELDS>
                 <FIELD refname="Microsoft.VSTS.Common.ResolvedReason">
-                  <COPY from="value" value="Fixed" />
-                  <ALLOWEDVALUES expanditems="true">
-                    <LISTITEM value="Fixed" />
+                  <COPY from="value" value="Copied to Backlog" />
+                  <ALLOWEDVALUES>
+                    <LISTITEM value="Copied to Backlog" />
                   </ALLOWEDVALUES>
                 </FIELD>
               </FIELDS>
-            </DEFAULTREASON>
+            </REASON>
           </REASONS>
           <FIELDS>
             <FIELD refname="System.AssignedTo">
@@ -461,4 +473,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</Witd:WITD>
+</witd:WITD>

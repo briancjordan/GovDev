@@ -10,7 +10,7 @@
            [System.AreaPath],
            [System.WorkItemType]
       FROM WorkItems
-     WHERE [System.TeamProject] = @project AND [System.AreaPath] UNDER @project AND [System.WorkItemType] = 'User Story'AND [System.State] &lt;&gt; 'Closed'
+     WHERE [System.TeamProject] = @project AND [System.AreaPath] UNDER @project AND [System.WorkItemType] = 'Use Case'AND [System.State] &lt;&gt; 'Closed'
   ORDER BY [Microsoft.VSTS.Common.StackRank]
   </Wiql>
 </WorkItemQuery>

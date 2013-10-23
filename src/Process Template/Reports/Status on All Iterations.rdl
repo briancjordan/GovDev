@@ -3878,7 +3878,7 @@ WHERE ProjectGUID = @ProjectGuid</CommandText>
         <Values>
           <Value>Change Request</Value>
           <Value>Requirement</Value>
-          <Value>User Story</Value>
+          <Value>Use Case</Value>
         </Values>
       </DefaultValue>
       <AllowBlank>true</AllowBlank>

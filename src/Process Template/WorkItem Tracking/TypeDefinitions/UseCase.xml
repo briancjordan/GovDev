@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Use Case">
     <DESCRIPTION>Tracks an activity the user will be able to perform with the application</DESCRIPTION>
     <FIELDS>
@@ -31,7 +31,7 @@
       <FIELD name="Reason" refname="System.Reason" type="String" reportable="dimension">
         <HELPTEXT>The reason why the story is in its current state</HELPTEXT>
       </FIELD>
-      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" />
+      <FIELD name="Changed Date" refname="System.ChangedDate" type="DateTime" reportable="dimension" />
       <FIELD name="Changed By" refname="System.ChangedBy" type="String" reportable="dimension" syncnamechanges="true">
         <VALIDUSER />
         <ALLOWEXISTINGVALUE />
@@ -81,7 +81,7 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Risk" refname="Microsoft.VSTS.Common.Risk" type="String" reportable="dimension">
-        <ALLOWEDVALUES expanditems="true">
+        <ALLOWEDVALUES>
           <LISTITEM value="1 - High" />
           <LISTITEM value="2 - Medium" />
           <LISTITEM value="3 - Low" />
@@ -99,7 +99,7 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
         <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
@@ -117,26 +117,26 @@
     <WORKFLOW>
       <STATES>
         <STATE value="New">
-          <FIELDS>
+            <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ResolvedBy">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ClosedDate">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ClosedBy">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ActivatedDate">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
             <FIELD refname="Microsoft.VSTS.Common.ActivatedBy">
-              <EMPTY />
+                <EMPTY />
             </FIELD>
-          </FIELDS>
+            </FIELDS>
         </STATE>
         <STATE value="Active">
           <FIELDS>
@@ -225,7 +225,7 @@
         </TRANSITION>
         <TRANSITION from="New" to="Removed">
           <REASONS>
-            <DEFAULTREASON value="Removed from the backlog" />
+              <DEFAULTREASON value="Removed from the backlog" />
           </REASONS>
         </TRANSITION>
         <TRANSITION from="Active" to="New">
@@ -363,7 +363,7 @@
         </TRANSITION>
         <TRANSITION from="Removed" to="New">
           <REASONS>
-            <DEFAULTREASON value="Reconsidering the User Story" />
+            <DEFAULTREASON value="Reconsidering the Use Case" />
           </REASONS>
         </TRANSITION>
         <TRANSITION from="Resolved" to="New">
@@ -566,4 +566,4 @@
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</Witd:WITD>
+</witd:WITD>

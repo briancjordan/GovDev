@@ -7,6 +7,7 @@
       <Column refname="System.State" width="100" />
       <Column refname="Microsoft.VSTS.Scheduling.StoryPoints" width="50" />
       <Column refname="System.IterationPath" width="200" />
+      <Column refname="System.Tags" width="200" />
     </Columns>
     <AddPanel>
       <Fields>

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Witd:WITD application="Work item type editor" version="1.0" xmlns:Witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
+<witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Test Case">
     <DESCRIPTION>Server-side data for a set of steps to be tested.</DESCRIPTION>
     <FIELDS>
       <FIELD name="Title" refname="System.Title" type="String" reportable="dimension">
-        <REQUIRED />
         <HELPTEXT>Short description of the test case used to differentiate it in a list or report</HELPTEXT>
+        <REQUIRED />
       </FIELD>
       <FIELD name="State" refname="System.State" type="String" reportable="dimension">
         <HELPTEXT>The workflow state of the test case</HELPTEXT>
@@ -38,9 +38,9 @@
         <HELPTEXT>The reason why the test case is in the current state</HELPTEXT>
       </FIELD>
       <FIELD name="Assigned To" refname="System.AssignedTo" type="String" syncnamechanges="true" reportable="dimension">
+        <HELPTEXT>The person currently working on this test case</HELPTEXT>
         <ALLOWEXISTINGVALUE />
         <VALIDUSER />
-        <HELPTEXT>The person currently working on this test case</HELPTEXT>
       </FIELD>
       <FIELD name="Closed Date" refname="Microsoft.VSTS.Common.ClosedDate" type="DateTime" reportable="dimension">
         <WHENNOTCHANGED field="System.State">
@@ -54,20 +54,20 @@
         <ALLOWEXISTINGVALUE />
       </FIELD>
       <FIELD name="Priority" refname="Microsoft.VSTS.Common.Priority" type="Integer" reportable="dimension">
+        <HELPTEXT>Importance of this test case to the business goals of the product. 1=Most important.</HELPTEXT>
         <ALLOWEDVALUES expanditems="true">
           <LISTITEM value="1" />
           <LISTITEM value="2" />
           <LISTITEM value="3" />
           <LISTITEM value="4" />
-        </ALLOWEDVALUES>
-        <HELPTEXT>Importance of this test case to the business goals of the product. 1=Most important.</HELPTEXT>
+        </ALLOWEDVALUES>        
       </FIELD>
       <FIELD name="Created Date" refname="System.CreatedDate" type="DateTime" reportable="dimension" />
       <FIELD name="Created By" refname="System.CreatedBy" type="String" syncnamechanges="true" reportable="dimension" />
       <FIELD name="Steps" refname="Microsoft.VSTS.TCM.Steps" type="HTML">
         <HELPTEXT>Steps required to perform the test</HELPTEXT>
       </FIELD>
-      <FIELD name="Description" refname="System.Description" type="PlainText">
+      <FIELD name="Description" refname="System.Description" type="HTML" >
         <HELPTEXT>Purpose of this test; requirement tested</HELPTEXT>
       </FIELD>
       <FIELD name="History" refname="System.History" type="History">
@@ -82,7 +82,7 @@
       <FIELD name="Area Path" refname="System.AreaPath" type="TreePath" reportable="dimension">
         <HELPTEXT>The area of the product with which this test case is associated</HELPTEXT>
       </FIELD>
-      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath">
+      <FIELD name="Iteration Path" refname="System.IterationPath" type="TreePath" reportable="dimension">
         <HELPTEXT>The iteration within which this bug will be fixed</HELPTEXT>
       </FIELD>
       <FIELD name="Revised Date" refname="System.RevisedDate" type="DateTime" reportable="detail" />
@@ -90,29 +90,29 @@
       <FIELD name="Id" refname="System.Id" type="Integer" reportable="dimension" />
       <FIELD name="Area ID" refname="System.AreaId" type="Integer" />
       <FIELD name="Authorized As" refname="System.AuthorizedAs" type="String" />
-      <FIELD name="Automated Test Name" refname="Microsoft.VSTS.TCM.AutomatedTestName" type="String">
+      <FIELD name="Automated Test Name" refname="Microsoft.VSTS.TCM.AutomatedTestName" type="String" >
         <HELPTEXT>The name of the test that automates this test case</HELPTEXT>
       </FIELD>
-      <FIELD name="Automated Test Storage" refname="Microsoft.VSTS.TCM.AutomatedTestStorage" type="String">
+      <FIELD name="Automated Test Storage" refname="Microsoft.VSTS.TCM.AutomatedTestStorage" type="String" >
         <HELPTEXT>The assembly containing the test that automates this test case</HELPTEXT>
       </FIELD>
-      <FIELD name="Automated Test Id" refname="Microsoft.VSTS.TCM.AutomatedTestId" type="String">
+      <FIELD name="Automated Test Id" refname="Microsoft.VSTS.TCM.AutomatedTestId" type="String" >
         <HELPTEXT>The ID of the test that automates this test case</HELPTEXT>
       </FIELD>
-      <FIELD name="Automated Test Type" refname="Microsoft.VSTS.TCM.AutomatedTestType" type="String">
+      <FIELD name="Automated Test Type" refname="Microsoft.VSTS.TCM.AutomatedTestType" type="String" >
         <HELPTEXT>The type of the test that automates this test case</HELPTEXT>
       </FIELD>
       <FIELD name="Parameters" refname="Microsoft.VSTS.TCM.Parameters" type="HTML" />
       <FIELD name="Local Data Source" refname="Microsoft.VSTS.TCM.LocalDataSource" type="HTML" />
       <FIELD reportable="dimension" type="String" name="Automation status" refname="Microsoft.VSTS.TCM.AutomationStatus">
         <WHEN field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
-          <ALLOWEDVALUES expanditems="true">
+          <ALLOWEDVALUES>
             <LISTITEM value="Not Automated" />
             <LISTITEM value="Planned" />
           </ALLOWEDVALUES>
         </WHEN>
         <WHENNOT field="Microsoft.VSTS.TCM.AutomatedTestId" value="">
-          <ALLOWEDVALUES expanditems="true">
+          <ALLOWEDVALUES>
             <LISTITEM value="Automated" />
           </ALLOWEDVALUES>
           <COPY from="value" value="Automated" />
@@ -120,10 +120,10 @@
       </FIELD>
       <!-- **************** Team Build Integration Fields **************  -->
       <FIELD name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild" type="String" reportable="dimension">
-        <SUGGESTEDVALUES expanditems="true">
+        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
+        <SUGGESTEDVALUES>
           <LISTITEM value="&lt;None&gt;" />
         </SUGGESTEDVALUES>
-        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
       </FIELD>
     </FIELDS>
     <WORKFLOW>
@@ -343,12 +343,11 @@
             <Control Type="AttachmentsControl" LabelPosition="Top" />
           </Tab>
           <Tab Label="Associated Automation">
-            <Control Type="AssociatedAutomationControl" LabelPosition="Top" Dock="Fill">
-              <CustomControlOptions />
-            </Control>
+            <Control Type="AssociatedAutomationControl" LabelPosition="Top" Dock="Fill" />
           </Tab>
         </TabGroup>
       </Layout>
     </FORM>
   </WORKITEMTYPE>
-</Witd:WITD>
+</witd:WITD>
+

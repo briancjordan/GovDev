@@ -22,7 +22,8 @@
 	OR	Source.[System.WorkItemType] = 'Use Case' 
 	OR	Source.[System.WorkItemType] = 'Task')) 
 	AND	([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') 
-	AND	(Target.[System.WorkItemType] = 'Task' 
+	AND	(Target.[System.WorkItemType] = 'Use Case' 
+	OR	Target.[System.WorkItemType] = 'Task' 
 	OR	Target.[System.WorkItemType] = 'Bug') 
 	ORDER BY [System.Id] MODE (Recursive)
    </Wiql>

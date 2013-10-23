@@ -2984,7 +2984,7 @@ WHERE ProjectGUID = @ProjectGuid
       <DefaultValue>
         <Values>
           <Value>Requirement</Value>
-          <Value>User Story</Value>
+          <Value>Use Case</Value>
           <Value>Scenario</Value>
         </Values>
       </DefaultValue>
