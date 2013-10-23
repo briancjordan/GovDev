@@ -3,7 +3,7 @@
   <metadata>
     <name>GovDev for TFS 2012</name>
     <description>This template allows you to organize and track the progress and health of projects by tying into a formal project mangement process while facilitating Agile processes as part of software design, build and test.</description>
-    <version type="ADCC42AB-9882-485E-A3ED-7678F01F66BC" major="2" minor="0" />
+    <version type="3D8056A2-F3A6-4E23-A29D-1AEF90D8230C" major="2" minor="20" />
     <plugins>
       <plugin name="Microsoft.ProjectCreationWizard.Classification" wizardPage="false" />
       <plugin name="Microsoft.ProjectCreationWizard.Reporting" wizardPage="false" />
