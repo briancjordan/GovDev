@@ -4,9 +4,11 @@
   <CATEGORY name="Bug Category" refname="Microsoft.BugCategory">
     <DEFAULTWORKITEMTYPE name="Bug" />
   </CATEGORY>
-  <CATEGORY name="Requirement Category" refname="Microsoft.RequirementCategory">
+  <CATEGORY name="Requirement Category" refname="GovDev.RequirementCategory">
+    <DEFAULTWORKITEMTYPE name="Requirement" />
+  </CATEGORY>
+  <CATEGORY name="Use Case Category" refname="Microsoft.RequirementCategory">
     <DEFAULTWORKITEMTYPE name="Use Case" />
-    <WORKITEMTYPE name="Requirement" />
   </CATEGORY>
   <CATEGORY name="Test Case Category" refname="Microsoft.TestCaseCategory">
     <DEFAULTWORKITEMTYPE name="Test Case" />

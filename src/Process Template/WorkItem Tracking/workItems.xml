@@ -16,6 +16,11 @@
     <taskXml>
       <WORKITEMTYPES>
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Bug.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewResponse.xml" />
+
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackRequest.xml" />
+        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackResponse.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SharedStep.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Task.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\TestCase.xml" />
@@ -24,10 +29,6 @@
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\Requirement.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\SupportTicket.xml" />
         <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\UseCase.xml" />
-        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewRequest.xml" />
-        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\CodeReviewResponse.xml" />
-        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackRequest.xml" />
-        <WORKITEMTYPE fileName="WorkItem Tracking\TypeDefinitions\FeedbackResponse.xml" />
       </WORKITEMTYPES>
     </taskXml>
   </task>
@@ -105,8 +106,7 @@
     </dependencies>
     <taskXml>
       <PROCESSCONFIGURATION>
-        <CommonConfiguration fileName="WorkItem Tracking\Process\CommonConfiguration.xml" />
-        <AgileConfiguration fileName="WorkItem Tracking\Process\AgileConfiguration.xml" />
+        <ProjectConfiguration fileName="WorkItem Tracking\Process\ProcessConfiguration.xml"/>
       </PROCESSCONFIGURATION>
     </taskXml>
   </task>

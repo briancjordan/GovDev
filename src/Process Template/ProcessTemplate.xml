@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProcessTemplate>
   <metadata>
-    <name>GovDev for TFS 2012</name>
+    <name>GovDev for TFS 2013</name>
     <description>This template allows you to organize and track the progress and health of projects by tying into a formal project mangement process while facilitating Agile processes as part of software design, build and test.</description>
-    <version type="3D8056A2-F3A6-4E23-A29D-1AEF90D8230C" major="2" minor="20" />
+    <version type="3D8056A2-F3A6-4E23-A29D-1AEF90D8230C" major="3" minor="0" />
     <plugins>
       <plugin name="Microsoft.ProjectCreationWizard.Classification" wizardPage="false" />
       <plugin name="Microsoft.ProjectCreationWizard.Reporting" wizardPage="false" />
@@ -18,7 +18,8 @@
   </metadata>
   <groups>
     <group id="Classification" description="Structure definition for the project." completionMessage="Project Structure uploaded.">
-      <dependencies></dependencies>
+      <dependencies>
+      </dependencies>
       <taskList filename="Classification\Classification.xml" />
     </group>
     <group id="Groups" description="Create Groups and assign Permissions." completionMessage="Groups created and Permissions assigned.">
