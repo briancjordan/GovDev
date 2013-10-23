@@ -24,7 +24,7 @@
       </Nodes>
       <properties>
         <property name="MSPROJ" value="Classification\FileMapping.xml" isFile="true" />
-        <property name="Process Template" value="GovDev for TFS 2.0" />
+        <property name="Process Template" value="GovDev for TFS 2012" />
       </properties>
     </taskXml>
   </task>
