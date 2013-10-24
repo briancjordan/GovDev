@@ -75,8 +75,8 @@
           <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Task.htm" documentLibrary="Process Guidance" target="Supporting Files/Task.aspx" />
           <file source="Windows SharePoint Services\Process Guidance\Supporting Files\TestCase.htm" documentLibrary="Process Guidance" target="Supporting Files/Test Case.htm" />
           <file source="Windows SharePoint Services\Process Guidance\Supporting Files\TestCase.htm" documentLibrary="Process Guidance" target="Supporting Files/Test Case.aspx" />
-	  <file source="Windows SharePoint Services\Process Guidance\Supporting Files\UseCase.htm" documentLibrary="Process Guidance" target="Supporting Files/Use Case.htm" />
-          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\Use Case.htm" documentLibrary="Process Guidance" target="Supporting Files/Use Case.aspx" />
+	        <file source="Windows SharePoint Services\Process Guidance\Supporting Files\UseCase.htm" documentLibrary="Process Guidance" target="Supporting Files/Use Case.htm" />
+          <file source="Windows SharePoint Services\Process Guidance\Supporting Files\UseCase.htm" documentLibrary="Process Guidance" target="Supporting Files/Use Case.aspx" />
         </files>
         <activateFeatures>
           <!-- TfsDashboardAgileMoss -->
