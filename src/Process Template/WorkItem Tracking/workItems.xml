@@ -61,15 +61,16 @@
           <Query name="Use Cases without Test Cases" fileName="WorkItem Tracking\Queries\UseCasesWithoutTestCases.wiq" />
         </QueryFolder>
         <QueryFolder name="Project Management">
-          <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\ActiveTasks.wiq" />
+          <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\PM_ActiveBugs.wiq" />
+          <Query name="Active Tasks" fileName="WorkItem Tracking\Queries\PM_ActiveTasks.wiq" />
           <Query name="All Iterations Backlog" fileName="WorkItem Tracking\Queries\AllIterationsBacklog.wiq" />
           <Query name="All Iterations Task Backlog" fileName="WorkItem Tracking\Queries\AllIterationsTaskBacklog.wiq" />
           <Query name="All Iterations Test Case Backlog" fileName="WorkItem Tracking\Queries\AllIterationsTestCaseBacklog.wiq" />
-          <Query name="Open Issues" fileName="WorkItem Tracking\Queries\OpenIssues.wiq" />
+          <Query name="Open Issues" fileName="WorkItem Tracking\Queries\PM_OpenIssues.wiq" />
           <Query name="Open Requirements" fileName="WorkItem Tracking\Queries\OpenRequirements.wiq" />
-          <Query name="Open Support Tickets" fileName="WorkItem Tracking\Queries\OpenSupportTickets.wiq" />
-          <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
-          <Query name="Open Use Cases" fileName="WorkItem Tracking\Queries\OpenUseCases.wiq" />
+          <Query name="Open Support Tickets" fileName="WorkItem Tracking\Queries\PM_OpenSupportTickets.wiq" />
+          <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\PM_OpenTestCases.wiq" />
+          <Query name="Open Use Cases" fileName="WorkItem Tracking\Queries\PM_OpenUseCases.wiq" />
           <Query name="Requirements Delivered" fileName="WorkItem Tracking\Queries\RequirementsDelivered.wiq" />
           <Query name="Work Breakdown from Requirements" fileName="WorkItem Tracking\Queries\WorkBreakdown.wiq" />
         </QueryFolder>
@@ -79,9 +80,9 @@
           <Query name="Requirements with Open Change Requests" fileName="WorkItem Tracking\Queries\RequirementsWithOpenChangeRequests.wiq" />
         </QueryFolder>
         <QueryFolder name="Test Management">
-          <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\ActiveBugs.wiq" />
-          <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\OpenTestCases.wiq" />
-          <Query name="Resolved Bugs" fileName="WorkItem Tracking\Queries\ResolvedBugs.wiq" />
+          <Query name="Active Bugs" fileName="WorkItem Tracking\Queries\TM_ActiveBugs.wiq" />
+          <Query name="Open Test Cases" fileName="WorkItem Tracking\Queries\TM_OpenTestCases.wiq" />
+          <Query name="Resolved Bugs" fileName="WorkItem Tracking\Queries\TM_ResolvedBugs.wiq" />
         </QueryFolder>
         <Query name="My Bugs" fileName="WorkItem Tracking\Queries\MyBugs.wiq" />
         <Query name="My Tasks" fileName="WorkItem Tracking\Queries\MyTasks.wiq" />
