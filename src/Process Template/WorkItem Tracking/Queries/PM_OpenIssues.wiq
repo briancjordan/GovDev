@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WorkItemQuery Version="1">
-  <Wiql>SELECT [System.Id],
+  <Wiql>
+				SELECT [System.Id],
 							 [Microsoft.VSTS.Common.Priority],
 							 [System.Title],
 							 [System.AssignedTo] 
 							 FROM WorkItems 
 							 WHERE [System.TeamProject] = @project 
 							 AND [System.WorkItemType] = 'Issue' 
-							 AND [System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1' 
 							 AND [System.State] &lt;&gt; 'Closed' 
 							 ORDER BY [Microsoft.VSTS.Common.Priority],
-									      [System.Id]
+												[System.Id]
 	</Wiql>
 </WorkItemQuery>

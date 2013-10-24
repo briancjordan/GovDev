@@ -5,9 +5,19 @@
       <Nodes>
         <Node StructureType="ProjectLifecycle" Name="Iteration" xmlns="">
           <Children>
-            <Node StructureType="ProjectLifecycle" Name="Iteration 1" />
-            <Node StructureType="ProjectLifecycle" Name="Iteration 2" />
-            <Node StructureType="ProjectLifecycle" Name="Iteration 3" />
+            <Node StructureType="ProjectLifecycle" Name="Release 1">
+              <Children>
+                <Node StructureType="ProjectLifecycle" Name="Iteration 1" />
+                <Node StructureType="ProjectLifecycle" Name="Iteration 2" />
+                <Node StructureType="ProjectLifecycle" Name="Iteration 3" />
+                <Node StructureType="ProjectLifecycle" Name="Iteration 4" />
+                <Node StructureType="ProjectLifecycle" Name="Iteration 5" />
+                <Node StructureType="ProjectLifecycle" Name="Iteration 6" />
+              </Children>
+            </Node>
+            <Node StructureType="ProjectLifecycle" Name="Release 2" />
+            <Node StructureType="ProjectLifecycle" Name="Release 3" />
+            <Node StructureType="ProjectLifecycle" Name="Release 4" />
           </Children>
         </Node>
         <Node StructureType="ProjectModelHierarchy" Name="Area" xmlns="" />

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tasks>
   <task id="LabTask" name="Create Lab area" plugin="Microsoft.ProjectCreationWizard.Lab" completionMessage="Lab Task completed.">
-    <dependencies />
     <taskXml>
       <ProcessTemplate Type="Custom" Filename="Lab\Templates\LabDefaultTemplate.xaml" Description="This is the default Lab process template for this Team Project." ServerPath="$/$$PROJECTNAME$$/BuildProcessTemplates" />
       <permission allow="Read, Create, Write, Edit, Delete, Start, Stop, Pause, ManageSnapshots, ManageLocation, DeleteLocation, ManagePermissions, ManageChildPermissions" identity="$$PROJECTCOLLECTIONADMINGROUP$$" />

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tasks>
   <task id="Site" plugin="Microsoft.ProjectCreationWizard.Reporting" completionMessage="Project Reporting site created.">
-    <dependencies />
     <taskXml>
       <ReportingServices>
         <site></site>

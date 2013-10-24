@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tasks>
   <task id="SharePointPortal" name="Create Sharepoint Portal" plugin="Microsoft.ProjectCreationWizard.Portal" completionMessage="Project portal site created.">
-    <dependencies />
     <taskXml>
       <Portal>
         <site template="TFS2010 Agile Dashboard" language="1033" />
@@ -38,7 +37,7 @@
           <file source="Windows SharePoint Services\Samples and Templates\Personas and Design\Sample Document - Persona definition.docx" documentLibrary="Samples and Templates" target="Personas and Design/Sample Document - Persona definition.docx" />
           <!-- Samples and Templates - Backup of planning workbooks -->
           <file source="Windows SharePoint Services\Shared Documents\Project Management\Iteration Task Backlog.xlsm" documentLibrary="Samples and Templates" target="Project Management/Document Template - Iteration Task Backlog.xlsm" queryId="Iteration Management/Iteration 1/Iteration Task Backlog" />
-          <file source="Windows SharePoint Services\Shared Documents\Project Management\Use Case Planning.xlsm" documentLibrary="Samples and Templates" target="Project Management/Document Template - Use Case Planning.xlsm"  queryId="Use Case Planning" />
+          <file source="Windows SharePoint Services\Shared Documents\Project Management\Use Case Planning.xlsm" documentLibrary="Samples and Templates" target="Project Management/Document Template - Use Case Planning.xlsm" queryId="Use Case Planning" />
           <!-- Samples - Retrospectives -->
           <file source="Windows SharePoint Services\Samples and Templates\Retrospectives\Document Template - Iteration Retrospective.dotx" documentLibrary="Samples and Templates" target="Retrospectives/Document Template - Iteration Retrospective.dotx" />
           <file source="Windows SharePoint Services\Samples and Templates\Retrospectives\Sample Document - Iteration Retrospective.docx" documentLibrary="Samples and Templates" target="Retrospectives/Sample Document - Iteration Retrospective.docx" />

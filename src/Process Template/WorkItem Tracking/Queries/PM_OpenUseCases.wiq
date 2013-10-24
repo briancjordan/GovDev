@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WorkItemQuery Version="1">
-  <Wiql>SELECT [System.Id],
+  <Wiql>
+        SELECT [System.Id],
                [Microsoft.VSTS.Common.StackRank],
                [Microsoft.VSTS.Scheduling.StoryPoints],
                [System.Title] 
                FROM WorkItems 
                WHERE [System.TeamProject] = @project 
-               AND [System.IterationPath] UNDER '$$PROJECTNAME$$\Release 1\Iteration 1'
                AND [System.WorkItemType] = 'Use Case' 
-               AND ( [System.State] &lt;&gt; 'Removed' 
-               OR [System.State] &lt;&gt; 'Closed' ) 
+               AND ( [System.State] &lt;&gt; 'Removed' OR [System.State] &lt;&gt; 'Closed' ) 
                ORDER BY [Microsoft.VSTS.Common.StackRank]
   </Wiql>
 </WorkItemQuery>
