@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <witd:WITD application="Work item type editor" version="1.0" xmlns:witd="http://schemas.microsoft.com/VisualStudio/2008/workitemtracking/typedef">
   <WORKITEMTYPE name="Use Case">
     <DESCRIPTION>Tracks an activity the user will be able to perform with the application</DESCRIPTION>
@@ -110,7 +110,7 @@
       <FIELD name="Scenario" refname="GovDev.Scenario" type="HTML">
         <HELPTEXT>Description or reference to the scenarios associated with the use case that must work for this work to be considered complete</HELPTEXT>
       </FIELD>
-      <FIELD name="Planning Points" refname="Microsoft.VSTS.Scheduling.StoryPoints" type="Double" reportable="measure">
+      <FIELD name="Story Points" refname="Microsoft.VSTS.Scheduling.StoryPoints" type="Double" reportable="measure">
         <HELPTEXT>The size of work estimated for implementing this use case</HELPTEXT>
       </FIELD>
     </FIELDS>
