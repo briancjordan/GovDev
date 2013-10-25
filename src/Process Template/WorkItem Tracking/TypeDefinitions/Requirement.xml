@@ -140,7 +140,7 @@
     </FIELDS>
     <WORKFLOW>
       <STATES>
-        <STATE value="Proposed">
+        <STATE value="New">
           <FIELDS>
             <FIELD refname="Microsoft.VSTS.Common.ResolvedDate">
               <EMPTY />
@@ -224,7 +224,7 @@
         </STATE>
       </STATES>
       <TRANSITIONS>
-        <TRANSITION from="" to="Proposed">
+        <TRANSITION from="" to="New">
           <REASONS>
             <DEFAULTREASON value="New" />
           </REASONS>
@@ -234,7 +234,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Proposed" to="Active">
+        <TRANSITION from="New" to="Active">
           <REASONS>
             <REASON value="Investigate" />
             <DEFAULTREASON value="Accepted" />
@@ -249,7 +249,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Active" to="Proposed">
+        <TRANSITION from="Active" to="New">
           <REASONS>
             <REASON value="Postponed" />
             <DEFAULTREASON value="Investigation Complete" />
@@ -316,7 +316,7 @@
             </FIELD>
           </FIELDS>
         </TRANSITION>
-        <TRANSITION from="Proposed" to="Closed">
+        <TRANSITION from="New" to="Closed">
           <REASONS>
             <DEFAULTREASON value="Rejected" />
           </REASONS>
