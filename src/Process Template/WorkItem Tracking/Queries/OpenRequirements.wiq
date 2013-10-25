@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <WorkItemQuery Version="1">
   <Wiql>
 	SELECT	[System.Id], 
@@ -8,10 +8,9 @@
 		[System.Reason] 
 	FROM	WorkItems 
 	WHERE	[System.TeamProject] = @project 
-        AND 	[System.IterationPath] UNDER @project 
 	AND	[System.WorkItemType] = 'Requirement' 
 	AND	[System.State] &lt;&gt; 'Closed' 
 	ORDER BY [Microsoft.VSTS.Common.Priority], 
-                 [System.Id]
+              [System.Id]
   </Wiql>
 </WorkItemQuery>

@@ -17,12 +17,11 @@
 		[System.AreaPath] 
 		FROM	WorkItemLinks 
 		WHERE	(Source.[System.TeamProject] = @project 
-		AND Source.[System.AreaPath] under @project 
 		AND Source.[System.IterationPath] under '$$PROJECTNAME$$\Release 1\Iteration 1' 
 		AND Source.[System.WorkItemType] = 'Use Case') 
 		AND ([System.Links.LinkType] = 'Microsoft.VSTS.Common.TestedBy-Forward') 
 		AND (Target.[System.WorkItemType] = 'Test Case') 
 		ORDER BY [Microsoft.VSTS.Common.StackRank], 
-						 [Microsoft.VSTS.Common.Priority] mode (MustContain)
+			[Microsoft.VSTS.Common.Priority] mode (MustContain)
 	</Wiql>
 </WorkItemQuery>
